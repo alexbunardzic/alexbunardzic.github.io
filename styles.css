@@ -56,12 +56,19 @@ main {
   margin-top: 60px;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px;
+}
+
 section {
   background-color: #fff;
   padding: 2em;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -77,12 +84,4 @@ h2 {
 }
 
 p {
-  margin-bottom: 20px;
-  color: #666;
-}
-
-button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 20px
+ 
