@@ -1,141 +1,146 @@
 /* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: left; /* Ensure text is left-aligned globally */
 }
 
 h1, h2, h3 {
-    font-family: 'Georgia', serif;
-    margin-bottom: 0.5em;
+  font-family: 'Georgia', serif;
+  margin-bottom: 0.5em;
 }
 
 h1 {
-    font-size: 2.5rem;
-    color: #333;
+  font-size: 2.5rem;
+  color: #333;
 }
 
 h2 {
-    font-size: 2rem;
-    color: #555;
+  font-size: 2rem;
+  color: #555;
 }
 
 h3 {
-    font-size: 1.5rem;
-    color: #666;
+  font-size: 1.5rem;
+  color: #666;
 }
 
 /* Containers */
 .container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* Hero Section */
 .hero {
-    background-color: #005A8B;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-    margin-bottom: 40px;
+  background-color: #005A8B;
+  color: white;
+  text-align: center; /* Hero remains centered */
+  padding: 50px 20px;
+  margin-bottom: 40px;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 0 0 20px;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 0 20px;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin: 0;
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 /* About Section */
 .about {
-    text-align: left;
-    margin-bottom: 60px;
+  text-align: left; /* Ensure about text is left-aligned */
+  margin-bottom: 60px;
 }
 
 .about h2 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .about p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 30px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
 }
 
 /* Articles Section */
 .articles {
-    text-align: left;
-    margin-bottom: 60px;
+  text-align: left; /* Ensure articles text is left-aligned */
+  margin-bottom: 60px;
 }
 
 .articles h2 {
-    margin-bottom: 30px;
-    font-size: 2rem;
-    color: #333;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #333;
 }
 
 .article {
-    margin-bottom: 30px;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .article h3 {
-    font-size: 1.5rem;
-    color: #005A8B;
-    margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #005A8B;
+  margin-bottom: 10px;
 }
 
 .article p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 /* Highlight Section */
 .highlight {
-    background-color: #f0f0f0;
-    padding: 20px;
-    margin: 40px 0;
-    border-left: 5px solid #005A8B;
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin: 40px 0;
+  border-left: 5px solid #005A8B;
 }
 
 .highlight h3 {
-    font-size: 1.5rem;
-    color: #333;
+  font-size: 1.5rem;
+  color: #333;
 }
 
 .highlight ul {
-    list-style-type: none;
-    padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .highlight li {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 10px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 10px;
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 footer p {
-    margin: 0;
-    font-size: 1rem;
+  margin: 0;
+  font-size: 1rem;
 }
