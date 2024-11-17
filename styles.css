@@ -70,6 +70,13 @@ main {
   grid-gap: 20px;
 }
 
+.container img {
+  width: 200px; /* adjust the width to your liking */
+  height: 200px; /* adjust the height to your liking */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 section {
   background-color: #fff;
   padding: 2em;
