@@ -71,10 +71,12 @@ main {
 }
 
 .container img {
-  width: 200px; /* adjust the width to your liking */
-  height: 200px; /* adjust the height to your liking */
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid #fff; /* add a white border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow */
 }
 
 section {
