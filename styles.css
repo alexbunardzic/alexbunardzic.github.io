@@ -7,107 +7,102 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
   background-color: #f9f9f9;
 }
 
-/* Header Section */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 1em;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-header nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-header nav ul li {
-  margin-right: 20px;
-}
-
-header nav a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-header nav a:hover {
-  color: #ccc;
-}
-
-.profile-pic {
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2em;
-  margin-top: 60px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 20px;
-}
-
-.container img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #fff; /* add a white border */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow */
-}
-
-section {
-  background-color: #fff;
-  padding: 2em;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+h1, h2, h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 36px;
 }
 
 h2 {
+  font-size: 24px;
+}
+
+h3 {
   font-size: 18px;
-  margin-bottom: 10px;
-  color: #666;
 }
 
 p {
-.tagline {
-  font-size: 18px;
-  font-weight: 300;
-  color: #666;
-  text-align: center;
   margin-bottom: 20px;
+}
 
-  font-size: 18px;
-  font-weight: 300;
-  color: #666;
-  text-align: center;
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+/* Hero Section Styles */
+
+.hero {
+  background-image: linear-gradient(to bottom, #4CAF50, #3e8e41);
+  background-size: 100% 300px;
+  background-position: 0% 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero p {
+  font-size: 24px;
+}
+
+/* Services Section Styles */
+
+.services {
+  padding: 50px 0;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.services li {
   margin-bottom: 20px;
+}
+
+.services h3 {
+  font-size: 18px;
+}
+
+.services p {
+  font-size: 16px;
+}
+
+/* About Section Styles */
+
+.about {
+  padding: 50px 0;
+}
+
+.about h2 {
+  font-size: 24px;
+}
+
+.about p {
+  font-size: 16px;
+}
