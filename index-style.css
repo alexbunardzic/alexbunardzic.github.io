@@ -1,191 +1,119 @@
-/* Global Styles */
+/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    text-align: left;
 }
-
-h1, h2, h3 {
-    font-family: 'Georgia', serif;
-    margin-bottom: 0.5em;
-}
-
-h1 {
-    font-size: 2.5rem;
-    color: #333;
-}
-
-h2 {
-    font-size: 2rem;
-    color: #555;
-}
-
-h3 {
-    font-size: 1.5rem;
-    color: #666;
-}
-
-/* Containers */
 .container {
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
 }
-
-/* Navigation Bar */
-.navbar {
-    background-color: #333;
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.navbar ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-.navbar li {
-    margin: 0 15px;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.navbar a:hover {
-    color: #FF6600;
-}
-
-/* Hero Section */
+/* Header Section */
 #hero {
-    background-color: #005A8B;
+    background-color: #282c34;
     color: white;
+    padding: 100px 0;
     text-align: center;
-    padding: 50px 20px;
-    margin-bottom: 40px;
+    position: relative;
 }
-
-#hero .profile-pic {
-    width: 120px;
-    height: 120px;
+.profile-pic {
     border-radius: 50%;
     margin-bottom: 20px;
 }
-
-#hero h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 0 0 20px;
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
-
-#hero p {
-    font-size: 1.2rem;
-    margin: 0;
+.tagline {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    font-weight: 300;
 }
-
+.cta-button {
+    background-color: #ff6600;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+.cta-button:hover {
+    background-color: #e55b00;
+}
 /* About Section */
 #about {
-    text-align: left;
-    margin-bottom: 60px;
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
 }
-
 #about h2 {
+    font-size: 2.2em;
     margin-bottom: 20px;
 }
-
 #about p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 30px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
 }
-
 /* Skills Section */
 #skills {
-    background-color: #f9f9f9;
-    padding: 40px 0;
+    background-color: #eaeaea;
+    padding: 50px 0;
+    text-align: center;
 }
-
 #skills h2 {
-    font-size: 2rem;
-    color: #333;
+    font-size: 2.2em;
     margin-bottom: 20px;
 }
-
 #skills ul {
     list-style: none;
+    font-size: 1.2em;
 }
-
-#skills ul li {
-    font-size: 1.1rem;
-    line-height: 1.8;
+#skills li {
+    margin: 10px 0;
 }
-
-/* Articles Section */
-#articles {
-    padding: 40px 0;
-}
-
-#articles h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Videos & Podcasts Section */
-#videos-podcasts {
-    padding: 40px 0;
-    background-color: #f4f4f4;
-}
-
-#videos-podcasts h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Training Material Section */
-#training-material {
-    padding: 40px 0;
-}
-
-#training-material h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
 /* Contact Section */
 #contact {
-    padding: 40px 0;
-    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
 }
-
 #contact h2 {
-    font-size: 2rem;
-    color: #333;
+    font-size: 2.2em;
     margin-bottom: 20px;
 }
-
 #contact p {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.2em;
     margin-bottom: 20px;
 }
-
-#contact .cta-button {
-    padding
+/* Footer Section */
+footer {
+    background-color: #282c34;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+footer p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+.social-links {
+    margin-top: 20px;
+}
+.social-icon {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+}
+.social-icon:hover {
+    color: #ff6600;
+}
