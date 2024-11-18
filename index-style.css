@@ -1,142 +1,51 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Header Section */
-#hero {
-    background-color: #282c34;
-    color: white;
-    padding: 100px 0;
-    text-align: center;
-    position: relative;
-}
-
-.profile-pic {
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.tagline {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    font-weight: 300;
-}
-
-.cta-button {
-    background-color: #ff6600;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #e55b00;
-}
-
-/* About Section */
-#about {
-    padding: 50px 0;
-    background-color: #fff;
-    text-align: center;
-}
-
-#about h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
-}
-
-#about p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 /* Skills Section */
 #skills {
-    background-color: #eaeaea;
-    padding: 50px 0;
-    text-align: center;
+    background-color: #f9f9f9;
+    padding: 40px 0;
 }
 
 #skills h2 {
-    font-size: 2.2em;
+    font-size: 2rem;
+    color: #333;
     margin-bottom: 20px;
 }
 
 #skills ul {
     list-style: none;
-    font-size: 1.2em;
 }
 
-#skills li {
-    margin: 10px 0;
+#skills ul li {
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 /* Contact Section */
 #contact {
-    padding: 50px 0;
-    text-align: center;
-    background-color: #fff;
+    padding: 40px 0;
+    background-color: #f4f4f4;
 }
 
 #contact h2 {
-    font-size: 2.2em;
+    font-size: 2rem;
+    color: #333;
     margin-bottom: 20px;
 }
 
 #contact p {
-    font-size: 1.2em;
+    font-size: 1.1rem;
+    line-height: 1.8;
     margin-bottom: 20px;
 }
 
-/* Footer Section */
-footer {
-    background-color: #282c34;
+#contact .cta-button {
+    padding: 10px 20px;
+    background-color: #FF6600;
     color: white;
-    padding: 30px 0;
-    text-align: center;
-}
-
-footer p {
-    font-size: 1em;
-    margin-bottom: 10px;
-}
-
-.social-links {
-    margin-top: 20px;
-}
-
-.social-icon {
-    margin: 0 15px;
     text-decoration: none;
-    color: white;
-    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 4px;
 }
 
-.social-icon:hover {
-    color: #ff6600;
+#contact .cta-button:hover {
+    background-color: #FF9933;
 }
