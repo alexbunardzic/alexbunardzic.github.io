@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Bunardzic - Published Work</title>
+    <link rel="stylesheet" href="new-styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="hero">
+        <div class="container">
+            <img src="https://opensource.com/sites/default/files/pictures/alex.jpeg" alt="Alex Bunardzic" class="profile-pic">
+            <h1>My Published Work</h1>
+            <p class="tagline">Articles | Blog Posts | Training Material | Videos</p>
+            <p class="tagline">Thought Leadership in Software Engineering, DevOps, TDD, and Agile Practices</p>
+            <a href="#work" class="cta-button">Explore My Work</a>
+        </div>
+    </header>
+
+    <!--  Section -->
+    <section id="about">
+        <div class="container">
+        <h2>Articles & Thought Leadership</h2>
+        
+        <!-- OpenSource.com Articles -->
+        <div class="article-category">
+            <h3>OpenSource.com Articles</h3>
+            <p>As an advocate for best practices in software engineering, I regularly publish articles on OpenSource.com. Below are some of the highlights:</p>
+            
+            <!-- Article Highlights -->
+            <div class="article-summary">
+                <h4>Failure is a Feature: Blameless DevOps</h4>
+                <p>Explored the importance of creating a culture where failures are treated as learning opportunities in the DevOps ecosystem. Highlighted key strategies for implementing a blameless post-mortem culture that improves resilience and continuous improvement in software systems.</p>
+            </div>
+
+            <div class="article-summary">
+                <h4>Mutation Testing: The Evolution of TDD</h4>
+                <p>Discussed how mutation testing strengthens Test-Driven Development (TDD) by identifying flaws in test suites and ensuring tests can catch edge cases. Offered practical examples and tools for integrating mutation testing into the development process.</p>
+            </div>
+
+            <div class="article-summary">
+                <h4>Test-Driven Development Best Practices</h4>
+                <p>Provided a comprehensive guide to best practices in Test-Driven Development. Included tips on writing effective tests, ensuring maintainability, and structuring TDD workflows to enhance productivity and software quality.</p>
+            </div>
+
+            <div class="article-summary">
+                <h4>Service Virtualization & TDD</h4>
+                <p>Examined how service virtualization enhances TDD by allowing development and testing without reliance on external systems. Shared insights on implementing mock services to improve test coverage and accelerate the delivery pipeline.</p>
+            </div>
+
+            <div class="article-summary">
+                <h4>Agile vs. Waterfall: Which Methodology Works Best?</h4>
+                <p>Analyzed the pros and cons of Agile and Waterfall methodologies. Suggested when and how to adopt each approach to optimize project outcomes based on team structure, goals, and timeline.</p>
+            </div>
+
+            <!-- Add more articles as necessary -->
+        </div>
+
+        <!-- Link to Full Article Archive -->
+        <p>For more in-depth articles on software engineering practices, you can visit my full article archive on <a href="https://opensource.com/users/alex-bunardzic" target="_blank">OpenSource.com</a>.</p>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out to discuss collaboration, speaking engagements, or just to chat about software development.</p>
+            <a href="mailto:alexbunardzic@gmail.com" class="cta-button">Email Me</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Alex Bunardzic</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/alexbunardzic" target="_blank" class="social-icon">LinkedIn</a>
+                <a href="https://github.com/alexbunardzic" target="_blank" class="social-icon">GitHub</a>
+                <a href="https://twitter.com/alexbunardzic" target="_blank" class="social-icon">Twitter</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
