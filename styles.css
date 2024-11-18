@@ -88,6 +88,16 @@ section {
     margin: 0 auto;
 }
 
+/* Profile Picture in About Section */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image round */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* About Section */
 .about h2, .projects h2, .contact h2 {
     font-size: 2rem;
