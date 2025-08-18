@@ -1,72 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Bunardzic - Senior Technology Leader & Developer Advocate</title>
-    <link rel="stylesheet" href="new-styles.css">
+    <title>Alex Bunardzic - AI & Refactoring Strategist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <!-- QR Code Generation Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"></script>
 </head>
-
 <body>
-    <!-- Header Section -->
-    <header id="hero">
-        <div class="container">
-            <img src="https://opensource.com/sites/default/files/pictures/alex.jpeg" alt="Alex Bunardzic" class="profile-pic">
-            <h1>Hi, I'm Alex Bunardzic</h1>
-            <h2>AI & Refactoring Strategist</h2>
-            <br /><br />
-            <a href="published-work.html" class="cta-button">Explore My Published Work</a>
-        </div>
-    </header>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                With over two decades of experience in software development and IT leadership, I specialize in leading agile teams, delivering high-quality technical solutions, and driving DevOps transformations by leveraging the leading edge AI technology. I’m passionate about continuous learning and the evolution of software engineering practices.
-            </p>
-        </div>
-    </section>
+    <div class="main-container">
+        <!-- Hero Section -->
+        <header class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <p class="hero-subtitle">Devoxx Belgium 2025 · Antwerp</p>
+                        <h1 class="hero-name">Alex Bunardzic</h1>
+                        <h2 class="hero-brand-title">AI & Refactoring Strategist</h2>
+                        <p class="hero-tagline">Test‑Driven Navigation for legacy systems, powered by AI.</p>
+                        <p class="hero-location">Vancouver, Canada · Working globally</p>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Core Competencies</h2>
-            <ul>
-                <li>Agile & DevOps</li>
-                <li>Test-Driven Development (TDD)</li>
-                <li>Cloud Technologies (AWS, Azure)</li>
-                <li>Microservices Architecture</li>
-                <li>CI/CD Automation</li>
-                <li>Mentorship & Leadership</li>
-            </ul>
-        </div>
-    </section>
+                        <div class="hero-cta-buttons">
+                            <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                Book a discovery call
+                            </a>
+                            <a href="https://devoxx.be/app/talk/12467/the-future-of-refactoring-testdriven-navigation/" target="_blank" rel="noreferrer" class="btn btn-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                                See my Devoxx talk
+                            </a>
+                            <a href="#" id="vcard-btn" class="btn btn-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+                                Save contact (vCard)
+                            </a>
+                        </div>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out to discuss collaboration, speaking engagements, or just to chat about software development.</p>
-            <p align="top"><a href="https://app.cal.com/alex-bunardzic">Book a call with me to discuss<img src="calendar_icon48.png" /></a></p>
-            <br />
-            <a href="mailto:alexbunardzic@gmail.com" class="cta-button">Email Me</a>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Alex Bunardzic</p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/alexbunardzic" target="_blank" class="social-icon">LinkedIn</a>
-                <a href="https://github.com/alexbunardzic" target="_blank" class="social-icon">GitHub</a>
-                <a href="https://twitter.com/alexbunardzic" target="_blank" class="social-icon">Twitter</a>
+                        <div class="hero-socials">
+                            <a href="https://www.linkedin.com/in/alexbunardzic/" target="_blank" rel="noreferrer" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/alexbunardzic" target="_blank" rel="noreferrer" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-qrcode">
+                        <div class="qrcode-card">
+                            <div class="qrcode-label">Scan to connect</div>
+                            <div class="qrcode-image-container" id="qrcode"></div>
+                            <div class="qrcode-url">Opens alexbunardzic.github.io</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
-</body>
+        </header>
 
+        <!-- Credibility Strip -->
+        <section class="credibility-section">
+            <div class="container">
+                <p class="credibility-title">Previously collaborated with</p>
+                <div class="logos-grid">
+                    <div class="logo-item">Devoxx</div>
+                    <div class="logo-item">Staples (Makr.co)</div>
+                    <div class="logo-item">Raymond James</div>
+                    <div class="logo-item">Exact Payments</div>
+                    <div class="logo-item">WorkSafeBC</div>
+                    <div class="logo-item">PHSA</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offerings Section -->
+        <section class="offerings-section" id="services">
+            <div class="container">
+                <h3 class="section-title">Engagements that move the needle</h3>
+                <p class="section-subtitle">Packages are outcome‑oriented and designed to pay for themselves through reduced cycle time, lower defect rates, and faster delivery.</p>
+                <div class="offerings-grid">
+                    <!-- Navigation Audit -->
+                    <div class="offering-card">
+                        <div class="offering-icon-wrapper">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8 11.4 12.6 7.8 16.2 12.6 11.4 16.2 7.8z"/></svg>
+                        </div>
+                        <h4 class="offering-title">Navigation Audit</h4>
+                        <p class="offering-blurb">2–3 week codebase & delivery assessment. Pinpoint risks, create a refactoring compass, and define 90‑day outcomes.</p>
+                        <button class="btn-offering">Request audit</button>
+                    </div>
+                    <!-- AI-Augmented TDD Accelerator -->
+                    <div class="offering-card">
+                        <div class="offering-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v0A2.5 2.5 0 0 1 9.5 7h0A2.5 2.5 0 0 1 7 4.5v0A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 1 17 4.5v0A2.5 2.5 0 0 1 14.5 7h0A2.5 2.5 0 0 1 12 4.5v0A2.5 2.5 0 0 1 14.5 2Z"/><path d="M12 7.5c-2.5 0-5 .5-5 2.5v1.5c0 1.5 1.2 2.5 2.5 2.5h.5c1.5 0 2.5 1.5 2.5 3v0c0 1.5-1 2.5-2.5 2.5h-5c-1.5 0-2.5-1-2.5-2.5v-1.5c0-2 2.5-2.5 5-2.5"/><path d="M12 7.5c2.5 0 5 .5 5 2.5v1.5c0 1.5-1.2 2.5-2.5 2.5h-.5c-1.5 0-2.5 1.5-2.5 3v0c0 1.5 1 2.5 2.5 2.5h5c1.5 0 2.5-1 2.5-2.5v-1.5c0-2-2.5-2.5-5-2.5"/></svg>
+                        </div>
+                        <h4 class="offering-title">AI‑Augmented TDD Accelerator</h4>
+                        <p class="offering-blurb">Hands‑on enablement for your team: AI‑assisted unit tests, mutation testing, safe refactors, and guardrail patterns.</p>
+                        <button class="btn-offering">Run the accelerator</button>
+                    </div>
+                    <!-- Legacy Rescue Sprints -->
+                    <div class="offering-card">
+                        <div class="offering-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12"/><path d="M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M18 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M6 15c0-2 2-3 4-3s4 1 4 3"/><path d="M6 9c0-2 2-3 4-3s4 1 4 3"/></svg>
+                        </div>
+                        <h4 class="offering-title">Legacy Rescue Sprints</h4>
+                        <p class="offering-blurb">Time‑boxed refactoring sprints to unlock features, reduce defects, and shorten cycle time without big‑bang rewrites.</p>
+                        <button class="btn-offering">Plan a sprint</button>
+                    </div>
+                    <!-- Fractional Head of Engineering -->
+                    <div class="offering-card">
+                        <div class="offering-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2c0-3.3 2.7-6 6-6h2c3.3 0 6 2.7 6 6v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-2"/><path d="M7 10.7c0-2.3.8-4.5 2.2-6.2"/><path d="M17 10.7c0-2.3-.8-4.5-2.2-6.2"/><path d="M4 14.5c0-1.7.5-3.2 1.3-4.5"/><path d="M20 14.5c0-1.7-.5-3.2-1.3-4.5"/></svg>
+                        </div>
+                        <h4 class="offering-title">Fractional Head of Engineering</h4>
+                        <p class="offering-blurb">Leadership for scale‑ups: roadmaps, SDLC modernization, CI/CD, XP practices, and coaching for durable delivery.</p>
+                        <button class="btn-offering">Explore engagement</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Talk Highlight Section -->
+        <section class="talk-highlight-section">
+            <div class="container talk-highlight-grid">
+                <div class="talk-info">
+                    <h3 class="section-title text-white">The Future of Refactoring: Test‑Driven Navigation</h3>
+                    <p class="section-subtitle text-neutral-300">Fresh from Devoxx Belgium, this talk shows how AI can pair with tests to steer refactors safely through legacy code. Ask about an in‑house version tailored to your stack.</p>
+                    <div class="talk-buttons">
+                        <a href="https://devoxx.be/app/talk/12467/the-future-of-refactoring-testdriven-navigation/" target="_blank" rel="noreferrer" class="btn btn-talk-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                            View session
+                        </a>
+                        <a href="#services" class="btn btn-talk-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                            Bring it to my team
+                        </a>
+                    </div>
+                </div>
+                <div class="workshop-outcomes">
+                    <div class="outcomes-card">
+                        <h4 class="outcomes-title">Workshop outcomes</h4>
+                        <ul class="outcomes-list">
+                            <li>Refactor confidently with executable tests as a compass</li>
+                            <li>Adopt mutation testing to harden your safety net</li>
+                            <li>Use AI to generate, explain & evolve tests</li>
+                            <li>Shorten cycle time and defect escape rate</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <h3 class="section-title">About</h3>
+                <p class="about-text">
+                    Alex Bunardzic is an engineering leader and practitioner with 20+ years of experience across fintech, healthcare, and enterprise platforms. He has led large engineering groups, modernized SDLCs with XP/TDD, and delivered at scale with Ruby on Rails, Node.js, and .NET ecosystems. He organized the first International TDD Conference and writes about software craftsmanship and pragmatic simplicity.
+                </p>
+                <div class="about-links">
+                    <a href="https://opensource.com/users/alex-bunardzic" target="_blank" rel="noreferrer">Articles</a>
+                    <a href="https://medium.com/@alexbunardzic" target="_blank" rel="noreferrer">Essays</a>
+                    <a href="https://www.youtube.com/user/alexbunardzic" target="_blank" rel="noreferrer">Videos</a>
+                    <a href="https://tddconference.github.io/" target="_blank" rel="noreferrer">TDD Conference</a>
+                </div>
+            </div>        
+        </section>
+
+        <!-- Lead Magnet Section -->
+        <section class="lead-magnet-section">
+            <div class="container lead-magnet-grid">
+                <div>
+                    <h3 class="lead-magnet-title">Free Field Guide: AI‑Augmented Refactoring</h3>
+                    <p class="lead-magnet-text">A concise, 10‑page PDF covering test‑driven navigation, mutation testing, and AI pairing patterns. Perfect for engineering leaders who need results in 90 days.</p>
+                </div>
+                <form class="lead-magnet-form">
+                    <input class="form-input" placeholder="Work email"/>
+                    <button class="btn-form">Get the PDF</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-section">
+            <div class="container footer-content">
+                <div class="footer-copyright">© <span id="year"></span> Alex Bunardzic. All rights reserved.</div>
+                <div class="footer-links">
+                    <a class="footer-link" href="mailto:alexbunardzic@gmail.com">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        alexbunardzic@gmail.com
+                    </a>
+                    <a class="footer-link" href="https://www.linkedin.com/in/alexbunardzic/" target="_blank" rel="noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        LinkedIn
+                    </a>
+                    <a class="footer-link" href="https://github.com/alexbunardzic" target="_blank" rel="noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
 </html>
