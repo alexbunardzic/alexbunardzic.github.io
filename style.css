@@ -462,3 +462,58 @@ body {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
+
+/* Offering card hover popups */
+.offering-card {
+    position: relative;
+    overflow: visible; /* allow popup to render above content if needed */
+}
+
+.offering-popup {
+    position: absolute;
+    inset: 0; /* cover the card */
+    background-color: var(--color-white);
+    border: 1px solid #e5e5e5;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 0.08);
+    padding: 1rem;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    pointer-events: none; /* don't block hover until visible */
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.offering-card:hover .offering-popup,
+.offering-card:focus-within .offering-popup {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.popup-title {
+    margin: 0 0 0.25rem 0;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.offering-popup p {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.9rem;
+    color: var(--color-neutral-700);
+}
+
+.popup-price {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    color: var(--color-neutral-900);
+}
+
+/* Optional: subtle hover lift behind the popup */
+.offering-card:hover,
+.offering-card:focus-within {
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.06);
+}
