@@ -73,7 +73,7 @@ body {
 }
 .hero-location {
     margin-top: 0.5rem;
-    font-size: 0.875rem;
+    font-size: 0.975rem;
     color: var(--color-neutral-500);
 }
 .hero-cta-buttons {
@@ -517,3 +517,62 @@ body {
 .offering-card:focus-within {
     box-shadow: 0 4px 10px rgb(0 0 0 / 0.06);
 }
+
+
+/* --- New Logo Hero Section Styling --- */
+
+/* This is a fallback font stack. For a perfect match, you would need to host the "Madelyn BC" and "Studio BC" webfonts if they are available.
+   'Montserrat' is a great, clean, and modern alternative available on Google Fonts. */
+   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+   /* Main container for the black hero section */
+   .logo-hero-section {
+       background-color: #000000; /* Black background */
+       color: #FFFFFF; /* White text */
+       text-align: center;
+       padding: 60px 20px;
+       width: 100%;
+   }
+   
+   /* Container for the logo image */
+   .logo-container {
+       max-width: 450px; /* Controls the max size of the logo */
+       margin: 0 auto 40px auto; /* Centers the logo and adds space below it */
+   }
+   
+   .logo-container img {
+       width: 100%;
+       height: auto;
+       display: block;
+   }
+   
+   /* Container for all the text below the logo */
+   .hero-text-container {
+       font-family: 'Montserrat', sans-serif; /* A clean, modern font as an alternative */
+   }
+   
+   
+   
+   /* --- Responsive Adjustments for Mobile --- */
+   @media (max-width: 768px) {
+       .logo-hero-section {
+           padding: 40px 15px;
+       }
+   
+       .logo-container {
+           max-width: 320px; /* Smaller logo on mobile */
+           margin-bottom: 30px;
+       }
+   
+       .hero-name {
+           font-size: 2rem; /* 32px */
+       }
+   
+       .hero-subtitle {
+           font-size: 1rem; /* 16px */
+       }
+   
+       .hero-location {
+            font-size: 0.9rem; /* 14.4px */
+       }
+   }
