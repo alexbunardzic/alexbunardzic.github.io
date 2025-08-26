@@ -537,7 +537,7 @@ body {
 /* Container for the logo image - UPDATED */
 .logo-container {
     /* The key change is reducing the max-width from 450px to a more balanced 380px */
-    max-width: 380px;
+    max-width: 280px;
     margin: 0 auto 40px auto; /* Centers the logo and adds space below it */
 }
 
