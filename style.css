@@ -534,18 +534,19 @@ body {
        width: 100%;
    }
    
-   /* Container for the logo image */
-   .logo-container {
-       max-width: 450px; /* Controls the max size of the logo */
-       margin: 0 auto 40px auto; /* Centers the logo and adds space below it */
-   }
-   
-   .logo-container img {
-       width: 100%;
-       height: auto;
-       display: block;
-   }
-   
+/* Container for the logo image - UPDATED */
+.logo-container {
+    /* The key change is reducing the max-width from 450px to a more balanced 380px */
+    max-width: 380px;
+    margin: 0 auto 40px auto; /* Centers the logo and adds space below it */
+}
+
+.logo-container img {
+    /* This ensures the image is always responsive and fits within the container */
+    width: 100%;
+    height: auto;
+    display: block;
+}   
    /* Container for all the text below the logo */
    .hero-text-container {
        font-family: 'Montserrat', sans-serif; /* A clean, modern font as an alternative */
