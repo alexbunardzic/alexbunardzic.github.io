@@ -73,7 +73,7 @@ body {
 }
 .hero-location {
     margin-top: 0.5rem;
-    font-size: 0.975rem;
+    font-size: 1.2rem;
     color: var(--color-neutral-500);
 }
 .hero-cta-buttons {
