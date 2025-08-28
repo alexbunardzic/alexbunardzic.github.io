@@ -10,6 +10,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     <!-- QR Code Generation Library -->
     <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Senior Compliance Executive"
+          },
+          "datePublished": "2023-01-01",
+          "reviewBody": "I worked with Alex at Raymond James Ltd for about 7 years. Together we developed one of the strongest Compliance systems in the Financial Services industry. Alex was heavily involved in managing the team responsible for the programming. I always appreciated his ‘out of the box’ thinking and his ‘can do’ attitude. In retrospect, Alex was an extremely cooperative and insightful partner. He was successful in capturing my vision and solving countless problems to deliver programs that always exceeded my expectations.",
+          "itemReviewed": {
+            "@type": "Person",
+            "name": "Alex Bunardzic",
+            "url": "https://alexbunardzic.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Raymond James Ltd"
+          }
+        }
+        </script>        
 </head>
 <body>
 
@@ -119,9 +140,32 @@
             <div class="container">
                 <p class="credibility-title">Trusted by engineering leaders in fintech, healthcare, and enterprise. Previously collaborated with:</p>
                 <div class="logos-grid">
+                    <div class="logo-item">
+                        <button popovertarget="raymond-popover" class="logo-btn">
+                        Raymond James
+                        </button>
+                    </div>
+                    
+                    <!-- Popover anchored near the button -->
+                    <div id="raymond-popover" popover class="testimonial-popover">
+                        <p class="testimonial-text">
+                        "I worked with Alex at Raymond James Ltd for about 7 years. Together we
+                        developed one of the strongest Compliance systems in the Financial Services
+                        industry. Alex was heavily involved in managing the team responsible for the
+                        programming. I always appreciated his ‘out of the box’ thinking and his
+                        ‘can do’ attitude. In retrospect, Alex was an extremely cooperative and
+                        insightful partner. He was successful in capturing my vision and solving
+                        countless problems to deliver programs that always exceeded my expectations."
+                        </p>
+                        <p class="testimonial-author">
+                            <a href="https://www.linkedin.com/in/sandy-martin-7346801/" target="_blank" rel="noreferrer" class="testimonial-link"><img src="sandy_martin.jpeg" width="150"/>&nbsp;Sandy Martin
+                        — Senior Compliance Executive, Raymond James Ltd</a>
+                        </p>
+                        <a href="/testimonials/raymond-james" class="btn btn-secondary">Read full story →</a>
+                    </div>
+  
                     <div class="logo-item">Devoxx</div>
                     <div class="logo-item">Staples (Makr.co)</div>
-                    <div class="logo-item">Raymond James</div>
                     <div class="logo-item">Exact Payments</div>
                     <div class="logo-item">WorkSafeBC</div>
                     <div class="logo-item">PHSA</div>

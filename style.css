@@ -556,6 +556,45 @@ body {
     display: block;
 }
 
+/* Testimonial popover styling */
+.testimonial-popover {
+    border: 1px solid #e5e5e5;
+    border-radius: 0.75rem;
+    background-color: var(--color-white);
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    max-width: 28rem;
+    font-size: 0.875rem;
+    color: var(--color-neutral-700);
+}
+
+/* The trigger button inherits .logo-item feel */
+.logo-btn {
+    background: none;
+    border: none;
+    font: inherit;
+    color: var(--color-neutral-600);
+    cursor: pointer;
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+}
+
+.logo-btn:hover {
+    color: var(--color-black);
+}
+
+/* Text inside popover */
+.testimonial-text {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.5;
+}
+
+.testimonial-author {
+    margin: 0.5rem 0 1rem 0;
+    font-weight: 500;
+    color: var(--color-neutral-800);
+    font-size: 0.85rem;
+}
 
 
 /* --- Responsive Adjustments for Mobile --- */
