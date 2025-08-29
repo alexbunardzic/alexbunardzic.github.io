@@ -13,8 +13,8 @@
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     height: 100%;
     font-family: 'Inter', sans-serif;
     background-color: var(--color-neutral-50);
@@ -40,44 +40,41 @@ html, body {
 }
 
 /* Hero Section */
-.hero-section {
+/* Hero Section - Balanced Vertical Spacing */
+.logo-hero-section {
+    background-color: #000000;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    width: 100vw;
     position: relative;
-    overflow: hidden;
-    padding-bottom: 4rem; /* keep bottom padding if you want breathing room below */  
-}
-.hero-content {
-    padding-top: 4rem; /* space above your logo/text */
-}
-.hero-grid {
-    display: grid;
-    gap: 2.5rem;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    /* Unified spacing */
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    padding: 80px 20px;   /* top/bottom breathing space */
 }
-.hero-subtitle {
-    font-size: 0.875rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-neutral-500);
-    margin: 0;
+
+/* Container for the logo */
+.logo-container {
+    max-width: 340px;
+    width: 100%;
+    margin-bottom: 24px; /* space below logo before text */
 }
-.hero-name {
-    margin-top: 0.5rem;
-    font-size: 2.25rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 0;
-}
-.hero-brand-title {
-    margin-top: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color-neutral-700);
-    margin-bottom: 0;
-}
+
+/* Adjust typography spacing */
+.hero-subtitle,
+.hero-name,
+.hero-brand-title,
 .hero-tagline {
-    margin-top: 1rem;
-    font-size: 1.125rem;
-    color: var(--color-neutral-700);
+    margin-top: 0.5rem;
+    margin-bottom: 0;
 }
 .hero-location {
     margin-top: 0.5rem;
@@ -608,6 +605,22 @@ html, body {
 
 /* --- Responsive Adjustments for Mobile --- */
 @media (max-width: 768px) {
+    .logo-hero-section {
+        padding: 60px 15px;  /* a bit tighter on small screens */
+    }
+
+    .logo-container {
+        max-width: 280px;
+        margin-bottom: 20px;
+    }
+
+    .hero-name { font-size: 2rem; }
+    .hero-brand-title { font-size: 1.25rem; }
+    .hero-subtitle { font-size: 0.9rem; }
+    .hero-tagline { font-size: 1rem; }
+}
+
+@media (max-width: 768px) {
     .hero-content {
         padding-top: 2rem;   /* tighter top spacing on small screens */
         padding-left: 1rem;  /* optional horizontal padding */
@@ -616,19 +629,6 @@ html, body {
       
     .logo-hero-section {
         padding: 40px 15px;
-    }
-
-    .logo-container {
-        max-width: 300px;
-        margin-bottom: 30px;
-    }
-
-    .hero-name {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
     }
 
     .hero-location {
