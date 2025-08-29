@@ -12,8 +12,10 @@
     --color-white: #fff;
 }
 
-body {
+html, body {
     margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: 'Inter', sans-serif;
     background-color: var(--color-neutral-50);
     color: var(--color-neutral-900);
@@ -22,6 +24,10 @@ body {
 }
 
 .main-container {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 0 !important;  
     min-height: 100vh;
 }
 
@@ -37,8 +43,10 @@ body {
 .hero-section {
     position: relative;
     overflow: hidden;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-bottom: 4rem; /* keep bottom padding if you want breathing room below */  
+}
+.hero-content {
+    padding-top: 4rem; /* space above your logo/text */
 }
 .hero-grid {
     display: grid;
@@ -597,8 +605,15 @@ body {
 }
 
 
+
 /* --- Responsive Adjustments for Mobile --- */
 @media (max-width: 768px) {
+    .hero-content {
+        padding-top: 2rem;   /* tighter top spacing on small screens */
+        padding-left: 1rem;  /* optional horizontal padding */
+        padding-right: 1rem; /* to prevent text/logo from hugging edges */
+      }
+      
     .logo-hero-section {
         padding: 40px 15px;
     }
