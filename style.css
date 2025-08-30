@@ -37,7 +37,6 @@ body {
 .hero-section {
     position: relative;
     overflow: hidden;
-    padding-top: 4rem;
     padding-bottom: 4rem;
 }
 .hero-grid {
@@ -529,12 +528,6 @@ body {
     box-sizing: border-box; /* Ensures padding is included in the width */
 
     /* --- KEY FIX: Forcing the section to be full-width --- */
-    width: 100vw; /* 100% of the viewport width */
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw; /* Pulls the element left to the edge */
-    margin-right: -50vw; /* Pulls the element right to the edge */
 
     /* Flexbox for robust centering of the content INSIDE the section */
     display: flex;
