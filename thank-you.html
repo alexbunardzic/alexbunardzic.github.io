@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You for Downloading - Test Driven Navigation</title>
+    <title>Thank You for Your Request - Test Driven Navigation</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Additional styles specific to the thank you page */
         .thank-you-container {
             min-height: 70vh;
             display: flex;
@@ -56,13 +55,26 @@
             line-height: 1.6;
         }
         
-        .email-note {
+        .download-section {
             background-color: var(--color-neutral-50);
             border-radius: 0.75rem;
-            padding: 1rem;
-            margin: 1.5rem 0;
-            font-size: 0.875rem;
-            color: var(--color-neutral-600);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .download-button {
+            display: inline-block;
+            background-color: var(--color-black);
+            color: var(--color-white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        
+        .download-button:hover {
+            opacity: 0.9;
         }
         
         .action-buttons {
@@ -85,8 +97,6 @@
 </head>
 <body>
     <div class="main-container">
-        <!-- If you have a header/navigation, include it here -->
-        
         <section class="thank-you-container">
             <div class="container">
                 <div class="thank-you-card">
@@ -99,12 +109,20 @@
                     <h1 class="thank-you-title">Thank You!</h1>
                     
                     <p class="thank-you-message">
-                        Your free Field Guide: Test Driven Navigation (TDN) is on its way to your inbox.
+                        Thank you for requesting our Field Guide: Test Driven Navigation (TDN).
                     </p>
                     
-                    <div class="email-note">
-                        <p>Can't find the email? Please check your spam folder or promotions tab. The email should arrive within the next few minutes.</p>
+                    <div class="download-section">
+                        <h3>Download Your Field Guide</h3>
+                        <p>Click the button below to download your PDF:</p>
+                        <a href="https://drive.google.com/file/d/1415mQQ2vq0aRwEi6Y7c9oJPPJVI7GQj_/view?usp=sharing" class="download-button" id="download-link">
+                            Download PDF
+                        </a>
                     </div>
+                    
+                    <p class="email-note">
+                        We've also sent a copy to your email address. If you don't see it within a few minutes, please check your spam folder.
+                    </p>
                     
                     <div class="action-buttons">
                         <a href="/" class="btn btn-primary">Return to Homepage</a>
@@ -113,19 +131,18 @@
                 </div>
             </div>
         </section>
-        
-        <!-- If you have a footer, include it here -->
     </div>
 
     <script>
-        // Simple function to check if the page was redirected from a form submission
+        // Auto-scroll to download section if URL has #download hash
         document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const submitted = urlParams.get('submitted');
-            
-            if (submitted === 'true') {
-                // You could add tracking or additional actions here
-                console.log('Form submitted successfully');
+            if (window.location.hash === '#download') {
+                const downloadSection = document.querySelector('.download-section');
+                if (downloadSection) {
+                    setTimeout(() => {
+                        downloadSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 500);
+                }
             }
         });
     </script>
