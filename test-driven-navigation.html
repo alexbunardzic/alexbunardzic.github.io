@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Metadata -->
+    <title>Test-Driven Navigation (TDN): The Technical Framework for AI-Assisted Refactoring</title>
+    <meta name="description" content="A detailed guide to using Test-Driven Navigation. Learn how to use failing tests to guide AI, de-risk legacy modernization, and evolve complex systems safely.">
+    
+    <!-- Basic Styling (Embed in page for simplicity) -->
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --text-color: #212529;
+            --secondary-text-color: #6c757d;
+            --border-color: #e9ecef;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        h1, h2, h3 {
+            color: var(--dark-color);
+            line-height: 1.3;
+        }
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; margin-top: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        h3 { font-size: 1.5rem; margin-top: 2rem; }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 0.5rem; }
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--secondary-text-color);
+        }
+
+        /* --- Navigation --- */
+        .main-nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo img { height: 40px; }
+        .nav-menu { list-style: none; display: flex; margin: 0; padding: 0; gap: 2rem; }
+        .nav-menu li a { font-weight: 600; font-size: 0.95rem; transition: color 0.2s; color: var(--dark-color); }
+        .nav-menu li a:hover { color: var(--primary-color); }
+        .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 5px; font-weight: 600; text-align: center; }
+        .btn-primary { background-color: var(--primary-color); color: #fff; }
+        .btn-primary:hover { background-color: #0056b3; }
+        
+        /* --- Pillar Page Specific --- */
+        .pillar-hero {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: var(--light-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .pillar-hero h1 { margin-bottom: 0.5rem; }
+        .pillar-hero .sub-headline { font-size: 1.25rem; color: var(--secondary-text-color); max-width: 800px; margin: 0 auto 1rem auto; }
+        .pillar-content { padding: 2rem 0; }
+        .process-image { margin: 2rem 0; border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .case-snapshot { background-color: var(--light-color); padding: 2rem; border-radius: 8px; border-left: 5px solid var(--primary-color); }
+        .cta-section { background-color: var(--dark-color); color: #fff; padding: 4rem 0; text-align: center; }
+        .cta-section h2 { color: #fff; border: none; }
+        .footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: var(--secondary-text-color); border-top: 1px solid var(--border-color); }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navigation Bar -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="/" class="nav-logo">
+                <img src="BVALogo.png" alt="Business Velocity Architect Logo" height="40">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#services">My Approach</a></li>
+                <li><a href="/test-driven-navigation.html">The Framework</a></li>
+                <li><a href="/executive-resources.html">Executive Resources</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+            <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary" style="color: #fff;">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- Main Content for the Pillar Page -->
+    <main>
+        
+        <!-- Hero Section -->
+        <header class="pillar-hero">
+            <div class="container">
+                <h1>The Framework: Test-Driven Navigation</h1>
+                <p class="sub-headline">A disciplined, AI-augmented workflow for transforming legacy systems into adaptable, high-velocity assets.</p>
+            </div>
+        </header>
+
+        <div class="pillar-content">
+            <div class="container">
+                <p>Business leaders feel the "Innovation Tax" as system friction. For technical leaders, this friction manifests as brittle code, risky deployments, and a pervasive fear of touching critical systems. Test-Driven Navigation (TDN) is the operating model designed to eliminate that friction by making change small, safe, and verifiable, using AI as a precision partner, not a chaos-maker.</p>
+
+                <!-- The Core Problem -->
+                <section id="problem">
+                    <h2>The Flaw of "Prompt-Driven Development"</h2>
+                    <p>Generative AI promised to solve the endless chore of refactoring, but its typical application often creates more problems than it solves. We call this "Prompt-Driven Development": asking an AI assistant for a large, sweeping change and hoping for a good outcome.</p>
+                    <p>This approach is fundamentally a "Big Bang" delivery model, and it fails for predictable reasons:</p>
+                    <ul>
+                        <li><strong>Un-reviewable Diffs:</strong> The AI produces thousands of lines of changed code, making a thorough human review impossible and creating hidden risks.</li>
+                        <li><strong>Loss of Deterministic Control:</strong> The engineer loses fine-grained control, unable to guide the process or verify each incremental step.</li>
+                        <li><strong>Risk of Hallucinated Logic:</strong> In complex scenarios, the AI can introduce subtle, incorrect, or insecure "solutions" that are difficult to spot until they cause a production incident.</li>
+                    </ul>
+                    <p>This method forces engineers to abdicate their strategic role, turning them into passive prompters rather than active architects. It trades short-term speed for long-term risk and instability.</p>
+                </section>
+
+                <!-- The Solution -->
+                <section id="solution">
+                    <h2>TDN: Using Tests as a Compass for AI</h2>
+                    <p>Test-Driven Navigation flips the script. Instead of giving the AI a vague, high-level goal, we provide it with a hyper-specific, machine-readable instruction: <strong>a single failing test</strong>.</p>
+                    <p>This failing test acts as a compass, forcing the AI to work in a safe, incremental loop that every TDD practitioner will recognize. The developer remains the strategist, defining the "what" (the next desired behavior, encoded in the test), while the AI becomes a hyper-efficient pair partner, executing the "how" (making the test pass with minimal code changes).</p>
+                    
+                    <img src="/flywheel-image.png" alt="The Micro-Steps Development Flywheel" class="process-image">
+
+                    <blockquote>The core philosophy is simple: Treat every change as a series of small, safe, reversible micro-bets, each one quickly verified by an executable test, not by human opinion.</blockquote>
+                </section>
+
+                <!-- The Process -->
+                <section id="process">
+                    <h2>The TDN Operating Model: A Step-by-Step Guide</h2>
+                    <p>TDN is not just a coding technique; it's a full operating model that integrates with your SDLC to de-risk modernization and accelerate delivery. Here is the high-level flow:</p>
+                    <ol>
+                        <li><strong>Align on Outcomes:</strong> We begin by choosing the business and engineering metrics that matter most (e.g., cycle time, defect escape rate, rework). This ensures all refactoring efforts are tied to measurable value, not perfection.</li>
+                        <li><strong>Baseline + Map Risks:</strong> Using metrics and AI-powered static analysis, we identify the riskiest, most expensive parts of the codebase. This is where change is most needed and will have the greatest impact.</li>
+                        <li><strong>Establish Guardrails:</strong> Tests become the immutable compass. We harden the existing test suite with techniques like mutation testing to ensure our safety net is robust before we begin.</li>
+                        <li><strong>Move in Micro-steps:</strong> This is the core Red-Green-Refactor loop. The engineer writes the next failing test, the AI proposes the minimal change to make it pass, and the engineer validates the solution. The engineer is always the pilot; the AI is the navigator.</li>
+                        <li><strong>Review + Release:</strong> Because each change is tiny and test-backed, code reviews are fast and focused. CI gates enforce safety, and with techniques like feature flags, rollbacks remain trivial.</li>
+                        <li><strong>Rinse, Compound, Scale:</strong> Each successful micro-refactor makes the next one cheaper and easier. This creates a compounding effect, transforming today's improvements into tomorrow's velocity.</li>
+                    </ol>
+                    <blockquote><strong>Leader Takeaway: Trust AI as a compass, never as the pilot.</strong></blockquote>
+                </section>
+
+                <!-- The Proof -->
+                <section id="proof">
+                    <h2>Case Snapshot: Putting TDN into Practice</h2>
+                    <div class="case-snapshot">
+                        <h3>Context</h3>
+                        <p>Mid-market platform company struggling with a legacy monolith and attached services. The team suffered from high release anxiety, rising incident counts, and slow feature throughput.</p>
+                        <h3>90-Day Plan</h3>
+                        <ul>
+                            <li><strong>Navigation Audit:</strong> Mapped system risks and targeted specific business outcomes.</li>
+                            <li><strong>Guardrails in Critical Paths:</strong> Hardened test suites around the most brittle, high-value code.</li>
+                            <li><strong>Pairing Patterns:</strong> Trained the team on how to use AI as a pair partner, with seniors mentoring while shipping.</li>
+                        </ul>
+                        <h3>Illustrative Outcomes (After 90 days)</h3>
+                        <ul>
+                            <li><strong>✅ Cycle Time:</strong> Reduced from 45 days to 21 days.</li>
+                            <li><strong>✅ Defect Escapes:</strong> Down by 50%.</li>
+                            <li><strong>⭐ Dev Satisfaction:</strong> Increased by +30%.</li>
+                        </ul>
+                        <p><strong>The win is a repeatable operating model, not one-off heroics.</strong></p>
+                    </div>
+
+                    <div id="devoxx-video" style="margin-top: 3rem; text-align:center; background-color: #efefef; padding: 2rem; border-radius: 8px;">
+                        <h3>Watch the Devoxx Belgium 2025 Presentation</h3>
+                        <p><em>(The full video of my talk, "The Future of Refactoring: Test-Driven Navigation," will be embedded here following the conference in October 2025.)</em></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Go Deeper</h2>
+                <p style="font-size: 1.1rem; max-width: 700px; margin: 1rem auto 2rem auto;">Let's discuss your current architecture, identify key areas of technical drag, and whiteboard how the TDN framework could apply to your specific challenges.</p>
+                <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary" style="font-size: 1.1rem;">Schedule a Technical Deep-Dive</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Alex Bunardzic. All Rights Reserved.</p>
+            <p><a href="https://www.linkedin.com/in/alexbunardzic/">Connect on LinkedIn</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
