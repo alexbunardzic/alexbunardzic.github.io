@@ -587,13 +587,17 @@
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_next" value="https://alexbunardzic.com/thank-you.html">
             <input type="hidden" name="_autoresponse" value="Thank you for requesting our Field Guide: Test Driven Navigation. You can download it from this link: https://drive.google.com/file/d/1415mQQ2vq0aRwEi6Y7c9oJPPJVI7GQj_/view?usp=sharing">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="false">
+            
             <div class="form-group">
                 <input type="email" id="email" name="email" placeholder="Your work email address" required>
-                <p style="margin-top: 1rem; font-size: 0.75rem; color: #666;">
-                    We respect your privacy. Your email will only be used to send you the field guide.
-                </p>    
             </div>
             <button type="submit" class="btn-form">Get the PDF</button>
+            
+            <p style="margin-top: 1rem; font-size: 0.75rem; color: #666;">
+                We respect your privacy. Your email will only be used to send you the field guide.
+            </p>
         </form>
     </div>
 </section>
@@ -621,5 +625,34 @@
     </div>
     
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('download-form');
+            
+            form.addEventListener('submit', function(e) {
+                // Basic validation
+                const emailInput = document.getElementById('email');
+                const email = emailInput.value.trim();
+                
+                if (!isValidEmail(email)) {
+                    e.preventDefault();
+                    alert('Please enter a valid email address');
+                    emailInput.focus();
+                    return;
+                }
+                
+                // If validation passes, the form will submit to FormSubmit
+                // You could add a loading indicator here
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+            });
+            
+            function isValidEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+        });
+        </script>
 </body>
 </html>
