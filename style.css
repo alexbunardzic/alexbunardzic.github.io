@@ -590,6 +590,64 @@ body {
 }
 
 
+/* Main Navigation Styles */
+.main-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Or your site's max width */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-logo img {
+    height: 40px; /* Adjust as needed */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #343a40;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-menu li a:hover {
+    color: #007bff; /* Your primary brand color */
+}
+
+.btn-nav-cta {
+    background-color: #007bff; /* Your primary brand color */
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-nav-cta:hover {
+    background-color: #0056b3; /* A darker shade for hover */
+}
+
+
 /* --- Responsive Adjustments for Mobile --- */
 @media (max-width: 768px) {
     .logo-hero-section {
