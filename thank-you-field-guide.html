@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Request | Alex Bunardzic</title>
+    <!-- Basic styling can be copied from the other pages -->
+    <style>
+        :root { --primary-color: #007bff; --dark-color: #343a40; --light-color: #f8f9fa; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+        .thank-you-content { padding: 5rem 0; }
+        .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 5px; font-weight: 600; text-decoration: none; }
+        .btn-primary { background-color: var(--primary-color); color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="thank-you-content">
+            <h1>Thank You!</h1>
+            <p>Your request for the <strong>Field Guide to Business Velocity</strong> has been received.</p>
+            <p>Your download should begin automatically. If it doesn't, please use the link below.</p>
+            <br>
+            <a href="/path/to/Field-Guide.pdf" class="btn btn-primary" id="download-link" download>Download the Field Guide Now</a>
+            <br><br>
+            <p><a href="/">← Return to the homepage</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-triggers the download on page load
+        window.onload = function() {
+            document.getElementById('download-link').click();
+        };
+    </script>
+</body>
+</html>

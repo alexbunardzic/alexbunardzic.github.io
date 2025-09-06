@@ -59,7 +59,13 @@
         .cta-section { background-color: var(--dark-color); color: #fff; padding: 4rem 0; text-align: center; }
         .cta-section h2 { color: #fff; border: none; }
         .footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: var(--secondary-text-color); border-top: 1px solid var(--border-color); }
-    </style>
+        /* --- NEW FORM STYLES --- */
+        .lead-magnet-form { margin-top: 1rem; }
+        .form-fields { display: flex; flex-direction: column; gap: 0.5rem; }
+        .form-fields input[type="email"] { padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 5px; font-size: 1rem; }
+        .btn-form { width: 100%; border: none; background-color: var(--primary-color); color: white; padding: 0.75rem 1.5rem; border-radius: 5px; font-weight: 600; text-align: center; cursor: pointer; transition: background-color 0.2s; }
+        .btn-form:hover { background-color: #0056b3; }
+</style>
 </head>
 <body>
 
@@ -105,13 +111,40 @@
                             <h3>The Field Guide to Business Velocity</h3>
                             <img src="path/to/field-guide-cover.png" alt="Cover of the Field Guide to Business Velocity">
                             <p>A 10-page executive guide detailing the principles, processes, and outcomes of an AI-augmented refactoring mindset. Learn the operating model for turning legacy drag into predictable velocity.</p>
-                            <a href="/path/to/Field-Guide.pdf" class="btn btn-primary" download>Download the Field Guide</a>
+
+                            <!-- === NEW FORM FOR FIELD GUIDE === -->
+                            <form class="lead-magnet-form" action="https://formsubmit.co/alexbunardzic@gmail.com" method="POST">
+                                <input type="hidden" name="_subject" value="New Field Guide Request">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_next" value="https://alexbunardzic.com/thank-you-field-guide.html">
+                                <input type="text" name="_honey" style="display:none">
+                                <input type="hidden" name="_captcha" value="false">
+                                <div class="form-fields">
+                                    <input type="email" name="email" placeholder="Your work email address" required>
+                                    <button type="submit" class="btn-form">Download the Field Guide</button>
+                                </div>
+                            </form>
+
                         </div>
                         <div class="resource-card">
                             <h3>The Velocity Mandate Framework</h3>
                             <img src="path/to/lead-magnet-cover.png" alt="Cover of The Velocity Mandate">
                             <p>A 2-page framework for leaders. This document translates the technical challenge of system friction into a clear business case, perfect for aligning your leadership team around a new vision for technology.</p>
-                            <a href="/path/to/Lead-Magnet.pdf" class="btn btn-primary" download>Download the Framework</a>
+
+                            <!-- === NEW FORM FOR FRAMEWORK === -->
+                            <form class="lead-magnet-form" action="https://formsubmit.co/alexbunardzic@gmail.com" method="POST">
+                                <input type="hidden" name="_subject" value="New Velocity Framework Request">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_next" value="https://alexbunardzic.com/thank-you-framework.html">
+                                <input type="text" name="_honey" style="display:none">
+                                <input type="hidden" name="_captcha" value="false">
+                                <div class="form-fields">
+                                    <input type="email" name="email" placeholder="Your work email address" required>
+                                    <button type="submit" class="btn-form">Download the Framework</button>
+                                </div>
+                            </form>
+                            <!-- === END NEW FORM === -->
+
                         </div>
                     </div>
                 </section>
