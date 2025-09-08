@@ -648,6 +648,56 @@ body {
 }
 
 
+/* ROI Calculator Section */
+.roi-calculator-section {
+    padding: 4rem 0;
+    background-color: var(--color-white);
+    border-top: 1px solid #e5e5e5;
+  }
+  
+  .roi-calculator-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .roi-inputs label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-neutral-700);
+    margin-bottom: 1rem;
+  }
+  
+  .roi-inputs input[type="number"],
+  .roi-inputs input[type="range"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+  }
+  
+  .roi-outputs {
+    border: 1px solid #e5e5e5;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background-color: var(--color-neutral-50);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  }
+  
+  .roi-output-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .roi-output {
+    font-size: 1rem;
+    color: var(--color-neutral-700);
+    margin-bottom: 0.75rem;
+  }
+  
+
 /* --- Responsive Adjustments for Mobile --- */
 @media (max-width: 768px) {
     .logo-hero-section {

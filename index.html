@@ -454,14 +454,235 @@
                 </div>
                 </div>
             </div>
-          </section>
-          
+
+<!-- Team-Based Executive ROI Calculator (TDN-focused) -->
+<!-- Team-Based Executive ROI Calculator (fixed & namespaced) -->
+<section class="roi-calculator-section" id="team-roi-calculator" style="padding: 3rem 0;">
+    <div class="container">
+      <h3 class="section-title">What Safe, Frequent Delivery Is Worth to Your Bottom Line</h3>
+      <p class="section-subtitle">Estimate the value your delivery teams could unlock by shipping more often with low blast radius and AI-enabled guardrails.</p>
+  
+      <div class="roi-team-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:2rem; margin-top:1.5rem;">
+        <!-- Inputs -->
+        <div>
+          <label style="display:block; font-weight:600; margin-bottom:0.5rem;">Number of Delivery Teams</label>
+          <input type="number" id="teamroi-teams" value="3" min="1" style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #e5e5e5; margin-bottom:1rem;">
+  
+          <label style="display:block; font-weight:600; margin-bottom:0.5rem;">Safe Cycles per Team per Quarter</label>
+          <input type="number" id="teamroi-cycles" value="12" min="1" step="1" style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #e5e5e5; margin-bottom:1rem;">
+          <div style="font-size:0.9rem; color:var(--color-neutral-600); margin-bottom:1rem;">(e.g., 12 = ~weekly safe releases)</div>
+  
+          <label style="display:block; font-weight:600; margin-bottom:0.5rem;">Value per Delivery Cycle ($)</label>
+          <input type="number" id="teamroi-value" value="25000" min="0" step="500" style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #e5e5e5; margin-bottom:1rem;">
+          <div style="font-size:0.9rem; color:var(--color-neutral-600); margin-bottom:1rem;">(revenue, cost avoidance, compliance value, etc.)</div>
+  
+          <label style="display:block; font-weight:600; margin-bottom:0.5rem;">Reliability: Baseline (no guardrails) %</label>
+          <input type="range" id="teamroi-rel-baseline" min="30" max="80" step="5" value="60"
+                 style="width:100%; margin-bottom:0.25rem;">
+          <div style="margin-bottom:1rem; color:var(--color-neutral-600);">Baseline reliability: <span id="teamroi-rbv">60%</span></div>
+  
+          <label style="display:block; font-weight:600; margin-bottom:0.5rem;">Reliability with TDN (AI guardrails) %</label>
+          <input type="range" id="teamroi-rel-tdn" min="70" max="99" step="1" value="95"
+                 style="width:100%; margin-bottom:0.25rem;">
+          <div style="margin-bottom:1.25rem; color:var(--color-neutral-600);">TDN reliability: <span id="teamroi-rtv">95%</span></div>
+  
+          <button id="teamroi-calc-btn" class="btn btn-primary" style="width:100%; border-radius:12px; padding:0.9rem; font-weight:700;">
+            Calculate Team ROI
+          </button>
+        </div>
+  
+        <!-- Outputs -->
+        <div>
+          <div style="border-radius:12px; padding:1.25rem; background:var(--color-neutral-50); border:1px solid #e5e5e5;">
+            <h4 class="roi-output-title" style="margin-top:0; margin-bottom:0.5rem;">ROI Summary</h4>
+  
+            <p id="teamroi-quarterly-baseline" style="margin:0.6rem 0; color:var(--color-neutral-700);"><strong>Quarterly (Baseline):</strong> —</p>
+            <p id="teamroi-quarterly-tdn" style="margin:0.6rem 0; color:var(--color-neutral-700);"><strong>Quarterly (With TDN):</strong> —</p>
+            <p id="teamroi-quarterly-delta" style="margin:0.6rem 0; color:var(--color-neutral-700);"><strong>Delta Unlocked / Quarter:</strong> —</p>
+  
+            <hr style="border:none; border-top:1px solid #ececec; margin:1rem 0;">
+  
+            <p id="teamroi-annual-baseline" style="margin:0.4rem 0; color:var(--color-neutral-700);"><strong>Annual (Baseline):</strong> —</p>
+            <p id="teamroi-annual-tdn" style="margin:0.4rem 0; color:var(--color-neutral-700);"><strong>Annual (With TDN):</strong> —</p>
+            <p id="teamroi-annual-delta" style="margin:0.4rem 0; color:var(--color-neutral-700);"><strong>Delta Unlocked / Year:</strong> —</p>
+  
+            <div style="margin-top:1rem;">
+              <div style="font-size:0.95rem; color:var(--color-neutral-700); margin-bottom:0.5rem;"><strong>Equivalent:</strong> Team-capacity freed</div>
+              <div id="teamroi-equiv" style="font-weight:700; font-size:1.05rem; color:var(--color-neutral-800);">— teams worth</div>
+            </div>
+  
+            <div style="margin-top:1rem;">
+              <a href="https://app.cal.com/alex-bunardzic" class="btn btn-secondary" style="border-radius:10px; padding:0.6rem 1rem; font-weight:600; display:inline-block;">
+                Schedule a Velocity Briefing →
+              </a>
+            </div>
+          </div>
+  
+          <!-- Tiny bar chart -->
+          <div style="margin-top:1rem;">
+            <svg id="teamroi-chart" width="100%" height="70" viewBox="0 0 600 70" preserveAspectRatio="none" style="background:transparent;">
+              <text x="10" y="16" font-size="12" fill="#6b7280">Baseline</text>
+              <text x="10" y="42" font-size="12" fill="#6b7280">With TDN</text>
+  
+              <rect id="teamroi-baseline-bar" x="120" y="4" width="0" height="18" rx="6" fill="#d1d5db"></rect>
+              <rect id="teamroi-tdn-bar" x="120" y="30" width="0" height="18" rx="6" fill="#111827"></rect>
+  
+              <text id="teamroi-chart-max" x="580" y="16" font-size="12" fill="#6b7280" text-anchor="end"></text>
+              <text id="teamroi-chart-max2" x="580" y="42" font-size="12" fill="#111827" text-anchor="end"></text>
+            </svg>
+          </div>
+        </div>
+      </div>
+  
+      <!-- interpretive caption -->
+      <p style="text-align:center; font-size:0.95rem; margin-top:1.5rem; color:var(--color-neutral-600);">
+        This model treats the <strong>team</strong> as the smallest unit of delivery — value grows by shipping 
+        <em>small, safe, reversible changes frequently</em> with AI guardrails that reduce risk and accelerate ROI.
+      </p>
+    </div>
+  </section>
+  
+  <script>
+    (function(){
+      // helper formatter
+      function money(n) {
+        return '$' + Number(n).toLocaleString(undefined, {maximumFractionDigits:0});
+      }
+  
+      // main calculation - robust parsing + guard
+      function calculateTeamROI() {
+        const T = Math.max(0, parseFloat(document.getElementById('teamroi-teams').value) || 0);
+        const C = Math.max(0, parseFloat(document.getElementById('teamroi-cycles').value) || 0);
+        const V = Math.max(0, parseFloat(document.getElementById('teamroi-value').value) || 0);
+  
+        const Rb = (parseFloat(document.getElementById('teamroi-rel-baseline').value) || 0) / 100;
+        const Rt = (parseFloat(document.getElementById('teamroi-rel-tdn').value) || 0) / 100;
+  
+        // Quarterly ROI = T * C * V * Reliability
+        const quarterlyBaseline = T * C * V * Rb;
+        const quarterlyTdn = T * C * V * Rt;
+        const quarterlyDelta = quarterlyTdn - quarterlyBaseline;
+  
+        const annualBaseline = quarterlyBaseline * 4;
+        const annualTdn = quarterlyTdn * 4;
+        const annualDelta = quarterlyDelta * 4;
+  
+        // per-team baseline quarter for equivalence (avoid 0)
+        const perTeamBaselineQuarter = Math.max(1, (C * V * Rb));
+        const teamEquivalents = quarterlyDelta / perTeamBaselineQuarter;
+  
+        // update outputs
+        document.getElementById('teamroi-quarterly-baseline').innerHTML = '<strong>Quarterly (Baseline):</strong> ' + money(quarterlyBaseline);
+        document.getElementById('teamroi-quarterly-tdn').innerHTML = '<strong>Quarterly (With TDN):</strong> ' + money(quarterlyTdn);
+        document.getElementById('teamroi-quarterly-delta').innerHTML = '<strong>Delta Unlocked / Quarter:</strong> ' + money(quarterlyDelta);
+  
+        document.getElementById('teamroi-annual-baseline').innerHTML = '<strong>Annual (Baseline):</strong> ' + money(annualBaseline);
+        document.getElementById('teamroi-annual-tdn').innerHTML = '<strong>Annual (With TDN):</strong> ' + money(annualTdn);
+        document.getElementById('teamroi-annual-delta').innerHTML = '<strong>Delta Unlocked / Year:</strong> ' + money(annualDelta);
+  
+        document.getElementById('teamroi-equiv').innerText = (teamEquivalents >= 0 ? teamEquivalents.toFixed(2) : '0.00') + ' team-quarters (value)';
+  
+        // update mini chart
+        const theoreticalMax = T * C * V; // 100% potential
+        drawBars(theoreticalMax, quarterlyBaseline, quarterlyTdn, Rb, Rt);
+
+    }
+  
+      // draw bars into the SVG; ensures visible difference
+    function drawBars(theoreticalMax, baselineValue, tdnValue, Rb, Rt) {
+        const maxV = theoreticalMax || 1;
+        const svgWidth = 440; // available width for bars
+        const baselineWidth = Math.max(6, Math.round((baselineValue / maxV) * svgWidth));
+        const tdnWidth = Math.max(6, Math.round((tdnValue / maxV) * svgWidth));
+
+        // Update bars
+        document.getElementById('teamroi-baseline-bar').setAttribute('width', baselineWidth);
+        document.getElementById('teamroi-tdn-bar').setAttribute('width', tdnWidth);
+
+        // % labels inside bars
+        const baselinePct = Math.round(Rb * 100) + "% of potential";
+        const tdnPct = Math.round(Rt * 100) + "% of potential";
+
+        let baselineLabel = document.getElementById('teamroi-baseline-pct');
+        if (!baselineLabel) {
+            baselineLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            baselineLabel.setAttribute("id", "teamroi-baseline-pct");
+            baselineLabel.setAttribute("y", 17);
+            baselineLabel.setAttribute("fill", "#374151");
+            baselineLabel.setAttribute("font-size", "11");
+            document.getElementById('teamroi-chart').appendChild(baselineLabel);
+        }
+        baselineLabel.setAttribute("x", 125);
+        baselineLabel.textContent = baselinePct;
+
+        let tdnLabel = document.getElementById('teamroi-tdn-pct');
+        if (!tdnLabel) {
+            tdnLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            tdnLabel.setAttribute("id", "teamroi-tdn-pct");
+            tdnLabel.setAttribute("y", 43);
+            tdnLabel.setAttribute("fill", "#ffffff");
+            tdnLabel.setAttribute("font-size", "11");
+            document.getElementById('teamroi-chart').appendChild(tdnLabel);
+        }
+        tdnLabel.setAttribute("x", 125);
+        tdnLabel.textContent = tdnPct;
+
+        // Dollar labels (always above bars, shifted right a bit)
+        const offset = 600; // position near far right
+        const baselineDollar = document.getElementById('teamroi-chart-max');
+        baselineDollar.setAttribute("x", offset);
+        baselineDollar.setAttribute("y", 16);
+        baselineDollar.textContent = money(Math.round(baselineValue));
+
+        const tdnDollar = document.getElementById('teamroi-chart-max2');
+        tdnDollar.setAttribute("x", offset);
+        tdnDollar.setAttribute("y", 42);
+        tdnDollar.textContent = money(Math.round(tdnValue));
+
+        // Ensure dollar labels render on top by moving them to end of <svg>
+        const svg = document.getElementById('teamroi-chart');
+        svg.appendChild(baselineDollar);
+        svg.appendChild(tdnDollar);
+    }
+
+  
+      // sync slider labels and auto-calc on input
+      const inputsToWatch = [
+        'teamroi-teams','teamroi-cycles','teamroi-value',
+        'teamroi-rel-baseline','teamroi-rel-tdn'
+      ];
+      inputsToWatch.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('input', function(){
+          // update the visible percent text for ranges
+          if (id === 'teamroi-rel-baseline') {
+            document.getElementById('teamroi-rbv').textContent = this.value + '%';
+          }
+          if (id === 'teamroi-rel-tdn') {
+            document.getElementById('teamroi-rtv').textContent = this.value + '%';
+          }
+          // recalc live
+          calculateTeamROI();
+        });
+      });
+  
+      // also wire the calculate button
+      const calcBtn = document.getElementById('teamroi-calc-btn');
+      if (calcBtn) calcBtn.addEventListener('click', calculateTeamROI);
+  
+      // initial render
+      calculateTeamROI();
+    })();
+  </script>
+  
+            
 
         <!-- Talk Highlight Section -->
         <section class="talk-highlight-section">
             <div class="container talk-highlight-grid">
                 <div class="talk-info">
-                    <h3 class="section-title text-white">The Future of Refactoring: Test‑Driven Navigation</h3>
+                    <h3 class="section-title text-white">AI and The Future of Refactoring: Test‑Driven Navigation</h3>
                     <p class="section-subtitle text-neutral-300">Fresh from Devoxx Belgium, this talk shows how AI can pair with tests to steer refactors safely through legacy code. Ask about an in‑house version tailored to your stack.</p>
                     <div class="talk-buttons">
                         <a href="https://devoxx.be/app/talk/12467/the-future-of-refactoring-testdriven-navigation/" target="_blank" rel="noreferrer" class="btn btn-talk-primary">
