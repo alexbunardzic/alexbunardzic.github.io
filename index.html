@@ -26,12 +26,33 @@
     <!-- QR Code Generation Library -->
     <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"></script>
     <script type="application/ld+json">
-        {
+      {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Esa Karjalainen, CEO, Nikaxu Inc"
+        },
+        "datePublished": "2025-09-13",
+        "reviewBody": "I had the pleasure of interacting with Alex recently. His deep experience, ability to take a truly holistic view, and still drive concrete execution is impressive.
+
+        A rare combination that makes conversations with him both insightful and actionable.",
+        "itemReviewed": {
+          "@type": "Person",
+          "name": "Alex Bunardzic",
+          "url": "https://alexbunardzic.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Nikaxu Inc"
+        }
+      }
+      {
           "@context": "https://schema.org",
           "@type": "Review",
           "author": {
             "@type": "Person",
-            "name": "Senior Compliance Executive"
+            "name": "Sandy Martin, Senior Compliance Executive"
           },
           "datePublished": "2025-08-21",
           "reviewBody": "I worked with Alex at Raymond James Ltd for about 7 years. Together we developed one of the strongest Compliance systems in the Financial Services industry. Alex was heavily involved in managing the team responsible for the programming. I always appreciated his ‘out of the box’ thinking and his ‘can do’ attitude. In retrospect, Alex was an extremely cooperative and insightful partner. He was successful in capturing my vision and solving countless problems to deliver programs that always exceeded my expectations.",
@@ -50,7 +71,7 @@
             "@type": "Review",
             "author": {
               "@type": "Person",
-              "name": "Director - Advanced Technology Solution at WorkSafeBC"
+              "name": "Andre Kaminski,Director - Advanced Technology Solution at WorkSafeBC"
             },
             "datePublished": "2025-09-01",
             "reviewBody": "I had the privilege of working directly with Alex for two years, during which he served as Software Engineering Practice Lead under my leadership as Director of DevOps at WorkSafeBC. During this time, Alex transformed our development practices in ways that benefited the delivery pods. He introduced and enforced Test-Driven Development across our engineering teams. Perhaps most impressively, Alex pioneered the use of Mountybank for API emulation, solving a critical challenge we faced in testing busy, production-like environments. His hands-on approach and deep technical expertise made him the go-to person when our teams needed innovative solutions to complex problems.
@@ -71,7 +92,7 @@
             "@type": "Review",
             "author": {
               "@type": "Person",
-              "name": "Co-Founder @ GTM Delta"
+              "name": "Eric Eright, Co-Founder @ GTM Delta"
             },
             "datePublished": "2025-09-01",
             "reviewBody": "When Alex joined the dev team, I was an Ops architect. His approach fundamentally changed how I look at building and deploying enterprise software. It truly reshaped my career. This was DevOps before DevOps was a thing. What began as feeling like we were flouting convention quickly showed results. I still apply the practices and processes that Alex taught me in my daily work. I rarely meet people who can be deeply philosophical, yet ruthlessly pragmatic. I’d work with Alex anywhere he goes.",
@@ -135,7 +156,26 @@
                         <div class="social-proof" style="margin-top: 2rem; margin-bottom: 3rem;">
                             <p style="text-transform: uppercase; font-size: 1.1rem; color: #6c757d; letter-spacing: 1px;">Trusted by business and engineering leaders at:</p>
                             <div class="logos" style="display: flex; align-items: center; gap: 20px; filter: grayscale(100%) opacity(60%);">
-                                <div class="logo-item" style="font-size: 1.0rem;">
+
+                              <div class="logo-item" style="font-size: 1.0rem;">
+                                <button popovertarget="nikaxu-popover" class="logo-btn">
+                                  Nikaxu Inc.
+                                </button>
+                            </div>    
+                            <!-- Popover anchored near the button -->
+                            <div id="nikaxu-popover" popover class="testimonial-popover">
+                                <p class="testimonial-text">
+                                "I had the pleasure of interacting with Alex recently. His deep experience, ability to take a truly holistic view, and still drive concrete execution is impressive.<br /><br />
+                                A rare combination that makes conversations with him both insightful and actionable."
+                                </p>
+                                <p class="testimonial-author">
+                                    <a href="https://www.linkedin.com/in/esa-karjalainen-3b8b927/" target="_blank" rel="noreferrer" class="testimonial-link"><img src="Esa_Karjalainen.jpeg" width="150"/><br />Esa Karjalainen, CEO Nikaxu Inc.</a><br /><br />
+                                    <a href="https://www.nikaxu.com/" target="_blank" rel="noreferrer" class="testimonial-link"><img src="nikaxu_logo.png" alt="Nikaxu logo" width="100"/></a>
+                                </p>    
+                                <a href="/testimonials/nikaxu" class="btn btn-secondary">Read full story →</a>
+                            </div>
+
+                              <div class="logo-item" style="font-size: 1.0rem;">
                                     <button popovertarget="worksafebc-popover" class="logo-btn">
                                     WorkSafeBC
                                     </button>
@@ -194,9 +234,9 @@
                                     </p>
                                     <a href="/testimonials/raymond-james" class="btn btn-secondary">Read full story →</a>
                                 </div>
-                                <div class="logo-item" style="font-size: 1.0rem;">Exact Payments</div>
-                                <div class="logo-item " style="font-size: 1.0rem;">PHSA</div>
-                                        </div>
+                                <!--div class="logo-item" style="font-size: 1.0rem;">Exact Payments</div>
+                                <div class="logo-item " style="font-size: 1.0rem;">PHSA</div-->
+                              </div>
                         </div>
 
 
