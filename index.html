@@ -157,7 +157,17 @@
       text-decoration: underline;
     }
   </style>
-  
+
+<script>
+  function trackPromoClick() {
+    if (typeof gtag === 'function') {
+      gtag('event', 'promo_bar_click', {
+        'event_category': 'Promo Bar',
+        'event_label': 'Devoxx Landing Link'
+      });
+    }
+  }
+</script>
 
 
     <div class="main-container">
