@@ -549,17 +549,47 @@ body {
     display: block;
 }
 
-/* Testimonial popover styling */
+
+
+/* Base popover styling */
 .testimonial-popover {
-    border: 1px solid #e5e5e5;
-    border-radius: 0.75rem;
-    background-color: var(--color-white);
-    padding: 1rem;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-    max-width: 28rem;
-    font-size: 0.875rem;
-    color: var(--color-neutral-700);
-}
+    max-width: 500px;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+    overflow-y: auto;
+  }
+  
+  /* Testimonial text */
+  .testimonial-popover .testimonial-text {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  /* Author block */
+  .testimonial-popover .testimonial-author {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .testimonial-popover .testimonial-author img {
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* CTA button inside popover */
+  .testimonial-popover .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+  }
 
 /* The trigger button inherits .logo-item feel */
 .logo-btn {
@@ -575,20 +605,6 @@ body {
 .logo-btn:hover {
     color: var(--color-black);
 }
-
-/* Text inside popover */
-.testimonial-text {
-    margin: 0 0 0.5rem 0;
-    line-height: 1.5;
-}
-
-.testimonial-author {
-    margin: 0.5rem 0 1rem 0;
-    font-weight: 500;
-    color: var(--color-neutral-800);
-    font-size: 0.85rem;
-}
-
 
 /* Main Navigation Styles */
 .main-nav {
@@ -720,4 +736,29 @@ body {
     .hero-location {
         font-size: 0.9rem;
     }
+
+    .testimonial-popover {
+        max-width: 95vw;         /* nearly full screen width */
+        width: 95vw;
+        height: auto;
+        max-height: 80vh;        /* allow scroll if very long */
+        font-size: 1.05rem;      /* bump up text size */
+        line-height: 1.7;        /* more breathing room */
+        padding: 1.25rem;
+      }
+    
+      .testimonial-popover .testimonial-author {
+        font-size: 1rem;
+      }
+    
+      .testimonial-popover img {
+        max-width: 120px;        /* scale down logos/photos */
+        height: auto;
+      }
+    
+      .testimonial-popover .btn {
+        width: 100%;             /* button full width for easy tapping */
+        font-size: 1.05rem;
+        padding: 0.8rem;
+      }
 }
