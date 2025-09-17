@@ -968,6 +968,13 @@ body {
         max-width: 28rem;
     }
 }
+/* Extra mobile transparency fix */
+@media (max-width: 768px) {
+    .testimonial-popover[style*="display: block"] {
+        background: white !important;
+        opacity: 1 !important;
+    }
+}
 
     
 
