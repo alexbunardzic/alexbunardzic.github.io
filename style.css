@@ -700,6 +700,15 @@ body {
 
 /* --- Responsive Adjustments for Mobile --- */
 @media (max-width: 768px) {
+    .testimonials {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .testimonial {
+        max-width: 90%; /* Take most of screen width */
+      }
+      
     .logo-hero-section {
         padding: 40px 15px;
     }
