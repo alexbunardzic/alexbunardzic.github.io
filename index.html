@@ -1210,5 +1210,44 @@
     }
 </style>
 
+
+<script>
+  // Ensure all popovers are hidden on page load
+  document.addEventListener('DOMContentLoaded', function() {
+      const popovers = document.querySelectorAll('[popover]');
+      popovers.forEach(popover => {
+          popover.hidePopover?.(); // Hide if browser supports popover
+          popover.style.display = 'none'; // Fallback for older browsers
+      });
+  });
+  
+  // Handle button clicks to show/hide popovers
+  document.addEventListener('click', function(e) {
+      if (e.target.hasAttribute('popovertarget')) {
+          const targetId = e.target.getAttribute('popovertarget');
+          const popover = document.getElementById(targetId);
+          
+          if (popover) {
+              // First hide all other popovers
+              const allPopovers = document.querySelectorAll('[popover]');
+              allPopovers.forEach(p => {
+                  if (p !== popover) {
+                      p.hidePopover?.();
+                      p.style.display = 'none';
+                  }
+              });
+              
+              // Toggle the clicked popover
+              if (popover.matches(':popover-open')) {
+                  popover.hidePopover?.();
+                  popover.style.display = 'none';
+              } else {
+                  popover.showPopover?.();
+                  popover.style.display = 'block';
+              }
+          }
+      }
+  });
+  </script>
 </body>
 </html>
