@@ -127,7 +127,29 @@
               "name": "GTM Delta"
             }
         }
-    </script>        
+
+        {
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Alex Smigoc, VP of Engineering"
+          },
+          "datePublished": "2025-09-16",
+          "reviewBody": "I had the privilege of working with Alex Bunardzic almost 30 years ago when we were both software engineers at the same company. Alex was a software architect at the time, and he naturally became a mentor to me. He was passionate about best practices in Java and was one of the first people I met who was really pushing test-driven development, long before most had even heard of it. I learned a lot just by watching how he approached problems and how much care he put into writing clean, maintainable code.
+
+          Looking back, the fundamentals I picked up from Alex have stayed with me throughout my career and proved to be incredibly valuable as I moved into technical leadership roles. Things like test-first thinking, focusing on simplicity, and always questioning whether the solution will stand the test of time. His influence helped shape how I build and lead teams even today, and I’m still grateful for the time we worked together and the lessons I took away from it.": {
+            "@type": "Person",
+            "name": "Alex Bunardzic",
+            "url": "https://alexbunardzic.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Quote Media"
+          }
+      }
+
+      </script>        
 </head>
 <body>
 
@@ -313,8 +335,27 @@
                                     </p>
                                     <a href="/testimonials/raymond-james" class="btn btn-secondary">Read full story →</a>
                                 </div>
-                                <!--div class="logo-item" style="font-size: 1.0rem;">Exact Payments</div>
-                                <div class="logo-item " style="font-size: 1.0rem;">PHSA</div-->
+
+                                <div class="logo-item" style="font-size: 1.0rem;">
+                                  <button popovertarget="quotemedia-popover" class="logo-btn">
+                                  Quote Media
+                                  </button>
+                              </div>
+                              <!-- Popover anchored near the button -->
+                              <div id="quotemedia-popover" popover class="testimonial-popover">
+                                  <p class="testimonial-text">
+                                      "I had the privilege of working with Alex Bunardzic almost 30 years ago when we were both software engineers at the same company. Alex was a software architect at the time, and he naturally became a mentor to me. He was passionate about best practices in Java and was one of the first people I met who was really pushing test-driven development, long before most had even heard of it. I learned a lot just by watching how he approached problems and how much care he put into writing clean, maintainable code.<br /><br />
+
+                                      Looking back, the fundamentals I picked up from Alex have stayed with me throughout my career and proved to be incredibly valuable as I moved into technical leadership roles. Things like test-first thinking, focusing on simplicity, and always questioning whether the solution will stand the test of time. His influence helped shape how I build and lead teams even today, and I’m still grateful for the time we worked together and the lessons I took away from it." 
+                                  </p>
+                                  <p class="testimonial-author">
+                                      <a href="https://www.linkedin.com/in/alexsmigoc/" target="_blank" rel="noreferrer" class="testimonial-link"><img src="alex_smigoc.jpeg" width="150"/><br />Alex Smigoc - VP of Engineering</a><br />
+                                      <a href="https://quotemedia.com/" target="_blank" rel="noreferrer" class="testimonial-link"><img src="quotemedia_logo.jpeg" alt="Quote Media Logo" width="100"/></a>
+                                  </p>
+                                  <a href="/testimonials/quotemedia" class="btn btn-secondary">Read full story →</a>
+                              </div>
+                              <!--div class="logo-item" style="font-size: 1.0rem;">Exact Payments</div>
+                              <div class="logo-item " style="font-size: 1.0rem;">PHSA</div-->
                               </div>
                         </div>
 
