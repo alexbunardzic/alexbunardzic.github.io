@@ -1209,6 +1209,91 @@
         }
     }
 </style>
-
+<script>
+  // Fix for mobile popover behavior
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if browser supports popover API
+    const supportsPopover = HTMLElement.prototype.hasOwnProperty('popover');
+    
+    if (!supportsPopover) {
+        // Fallback for browsers without popover support
+        const popovers = document.querySelectorAll('[popover]');
+        popovers.forEach(popover => {
+            popover.style.display = 'none';
+        });
+        
+        // Handle button clicks manually
+        document.addEventListener('click', function(e) {
+            if (e.target.hasAttribute('popovertarget')) {
+                e.preventDefault();
+                const targetId = e.target.getAttribute('popovertarget');
+                const popover = document.getElementById(targetId);
+                
+                if (popover) {
+                    // Hide all other popovers
+                    const allPopovers = document.querySelectorAll('[popover]');
+                    allPopovers.forEach(p => {
+                        if (p !== popover) {
+                            p.style.display = 'none';
+                        }
+                    });
+                    
+                    // Toggle current popover
+                    if (popover.style.display === 'none' || popover.style.display === '') {
+                        popover.style.display = 'block';
+                        // Position the popover near the button
+                        const rect = e.target.getBoundingClientRect();
+                        popover.style.position = 'fixed';
+                        popover.style.top = (rect.bottom + 10) + 'px';
+                        popover.style.left = '50%';
+                        popover.style.transform = 'translateX(-50%)';
+                        popover.style.zIndex = '1000';
+                    } else {
+                        popover.style.display = 'none';
+                    }
+                }
+            }
+            
+            // Close popover when clicking outside
+            if (!e.target.closest('[popover]') && !e.target.hasAttribute('popovertarget')) {
+                const allPopovers = document.querySelectorAll('[popover]');
+                allPopovers.forEach(p => {
+                    p.style.display = 'none';
+                });
+            }
+        });
+    } else {
+        // For browsers that support popover, ensure they're closed initially
+        const popovers = document.querySelectorAll('[popover]');
+        popovers.forEach(popover => {
+            try {
+                popover.hidePopover();
+            } catch (e) {
+                // Some browsers throw error if popover is already closed
+                console.log('Popover already closed or error:', e);
+            }
+        });
+    }
+    
+    // Additional mobile-specific fix
+    if (window.innerWidth <= 768) {
+        // Force hide all popovers on mobile load
+        setTimeout(() => {
+            const popovers = document.querySelectorAll('[popover]');
+            popovers.forEach(popover => {
+                if (supportsPopover) {
+                    try {
+                        popover.hidePopover();
+                    } catch (e) {
+                        // Ignore errors
+                    }
+                } else {
+                    popover.style.display = 'none';
+                }
+            });
+        }, 100); // Small delay to ensure page is fully loaded
+    }
+});
+</script>
 </body>
 </html>
