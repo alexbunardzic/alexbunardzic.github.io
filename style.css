@@ -798,6 +798,29 @@ body {
     font-size: 0.875rem;
     color: var(--color-neutral-700);
     margin: 0 auto;
+    
+    /* Ensure popovers are hidden by default on all devices */
+    display: none;
+}
+
+/* Show popover when it has the :popover-open pseudo-class */
+.testimonial-popover:popover-open {
+    display: block;
+}
+
+/* Fallback for browsers that don't support :popover-open */
+.testimonial-popover[open] {
+    display: block;
+}
+
+/* Additional mobile-specific hiding (extra safety) */
+@media (max-width: 768px) {
+    .testimonial-popover:not(:popover-open):not([open]) {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
 }
 
 .testimonial-text {
@@ -915,4 +938,6 @@ body {
         max-width: 28rem;
     }
 }
+
+
 }
