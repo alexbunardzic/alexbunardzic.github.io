@@ -1210,7 +1210,7 @@
     }
 </style>
 <script>
-  // Fix for mobile popover behavior
+// Fix for mobile popover behavior
 document.addEventListener('DOMContentLoaded', function() {
     // Check if browser supports popover API
     const supportsPopover = HTMLElement.prototype.hasOwnProperty('popover');
@@ -1247,7 +1247,35 @@ document.addEventListener('DOMContentLoaded', function() {
                         popover.style.top = (rect.bottom + 10) + 'px';
                         popover.style.left = '50%';
                         popover.style.transform = 'translateX(-50%)';
-                        popover.style.zIndex = '1000';
+                        popover.style.zIndex = '9999';
+                        
+                        // Force mobile styling via JavaScript
+                        popover.style.backgroundColor = '#ffffff';
+                        popover.style.border = '3px solid #9ca3af';
+                        popover.style.borderRadius = '0.75rem';
+                        popover.style.boxShadow = '0 20px 35px rgba(0,0,0,0.35)';
+                        popover.style.padding = '1.25rem';
+                        popover.style.maxWidth = '95vw';
+                        popover.style.opacity = '1';
+                        popover.style.visibility = 'visible';
+                        
+                        // Style the text content for better readability
+                        const textElements = popover.querySelectorAll('.testimonial-text');
+                        textElements.forEach(el => {
+                            el.style.color = '#1f2937';
+                            el.style.fontWeight = '500';
+                        });
+                        
+                        const authorElements = popover.querySelectorAll('.testimonial-author');
+                        authorElements.forEach(el => {
+                            el.style.color = '#111827';
+                            el.style.fontWeight = '600';
+                        });
+                        
+                        const linkElements = popover.querySelectorAll('.testimonial-link');
+                        linkElements.forEach(el => {
+                            el.style.color = '#374151';
+                        });
                     } else {
                         popover.style.display = 'none';
                     }
