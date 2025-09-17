@@ -795,22 +795,51 @@ body {
     right: auto;
     bottom: auto;
     
-    /* Your custom styling */
-    border: 1px solid #e5e5e5;
+    /* Your custom styling with stronger background */
+    border: 2px solid #d1d5db !important;
     border-radius: 0.75rem;
-    background-color: var(--color-white) !important; /* Force solid background */
+    background: #ffffff !important; /* Solid white background */
+    background-color: #ffffff !important;
     padding: 1rem;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25) !important;
     max-width: 90vw;
     width: 100%;
     font-size: 0.875rem;
-    color: var(--color-neutral-700);
+    color: #374151 !important; /* Darker text for better contrast */
     margin: 0 auto;
-    z-index: 1000;
+    z-index: 9999 !important;
     
-    /* Hidden by default - let browser handle the popover behavior */
+    /* Ensure visibility */
     opacity: 1 !important;
     visibility: visible !important;
+}
+
+/* Mobile-specific stronger styling */
+@media (max-width: 768px) {
+    .testimonial-popover {
+        background: #ffffff !important;
+        border: 3px solid #9ca3af !important;
+        box-shadow: 0 20px 35px rgba(0,0,0,0.35) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        max-width: 95vw !important;
+        padding: 1.25rem !important;
+    }
+    
+    .testimonial-text {
+        color: #1f2937 !important;
+        font-weight: 500 !important;
+        line-height: 1.6;
+    }
+    
+    .testimonial-author {
+        color: #111827 !important;
+        font-weight: 600 !important;
+    }
+    
+    .testimonial-link {
+        color: #374151 !important;
+    }
 }
 
 /* Ensure proper popover behavior */
@@ -820,7 +849,7 @@ body {
 
 /* Fix any potential transparency issues */
 .testimonial-popover:popover-open {
-    background-color: var(--color-white) !important;
+    background-color: #ffffff !important;
     opacity: 1 !important;
 }
 
@@ -940,7 +969,7 @@ body {
     }
 }
 
-
+    
 
 
 }
