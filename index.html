@@ -1295,19 +1295,22 @@
   </script>
 
 
+<!-- =====  hamburger (mobile)  – place LAST  ===== -->
+<button id="nav-toggle" aria-label="Open menu" hidden>X</button>
+
 <script>
-  /* =====  hamburger (mobile)  ===== */
-  (() => {
-    if (window.innerWidth > 768) return;
-    const btn = document.getElementById('nav-toggle');
-    btn.removeAttribute('hidden');      // ← delete the attribute entirely
-    btn.style.display = 'block';        // ← and force block just in case
-    const menu = document.querySelector('.nav-menu');
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('active');
-      menu.classList.toggle('open');
-    });
-  })();
-  </script>
+(() => {
+  if (window.innerWidth > 768) return;
+  const btn = document.getElementById('nav-toggle');
+  btn.removeAttribute('hidden');
+  btn.style.display = 'block';
+  const menu = document.querySelector('.nav-menu');
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    menu.classList.toggle('open');
+  });
+})();
+</script>
+</body>
 </body>
 </html>
