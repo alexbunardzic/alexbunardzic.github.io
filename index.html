@@ -5,18 +5,19 @@
     <meta name="description" content="Partner with a Business Velocity Architect to eliminate your 'Innovation Tax.' We de-risk legacy modernization and transform your technology into an engine for market speed and growth." content="width=device-width, initial-scale=1.0">
     <title>Alex Bunardzic | Business Velocity Architect | Turn Tech Drag into Strategic Momentum</title>
 
+
     <script>
-      /* ---- kill mobile auto-open ---- */
       if (screen.width <= 768) {
-        document.documentElement.classList.add('mobile');   /* CSS hook */
-        document.querySelectorAll('[popover]').forEach(el => {
-          el.setAttribute('data-p', el.id);   // keep reference
-          el.removeAttribute('popover');      // ← word gone → UA ignores it
-          el.hidden = true;                   // start hidden
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('[popover]').forEach(el => {
+            el.setAttribute('data-p', el.id);
+            el.removeAttribute('popover');
+            el.hidden = true;
+          });
         });
       }
       </script>
-
+  
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYNRR92L50"></script>
