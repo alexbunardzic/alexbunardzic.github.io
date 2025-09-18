@@ -1296,17 +1296,18 @@
 
 
 <script>
-  /* =====  hamburger toggle (mobile)  ===== */
+  /* =====  hamburger (mobile)  ===== */
   (() => {
     if (window.innerWidth > 768) return;
     const btn = document.getElementById('nav-toggle');
+    btn.removeAttribute('hidden');      // ← delete the attribute entirely
+    btn.style.display = 'block';        // ← and force block just in case
     const menu = document.querySelector('.nav-menu');
-    btn.hidden = false;              // show button
     btn.addEventListener('click', () => {
       btn.classList.toggle('active');
       menu.classList.toggle('open');
     });
   })();
-</script>
+  </script>
 </body>
 </html>
