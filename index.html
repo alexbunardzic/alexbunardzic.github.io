@@ -13,6 +13,8 @@
             el.setAttribute('data-p', el.id);
             el.removeAttribute('popover');
             el.hidden = true;
+            /* ➜  force opaque background now */
+            el.style.cssText = 'background:#fff;border:3px solid #9ca3af;box-shadow:0 20px 35px rgba(0,0,0,.35);padding:1.25rem;border-radius:.75rem;';
           });
         });
       }
