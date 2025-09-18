@@ -976,6 +976,34 @@ body {
     }
 }
 
+/* ------------------------------------------------------------------ */
+/*  Mobile-only pop-over fix – opaque background & crisper text       */
+/* ------------------------------------------------------------------ */
+@media (max-width: 768px) {
+    /* every pop-over in the testimonials block */
+    .social-proof [popover] {
+      background: #ffffff !important;          /* opaque white            */
+      border: 3px solid #9ca3af !important;   /* stronger border         */
+      box-shadow: 0 20px 35px rgba(0,0,0,.35) !important;
+      max-width: 95vw !important;             /* keep it inside viewport  */
+      padding: 1.25rem !important;
+      color: #111827 !important;              /* almost black text       */
+    }
+  
+    /* text inside the pop-over */
+    .social-proof [popover] .testimonial-text {
+      color: #1f2937 !important;
+      font-weight: 500 !important;
+      line-height: 1.6;
+    }
+    .social-proof [popover] .testimonial-author {
+      color: #111827 !important;
+      font-weight: 600 !important;
+    }
+    .social-proof [popover] .testimonial-link {
+      color: #374151 !important;
+    }
+  }
     
 
 
