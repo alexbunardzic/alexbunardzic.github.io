@@ -1213,16 +1213,19 @@
     <!-- =====  NEW MOBILE POPOVER FIX  ===== -->
     <script>
       (() => {
-        if (window.innerWidth > 768) return;          // leave desktop as-is
-  
-        /* 1. rename popover → data-popover so UA ignores it */
+        if (window.innerWidth > 768) return;
+      
+        /* 1. rename popover → data-popover */
         document.querySelectorAll('[popover]').forEach(el => {
           el.setAttribute('data-popover', el.id);
           el.removeAttribute('popover');
-          el.classList.add('mobile-pop');             // hook for our CSS
+          el.classList.add('mobile-pop');
         });
-  
-        /* 2. one listener handles all toggles */
+      
+        /* 2. CLOSE every box immediately (keeps them hidden until click) */
+        document.querySelectorAll('.mobile-pop').forEach(p => p.classList.remove('show'));
+      
+        /* 3. one global click handler */
         document.addEventListener('click', e => {
           const btn = e.target.closest('[popovertarget]');
           if (!btn) return;
@@ -1231,7 +1234,7 @@
           const box = document.querySelector(`[data-popover="${id}"]`);
           if (!box) return;
           const show = !box.classList.contains('show');
-          document.querySelectorAll('.mobile-pop').forEach(p => p.classList.remove('show')); // close others
+          document.querySelectorAll('.mobile-pop').forEach(p => p.classList.remove('show'));
           if (show) box.classList.add('show');
         });
       })();
