@@ -1013,7 +1013,7 @@ body {
 /* =========  hamburger (≤768 px)  ========= */
 @media (max-width: 768px) {
     #nav-toggle {                     /* show button */
-      display: block;
+      display: block !important;
       position: absolute;
       right: 1rem; top: 1rem;
       width: 28px; height: 22px;
