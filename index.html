@@ -1323,5 +1323,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+
+<!-- Mobile pop-over solid background fix -->
+<script>
+  (() => {
+    const isSmall = window.matchMedia('(max-width: 768px)').matches;
+    if (!isSmall) return;               // leave desktop untouched
+  
+    document.querySelectorAll('[popover]').forEach(pop => {
+      /* 1. force solid background while closed */
+      pop.style.setProperty('background', '#ffffff', 'important');
+      pop.style.setProperty('border', '3px solid #9ca3af', 'important');
+      pop.style.setProperty('box-shadow', '0 20px 35px rgba(0,0,0,.35)', 'important');
+      pop.style.setProperty('color', '#111827', 'important');
+      pop.style.setProperty('max-width', '95vw', 'important');
+      pop.style.setProperty('padding', '1.25rem', 'important');
+  
+      /* 2. in case a polyfill left one open, close it now */
+      try { pop.hidePopover(); } catch (_) {}
+    });
+  })();
+  </script>
 </body>
 </html>
