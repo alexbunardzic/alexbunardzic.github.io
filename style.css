@@ -976,32 +976,33 @@ body {
     }
 }
 
-/* ------------------------------------------------------------------ */
-/*  Mobile-only pop-over fix – opaque background & crisper text       */
-/* ------------------------------------------------------------------ */
+/* ----------------------------------------------------------- */
+/*  1.  Mobile: force solid background on ALL popovers         */
+/* ----------------------------------------------------------- */
 @media (max-width: 768px) {
-    /* every pop-over in the testimonials block */
-    .social-proof [popover] {
-      background: #ffffff !important;          /* opaque white            */
-      border: 3px solid #9ca3af !important;   /* stronger border         */
+    [popover] {                                    /* native element */
+      background: #ffffff !important;
+      border: 3px solid #9ca3af !important;
       box-shadow: 0 20px 35px rgba(0,0,0,.35) !important;
-      max-width: 95vw !important;             /* keep it inside viewport  */
+      max-width: 95vw !important;
       padding: 1.25rem !important;
-      color: #111827 !important;              /* almost black text       */
+      color: #111827 !important;
     }
   
-    /* text inside the pop-over */
-    .social-proof [popover] .testimonial-text {
-      color: #1f2937 !important;
-      font-weight: 500 !important;
-      line-height: 1.6;
-    }
-    .social-proof [popover] .testimonial-author {
-      color: #111827 !important;
-      font-weight: 600 !important;
-    }
-    .social-proof [popover] .testimonial-link {
-      color: #374151 !important;
+    .testimonial-text   { color: #1f2937 !important; font-weight: 500 !important; }
+    .testimonial-author { color: #111827 !important; font-weight: 600 !important; }
+    .testimonial-link   { color: #374151 !important; }
+  }
+  
+  /* ----------------------------------------------------------- */
+  /*  2.  Desktop: keep the subtle look you already have         */
+  /* ----------------------------------------------------------- */
+  @media (min-width: 769px) {
+    .testimonial-popover {
+      background: var(--color-white);
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 8px 16px rgba(0,0,0,.08);
+      max-width: 28rem;
     }
   }
     
