@@ -165,23 +165,42 @@
           }
       }
 
-      </script>        
+    </script>        
+    <style>
+      @media (max-width: 768px) {
+        #nav-toggle {                     /* hamburger frame */
+          position: fixed;
+          top: 1rem; right: 1rem;
+          z-index: 1100;
+          width: 28px; height: 22px;
+          background: none; border: none; cursor: pointer;
+        }
+        #nav-toggle span {                /* three black bars */
+          display: block;
+          height: 3px; margin: 4px 0;
+          background: #000; border-radius: 2px;
+          transition: .3s;
+        }
+        #nav-toggle.active span:nth-child(1){ transform: rotate(45deg) translate(5px,5px); }
+        #nav-toggle.active span:nth-child(2){ opacity: 0; }
+        #nav-toggle.active span:nth-child(3){ transform: rotate(-45deg) translate(7px,-6px); }
+      
+        .nav-menu {                       /* vertical slide-down */
+          display: none;
+          flex-direction: column;
+          gap: .75rem;
+          width: 100%;
+          padding: 1rem 0;
+        }
+        .nav-menu.open { display: flex; }
+      }
+      </style>
 </head>
 <body>
-  <body>
-    <button id="nav-toggle" style="
-      position:fixed;
-      top:20px;
-      right:20px;
-      z-index:99999;
-      background:#ff0000;
-      color:#fff;
-      padding:20px 30px;
-      font-size:24px;
-      border:5px solid #fff;
-      box-shadow:0 0 0 5px #ff0000;
-    ">BIG RED BUTTON</button>
-    <!-- rest of your page... -->
+  <button id="nav-toggle" aria-label="Open menu" hidden>
+    <span></span><span></span><span></span>
+  </button>
+
   <!-- 1️⃣  hamburger – FIRST element on the page -->
     <button id="nav-toggle" aria-label="Open menu" hidden>X</button>
     <script>
@@ -1353,6 +1372,18 @@
   });
 })();
 </script>
+<script>
+  (() => {
+    if (screen.width > 768) return;
+    const btn = document.getElementById('nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    btn.hidden = false;                 // reveal button
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      menu.classList.toggle('open');
+    });
+  })();
+  </script>
 </body>
 </body>
 </html>
