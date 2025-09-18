@@ -980,6 +980,9 @@ body {
 /*  1.  Mobile: force solid background on ALL popovers         */
 /* ----------------------------------------------------------- */
 @media (max-width: 768px) {
+    .mobile-pop {
+        display: none !important;          /* FORCE closed on load */
+      }
     [popover] {                                    /* native element */
       background: #ffffff !important;
       border: 3px solid #9ca3af !important;
