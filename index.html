@@ -225,35 +225,6 @@
     <span style="display:block;height:3px;margin:4px 0;background:#000;border-radius:2px;"></span>
   </button>
 
-  <!-- 1️⃣  hamburger – FIRST element on the page -->
-    <button id="nav-toggle" aria-label="Open menu" hidden>X</button>
-    <script>
-    (() => {
-      if (screen.width > 768) return;
-      const btn = document.getElementById('nav-toggle');
-      btn.removeAttribute('hidden');
-      btn.style.display = 'block';
-      const menu = document.querySelector('.nav-menu');
-      btn.addEventListener('click', () => {
-        btn.classList.toggle('active');
-        menu.classList.toggle('open');
-      });
-    })();
-    </script>
-  
-    <!-- 2️⃣  everything you already have... -->
-    <div class="main-container"> ...
-<script>
-    /* ---- kill mobile auto-open ---- */
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll('[popover]').forEach(el => {
-        el.setAttribute('data-p', el.id);   // keep id reference
-        el.removeAttribute('popover');      // ← word gone → UA ignores it
-        el.hidden = true;                   // hide until requested
-      });
-    }
-    </script>
-
 <!-- Promo Bar: Add just inside <body>, above your site header/nav -->
   <div class="promo-bar">
     🎤 I’m speaking at <strong>Devoxx Belgium</strong> on Oct 10 — 
