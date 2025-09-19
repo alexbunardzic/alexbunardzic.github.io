@@ -5,43 +5,27 @@
     <meta name="description" content="Partner with a Business Velocity Architect to eliminate your 'Innovation Tax.' We de-risk legacy modernization and transform your technology into an engine for market speed and growth." content="width=device-width, initial-scale=1.0">
     <title>Alex Bunardzic | Business Velocity Architect | Turn Tech Drag into Strategic Momentum</title>
 
-    <style>
+    <head>
+      …meta, title, etc…
+    
+      <!-- =====  mobile hamburger – inline  ===== -->
+      <style>
       @media (max-width: 768px) {
         #nav-toggle {
           position: fixed !important;
-          top: 1rem !important;
-          right: 1rem !important;
-          z-index: 9999 !important;
-          width: 28px !important;
-          height: 22px !important;
-          background: none !important;
-          border: none !important;
-          cursor: pointer !important;
-          display: block !important;   /* force visible */
+          top: 1rem !important; right: 1rem !important;
+          z-index: 9999 !important; width: 28px !important; height: 22px !important;
+          background: none !important; border: none !important; cursor: pointer !important;
         }
         #nav-toggle span {
-          display: block !important;
-          height: 3px !important;
-          margin: 4px 0 !important;
-          background: #000 !important;   /* black bars */
-          border-radius: 2px !important;
+          display: block !important; height: 3px !important; margin: 4px 0 !important;
+          background: #000 !important; border-radius: 2px !important;
         }
+        /* ➜  these two lines make the menu drop down */
+        .nav-menu        { display: none !important; flex-direction: column !important; gap: .75rem !important; }
+        .nav-menu.open   { display: flex !important; }
       }
       </style>
-    <script>
-      if (screen.width <= 768) {
-        document.addEventListener('DOMContentLoaded', () => {
-          document.querySelectorAll('[popover]').forEach(el => {
-            el.setAttribute('data-p', el.id);
-            el.removeAttribute('popover');
-            el.hidden = true;
-            /* ➜  force opaque background now */
-            el.style.cssText = 'background:#fff;border:3px solid #9ca3af;box-shadow:0 20px 35px rgba(0,0,0,.35);padding:1.25rem;border-radius:.75rem;';
-          });
-        });
-      }
-      </script>
-  
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYNRR92L50"></script>
@@ -1323,62 +1307,16 @@
 
 
 <script>
-  /* ---- mobile pop-over toggle + solid card ---- */
+  /* =====  hamburger toggle (mobile)  ===== */
   (() => {
     if (screen.width > 768) return;
-  
-    document.addEventListener('click', e => {
-      const btn = e.target.closest('button[popovertarget]');
-      if (!btn) return;
-      e.preventDefault();
-      const id = btn.getAttribute('popovertarget');
-      let box = document.getElementById(id);
-      if (!box) return;
-  
-      const open = !box.hidden;
-      document.querySelectorAll('[data-p]').forEach(p => p.hidden = true);
-      box.hidden = open;
-  
-      if (!open) {
-        /* wrap inner HTML in an opaque card */
-        box.innerHTML = `
-          <div style="background:#fff;border:3px solid #9ca3af;box-shadow:0 20px 35px rgba(0,0,0,.35);padding:1.25rem;border-radius:.75rem;width:90vw;max-width:420px;max-height:80vh;overflow-y:auto;">
-            ${box.innerHTML}
-          </div>`;        
-      }
-    });
-  })();
-  </script>
-
-
-<!-- =====  hamburger (mobile)  – place LAST  ===== -->
-<button id="nav-toggle" aria-label="Open menu" hidden>X</button>
-
-<script>
-(() => {
-  if (window.innerWidth > 768) return;
-  const btn = document.getElementById('nav-toggle');
-  btn.removeAttribute('hidden');
-  btn.style.display = 'block';
-  const menu = document.querySelector('.nav-menu');
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('active');
-    menu.classList.toggle('open');
-  });
-})();
-</script>
-<script>
-  (() => {
-    if (screen.width > 768) return;
-    const btn = document.getElementById('nav-toggle');
+    const btn  = document.getElementById('nav-toggle');
     const menu = document.querySelector('.nav-menu');
-    btn.hidden = false;                 // reveal button
     btn.addEventListener('click', () => {
-      btn.classList.toggle('active');
-      menu.classList.toggle('open');
+      btn.classList.toggle('active');   /* spins bars into X */
+      menu.classList.toggle('open');    /* shows vertical menu */
     });
   })();
   </script>
-</body>
 </body>
 </html>
