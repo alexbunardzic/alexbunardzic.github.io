@@ -288,44 +288,6 @@
     }
     </script>
 
-<!-- Promo Bar: Add just inside <body>, above your site header/nav -->
-  <div class="promo-bar">
-    🎤 I’m speaking at <strong>Devoxx Belgium</strong> on Oct 10 — 
-    <a href="/devoxx.html">get exclusive updates →</a>
-  </div>
-  
-  <style>
-    .promo-bar {
-      background: #0d47a1; /* Deep blue to match Devoxx landing */
-      color: #fff;
-      text-align: center;
-      padding: 0.75rem 1rem;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-    .promo-bar a {
-      color: #ffeb3b; /* Bright yellow for contrast */
-      text-decoration: none;
-      font-weight: bold;
-      margin-left: 0.25rem;
-    }
-    .promo-bar a:hover {
-      text-decoration: underline;
-    }
-  </style>
-
-<script>
-  function trackPromoClick() {
-    if (typeof gtag === 'function') {
-      gtag('event', 'promo_bar_click', {
-        'event_category': 'Promo Bar',
-        'event_label': 'Devoxx Landing Link'
-      });
-    }
-  }
-</script>
-
-
     <div class="main-container">
         <!-- Hero Section -->
         <header class="hero-section">
