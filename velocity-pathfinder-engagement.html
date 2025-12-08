@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Metadata -->
     <title>Velocity Pathfinder Engagement | Alex Bunardzic</title>
-    <meta name="description" content="A focused engagement designed to build a shared understanding of your system's constraints and create a credible, data-backed roadmap for reclaiming momentum.">
-    
+    <meta name="description"
+        content="A focused engagement designed to build a shared understanding of your system's constraints and create a credible, data-backed roadmap for reclaiming momentum.">
+
     <!-- Basic Styling (Embed in page for simplicity) -->
     <style>
         :root {
@@ -18,6 +20,7 @@
             --secondary-text-color: #6c757d;
             --border-color: #e9ecef;
         }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
@@ -25,48 +28,201 @@
             color: var(--text-color);
             background-color: #fff;
         }
+
         .container {
             max-width: 960px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
-        img { max-width: 100%; height: auto; }
-        a { color: var(--primary-color); text-decoration: none; }
-        h1, h2, h3 { color: var(--dark-color); line-height: 1.3; }
-        h1 { font-size: 2.5rem; }
-        h2 { font-size: 2rem; margin-top: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
-        h3 { font-size: 1.5rem; margin-top: 2rem; }
-        .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 5px; font-weight: 600; text-align: center; }
-        .btn-primary { background-color: var(--primary-color); color: #fff; }
-        .btn-primary:hover { background-color: #0056b3; }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--dark-color);
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
 
         /* --- Navigation --- */
-        .main-nav { background-color: #ffffff; border-bottom: 1px solid var(--border-color); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo img { height: 40px; }
-        .nav-menu { list-style: none; display: flex; margin: 0; padding: 0; gap: 2rem; }
-        .nav-menu li a { font-weight: 600; font-size: 0.95rem; transition: color 0.2s; color: var(--dark-color); }
-        .nav-menu li a:hover { color: var(--primary-color); }
-        
+        .main-nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 40px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+
+        .nav-menu li a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            color: var(--dark-color);
+        }
+
+        .nav-menu li a:hover {
+            color: var(--primary-color);
+        }
+
         /* --- Page Specific --- */
-        .page-hero { text-align: center; padding: 4rem 0; background-color: var(--light-color); border-bottom: 1px solid var(--border-color); }
-        .page-hero h1 { margin-bottom: 0.5rem; }
-        .page-hero .sub-headline { font-size: 1.25rem; color: var(--secondary-text-color); max-width: 800px; margin: 0 auto 1rem auto; }
-        .page-content { padding: 2rem 0; }
-        .resource-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; align-items: center; }
-        .resource-card { border: 1px solid var(--border-color); border-radius: 8px; padding: 2rem; }
-        .resource-card img { border: 1px solid var(--border-color); margin-bottom: 1rem; }
-        .cta-section { background-color: var(--dark-color); color: #fff; padding: 4rem 0; text-align: center; }
-        .cta-section h2 { color: #fff; border: none; }
-        .footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: var(--secondary-text-color); border-top: 1px solid var(--border-color); }
+        .page-hero {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: var(--light-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .page-hero h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .page-hero .sub-headline {
+            font-size: 1.25rem;
+            color: var(--secondary-text-color);
+            max-width: 800px;
+            margin: 0 auto 1rem auto;
+        }
+
+        .page-content {
+            padding: 2rem 0;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+            align-items: center;
+        }
+
+        .resource-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .resource-card img {
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: #fff;
+            border: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+            color: var(--secondary-text-color);
+            border-top: 1px solid var(--border-color);
+        }
+
         /* --- NEW FORM STYLES --- */
-        .lead-magnet-form { margin-top: 1rem; }
-        .form-fields { display: flex; flex-direction: column; gap: 0.5rem; }
-        .form-fields input[type="email"] { padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 5px; font-size: 1rem; }
-        .btn-form { width: 100%; border: none; background-color: var(--primary-color); color: white; padding: 0.75rem 1.5rem; border-radius: 5px; font-weight: 600; text-align: center; cursor: pointer; transition: background-color 0.2s; }
-        .btn-form:hover { background-color: #0056b3; }
-</style>
+        .lead-magnet-form {
+            margin-top: 1rem;
+        }
+
+        .form-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-fields input[type="email"] {
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .btn-form {
+            width: 100%;
+            border: none;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-form:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
+
 <body>
 
     <!-- Main Navigation Bar -->
@@ -88,27 +244,104 @@
 
     <!-- Main Content -->
     <main>
-        
+
         <header class="page-hero">
             <div class="container">
                 <h1>Velocity Pathfinder Engagement</h1>
-                <p class="sub-headline">A focused engagement designed to build a shared understanding of your system's constraints and create a credible, data-backed roadmap for reclaiming momentum.</p>
+                <p class="sub-headline">A focused engagement designed to build a shared understanding of your system's
+                    constraints and create a credible, data-backed roadmap for reclaiming momentum.</p>
             </div>
-        </header>   
+        </header>
 
         <div class="page-content">
             <div class="container">
+                <h2>The 2-Week Velocity Analysis & Recommendations</h2>
+                <h3>Uncover where your teams gain or lose velocity — and walk away with a clear roadmap for safer,
+                    faster
+                    delivery.</h3>
+                <p>Most organizations don't have a delivery problem. They have a <strong>clarity problem.</strong></p>
+                <p>You suspect your teams could move faster, but you can't pinpoint where the friction actually lives.
+                    Is it architectural? Process-related? Team dynamics? All three?</p>
+                <p>The 2-Week Velocity Analysis & Recommendations process cuts through the guesswork.</p>
+
+                <h2>What Happens</h2>
+                <h3>Week 1: Deep-Dive Analysis</h3>
+                <p>I embed with your organization to map the entire delivery system:</p>
+                <ul>
+                    <li><strong>Stakeholder interviews</strong> with 5-7 key leaders (engineering, product, operations)
+                    </li>
+                    <li><strong>Architecture review</strong> of your most critical systems</li>
+                    <li><strong>Workflow observation</strong> watching teams in their natural habitat</li>
+                    <li><strong>Data collection</strong> on deployment frequency, cycle time, defect rates</li>
+                </ul>
+                <h3>Week 2: Executive Briefing & Roadmap</h3>
+                <p>You receive a confidential, no-BS report containing:</p>
+                <ul>
+                    <li><strong>The 3 biggest velocity killers in your system</strong> (with evidence)</li>
+                    <li><strong>A prioritized 90-day roadmap</strong> with estimated ROI for each initiative</li>
+                    <li><strong>A frank assessment</strong> of whether Test-Driven Navigation is right for your
+                        organization</li>
+                    <li><strong>Quick wins</strong> you can implement immediately — even if you don't hire me</li>
+                </ul>
+
                 <section id="the-problem">
-                    <h2>Who It’s For:</h2>
-                    <p>CTOs, VPs of Engineering, and Product Leaders who seek a trusted partner to navigate the complexities of their systems, de-risk their roadmaps, and strategically apply AI to build a lasting competitive advantage.</p>
+                    <h2>Who This Is For</h2>
+                    <p>This diagnostic is designed for technology leaders - CTOs, VPs of Engineering and Product
+                        Leaders who seek a trusted partner to navigate the complexities of their systems, de-risk
+                        their
+                        roadmaps, and strategically apply AI to build a lasting competitive advantage. Leaders who
+                        feel
+                        the gap between their strategic vision and their team's ability to execute:</p>
+                    <ul>
+                        <li><strong>CTOs and VPs of Engineering</strong> at mid-market companies ($10M-$500M
+                            revenue)
+                        </li>
+                        <li><strong>Engineering Directors</strong> at enterprises who need data to make the business
+                            case for change</li>
+                        <li><strong>Technical Founders</strong> at well-funded startups (Series B+) who are scaling
+                            from
+                            20 to 100+ engineers</li>
+                    </ul>
+                    <p>You know your team is talented. You suspect the system is holding them back. You need
+                        clarity — fast.</p>
                 </section>
+
+                <h2>Investment: $15,000</h2>
+                <p><em>(Fully refundable against any follow-on engagement)</em></p>
+                <p>This diagnostic pays for itself if it helps you:</p>
+                <ul>
+                    <li>Avoid one failed project</li>
+                    <li>Ship one feature 4 weeks earlier</li>
+                    <li>Prevent one production incident</li>
+                    <li>Make one high-leverage architectural decision with confidence</li>
+                </ul>
+
+                <h2>Next Step: Book Your Kickoff Call</h2>
+                <p>I only accept 3 new engagements per quarter. If you're ready to get clarity on what's actually
+                    slowing you down:</p>
+                <p><a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                        Schedule Your 30-Minute Strategy Call →
+                    </a></p>
+                <p>In this confidential session, we'll discuss:</p>
+                <ul>
+                    <li>The primary sources of drag in your organization</li>
+                    <li>Whether a diagnostic makes sense for your specific context</li>
+                    <li>What a potential engagement would look like</li>
+                </ul>
+                <p>No pitch. No pressure. Just a straightforward conversation about whether we're a fit.</p>
 
                 <section id="downloads">
                     <h2>Downloadable Guide</h2>
                     <div class="resource-grid">
                         <div class="resource-card">
                             <h3>The Field Guide to Business Velocity: Empower Business With AI</h3>
-                            <img src="velocity-pathfinder-engagement.png" alt="Cover of the Velocity Pathfinder Engagement">
+                            <img src="velocity-pathfinder-engagement.png"
+                                alt="Cover of the Velocity Pathfinder Engagement">
                             <p>Executive guide detailing what we propose to co-create:</p>
                             <ul>
                                 <li>AI-Assisted Velocity Heatmap</li>
@@ -118,15 +351,18 @@
                             </ul>
 
                             <!-- === NEW FORM FOR FIELD GUIDE === -->
-                            <form class="lead-magnet-form" action="https://formsubmit.co/alexbunardzic@gmail.com" method="POST">
+                            <form class="lead-magnet-form" action="https://formsubmit.co/alexbunardzic@gmail.com"
+                                method="POST">
                                 <input type="hidden" name="_subject" value="New Velocity Pathfinder Engagement Request">
                                 <input type="hidden" name="_template" value="table">
-                                <input type="hidden" name="_next" value="https://alexbunardzic.com/thank-you-velocity-pathfinder.html">
+                                <input type="hidden" name="_next"
+                                    value="https://alexbunardzic.com/thank-you-velocity-pathfinder.html">
                                 <input type="text" name="_honey" style="display:none">
                                 <input type="hidden" name="_captcha" value="false">
                                 <div class="form-fields">
                                     <input type="email" name="email" placeholder="Your work email address" required>
-                                    <button type="submit" class="btn-form">Download the Velocity Pathfinder Engagement</button>
+                                    <button type="submit" class="btn-form">Download the Velocity Pathfinder
+                                        Engagement</button>
                                 </div>
                             </form>
 
@@ -139,8 +375,11 @@
         <section class="cta-section">
             <div class="container">
                 <h2>Ready to Architect Your Momentum?</h2>
-                <p style="font-size: 1.1rem; max-width: 700px; margin: 1rem auto 2rem auto;">Let's create AI-Assisted Velocity Heatmap to detect the primary sources of drag in your organization and outline a clear, 90-day path to building sustainable velocity.</p>
-                <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary" style="font-size: 1.1rem;">Book a Velocity Pathfinder Engagement</a>
+                <p style="font-size: 1.1rem; max-width: 700px; margin: 1rem auto 2rem auto;">Let's create AI-Assisted
+                    Velocity Heatmap to detect the primary sources of drag in your organization and outline a clear,
+                    90-day path to building sustainable velocity.</p>
+                <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary" style="font-size: 1.1rem;">Book a
+                    Velocity Pathfinder Engagement</a>
             </div>
         </section>
     </main>
@@ -153,4 +392,5 @@
     </footer>
 
 </body>
+
 </html>
