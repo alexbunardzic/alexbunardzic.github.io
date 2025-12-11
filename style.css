@@ -1034,3 +1034,58 @@ body {
 
 
 }
+/* Offerings Table Styles */
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+#offerings-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-white);
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+#offerings-table thead {
+    background-color: var(--color-neutral-900);
+    color: var(--color-white);
+}
+
+#offerings-table th {
+    padding: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+#offerings-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-neutral-100);
+    color: var(--color-neutral-700);
+    vertical-align: top;
+}
+
+#offerings-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+#offerings-table tbody tr:hover {
+    background-color: var(--color-neutral-50);
+}
+
+#offerings-table .badge {
+    display: inline-block;
+    margin-top: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background-color: #2563eb; /* Blue-600 */
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+}
