@@ -426,6 +426,7 @@ body {
     }
     .hero-qrcode {
         justify-content: flex-end;
+        align-self: start;
     }
     .hero-name { font-size: 3rem; }
     .hero-brand-title { font-size: 1.875rem; }
