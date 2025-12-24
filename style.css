@@ -850,7 +850,7 @@ body {
         text-transform: uppercase;
         font-size: 0.875rem;
         /* Smaller base size */
-        color: #6c757d;
+        color: var(--color-neutral-900);
         letter-spacing: 0.5px;
         /* Reduced letter spacing for mobile */
         margin-bottom: 1rem;
@@ -864,7 +864,6 @@ body {
         /* Center the logos */
         gap: 15px;
         /* Reduced gap */
-        filter: grayscale(100%) opacity(60%);
         flex-wrap: wrap;
         /* Allow wrapping on small screens */
         max-width: 100%;
