@@ -9,7 +9,7 @@
   <title>Alex Bunardzic | Business Velocity Architect | Turn Tech Drag into Strategic Momentum</title>
 
   <style>
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       #nav-toggle {
         position: fixed !important;
         top: 1rem !important;
@@ -35,7 +35,7 @@
     }
   </style>
   <script>
-    if (screen.width <= 768) {
+    if (screen.width <= 1024) {
       document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[popover]').forEach(el => {
           el.setAttribute('data-p', el.id);
@@ -234,7 +234,7 @@
       }
     </script>
   <style>
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       #nav-toggle {
         /* hamburger frame */
         position: fixed;
@@ -292,7 +292,7 @@
   <button id="nav-toggle" aria-label="Open menu" hidden>X</button>
   <script>
     (() => {
-      if (screen.width > 768) return;
+      if (screen.width > 1024) return;
       const btn = document.getElementById('nav-toggle');
       btn.removeAttribute('hidden');
       btn.style.display = 'block';
@@ -308,7 +308,7 @@
   <div class="main-container"> ...
     <script>
       /* ---- kill mobile auto-open ---- */
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 1024) {
         document.querySelectorAll('[popover]').forEach(el => {
           el.setAttribute('data-p', el.id);   // keep id reference
           el.removeAttribute('popover');      // ← word gone → UA ignores it
@@ -333,6 +333,7 @@
                 <li><a href="/test-driven-navigation">The Framework</a></li>
                 <li><a href="/executive-resources">Velocity Resources</a></li> <!-- For the Field Guide/Lead Magnet -->
                 <li><a href="/about">About</a></li>
+                <li><a href="https://aicraftspeopleguild.github.io/index.html">AI Craftspeople Guild (ACG)</a></li>
                 <li><a href="/engagements">Engagements</a></li>
                 <li><a href="/ai-engineering-masterclass.html">Masterclass</a></li>
               </ul>
@@ -2481,7 +2482,7 @@
 
   <style>
     /* solid card + placement */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .mobile-pop {
         position: fixed;
         top: 50%;
@@ -2511,7 +2512,7 @@
   <script>
     /* ---- mobile pop-over toggle + solid card ---- */
     (() => {
-      if (screen.width > 768) return;
+      if (screen.width > 1024) return;
 
       document.addEventListener('click', e => {
         const btn = e.target.closest('button[popovertarget]');
@@ -2542,7 +2543,7 @@
 
   <script>
     (() => {
-      if (window.innerWidth > 768) return;
+      if (window.innerWidth > 1024) return;
       const btn = document.getElementById('nav-toggle');
       btn.removeAttribute('hidden');
       btn.style.display = 'block';
@@ -2555,7 +2556,7 @@
   </script>
   <script>
     (() => {
-      if (screen.width > 768) return;
+      if (screen.width > 1024) return;
       const btn = document.getElementById('nav-toggle');
       const menu = document.querySelector('.nav-menu');
       btn.hidden = false;                 // reveal button

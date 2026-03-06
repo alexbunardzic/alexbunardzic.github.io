@@ -73,10 +73,21 @@
             z-index: 1000;
         }
 
+        .main-nav .container {
+            max-width: 1200px;
+            padding: 0 1rem;
+        }
+
         .nav-container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 1.25rem;
+        }
+
+        .nav-logo {
+            display: inline-flex;
+            align-items: center;
+            flex: 0 0 auto;
         }
 
         .nav-logo img {
@@ -87,19 +98,29 @@
             list-style: none;
             display: flex;
             margin: 0;
-            padding: 0;
-            gap: 2rem;
+            padding: 0 1.25rem;
+            gap: 1.25rem;
+            align-items: center;
+            flex: 1 1 auto;
+            justify-content: center;
         }
 
         .nav-menu li a {
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+            white-space: nowrap;
             transition: color 0.2s;
             color: var(--dark-color);
         }
 
         .nav-menu li a:hover {
             color: var(--primary-color);
+        }
+
+        .nav-container > .btn,
+        .nav-container > .btn-primary {
+            margin-left: 1rem;
+            white-space: nowrap;
         }
 
         /* --- Page Specific --- */
@@ -139,6 +160,7 @@
             border-top: 1px solid var(--border-color);
         }
     </style>
+  <link rel="stylesheet" href="nav-menu.css">
 </head>
 
 <body>
@@ -149,12 +171,18 @@
             <a href="/" class="nav-logo">
                 <img src="BVALogo.png" alt="Business Velocity Architect Logo" height="40">
             </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
             <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/#services">My Approach</a></li>
                 <li><a href="/test-driven-navigation.html">The Framework</a></li>
                 <li><a href="/executive-resources.html">Executive Resources</a></li>
                 <li><a href="/about.html">About</a></li>
+                <li><a href="https://aicraftspeopleguild.github.io/index.html">AI Craftspeople Guild (ACG)</a></li>
             </ul>
             <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary" style="color: #fff;">Book a Call</a>
         </div>
@@ -266,6 +294,7 @@
         </div>
     </footer>
 
+  <script src="nav-menu.js"></script>
 </body>
 
 </html>

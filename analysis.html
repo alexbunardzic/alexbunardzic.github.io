@@ -23,6 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">   
+  <link rel="stylesheet" href="nav-menu.css">
 </head>
 <body>
 
@@ -36,12 +37,18 @@
                         <a href="/" class="nav-logo">
                             <img src="BVALogo.png" alt="Alex Bunardzic Logo" height="40">
                         </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
                         <ul class="nav-menu">
                             <li><a href="/">Home</a></li>
                             <li><a href="/#services">My Approach</a></li> <!-- Links to the section on the homepage -->
                             <li><a href="/test-driven-navigation">The Framework</a></li>
                             <li><a href="/executive-resources">Executive Resources</a></li> <!-- For the Field Guide/Lead Magnet -->
                             <li><a href="/about">About</a></li>
+                <li><a href="https://aicraftspeopleguild.github.io/index.html">AI Craftspeople Guild (ACG)</a></li>
                         </ul>
                         <a href="https://app.cal.com/alex-bunardzic" class="btn btn-nav-cta">Book a Call</a>
                     </div>
@@ -195,5 +202,6 @@
     }
 </style>
 
+  <script src="nav-menu.js"></script>
 </body>
 </html>
