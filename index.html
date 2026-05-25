@@ -1,54 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="description"
-    content="Partner with a Business Velocity Architect to eliminate your 'Innovation Tax.' We de-risk legacy modernization and transform your technology into an engine for market speed and growth."
-    content="width=device-width, initial-scale=1.0">
-  <title>Alex Bunardzic | Business Velocity Architect | Turn Tech Drag into Strategic Momentum</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Bunardzic — Ship Fast. Ship Confident. With AI in the Loop.</title>
+<meta name="description" content="I help CTOs and VP Engineering at AI-accelerated SaaS companies ship software faster without compounding invisible risk. 34 years. Trusted at WorkSafeBC, Raymond James, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <style>
-    @media (max-width: 1024px) {
-      #nav-toggle {
-        position: fixed !important;
-        top: 1rem !important;
-        right: 1rem !important;
-        z-index: 9999 !important;
-        width: 28px !important;
-        height: 22px !important;
-        background: none !important;
-        border: none !important;
-        cursor: pointer !important;
-        display: block !important;
-        /* force visible */
-      }
+  :root {
+    --ink:      #0B0D12;
+    --ink-2:    #161920;
+    --ink-3:    #1E2229;
+    --amber:    #E8A820;
+    --amber-bg: rgba(232,168,32,0.08);
+    --amber-bd: rgba(232,168,32,0.22);
+    --fog:      #8B909A;
+    --mist:     #C4C8D0;
+    --white:    #F4F5F7;
+    --blue-soft:#6AAFFF;
+    --green-soft:#6EC78A;
+    --serif:    'Instrument Serif', Georgia, serif;
+    --mono:     'DM Mono', monospace;
+    --sans:     'Sora', system-ui, sans-serif;
+    --max:      1100px;
+  }
 
-      #nav-toggle span {
-        display: block !important;
-        height: 3px !important;
-        margin: 4px 0 !important;
-        background: #000 !important;
-        /* black bars */
-        border-radius: 2px !important;
-      }
-    }
-  </style>
-  <script>
-    if (screen.width <= 1024) {
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('[popover]').forEach(el => {
-          el.setAttribute('data-p', el.id);
-          el.removeAttribute('popover');
-          el.hidden = true;
-          /* ➜  force opaque background now */
-          el.style.cssText = 'background:#fff;border:3px solid #9ca3af;box-shadow:0 20px 35px rgba(0,0,0,.35);padding:1.25rem;border-radius:.75rem;';
-        });
-      });
-    }
-  </script>
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
 
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(11,13,18,0.9);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 64px;
+  }
+  .nav-logo {
+    font-family: var(--mono); font-size: 13px; font-weight: 500;
+    color: var(--amber); letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 13px; color: var(--fog);
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    font-family: var(--mono); font-size: 13px; font-weight: 500;
+    background: var(--amber); color: var(--ink);
+    padding: 8px 20px; border-radius: 6px;
+    transition: background .15s, transform .15s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: #f5b930; transform: translateY(-1px); }
 
+  /* ── SHARED ── */
+  section { padding: 100px 2rem; }
+  .inner { max-width: var(--max); margin: 0 auto; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--amber); margin-bottom: 16px;
+  }
+  .section-h {
+    font-family: var(--serif); font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+    font-weight: 400; line-height: 1.2; color: var(--white); margin-bottom: 1rem;
+  }
+  .section-sub {
+    font-size: 16px; color: var(--fog); line-height: 1.85;
+    max-width: 580px; margin-bottom: 3rem;
+  }
+  .btn-primary {
+    font-family: var(--mono); font-size: 14px; font-weight: 500;
+    background: var(--amber); color: var(--ink);
+    padding: 14px 28px; border-radius: 8px;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background .15s, transform .15s, box-shadow .2s;
+  }
+  .btn-primary:hover {
+    background: #f5b930; transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(232,168,32,0.25);
+  }
+  .btn-ghost {
+    font-family: var(--mono); font-size: 13px; color: var(--fog);
+    border-bottom: 1px solid rgba(139,144,154,0.4); padding-bottom: 2px;
+    transition: color .2s, border-color .2s;
+  }
+  .btn-ghost:hover { color: var(--white); border-color: rgba(244,245,247,0.5); }
+
+  /* ── HERO — outcome first, no TDN mention ── */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 120px 2rem 80px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 55% 50% at 75% 35%, rgba(232,168,32,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 35% 55% at 15% 85%, rgba(106,175,255,0.04) 0%, transparent 60%);
+  }
+  .hero-grid {
+    max-width: var(--max); margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 360px; gap: 80px; align-items: center;
+  }
+  .hero-context {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 28px;
+  }
+  .hero-tag {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--fog);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 5px 12px; border-radius: 100px;
+  }
+  .hero-dot { width: 4px; height: 4px; background: var(--fog); border-radius: 50%; }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 4.8vw, 3.8rem);
+    font-weight: 400; line-height: 1.12;
+    color: var(--white); margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--amber); }
+  .hero-sub {
+    font-size: 17px; color: var(--fog); line-height: 1.8;
+    max-width: 510px; margin-bottom: 2.5rem;
+  }
+  .hero-sub strong { color: var(--mist); font-weight: 500; }
+  .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+  /* outcome proof card — no TDN language */
+  .hero-card {
+    background: var(--ink-2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px; padding: 32px;
+    position: relative; overflow: hidden;
+  }
+  .hero-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--amber-bd), transparent);
+  }
+  .outcomes-label {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--fog); margin-bottom: 20px;
+  }
+  .outcome-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .outcome-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 14px; color: var(--mist); line-height: 1.55;
+  }
+  .outcome-check { color: var(--green-soft); flex-shrink: 0; font-family: var(--mono); font-size: 13px; margin-top: 1px; }
+  .hero-card-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 20px 0; }
+  .social-mini { display: flex; flex-direction: column; gap: 8px; }
+  .social-mini-item { display: flex; gap: 8px; align-items: baseline; }
+  .social-mini-num { font-family: var(--serif); font-size: 1.4rem; color: var(--amber); line-height: 1; }
+  .social-mini-label { font-size: 12px; color: var(--fog); }
+
+  /* ── PROOF WALL — right after hero ── */
+  .proof { background: var(--ink-2); padding: 80px 2rem; }
+  .proof-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; overflow: hidden;
+  }
+  .proof-item {
+    background: var(--ink-2); padding: 36px 32px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .proof-quote {
+    font-family: var(--serif); font-size: 1.05rem;
+    font-style: italic; color: var(--mist); line-height: 1.75; flex: 1;
+  }
+  .proof-quote::before { content: '\201C'; color: var(--amber); font-size: 1.5em; line-height: 0; vertical-align: -0.3em; }
+  .proof-attr {
+    border-top: 1px solid rgba(255,255,255,0.07); padding-top: 16px;
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  .proof-name { font-size: 13px; font-weight: 500; color: var(--white); }
+  .proof-role { font-size: 12px; color: var(--fog); }
+  .proof-org { font-family: var(--mono); font-size: 11px; color: var(--amber); letter-spacing: 0.05em; margin-top: 4px; }
+
+  /* ── THE PROBLEM ── */
+  .problem { background: var(--ink); }
+  .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .problem-prose { display: flex; flex-direction: column; gap: 1.4rem; }
+  .problem-prose p { font-size: 16px; color: var(--fog); line-height: 1.85; }
+  .problem-prose p strong { color: var(--white); font-weight: 500; }
+  .trap-card {
+    background: var(--ink-3);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px; padding: 32px;
+    position: sticky; top: 100px;
+  }
+  .trap-card-label {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--fog); margin-bottom: 20px;
+  }
+  .trap-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .trap-list li {
+    display: flex; gap: 12px; font-size: 14px; color: var(--mist); line-height: 1.55;
+  }
+  .trap-arrow { color: var(--amber); font-family: var(--mono); font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .trap-pill {
+    display: inline-block; margin-top: 24px;
+    font-family: var(--mono); font-size: 12px;
+    background: var(--amber-bg); color: var(--amber);
+    border: 1px solid var(--amber-bd); border-radius: 6px; padding: 8px 14px;
+    line-height: 1.4;
+  }
+
+  /* ── OUTCOMES SECTION — what you get, still no TDN ── */
+  .outcomes { background: var(--ink-2); }
+  .outcomes-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    margin-top: 3rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; overflow: hidden;
+  }
+  .outcome-card {
+    background: var(--ink-2); padding: 36px 28px;
+    display: flex; flex-direction: column; gap: 12px;
+    transition: background .2s;
+  }
+  .outcome-card:hover { background: var(--ink-3); }
+  .outcome-icon { font-size: 24px; line-height: 1; }
+  .outcome-title { font-weight: 500; font-size: 16px; color: var(--white); }
+  .outcome-desc { font-size: 14px; color: var(--fog); line-height: 1.7; }
+  .outcomes-callout {
+    margin-top: 3rem;
+    background: var(--ink-3);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 10px 10px 0;
+    padding: 28px 32px;
+    font-family: var(--serif); font-size: 1.15rem; font-style: italic;
+    color: var(--mist); line-height: 1.6;
+  }
+  .outcomes-callout cite {
+    display: block; margin-top: 12px;
+    font-family: var(--sans); font-style: normal;
+    font-size: 13px; color: var(--fog);
+  }
+
+  /* ── THE HOW REVEAL — TDN introduced here ── */
+  .how { background: var(--ink); }
+  .how-reveal {
+    background: var(--ink-2);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px; padding: 56px;
+    margin-bottom: 3rem;
+    position: relative; overflow: hidden;
+  }
+  .how-reveal::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 60% 60% at 85% 20%, rgba(232,168,32,0.05) 0%, transparent 70%);
+  }
+  .how-reveal-label {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--amber); margin-bottom: 12px;
+  }
+  .how-reveal h2 {
+    font-family: var(--serif); font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    font-weight: 400; color: var(--white); margin-bottom: 1rem; line-height: 1.25;
+  }
+  .how-reveal p {
+    font-size: 15px; color: var(--fog); line-height: 1.85;
+    max-width: 640px; margin-bottom: 1.5rem;
+  }
+  .how-reveal p strong { color: var(--mist); font-weight: 500; }
+  .tdn-diagram {
+    display: grid; grid-template-columns: 1fr 60px 1fr;
+    gap: 0; align-items: center; margin: 2.5rem 0;
+  }
+  .tdn-col {
+    background: var(--ink-3);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px; padding: 28px 24px;
+  }
+  .tdn-col-label {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 16px;
+  }
+  .tdn-col-label.human { color: var(--blue-soft); }
+  .tdn-col-label.ai    { color: #9D7AFF; }
+  .tdn-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .tdn-col li { font-size: 14px; color: var(--mist); display: flex; gap: 8px; line-height: 1.5; }
+  .tdn-col li::before { content: '·'; color: var(--fog); flex-shrink: 0; }
+  .tdn-mid {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 6px; padding: 0 16px;
+  }
+  .tdn-mid-line {
+    flex: 1; width: 1px;
+    background: linear-gradient(180deg, transparent, var(--amber-bd), transparent);
+    min-height: 40px;
+  }
+  .tdn-mid-label {
+    font-family: var(--mono); font-size: 9px; color: var(--amber);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    writing-mode: vertical-lr;
+  }
+  .tdn-anchor {
+    background: var(--ink);
+    border: 1px solid var(--amber-bd);
+    border-radius: 10px; padding: 20px 24px;
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .tdn-anchor-glyph {
+    font-family: var(--mono); font-size: 1.4rem; color: var(--amber); flex-shrink: 0;
+  }
+  .tdn-anchor-title { font-weight: 500; color: var(--white); margin-bottom: 4px; font-size: 15px; }
+  .tdn-anchor-desc { font-size: 14px; color: var(--fog); line-height: 1.6; }
+  .how-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 2rem; }
+
+  /* ── FIT / NOT FIT ── */
+  .fit { background: var(--ink-2); }
+  .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 3rem; }
+  .fit-col {
+    background: var(--ink-3); padding: 36px 32px;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .fit-col:first-child { border-radius: 12px 0 0 12px; }
+  .fit-col:last-child  { border-radius: 0 12px 12px 0; }
+  .fit-col-title {
+    font-family: var(--mono); font-size: 12px; text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 20px;
+  }
+  .fit-col-title.yes { color: var(--green-soft); }
+  .fit-col-title.no  { color: var(--fog); }
+  .fit-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .fit-list li {
+    font-size: 15px; color: var(--mist);
+    display: flex; gap: 10px; line-height: 1.55;
+  }
+  .fit-yes { color: var(--green-soft); flex-shrink: 0; }
+  .fit-no  { color: #555; flex-shrink: 0; }
+  .fit-cta { margin-top: 3rem; text-align: center; }
+
+  /* ── ENGAGEMENTS ── */
+  .eng { background: var(--ink); }
+  .eng-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 3rem; }
+  .eng-card {
+    background: var(--ink-2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px; padding: 32px;
+    display: flex; flex-direction: column; gap: 16px;
+    transition: border-color .2s, transform .2s;
+  }
+  .eng-card:hover { border-color: rgba(232,168,32,0.3); transform: translateY(-3px); }
+  .eng-card.featured {
+    border-color: var(--amber-bd);
+    background: linear-gradient(160deg, rgba(232,168,32,0.06), var(--ink-2) 60%);
+  }
+  .eng-tag {
+    font-family: var(--mono); font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--amber);
+    background: var(--amber-bg); border: 1px solid var(--amber-bd);
+    border-radius: 4px; padding: 3px 10px;
+    display: inline-block; align-self: flex-start;
+  }
+  .eng-name { font-family: var(--serif); font-size: 1.3rem; color: var(--white); }
+  .eng-desc { font-size: 14px; color: var(--fog); line-height: 1.7; flex: 1; }
+  .eng-price { font-family: var(--mono); font-size: 13px; color: var(--mist); }
+  .eng-link {
+    font-family: var(--mono); font-size: 13px; color: var(--amber);
+    border-bottom: 1px solid var(--amber-bd); padding-bottom: 2px;
+    align-self: flex-start; transition: border-color .2s;
+  }
+  .eng-link:hover { border-color: var(--amber); }
+
+  /* ── ABOUT STRIP ── */
+  .about { background: var(--ink-2); padding: 80px 2rem; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-bio { display: flex; flex-direction: column; gap: 1.2rem; }
+  .about-bio p { font-size: 15px; color: var(--fog); line-height: 1.85; }
+  .about-bio p strong { color: var(--mist); font-weight: 500; }
+  .about-credentials { list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .about-credentials li {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 14px; color: var(--mist);
+  }
+  .about-credentials li:last-child { border-bottom: none; }
+  .cred-year { font-family: var(--mono); font-size: 12px; color: var(--fog); flex-shrink: 0; min-width: 36px; }
+  .cred-text strong { color: var(--white); font-weight: 500; display: block; }
+
+  /* ── CONTENT HUB ── */
+  .content { background: var(--ink); }
+  .content-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 3rem; }
+  .content-card {
+    background: var(--ink-2); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px; padding: 32px;
+    display: flex; flex-direction: column; gap: 12px;
+    transition: border-color .2s;
+  }
+  .content-card:hover { border-color: rgba(255,255,255,0.18); }
+  .content-type { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fog); }
+  .content-title { font-family: var(--serif); font-size: 1.1rem; color: var(--white); line-height: 1.35; }
+  .content-desc { font-size: 13px; color: var(--fog); flex: 1; line-height: 1.65; }
+  .content-cta { font-family: var(--mono); font-size: 12px; color: var(--amber); margin-top: 8px; }
+
+  /* ── PIONEER PROGRAM ── */
+  .pioneer { background: var(--ink-2); }
+  .pioneer-box {
+    border: 1px solid var(--amber-bd);
+    background: linear-gradient(135deg, rgba(232,168,32,0.06), transparent);
+    border-radius: 20px; padding: 60px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .pioneer h2 { font-family: var(--serif); font-size: 2rem; color: var(--white); margin-bottom: 1rem; }
+  .pioneer p { font-size: 15px; color: var(--fog); line-height: 1.8; margin-bottom: 1.5rem; }
+  .pioneer-perks { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .pioneer-perks li { display: flex; gap: 12px; font-size: 14px; color: var(--mist); }
+  .pioneer-perks li::before { content: '—'; color: var(--amber); font-family: var(--mono); flex-shrink: 0; }
+  .pioneer-counter {
+    background: var(--ink); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px; padding: 36px; text-align: center;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .pioneer-num { font-family: var(--serif); font-size: 5rem; color: var(--amber); line-height: 1; }
+  .pioneer-counter-label { font-size: 14px; color: var(--fog); }
+  .pioneer-counter-sub {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--fog);
+    border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px;
+  }
+
+  /* ── FINAL CTA ── */
+  .final {
+    background: var(--ink); padding: 120px 2rem;
+    text-align: center;
+  }
+  .final h2 {
+    font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--white); max-width: 640px; margin: 0 auto 1.5rem; line-height: 1.2;
+  }
+  .final h2 em { font-style: italic; color: var(--amber); }
+  .final p { font-size: 16px; color: var(--fog); max-width: 460px; margin: 0 auto 2.5rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink-2); border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 48px 2rem;
+  }
+  .footer-inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;
+  }
+  .footer-logo { font-family: var(--mono); font-size: 13px; color: var(--amber); }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { font-size: 13px; color: var(--fog); transition: color .2s; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-copy { font-size: 12px; color: rgba(139,144,154,0.55); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+  .fade-up.v { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-grid, .problem-grid, .about-grid, .pioneer-box { grid-template-columns: 1fr; gap: 48px; }
+    .hero-card { display: none; }
+    .trap-card { position: static; }
+    .proof-grid, .outcomes-grid, .eng-grid, .content-grid, .fit-grid { grid-template-columns: 1fr; }
+    .fit-col:first-child { border-radius: 12px 12px 0 0; }
+    .fit-col:last-child  { border-radius: 0 0 12px 12px; }
+    .tdn-diagram { grid-template-columns: 1fr; }
+    .tdn-mid { display: none; }
+    .how-reveal { padding: 36px 28px; }
+    .pioneer-box { padding: 40px 28px; }
+    .nav-links { display: none; }
+  }
+</style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYNRR92L50"></script>
   <script>
@@ -58,2515 +498,599 @@
 
     gtag('config', 'G-PYNRR92L50');
   </script>
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-  <!-- QR Code Generation Library -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"></script>
-  <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Esa Karjalainen, CEO, Nikaxu Inc"
-        },
-        "datePublished": "2025-09-13",
-        "reviewBody": "I had the pleasure of interacting with Alex recently. His deep experience, ability to take a truly holistic view, and still drive concrete execution is impressive.
-
-        A rare combination that makes conversations with him both insightful and actionable.",
-        "itemReviewed": {
-          "@type": "Person",
-          "name": "Alex Bunardzic",
-          "url": "https://alexbunardzic.com"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Nikaxu Inc"
-        }
-      }
-      {
-          "@context": "https://schema.org",
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Sandy Martin, Senior Compliance Executive"
-          },
-          "datePublished": "2025-08-21",
-          "reviewBody": "I worked with Alex at Raymond James Ltd for about 7 years. Together we developed one of the strongest Compliance systems in the Financial Services industry. Alex was heavily involved in managing the team responsible for the programming. I always appreciated his ‘out of the box’ thinking and his ‘can do’ attitude. In retrospect, Alex was an extremely cooperative and insightful partner. He was successful in capturing my vision and solving countless problems to deliver programs that always exceeded my expectations.",
-          "itemReviewed": {
-            "@type": "Person",
-            "name": "Alex Bunardzic",
-            "url": "https://alexbunardzic.com"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Raymond James Ltd"
-          }
-        }
-        {
-            "@context": "https://schema.org",
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "Andre Kaminski,Director - Advanced Technology Solution at WorkSafeBC"
-            },
-            "datePublished": "2025-09-01",
-            "reviewBody": "I had the privilege of working directly with Alex for two years, during which he served as Software Engineering Practice Lead under my leadership as Director of DevOps at WorkSafeBC. During this time, Alex transformed our development practices in ways that benefited the delivery pods. He introduced and enforced Test-Driven Development across our engineering teams. Perhaps most impressively, Alex pioneered the use of Mountybank for API emulation, solving a critical challenge we faced in testing busy, production-like environments. His hands-on approach and deep technical expertise made him the go-to person when our teams needed innovative solutions to complex problems.
-
-            What sets Alex apart isn't just his technical prowess, but his unconventional thinking and willingness to challenge established norms—he's what I'd affectionately call an "unrepentant mutant slayer" when it comes to eliminating bad code and practices. As a speaker and thought leader within our organization, Alex consistently delivered insights that were simultaneously provocative and spot-on, pushing our teams to think beyond conventional wisdom. His strong opinions are always backed by solid reasoning and real-world experience, making him both a software visionary and a practical implementer. Any organization looking to elevate their engineering practices and culture would be fortunate to have someone with Alex's unique combination of technical depth, innovative thinking, and ability to drive meaningful change.",
-            "itemReviewed": {
-              "@type": "Person",
-              "name": "Alex Bunardzic",
-              "url": "https://alexbunardzic.com"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "WorkSafeBC"
-            }
-        }
-        {
-          "@context": "https://schema.org",
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Woody Zuill, Agile Guide"
-          },
-          "datePublished": "2025-09-13",
-          "reviewBody": "I’ve had the opportunity to connect with Alex both in person and through ongoing conversations online. What consistently stands out is his ability to combine depth of experience with a refreshing openness to new perspectives. He has a gift for making complex ideas feel accessible, while still challenging you to think more broadly.
-
-          Every interaction I’ve had has been thought-provoking and energizing. He is someone who doesn’t just talk about ideas, but brings them to life in a way that sparks meaningful dialogue and possibilities. I have no doubt that anyone collaborating with Alex would find his presence invaluable, both as a thinker who sees the big picture and as someone who helps others see new opportunities in their work.",
-          "itemReviewed": {
-            "@type": "Person",
-            "name": "Alex Bunardzic",
-            "url": "https://alexbunardzic.com"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Woody Zuill"
-          }
-        }
-        {
-            "@context": "https://schema.org",
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "Eric Eright, Co-Founder @ GTM Delta"
-            },
-            "datePublished": "2025-09-01",
-            "reviewBody": "When Alex joined the dev team, I was an Ops architect. His approach fundamentally changed how I look at building and deploying enterprise software. It truly reshaped my career. This was DevOps before DevOps was a thing. What began as feeling like we were flouting convention quickly showed results. I still apply the practices and processes that Alex taught me in my daily work. I rarely meet people who can be deeply philosophical, yet ruthlessly pragmatic. I’d work with Alex anywhere he goes.",
-            "itemReviewed": {
-              "@type": "Person",
-              "name": "Alex Bunardzic",
-              "url": "https://alexbunardzic.com"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "GTM Delta"
-            }
-        }
-        {
-          "@context": "https://schema.org",
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Alex Smigoc, VP of Engineering"
-          },
-          "datePublished": "2025-09-16",
-          "reviewBody": "I had the privilege of working with Alex Bunardzic almost 30 years ago when we were both software engineers at the same company. Alex was a software architect at the time, and he naturally became a mentor to me. He was passionate about best practices in Java and was one of the first people I met who was really pushing test-driven development, long before most had even heard of it. I learned a lot just by watching how he approached problems and how much care he put into writing clean, maintainable code.
-
-          Looking back, the fundamentals I picked up from Alex have stayed with me throughout my career and proved to be incredibly valuable as I moved into technical leadership roles. Things like test-first thinking, focusing on simplicity, and always questioning whether the solution will stand the test of time. His influence helped shape how I build and lead teams even today, and I’m still grateful for the time we worked together and the lessons I took away from it.": {
-            "@type": "Person",
-            "name": "Alex Bunardzic",
-            "url": "https://alexbunardzic.com"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "QuoteMedia"
-          }
-      }
-      {
-        "@context": "https://schema.org",
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Nathan Wawruck, Vice President"
-        },
-        "datePublished": "2025-09-24",
-        "reviewBody": "I am writing to endorse Alex as a true professional in the field of software engineering. Alex is a firm believer in software quality, and the importance of tests. He is also a proponent of collaboration and communication, rather than working in silos or isolation.
-
-        In my role as technical recruiter, I have spoken with hundreds of software developers over the years, and I can say that Alex is an outlier because of his convictions towards engineering excellence.
-        
-        On a more personal level, we always have lively, philosophical conversations about technical and non-technical topics. I highly recommend Alex for any software engineering endeavors, especially when excellence is the goal.": {
-          "@type": "Person",
-          "name": "Alex Bunardzic",
-          "url": "https://alexbunardzic.com"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Robert Half"
-        }
-      }
-      {
-        "@context": "https://schema.org",
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Ted Cohn, Founder & CEO, Warmlink | Prosper Together"
-        },
-        "datePublished": "2025-09-24",
-        "reviewBody": "Alex is a thought leader with a deep passion for building flawless software through best-in-class testing and architecture practices, combined with strong team leadership abilities, making him an excellent fit for those seeking experienced, quality-focused engineering talent — I highly recommend him.": {
-          "@type": "Person",
-          "name": "Alex Bunardzic",
-          "url": "https://alexbunardzic.com"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Warmlink"
-        }
-      }
-    </script>
-  <style>
-    @media (max-width: 1024px) {
-      #nav-toggle {
-        /* hamburger frame */
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        z-index: 1100;
-        width: 28px;
-        height: 22px;
-        background: none;
-        border: none;
-        cursor: pointer;
-      }
-
-      #nav-toggle span {
-        /* three black bars */
-        display: block;
-        height: 3px;
-        margin: 4px 0;
-        background: #000;
-        border-radius: 2px;
-        transition: .3s;
-      }
-
-      #nav-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-
-      #nav-toggle.active span:nth-child(2) {
-        opacity: 0;
-      }
-
-      #nav-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-      }
-
-      .nav-menu {
-        /* vertical slide-down */
-        display: none;
-        flex-direction: column;
-        gap: .75rem;
-        width: 100%;
-        padding: 1rem 0;
-      }
-
-      .nav-menu.open {
-        display: flex;
-      }
-    }
-  </style>
+  <script>
+  document.querySelectorAll('a[href*="cal.com"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      gtag('event', 'diagnostic_booking_click', {
+        event_category: 'conversion',
+        event_label: link.closest('section')?.id || 'nav'
+      });
+    });
+  });
+</script>
 </head>
-
 <body>
 
-  <!-- 1️⃣  hamburger – FIRST element on the page -->
-  <button id="nav-toggle" aria-label="Open menu" hidden>X</button>
-  <script>
-    (() => {
-      if (screen.width > 1024) return;
-      const btn = document.getElementById('nav-toggle');
-      btn.removeAttribute('hidden');
-      btn.style.display = 'block';
-      const menu = document.querySelector('.nav-menu');
-      btn.addEventListener('click', () => {
-        btn.classList.toggle('active');
-        menu.classList.toggle('open');
-      });
-    })();
-  </script>
-
-  <!-- 2️⃣  everything you already have... -->
-  <div class="main-container"> ...
-    <script>
-      /* ---- kill mobile auto-open ---- */
-      if (window.innerWidth <= 1024) {
-        document.querySelectorAll('[popover]').forEach(el => {
-          el.setAttribute('data-p', el.id);   // keep id reference
-          el.removeAttribute('popover');      // ← word gone → UA ignores it
-          el.hidden = true;                   // hide until requested
-        });
-      }
-    </script>
-
-    <div class="main-container">
-      <!-- Hero Section -->
-      <header class="hero-section">
-        <div class="container hero-content">
-          <!-- Main Navigation Bar -->
-          <nav class="main-nav">
-            <div class="container nav-container">
-              <a href="/" class="nav-logo">
-                <img src="BVALogo.png" alt="Alex Bunardzic Logo" height="40">
-              </a>
-              <ul class="nav-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/#services">My Approach</a></li> <!-- Links to the section on the homepage -->
-                <li><a href="/test-driven-navigation">The Framework</a></li>
-                <li><a href="/executive-resources">Velocity Resources</a></li> <!-- For the Field Guide/Lead Magnet -->
-                <li><a href="/about">About</a></li>
-                <li><a href="https://aicraftspeopleguild.github.io/index.html">AI Craftspeople Guild (ACG)</a></li>
-                <li><a href="/engagements">Engagements</a></li>
-                <li><a href="/ai-engineering-masterclass.html">Masterclass</a></li>
-              </ul>
-              <a href="https://app.cal.com/alex-bunardzic" class="btn btn-nav-cta">Book a Call</a>
-            </div>
-          </nav>
-
-          <div class="hero-text-content">
-            <h2>Reduce Delivery Risk in AI-Accelerated Software Systems</h2>
-
-            <h3>Make confident technical decisions in environments where AI speeds up delivery -- but also amplifies architectural and organizational mistakes.
-            </h3>
-            <p class="hero-tagline">I help CTOs and senior engineering leaders <strong>stabilize software delivery</strong> while adopting AI responsibly -- so teams move faster without accumulating invisible risk, brittle systems, or decision debt.</p>
-            <p  class="hero-tagline">My work focuses on <strong>clarifying direction before execution:</strong></p>
-            <ul class="hero-tagline">
-              <li>What problems are worth solving now</li>
-              <li>What changes are safe to make next</li>
-              <li>What risks AI is quietly introducing into your delivery system</li>
-            </ul>
-            <p class="hero-tagline">This diagnostic-first approach is informed by <strong>Test-Driven Navigation (TDN)</strong> -- a navigation-focused evolution of TDD designed for AI-assisted development.</p>
-            <h3>Start with a Delivery Risk & Direction Diagnostic</h3>
-            <p class="hero-tagline">A short, focused engagement to surface hidden risks, clarify priorities, and determine whether deeper work is justified.</p>
-  
-            <div class="hero-cta-buttons">
-              <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                </svg>
-                Book a 30-Minute CTO Diagnostic →
-              </a>
-            </div>
-
-            <!-- The Executive Problem -->
-            <h2>AI Is Fast. Your Delivery System Wasn’t Built for It.</h2>
-            <h3>AI dramatically increases output - but it also:</h3>
-            <ul class="hero-tagline">
-              <li>Amplifies existing delivery weaknesses</li>
-              <li>Hides quality decay behind velocity</li>
-              <li>Shifts engineering effort from thinking to reacting</li>
-            </ul>
-            <p class="hero-tagline">Most organizations are asking engineers to both:</p>
-            <ul class="hero-tagline">
-                <li>Decide <em>where</em> to go, and</li>
-                <li>Manage <em>how</em> the system stays correct, reliable, and performant</li>
-            </ul>
-            <p class="hero-tagline">At AI speed, that coupling no longer holds.</p>
-            <hr />
-
-            <!-- The Reframe -->
-            <h2>The Problem Isn’t AI</h2>
-            <h3>It’s Role Confusion</h3>
-            <p  class="hero-tagline">Human engineers are still best at:</p>
-            <ul class="hero-tagline">
-              <li>Deciding <em>what should happen next</em></li>
-              <li>Understanding business intent</li>
-              <li>Navigating complex tradeoffs</li>
-            </ul>
-            <p class="hero-tagline">AI is better at:</p>
-            <ul class="hero-tagline">
-                <li>Executing mechanics</li>
-                <li>Maintaining consistency</li>
-                <li>Enforcing constraints at scale</li>
-            </ul>
-            <p class="hero-tagline">When those roles are blurred, delivery becomes unpredictable.</p>
-            <hr />
-
-            <!-- Introducing TDN -->
-            <h2>Test-Driven Navigation (TDN)</h2>
-            <h3><strong>Test-Driven Navigation</strong> is an evolution of Test-Driven Development designed for AI-assisted software delivery.</h3>
-            <p  class="hero-tagline">In TDN:</p>
-            <ul class="hero-tagline">
-              <li>Humans focus on <strong>navigation</strong>
-                <em>(where are we going, what needs to change, what outcome we want)</em></li>
-              <li>AI focuses on <strong>execution</strong>
-                <em>(how to implement, refactor, and maintain the system safely)</em></li>
-            </ul>
-            <p class="hero-tagline">Tests define direction and boundaries, not manual micromanagement.</p>
-            <p class="hero-tagline"><strong>The result:</strong></p>
-            <p class="hero-tagline">AI accelerates delivery <strong>without eroding quality or control.</strong></p>
-            <hr />
-
-            <!-- Why This Matters to a CTO -->
-            <h2>TDN Restores Predictability at AI Speed</h2>
-            <p  class="hero-tagline">With TDN in place:</p>
-            <ul class="hero-tagline">
-              <li>Delivery becomes measurable and explainable</li>
-              <li>Quality regressions surface early</li>
-              <li>Engineers spend more time on intent and less on mechanical upkeep</li>
-              <li>AI becomes a force multiplier, not a liability</li>
-            </ul>
-            <p class="hero-tagline">This is not about writing more tests.</p>
-            <p class="hero-tagline">It’s about <strong>separating strategic intent from mechanical execution.</strong></p>
-            <hr />
-
-            <!-- What I Actually Do -->
-            <h2>Executive Advisory for AI-Assisted Delivery</h2>
-            <p  class="hero-tagline">I work directly with CTOs and engineering leaders to:</p>
-            <ul class="hero-tagline">
-              <li>Diagnose AI-related delivery risk</li>
-              <li>Introduce Test-Driven Navigation incrementally</li>
-              <li>Realign engineering effort around navigation, not micromanagement</li>
-              <li>Ensure AI usage increases revenue without increasing churn or defects</li>
-            </ul>
-            <p class="hero-tagline"><strong>This is not training.</strong></p>
-            <p class="hero-tagline"><strong>This is not a process rollout.</strong></p>
-            <p class="hero-tagline"><strong>This is not a tool install.</strong></p>
-            <p class="hero-tagline">It’s focused, executive-level intervention.</p>
-            <hr />
-
-            <!-- What Engagement Looks Like -->
-            <h2>How We Work Together</h2>
-            <ul class="hero-tagline">
-              <li>90-day advisory engagement</li>
-              <li>Bi-weekly sessions with you (and key engineering leads if needed)</li>
-              <li>Review of delivery signals, tests, and AI interaction patterns</li>
-              <li>Practical changes teams can adopt without stopping delivery</li>
-            </ul>
-            <p class="hero-tagline"><strong>Outcome</strong>: faster delivery, clearer intent, and controlled risk.</p>
-            <hr />
-
-            <!-- Fit -->
-            <h2>This Is a Good Fit If You:</h2>
-            <ul class="hero-tagline">
-              <li>Are a CTO/VP Engineering at a 50–300 person SaaS</li>
-              <li>Are using (or planning to use) AI in software delivery</li>
-              <li>Want leverage without sacrificing predictability</li>
-              <li>Are accountable for both speed and quality</li>
-            </ul>
-            <h2>This Is Not a Fit If You:</h2>
-            <ul class="hero-tagline">
-              <li>Want AI to “just go faster” without constraints</li>
-              <li>Are looking for developer training or certification</li>
-              <li>Are optimizing only for short-term velocity</li>
-            </ul>
-            <hr />
-
-            <!-- Credibility -->
-            <h2>About Alex Bunardzic</h2>
-            <ul class="hero-tagline">
-              <li>34+ years designing and delivering software systems</li>
-              <li>Inventor of <strong>Test-Driven Navigation (TDN)</strong></li>
-              <li>Organizer of the <strong>First International TDD Conference (2021)</strong></li>
-              <li>International speaker on software quality and delivery</li>
-            </ul>
-            <p class="hero-tagline">My focus is <strong>making AI safe and economically effective at scale.</strong></p>
-            <hr />
-
-            <!-- Final CTA -->
-            <h2>Book a 30-Minute CTO Diagnostic</h2>
-            <p  class="hero-tagline">A focused conversation to:</p>
-            <ul class="hero-tagline">
-              <li>Assess how AI is affecting your delivery system</li>
-              <li>Identify where navigation and execution are coupled incorrectly</li>
-              <li>Determine whether TDN-based advisory is appropriate</li>
-              <li>International speaker on software quality and delivery</li>
-            </ul>
-            <p class="hero-tagline">No pitch. No obligation.</p>
-            <div class="hero-cta-buttons">
-                <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                  Book the CTO Diagnostic →
-                </a>
-              </div>  
-            <hr />
-
-            <div class="hero-cta-buttons">
-                <p>Get a custom 90-day plan to reduce drag and accelerate delivery.</p>
-                <form id="download-form" class="lead-magnet-form" action="https://formsubmit.co/alexbunardzic@gmail.com"
-                method="POST">
-                <!-- FormSubmit configuration -->
-                <input type="hidden" name="_subject" value="New Field Guide Request">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_next" value="https://alexbunardzic.com/thank-you.html#download">
-                <input type="text" name="_honey" style="display:none">
-                <input type="hidden" name="_captcha" value="false">
-
-                <div class="form-fields">
-                  <input type="email" id="email" name="email" placeholder="Your work email address" required>
-                  <button type="submit" class="btn-form">Download the Test-Driven Navigation Field Guide</button>
-                </div>
-
-                <p class="privacy-notice">
-                  We respect your privacy. Your email will only be used to send you the Test-Driven Navigation Field
-                  Guide
-                  and occasional
-                  relevant resources.
-                </p>
-              </form>
-            </div>
-          </div>
-
-          <h2>Business Outcomes</h2>
-          <h3>What Clients Gain</h3>
-          <p class="hero-tagline">Organizations using Test-Driven Navigation (TDN) typically achieve:</p>
-          <ul class="hero-tagline">
-            <li>Faster delivery without destabilizing systems</li>
-            <li>Lower maintenance cost through controlled refactoring</li>
-            <li>Reduced AI-generated technical debt</li>
-            <li>Higher confidence in large-scale changes</li>
-            <li>Clear architectural direction instead of reactive rewrites</li>
-            <li>Engineering teams that think and act like system architects</li>
-          </ul>
-          <p class="hero-tagline">TDN aligns engineering decisions with <strong>business value</strong>, not just
-            code aesthetics.</p>
-          <hr />
-          <!-- Credibility Strip -->
-          <div class="social-proof" style="margin-top: 2rem; margin-bottom: 3rem;">
-            <p style="text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px;">
-              <strong>Trusted by business and engineering leaders at:</strong>
-            </p>
-            <div class="logos" style="display: flex; align-items: center; gap: 20px;">
-
-              <div class="logo-item" style="font-size: 1.0rem;">
-                <button popovertarget="nikaxu-popover" class="logo-btn">
-                  Nikaxu Inc.<img src="nikaxu_logo.png" width="55" />
-                </button>
-              </div>
-              <!-- Popover anchored near the button -->
-              <div id="nikaxu-popover" popover class="testimonial-popover">
-                <p class="testimonial-text">
-                  "I had the pleasure of interacting with Alex recently. His deep experience, ability to take a
-                  truly holistic view, and still drive concrete execution is impressive.<br /><br />
-                  A rare combination that makes conversations with him both insightful and actionable."
-                </p>
-                <p class="testimonial-author">
-                  <a href="https://www.linkedin.com/in/esa-karjalainen-3b8b927/" target="_blank" rel="noreferrer"
-                    class="testimonial-link"><img src="Esa_Karjalainen.jpeg" width="150" /><br />Esa Karjalainen,
-                    CEO Nikaxu Inc.</a><br /><br />
-                  <a href="https://www.nikaxu.com/" target="_blank" rel="noreferrer" class="testimonial-link"><img
-                      src="nikaxu_logo.png" alt="Nikaxu logo" width="100" /></a>
-                </p>
-                <!--a href="/testimonials/nikaxu" class="btn btn-secondary">Read full story →</a-->
-              </div>
-
-              <div class="logo-item" style="font-size: 1.0rem;">
-                <button popovertarget="worksafebc-popover" class="logo-btn">
-                  WorkSafeBC<img src="worksafebc_logo.jpg" width="100" />
-                </button>
-              </div>
-              <!-- Popover anchored near the button -->
-              <div id="worksafebc-popover" popover class="testimonial-popover">
-                <p class="testimonial-text">
-                  "I had the privilege of working directly with Alex for two years, during which he served as
-                  Software Engineering Practice Lead under my leadership as Director of DevOps at WorkSafeBC.
-                  During
-                  this time, Alex transformed our development practices in ways that benefited the delivery
-                  pods.
-                  He
-                  introduced and enforced Test-Driven Development across our engineering teams. Perhaps most
-                  impressively, Alex pioneered the use of Mountybank for API emulation, solving a critical
-                  challenge
-                  we faced in testing busy, production-like environments. His hands-on approach and deep
-                  technical
-                  expertise made him the go-to person when our teams needed innovative solutions to complex
-                  problems.<br /><br />
-                  What sets Alex apart isn't just his technical prowess, but his unconventional thinking and
-                  willingness to challenge established norms—he's what I'd affectionately call an "unrepentant
-                  mutant slayer" when it comes to eliminating bad code and practices. As a speaker and thought
-                  leader within our organization, Alex consistently delivered insights that were simultaneously
-                  provocative and spot-on, pushing our teams to think beyond conventional wisdom. His strong
-                  opinions are always backed by solid reasoning and real-world experience, making him both a
-                  software visionary and a practical implementer. Any organization looking to elevate their
-                  engineering practices and culture would be fortunate to have someone with Alex's unique
-                  combination of technical depth, innovative thinking, and ability to drive meaningful change."
-                </p>
-                <p class="testimonial-author">
-                  <a href="https://www.linkedin.com/in/andrekaminski/" target="_blank" rel="noreferrer"
-                    class="testimonial-link"><img src="andre_kaminski.jpeg" width="150" /><br />Andre Kaminski,
-                    Director - Advanced Technology Solution at WorkSafeBC</a><br /><br />
-                  <a href="https://www.worksafebc.com/en" target="_blank" rel="noreferrer" class="testimonial-link"><img
-                      src="worksafebc_logo.jpg" alt="WorkSafeBC Logo" width="100" /></a>
-                </p>
-                <!--a href="/testimonials/worksafebc" class="btn btn-secondary">Read full story →</a-->
-              </div>
-
-              <div class="logo-item" style="font-size: 1.0rem;">
-                <button popovertarget="raymond-popover" class="logo-btn">
-                  Raymond James<img src="raymondjames_canada_logo.jpeg" width="70" />
-                </button>
-              </div>
-              <!-- Popover anchored near the button -->
-              <div id="raymond-popover" popover class="testimonial-popover">
-                <p class="testimonial-text">
-                  "I worked with Alex at Raymond James Ltd for about 7 years. Together we
-                  developed one of the strongest Compliance systems in the Financial Services
-                  industry. Alex was heavily involved in managing the team responsible for the
-                  programming. I always appreciated his ‘out of the box’ thinking and his
-                  ‘can do’ attitude. In retrospect, Alex was an extremely cooperative and
-                  insightful partner. He was successful in capturing my vision and solving
-                  countless problems to deliver programs that always exceeded my expectations."
-                </p>
-                <p class="testimonial-author">
-                  <a href="https://www.linkedin.com/in/sandy-martin-7346801/" target="_blank" rel="noreferrer"
-                    class="testimonial-link"><img src="sandy_martin.jpeg" width="150" /><br />Sandy Martin
-                    — Senior Compliance Executive, Raymond James Ltd</a>
-                  <a href="https://www.raymondjames.ca/capwealthmanagement/your-team/about-raymond-james?sc_lang=en"
-                    target="_blank" rel="noreferrer" class="testimonial-link"><img src="raymondjames_canada_logo.jpeg"
-                      alt="Raymond James Logo" width="100" /></a>
-                </p>
-
-                <!--a href="/testimonials/raymond-james" class="btn btn-secondary">Read full story →</a-->
-              </div>
-
-              <div class="logo-item" style="font-size: 1.0rem;">
-                <button popovertarget="agileguide-popover" class="logo-btn">
-                  Agile Guide<img src="woody_zuill_logo.png" alt="Woody Zuill Logo" width="45" />
-                </button>
-              </div>
-              <!-- Popover anchored near the button -->
-              <div id="agileguide-popover" popover class="testimonial-popover">
-                <p class="testimonial-text">
-                  "I’ve had the opportunity to connect with Alex both in person and through ongoing
-                  conversations
-                  online. What consistently stands out is his ability to combine depth of experience with a
-                  refreshing openness to new perspectives. He has a gift for making complex ideas feel
-                  accessible,
-                  while still challenging you to think more broadly.<br /><br />
-
-                  Every interaction I’ve had has been thought-provoking and energizing. He is someone who
-                  doesn’t
-                  just talk about ideas, but brings them to life in a way that sparks meaningful dialogue and
-                  possibilities. I have no doubt that anyone collaborating with Alex would find his presence
-                  invaluable, both as a thinker who sees the big picture and as someone who helps others see new
-                  opportunities in their work."
-                </p>
-                <p class="testimonial-author">
-                  <a href="https://www.linkedin.com/in/woodyzuill/" target="_blank" rel="noreferrer"
-                    class="testimonial-link"><img src="woody_zuill.jpeg" width="150" /><br />Woody Zuill - Agile
-                    Guide, Senior Consultant, Agile Expertise and Coaching</a><br />
-                  <a href="https://woodyzuill.com/" target="_blank" rel="noreferrer" class="testimonial-link"><img
-                      src="woody_zuill_logo.png" alt="Woody Zuill Logo" width="100" /></a>
-                </p>
-                <!--a href="/testimonials/woody_zuill" class="btn btn-secondary">Read full story →</a-->
-              </div>
-
-              <div class="logo-item" style="font-size: 1.0rem;">
-                <button popovertarget="gtmdelta-popover" class="logo-btn">
-                  GTM Delta<img src="gtmdelta-logo.png" alt="GTM Delta Logo" width="50" />
-                </button>
-              </div>
-              <!-- Popover anchored near the button -->
-              <div id="gtmdelta-popover" popover class="testimonial-popover">
-                <p class="testimonial-text">
-                  "When Alex joined the dev team, I was an Ops architect. His approach fundamentally changed how
-                  I
-                  look at building and deploying enterprise software. It truly reshaped my career. This was
-                  DevOps
-                  before DevOps was a thing. What began as feeling like we were flouting convention quickly
-                  showed
-                  results. I still apply the practices and processes that Alex taught me in my daily work. I
-                  rarely
-                  meet people who can be deeply philosophical, yet ruthlessly pragmatic. I’d work with Alex
-                  anywhere
-                  he goes."
-                </p>
-                <p class="testimonial-author">
-                  <a href="https://www.linkedin.com/in/ericwrightdiscoposse/" target="_blank" rel="noreferrer"
-                    class="testimonial-link"><img src="eric-wright.jpg" width="150" /><br />Eric Wright -
-                    Co-Founder
-                    @ GTM Delta</a><br />
-                  <a href="https://gtmdelta.com/" target="_blank" rel="noreferrer" class="testimonial-link"><img
-                      src="gtmdelta-logo.png" alt="GTM Delta Logo" width="100" /></a>
-                </p>
-                <!--a href="/testimonials/raymond-james" class="btn btn-secondary">Read full story →</a-->
-              </div>
-
-              <div class="logo-item" style="font-size: 1.0rem;">
-                <button popovertarget="quotemedia-popover" class="logo-btn">
-                  QuoteMedia<img src="quotemedia_logo.jpeg" alt="QuoteMedia Logo" width="55" />
-                </button>
-              </div>
-              <!-- Popover anchored near the button -->
-              <div id="quotemedia-popover" popover class="testimonial-popover">
-                <p class="testimonial-text">
-                  "I had the privilege of working with Alex Bunardzic almost 30 years ago when we were both
-                  software
-                  engineers at the same company. Alex was a software architect at the time, and he naturally
-                  became
-                  a mentor to me. He was passionate about best practices in Java and was one of the first people
-                  I
-                  met who was really pushing test-driven development, long before most had even heard of it. I
-                  learned a lot just by watching how he approached problems and how much care he put into
-                  writing
-                  clean, maintainable code.<br /><br />
-
-                  Looking back, the fundamentals I picked up from Alex have stayed with me throughout my career
-                  and
-                  proved to be incredibly valuable as I moved into technical leadership roles. Things like
-                  test-first thinking, focusing on simplicity, and always questioning whether the solution will
-                  stand the test of time. His influence helped shape how I build and lead teams even today, and
-                  I’m
-                  still grateful for the time we worked together and the lessons I took away from it."
-                </p>
-                <p class="testimonial-author">
-                  <a href="https://www.linkedin.com/in/alexsmigoc/" target="_blank" rel="noreferrer"
-                    class="testimonial-link"><img src="alex_smigoc.jpeg" width="150" /><br />Alex Smigoc - VP of
-                    Engineering</a><br />
-                  <a href="https://quotemedia.com/" target="_blank" rel="noreferrer" class="testimonial-link"><img
-                      src="quotemedia_logo.jpeg" alt="QuoteMedia Logo" width="100" /></a>
-                </p>
-                <!--a href="/testimonials/quotemedia" class="btn btn-secondary">Read full story →</a-->
-              </div>
-
-              <div class="logo-item" style="font-size: 1.0rem;">
-                <button popovertarget="marketfit-popover" class="logo-btn">
-                  MarketFit<img src="MarketFit-Logo.png" alt="MarketFit Logo" width="55" />
-                </button>
-              </div>
-              <!-- Popover anchored near the button -->
-              <div id="marketfit-popover" popover class="testimonial-popover">
-                <p class="testimonial-text">
-                  "Alex combines technical expertise with creative problem-solving, generating innovative
-                  approaches
-                  to complex challenges. He balances visionary thinking with practical execution, focusing teams
-                  on
-                  delivering concrete results."
-                <p class="testimonial-author">
-                  <a href="https://www.linkedin.com/in/alanalbert/" target="_blank" rel="noreferrer"
-                    class="testimonial-link"><img src="alan_albert.jpeg" width="150" /><br />Alan Albert -
-                    Founder/CEO at MarketFit</a><br />
-                  <a href="https://www.marketfit.com/" target="_blank" rel="noreferrer" class="testimonial-link"><img
-                      src="MarketFit-Logo.png" alt="MarketFit Logo" width="100" /></a>
-                </p>
-                <!--a href="/testimonials/marketfit" class="btn btn-secondary">Read full story →</a-->
-              </div>
-
-              <div class="logo-item" style="font-size: 1.0rem;">
-                <button popovertarget="roberthalf-popover" class="logo-btn">
-                  Robert Half<img src="robert_half_international_logo.jpeg" alt="Robert Half Logo" width="55" />
-                </button>
-              </div>
-              <!-- Popover anchored near the button -->
-              <div id="roberthalf-popover" popover class="testimonial-popover">
-                <p class="testimonial-text">
-                  "I am writing to endorse Alex as a true professional in the field of software engineering.
-                  Alex
-                  is
-                  a firm believer in software quality, and the importance of tests. He is also a proponent of
-                  collaboration and communication, rather than working in silos or isolation.<br /><br />
-
-                  In my role as technical recruiter, I have spoken with hundreds of software developers over the
-                  years, and I can say that Alex is an outlier because of his convictions towards engineering
-                  excellence.<br /><br />
-
-                  On a more personal level, we always have lively, philosophical conversations about technical
-                  and
-                  non-technical topics. I highly recommend Alex for any software engineering endeavors,
-                  especially
-                  when excellence is the goal."
-                <p class="testimonial-author">
-                  <a href="https://www.linkedin.com/in/wawruck/" target="_blank" rel="noreferrer"
-                    class="testimonial-link"><img src="nathan_wawruck.jpeg" width="150" /><br />Nathan Wawruck -
-                    Vice President</a><br />
-                  <a href="https://www.roberthalf.com/us/en" target="_blank" rel="noreferrer"
-                    class="testimonial-link"><img src="robert_half_international_logo.jpeg" alt="Robert Half Logo"
-                      width="100" /></a>
-                </p>
-                <!--a href="/testimonials/roberthalf" class="btn btn-secondary">Read full story →</a-->
-              </div>
-
-              <div class="logo-item" style="font-size: 1.0rem;">
-                <button popovertarget="warmlink-popover" class="logo-btn">
-                  Warmlink<img src="warmlinkinc_logo.jpeg" alt="Warmlink Logo" width="55" />
-                </button>
-              </div>
-              <!-- Popover anchored near the button -->
-              <div id="warmlink-popover" popover class="testimonial-popover">
-                <p class="testimonial-text">
-                  "Alex is a thought leader with a deep passion for building flawless software through
-                  best-in-class
-                  testing and architecture practices, combined with strong team leadership abilities, making him
-                  an
-                  excellent fit for those seeking experienced, quality-focused engineering talent — I highly
-                  recommend him."
-                <p class="testimonial-author">
-                  <a href="https://www.linkedin.com/in/tedcohn/" target="_blank" rel="noreferrer"
-                    class="testimonial-link"><img src="ted_cohn.jpeg" width="150" /><br />Ted Cohn - Founder &
-                    CEO,
-                    Warmlink | Prosper Together</a><br />
-                  <a href="https://www.linkedin.com/company/warmlinkinc/" target="_blank" rel="noreferrer"
-                    class="testimonial-link"><img src="warmlinkinc_logo.jpeg" alt="Warmlink Logo" width="100" /></a>
-                </p>
-                <!--a href="/testimonials/warmlink" class="btn btn-secondary">Read full story →</a-->
-              </div>
-              <!--div class="logo-item" style="font-size: 1.0rem;">Exact Payments</div>
-                              <div class="logo-item " style="font-size: 1.0rem;">PHSA</div-->
-            </div>
-          </div>
-
-          <p class="hero-tagline"><strong>As seen at:</strong></p>
-          <a href="https://www.youtube.com/watch?v=tH8aqbHWgIM" class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 20h9" />
-              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-            </svg>
-            Devoxx Belgium →
-          </a> •
-          <a href="https://www.software-quality-days.com/en/program?tx_comot_pi2%5Baction%5D=index&tx_comot_pi2%5Bcontroller%5D=Planner&tx_comot_pi2%5Bday%5D=105&cHash=3f93c9733447fd4c359d29e2b7e23c12"
-            class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 20h9" />
-              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-            </svg>
-            International Software Quality Days (Vienna) →
-          </a> •
-          <a href="https://www.youtube.com/watch?v=Zj0Ys5tZST4" class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 20h9" />
-              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-            </svg>
-            Industry Podcasts →
-          </a>
-          <br />
-          <ul class="hero-text">
-            <li>Faster delivery without destabilizing systems</li>
-            <li>Lower maintenance costs and AI risk</li>
-            <li>Higher confidence in refactoring outcomes</li>
-            <li>Engineering teams operating like architects</li>
-          </ul>
-
-
-          <div class="logo-hero-section">
-            <div class="logo-container">
-              <img src="BVALogo.png" alt="Business Velocity Architect Logo" />
-            </div>
-          </div>
-          <div class="hero-grid">
-            <div class="hero-text">
-              <p class="hero-subtitle" style="font-size: 1.25rem;"><strong>Alex Bunardzic</strong><br>Business Velocity
-                Architect</p>
-
-              <p class="hero-subtitle">Vancouver, Canada · Working globally</p>
-
-              <h1>Velocity Without Compromise</h1>
-              <p class="hero-tagline">
-                Build software faster <strong>without sacrificing quality</strong> - even with AI
-                in the loop.
-              </p>
-
-              <p class="hero-tagline">
-                I help ambitious engineering organizations reduce technical debt, control AI-generated complexity,
-                and accelerate delivery using <strong>Test-Driven Navigation (TDN)</strong> -
-                a proven, test-first workflow for safe, incremental refactoring and AI-assisted development.
-              </p>
-
-              <p class="hero-tagline">
-                Creator of Test-Driven Navigation (TDN) · Invited speaker at
-                <a href="https://m.devoxx.com/events/dvbe25/speaker/12062/alex-bunardzic"><strong>Devoxx
-                    Belgium</strong></a> and
-                <a
-                  href="https://www.software-quality-days.com/en/program?tx_comot_pi2%5Baction%5D=index&tx_comot_pi2%5Bcontroller%5D=Planner&tx_comot_pi2%5Bday%5D=105&cHash=3f93c9733447fd4c359d29e2b7e23c12"><strong>International
-                    Software Quality Days (Vienna)</strong></a>
-              </p>
-              <p class="hero-tagline">
-                Trusted by organizations in healthcare, fintech, and regulated industries.
-              </p>
-
-              <div class="hero-cta-buttons">
-                <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                  Book a 30-Minute Diagnostic →
-                </a>
-                <a href="https://www.youtube.com/watch?v=tH8aqbHWgIM" class="btn btn-secondary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 20h9" />
-                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-                  </svg>
-                  Watch My Devoxx Talk →
-                </a>
-              </div>
-              <br />
-
-              <img src="Alex-Talk-Devoxx-Belgium.png" alt="Alex Devoxx Belgium" width="600"
-                style="margin-bottom: 1rem;" />
-              <h2>The Problem</h2>
-              <h3>Why Software Delivery Slows Down - Especially With AI</h3>
-              <p class="hero-tagline">Most organizations spend the majority of their engineering effort maintaining
-                existing systems, not delivering new value.</p>
-              <p class="hero-tagline">AI promised to help - but instead, many teams are now dealing with:</p>
-              <ul class="hero-tagline">
-                <li>Massive, uncontrolled code changes</li>
-                <li>Accidental complexity and unnecessary bloat</li>
-                <li>Increased technical debt disguised as “productivity”</li>
-                <li>Slower releases due to fear of breaking production</li>
-              </ul>
-              <p class="hero-tagline"><strong>Velocity without control is not progress.</strong></p>
-              <hr />
-
-              <h2>The Solution: Test-Driven Navigation (TDN)</h2>
-              <h3>What Is Test-Driven Navigation?</h3>
-              <p class="hero-tagline"><strong>Test-Driven Navigation (TDN)</strong> is a disciplined workflow that turns
-                AI from a risky code generator into a <strong>precise, incremental, test-driven assistant.</strong></p>
-              <p class="hero-tagline">Instead of letting AI “develop the system,” TDN:</p>
-              <ul class="hero-tagline">
-                <li>Uses failing tests as hyper-specific instructions</li>
-                <li>Forces AI to operate in <strong>small, safe, verifiable steps</strong></li>
-                <li>Applies Extreme Programming principles (the 3 C’s) to AI-assisted refactoring</li>
-                <li>Uses mutation testing to eliminate unnecessary code and bloat</li>
-              </ul>
-              <p class="hero-tagline">TDN allows teams to <strong>continuously improve systems while keeping them
-                  working - at all times.</strong></p>
-              <div class="hero-tagline"><em>TDN was introduced by Alex Bunardzic in his Devoxx Belgium closing talk
-                  and is now being presented internationally.</em></div>
-
-              <hr />
-
-              <h2>Upcoming Appearances</h2>
-              <h3>Upcoming Speaking & Media</h3>
-              <h4 class="hero-tagline">International Software Quality Days 2026 - Vienna</h4>
-              <p class="hero-tagline"><a
-                  href="https://www.software-quality-days.com/en/program?tx_comot_pi2%5Baction%5D=index&tx_comot_pi2%5Bcontroller%5D=Planner&tx_comot_pi2%5Bday%5D=105&cHash=3f93c9733447fd4c359d29e2b7e23c12">AI
-                  and the Future of Refactoring</a> 📅 May 21, 2026</p>
-              <p class="hero-tagline">Invited talk introducing Test-Driven Navigation as a practical AI workflow.</p>
-              <h3><em>Want these ideas applied to your organization?</em></h3>
-              <div class="hero-cta-buttons">
-                <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                  Book a Strategy Call →
-                </a>
-              </div>
-              <br />
-              <hr />
-
-              <h2>How I Work With Organizations</h2>
-              <h3>Engagement Models</h3>
-              <h4 class="hero-tagline">TDN Diagnostic (Fast Entry Point)</h4>
-              <p class="hero-tagline">
-                A short, focused assessment of your codebase, AI usage, and refactoring risks - followed by a concrete
-                action plan.</p>
-              <h4 class="hero-tagline">Velocity Accelerator</h4>
-              <p class="hero-tagline">Hands-on coaching and delivery using Test-Driven Navigation to reduce drag and
-                improve delivery speed in real systems.</p>
-              <h4 class="hero-tagline">Fractional Architecture Leadership</h4>
-              <p class="hero-tagline">Strategic technical leadership to guide refactoring, AI usage, and system
-                evolution without full-time overhead.</p>
-              <h4 class="hero-tagline">Executive & Team Workshops</h4>
-              <p class="hero-tagline">Practical, non-theoretical sessions that equip teams to apply TDN immediately.</p>
-              <div class="hero-cta-buttons">
-                <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                  Not sure what fits? Start with a 20-minute diagnostic call →
-                </a>
-              </div>
-              <br />
-              <hr />
-              <h2>Why Work With Alex</h2>
-              <ul class="hero-tagline">
-                <li>Inventor of Test-Driven Navigation</li>
-                <li>30+ years designing and delivering software</li>
-                <li>Trusted in healthcare, fintech, and regulated environments</li>
-                <li>Invited international speaker (Devoxx, ISQD)</li>
-                <li>Practitioner first - theory only where it helps</li>
-              </ul>
-              <h3 class="hero-tagline">Ready to Increase Velocity Without Increasing Risk?</h3>
-              <p class="hero-tagline">If your teams are moving fast but confidence is dropping - or if AI is adding
-                complexity instead of clarity - let’s talk.</p>
-              <div class="hero-cta-buttons">
-                <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                  Book a 30-Minute Diagnostic →
-                </a>
-              </div>
-              <br />
-              <hr />
-
-              <h2>I help CTOs and VPs of Engineering turn software systems into competitive weapons using AI-guided
-                refactoring.</h2>
-              <p class="hero-tagline">Your biggest competitor isn't another company - it's the friction in your own
-                delivery pipeline. While
-                your competitors ship weekly, you're stuck in quarterly release cycles. While they pivot in days,
-                you're
-                trapped by brittle architecture and mounting technical debt.</p>
-              <h3 class="section-subheading">I architect the systems that let you win the race against the market.
-              </h3>
-              <p class="hero-tagline">Fresh from delivering the closing talk at Devoxx Belgium - Europe's largest
-                developer conference - I'm now accepting 3 founding clients for Q1 2026.</p>
-
-              <div class="hero-cta-buttons">
-                <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                  Claim Your Founding Client Spot →
-                </a>
-                <a href="https://www.youtube.com/watch?v=tH8aqbHWgIM" class="btn btn-secondary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 20h9" />
-                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-                  </svg>
-                  Watch My Devoxx Belgium Talk →
-                </a>
-              </div>
-
-              <section id="hero-banner" class="hero-banner" style="position:relative; overflow:hidden;">
-                <!-- Background treatments -->
-                <div class="hero-bg" style="
-                              position:absolute; inset:0; 
-                              background:linear-gradient(135deg, #f9fafb 0%, #eef2ff 100%);
-                              z-index:-2;">
-                </div>
-                <svg class="hero-pattern" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-                  style="position:absolute; inset:0; opacity:0.1; z-index:-1;">
-                  <defs>
-                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                      <path d="M40 0H0V40" fill="none" stroke="#6366f1" stroke-width="1" />
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#grid)" />
-                </svg>
-                <!-- Optional headshot overlay -->
-                <!--img src="Alex_Bunardzic.png" alt="Alex Bunardzic" 
-                                 style="position:absolute; bottom:2rem; right:2rem; width:120px; border-radius:50%; box-shadow:0 4px 16px rgba(0,0,0,0.2); z-index:-1;"-->
-
-                <!-- Hero Content -->
-                <div class="container" id="hero-content"
-                  style="text-align:center; padding:0rem 1rem; max-width:900px; margin:0 auto;">
-                  <!-- Content injected by JS -->
-                </div>
-              </section>
-
-              <script>
-                (function () {
-                  const variants = [
-                    {
-                      headline: "Architect Business Velocity",
-                      subtext: "Deliver value faster, safer, and more affordably. With AI-enabled automation and reversible changes, your teams unlock ROI every cycle.",
-                      ctas: `
-                                  <a href="#team-roi-calculator" class="btn btn-primary" style="margin-right:1rem;">Calculate Your ROI</a>
-                                  <a href="https://app.cal.com/alex-bunardzic" class="btn btn-secondary">Get Your Velocity Briefing →</a>
-                                `
-                    },
-                    {
-                      headline: "The Shortest Path to Business Value",
-                      subtext: "Cut time-to-value significantly. Small, safe, reversible deliveries keep your blast radius low and your ROI high.",
-                      ctas: `
-                                  <a href="#team-roi-calculator" class="btn btn-primary">See How Much You Could Unlock →</a>
-                                `
-                    },
-                    {
-                      headline: "What Could Faster Delivery Unlock for You?",
-                      subtext: "AI-enabled guardrails reduce risk and accelerate ROI. Your teams become the engine of safe, frequent, high-value delivery.",
-                      ctas: `
-                                  <a href="#team-roi-calculator" class="btn btn-primary">Run the ROI Calculator</a>
-                                `
-                    }
-                  ];
-
-                  // Pick variant randomly
-                  const chosen = variants[Math.floor(Math.random() * variants.length)];
-
-                  // Inject content
-                  const container = document.getElementById("hero-content");
-                  container.innerHTML = `
-                              <h1 class="hero-title" style="font-size: 1.75rem;">${chosen.headline}</h1>
-                              <p class="hero-subtitle" style="margin-top:1rem;">${chosen.subtext}</p>
-                              <div style="margin-top:2rem;">${chosen.ctas}</div>
-                            `;
-                })();
-              </script>
-              <hr>
-
-              <h1>Founding Client Opportunity</h1>
-              <h2>Limited to 3 Organizations</h2>
-              <p class="hero-tagline">I'm accepting 3 founding clients for the Test-Driven Navigation initiative. As
-                a
-                founding client, you receive:</p>
-              <ul>
-                <li><strong>Priority access</strong> to all future TDN resources, frameworks, and tooling</li>
-                <li><strong>Co-creation opportunity</strong> - Help shape how TDN evolves in your specific industry
-                  context</li>
-                <li><strong>Lifetime advisory access</strong> (4 hours/quarter) for ongoing strategic guidance</li>
-                <li><strong>Case study feature</strong> (with your approval) in my follow-up presentations at Devoxx
-                  and
-                  other major conferences</li>
-              </ul>
-              <h2>What I need from you:</h2>
-              <ul>
-                <li>A real, meaningful business problem to solve together</li>
-                <li>Willingness to provide candid feedback on the engagement structure</li>
-                <li>Openness to being featured (anonymously if preferred) as a TDN success story</li>
-              </ul>
-              <div
-                style="background:#f9fafb; border:1px solid #d1d5db; border-radius:8px; padding:1rem; margin:1.5rem 0; font-size:0.9rem;">
-                <strong>"Alex's unconventional thinking and deep technical expertise made him the go-to person when
-                  our
-                  teams needed innovative solutions to complex problems."</strong><br />
-                — <a href="https://www.linkedin.com/in/andrekaminski/">Andre Kaminski</a>, Director of Advanced
-                Technology Solutions at <a href="https://www.worksafebc.ca/">WorkSafeBC</a>
-              </div>
-
-              <p class="hero-tagline"><strong>This isn't charity - it's partnership.</strong> You get elite
-                consulting
-                at a fraction of the cost. I get real-world validation of TDN in your specific context. Together, we
-                prove that Test-Driven Navigation transforms how organizations build software.</p>
-              <div
-                style="background:#f9fafb; border:1px solid #d1d5db; border-radius:8px; padding:1rem; margin:1.5rem 0; font-size:0.9rem;">
-                <h3>Why only 3 founding clients?</h3>
-                Each engagement receives my direct, hands-on involvement. I'm not building a consulting firm - I'm
-                proving
-                a framework. That requires deep focus and real partnership, not scalable delivery. Once these 3
-                engagements deliver measurable results, I'll open the program to a broader cohort.<br />
-              </div>
-
-              <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">Claim Your Founding Client Spot
-                →</a>
-              <p><em style="font-size:0.8rem;">Only 2 spots remaining for Q2 2026</em></p>
-              <br />
-
-              <h1>Reach Elite-Level Practice</h1>
-
-              <h2>Your biggest competitor isn't another company. It's the drag in your system losing you the race
-                against the market.</h2>
-              <p class="hero-tagline">I work at the intersection of technology, product, and people to build the one
-                capability that matters: <strong>the speed to win.</strong> I architect the systems that enable your
-                business to learn, adapt, and ship at the speed of your best ideas.</p>
-              <h3 class="section-subheading">This is for the leaders who feel the friction.</h3>
-              <p class="hero-tagline">This is for the technology leaders (the CTO, VP of Engineering, Director of
-                Product) who know their team is brilliant, but feel a growing friction between their ideas and their
-                ability to execute.</p>
-              <p class="hero-tagline">You're not looking for another pair of hands or a niche specialist. You need a
-                strategic partner to help you answer the real questions:</p>
-              <p class="hero-tagline">
-              <ul>
-                <li>"Why are we slowing down, and what are the hidden dependencies holding us back?"</li>
-                <li>"How can we de-risk bold product bets and innovate safely in our most critical systems?"</li>
-                <li>"How do we turn our technology organization from a cost center into the primary engine of our
-                  business strategy?"</li>
-              </ul>
-              </p>
-              <p class="hero-tagline">If these questions keep you up at night, we're speaking the same language.</p>
-              <h3>My Approach: From Trapped Potential to Strategic Momentum</h3>
-              <p class="hero-tagline">Most consultants see technical debt as a liability to be managed. I see it as
-                <strong>trapped potential</strong>.<br /><br />
-                Every line of legacy code is a decision frozen in time - it’s the fossilized evidence of a past
-                business
-                assumption. That old billing module encodes the assumption that you’d never sell subscriptions. That
-                monolithic architecture assumes your product would only ever live on the web.<br /><br />
-                Taken together, this debt forms a <strong>map of your oldest constraints</strong>. My work is to use
-                that map to find the precise points of leverage where challenging one old assumption can unlock a
-                whole
-                new trajectory for growth.
-              </p>
-              <p class="hero-tagline">My role is to architect the system that unlocks that potential.</p>
-              <p class="hero-tagline">We don't just "refactor code." We install a new operating model for continuous
-                evolution, using a framework I call <a href="/test-driven-navigation.html"><strong>Test-Driven
-                    Navigation (TDN)</strong></a>. This isn't just a development technique; it's a management
-                framework
-                for making your technology a direct, responsive driver of your business strategy. It turns AI from a
-                chaos-maker into a disciplined partner for growth.
-              </p>
-              <p class="hero-tagline">The goal is simple: To build a resilient, adaptive organization where the best
-                ideas can be shipped safely, quickly, and confidently.</p>
-              <h3>Stop managing friction. Start architecting momentum.</h3>
-              <p class="hero-tagline">I help you escape the costly cycle of technical debt and unlock new revenue
-                streams. Let's transform your biggest frustrations into your greatest strengths. Let's schedule a
-                30-minute strategy call. In this confidential session, we will discuss the primary sources of drag
-                in
-                your organization and begin to outline a clear path toward building sustainable velocity.</p>
-              <p class="hero-subtitle"><strong>Ready to accelerate your winning strategy? Let's talk.</strong></p>
-
-              <div class="hero-cta-buttons">
-                <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                  Schedule Your Free Velocity Strategy Call
-                </a>
-                <a href="https://www.youtube.com/watch?v=tH8aqbHWgIM" target="_blank" rel="noreferrer"
-                  class="btn btn-secondary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                  </svg>
-                  Watch my Devoxx talk
-                </a>
-                <a href="#" id="vcard-btn" class="btn btn-secondary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-                    <polyline points="14 2 14 8 20 8" />
-                    <line x1="16" x2="8" y1="13" y2="13" />
-                    <line x1="16" x2="8" y1="17" y2="17" />
-                    <line x1="10" x2="8" y1="9" y2="9" />
-                  </svg>
-                  Save contact (vCard)
-                </a>
-              </div>
-
-              <div class="hero-socials">
-                <a href="https://www.linkedin.com/in/alexbunardzic/" target="_blank" rel="noreferrer"
-                  class="social-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                    <rect width="4" height="12" x="2" y="9" />
-                    <circle cx="4" cy="4" r="2" />
-                  </svg>
-                  LinkedIn
-                </a>
-                <a href="https://github.com/alexbunardzic" target="_blank" rel="noreferrer" class="social-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                  </svg>
-                  GitHub
-                </a>
-              </div>
-            </div>
-            <div class="hero-qrcode">
-              <div class="qrcode-card">
-                <img src="Alex_Bunardzic.png" alt="Alex Bunardzic"
-                  style="width:300px; border-radius:50%; box-shadow:0 4px 16px rgba(0,0,0,0.2); z-index:-1;"><br /><br />
-                <div class="qrcode-label">Scan to connect</div>
-                <img src="QRLinkedIn.JPG" alt="QR Code" width="300" />
-                <div class="qrcode-url">Opens linkedin.com/in/alexbunardzic/</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <section class="offerings-section" id="services">
-        <div class="container">
-          <h3 class="section-title">The Strategic Problem</h3>
-          <p class="section-subtitle">
-            If you feel a growing gap between your strategic vision and your team's ability to execute, you are not
-            alone.<br /><br />
-            Too often, our technology - the very engine meant to propel us forward - becomes an anchor. Years of past
-            decisions, layered complexity, and hidden dependencies create a drag on the entire organization. The result
-            isn't just slow release cycles or budget overruns; it's a loss of agility. It's the hesitation to make a
-            bold pivot. It's the fear that a critical move will bring the whole system crashing down.<br /><br />
-            Your codebase isn't just a technical asset; it has become the central nervous system of your business
-            strategy. When it's brittle and slow, so is the business.
-          </p>
-          <h3 class="section-title">The Vision of a New Capability</h3>
-          <p class="section-subtitle">
-            Now, imagine your organization with a new nervous system. One built for speed and resilience.
-          <ul>
-            <li>Instead of reacting to the market, you pioneer its next move.</li>
-            <li>Instead of debating the risk of a new feature, you have the confidence to launch, learn, and iterate in
-              days, not months.</li>
-            <li>Instead of seeing your technology as a constraint, you leverage it as your primary competitive
-              advantage.</li>
-          </ul>
-          This is Business Velocity. It’s the state where your organization’s ability to learn and adapt is faster than
-          the rate of change in your industry. It is the single most important capability for modern market leadership.
-          </p>
-          <h3 class="section-title">My Role as the Architect</h3>
-          <p class="section-subtitle">
-            As a Business Velocity Architect, I don't just fix technical problems. I help you redesign the
-            engine.<br /><br />
-            My role is to partner with your leadership to install a new operating model - a disciplined, AI-augmented
-            framework that transforms how your teams build and evolve your systems. We turn AI from a source of chaos
-            into a precision tool for continuous evolution. We empower your developers to become true architects of your
-            future.<br /><br />
-            We will transform your technology from a fossilized record of past assumptions into a dynamic, living system
-            that drives your business forward.
-          </p>
-        </div>
-      </section>
-
-      <section class="offerings-section" id="services">
-        <div class="container">
-          <h1>What happens after you book a call?</h1>
-          <ol>
-            <li><strong>30-minute strategy session</strong> - We'll discuss your specific challenges and whether TDN is
-              a fit</li>
-            <li><strong>Custom proposal</strong> - If we're aligned, I'll send a tailored engagement plan within 48
-              hours</li>
-            <li><strong>Kickoff within 2 weeks</strong> - Founding clients get priority scheduling to start immediately
-            </li>
-          </ol>
-          <p>No pressure. No hard sell. Just a straightforward conversation about whether we can create value together.
-          </p>
-
-          <h1>Choose Your Starting Point</h1>
-          <p style="color: #64748b; margin-bottom: 30px;">Not sure which engagement is right for you? This quick
-            comparison helps you understand your options at a glance.</p>
-
-          <div class="table-responsive">
-            <table id="offerings-table">
-              <thead>
-                <tr>
-                  <th>Engagement</th>
-                  <th>Best For</th>
-                  <th>Duration</th>
-                  <th>Time Commitment</th>
-                  <th>Investment Range</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Navigating the Opportunities</strong><br /><span class="badge">START HERE</span></td>
-                  <td>First-time clients who need clarity on what's slowing them down</td>
-                  <td>2 weeks</td>
-                  <td>10-15 hours total</td>
-                  <td>$7,500-$15,000*</td>
-                </tr>
-                <tr>
-                  <td><strong>Pilot Team Accelerator</strong></td>
-                  <td>Prove ROI with one high-impact team before scaling</td>
-                  <td>6-8 weeks</td>
-                  <td>2 days/week</td>
-                  <td>$35,000-$50,000</td>
-                </tr>
-                <tr>
-                  <td><strong>Strategic Advisor</strong></td>
-                  <td>Ongoing counsel for critical decisions and leadership coaching</td>
-                  <td>Month-to-month</td>
-                  <td>4-8 hours/month</td>
-                  <td>$8,000-$12,000/mo</td>
-                </tr>
-                <tr>
-                  <td><strong>Team Workshop Series</strong></td>
-                  <td>Intensive capability boost for specific teams or challenges</td>
-                  <td>2 days</td>
-                  <td>On-site intensive</td>
-                  <td>$15,000-$20,000</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="asterisk">* Founding clients are free of charge on their first diagnostic engagement</p>
-          <br />
-
-          <!-- SECTION 3: PATHFINDING -->
-          <div class="section">
-            <h2>Not Sure Where to Start?</h2>
-            <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 30px;">Most clients begin with one of these two
-              paths:</p>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0;">
-              <div style="border: 2px solid #e2e8f0; padding: 25px; border-radius: 8px;">
-                <h3 style="margin-top: 0;">Path 1: Discovery Mode</h3>
-                <p style="color: #475569;"><em>"We know we have problems, but we're not sure what's actually causing
-                    them"</em></p>
-
-                <p style="margin-top: 20px;"><strong>Start with:</strong> Navigating the Opportunities (2-week
-                  Diagnostic)</p>
-
-                <p>This gives you:</p>
-                <ul style="margin: 15px 0; padding-left: 20px;">
-                  <li>Clear diagnostic of your velocity bottlenecks</li>
-                  <li>ROI-backed roadmap for the next 90 days</li>
-                  <li>Data to make the business case for change</li>
-                </ul>
-
-                <p><strong>Then decide:</strong> Pilot, Workshop, or Strategic Advisor based on what the diagnostic
-                  reveals</p>
-              </div>
-
-              <div style="border: 2px solid #e2e8f0; padding: 25px; border-radius: 8px;">
-                <h3 style="margin-top: 0;">Path 2: Proof of Concept</h3>
-                <p style="color: #475569;"><em>"We want to prove this works with one team before we commit to broader
-                    change"</em></p>
-
-                <p style="margin-top: 20px;"><strong>Start with:</strong> Pilot Team Accelerator (6-8 weeks)</p>
-
-                <p>This gives you:</p>
-                <ul style="margin: 15px 0; padding-left: 20px;">
-                  <li>Hands-on TDN implementation with measurable results</li>
-                  <li>Internal success story to build momentum</li>
-                  <li>Trained champions who can spread TDN</li>
-                </ul>
-
-                <p><strong>Then scale:</strong> Leadership Overhaul or multiply with additional pilot teams</p>
-              </div>
-            </div>
-
-            <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin-top: 30px; text-align: center;">
-              <p style="font-size: 1.3rem; margin-bottom: 15px;"><strong>Still not sure which path is right for
-                  you?</strong></p>
-              <p style="color: #64748b; margin-bottom: 20px;">Let's have a 30-minute strategy call. I'll help you figure
-                out the best starting point for your specific situation - no pitch, no pressure, no obligation.</p>
-              <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                </svg>
-                Book Your Strategy Call →
-              </a>
-            </div>
-          </div>
-          <br /><br />
-
-
-
-          <h3 class="section-title">Engagements Designed to Move the Needle</h3>
-          <p class="section-subtitle">
-            Your organization's challenges are unique. There are no one-size-fits-all solutions, only tailored
-            strategies that address your specific context. The engagements below are not a fixed menu, but rather common
-            starting points and examples of how we can partner to architect velocity in your organization.<br /><br />
-            Our work together will always begin with a deep-dive analysis to ensure the engagement is precisely designed
-            to achieve your desired outcomes.<br /><br />
-            Packages are outcome-oriented and designed to pay for themselves through reduced cycle time, lower defect
-            rates, and faster delivery.
-          </p>
-          <div class="offerings-grid">
-            <!-- Navigation Audit -->
-            <div class="offering-card" tabindex="0">
-              <div class="offering-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M16.2 7.8 11.4 12.6 7.8 16.2 12.6 11.4 16.2 7.8z" />
-                </svg>
-              </div>
-              <h4 class="offering-title">Navigating the Opportunities</h4>
-              <p class="offering-blurb">
-                A short, intensive engagement to detect and analyze the sources of drag in your system. We go beyond the
-                code to map the intersection of your technology, team dynamics, and product workflows. You come away
-                with a clear, actionable roadmap for unlocking momentum and a C-suite-ready business case for change.
-              </p>
-              <button class="btn-offering">A Strategic Deep-Dive</button>
-
-              <!-- Hover popup -->
-              <div class="offering-popup" aria-hidden="true">
-                <div class="offering-icon-wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M16.2 7.8 11.4 12.6 7.8 16.2 12.6 11.4 16.2 7.8z" />
-                  </svg>
-                </div>
-                <h5 class="popup-title">Navigating the Opportunities</h5>
-                <p>A short, intensive engagement to detect and analyze the sources of drag in your system. We go beyond
-                  the code to map the intersection of your technology, team dynamics, and product workflows. You come
-                  away with a clear, actionable roadmap for unlocking momentum and a C-suite-ready business case for
-                  change.<br /><br />
-                  <strong>Ideal for:</strong> Leaders who know things are slowing down but need a clear, objective
-                  analysis and a strategic plan to rally the organization around.
-                </p>
-                <a href="/navigating.html" class="btn-offering">A Strategic Deep-Dive</a>
-              </div>
-            </div>
-
-            <!-- AI-Augmented TDD Accelerator -->
-            <div class="offering-card" tabindex="0">
-              <div class="offering-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M9.5 2A2.5 2.5 0 0 1 12 4.5v0A2.5 2.5 0 0 1 9.5 7h0A2.5 2.5 0 0 1 7 4.5v0A2.5 2.5 0 0 1 9.5 2Z" />
-                  <path
-                    d="M14.5 2A2.5 2.5 0 0 1 17 4.5v0A2.5 2.5 0 0 1 14.5 7h0A2.5 2.5 0 0 1 12 4.5v0A2.5 2.5 0 0 1 14.5 2Z" />
-                  <path
-                    d="M12 7.5c-2.5 0-5 .5-5 2.5v1.5c0 1.5 1.2 2.5 2.5 2.5h.5c1.5 0 2.5 1.5 2.5 3v0c0 1.5-1 2.5-2.5 2.5h-5c-1.5 0-2.5-1-2.5-2.5v-1.5c0-2 2.5-2.5 5-2.5" />
-                  <path
-                    d="M12 7.5c2.5 0 5 .5 5 2.5v1.5c0 1.5-1.2 2.5-2.5 2.5h-.5c-1.5 0-2.5 1.5-2.5 3v0c0 1.5 1 2.5 2.5 2.5h5c1.5 0 2.5-1 2.5-2.5v-1.5c0-2-2.5-2.5-5-2.5" />
-                </svg>
-              </div>
-              <h4 class="offering-title">The Pilot Team Accelerator</h4>
-              <p class="offering-blurb">We select a single, high-impact team to serve as a pilot for the new operating
-                model. I work hands-on with them to implement <a href="/test-driven-navigation.html"><strong>Test-Driven
-                    Navigation (TDN)</strong></a>, clear critical blockers, and transform their workflow. The
-                goal is to create a lighthouse project — a resounding success story that demonstrates the new way of
-                working and builds momentum for broader change.</p>
-              <button class="btn-offering">Prove the Model</button>
-
-              <!-- Hover popup -->
-              <div class="offering-popup" aria-hidden="true">
-                <div class="offering-icon-wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M9.5 2A2.5 2.5 0 0 1 12 4.5v0A2.5 2.5 0 0 1 9.5 7h0A2.5 2.5 0 0 1 7 4.5v0A2.5 2.5 0 0 1 9.5 2Z" />
-                    <path
-                      d="M14.5 2A2.5 2.5 0 0 1 17 4.5v0A2.5 2.5 0 0 1 14.5 7h0A2.5 2.5 0 0 1 12 4.5v0A2.5 2.5 0 0 1 14.5 2Z" />
-                    <path
-                      d="M12 7.5c-2.5 0-5 .5-5 2.5v1.5c0 1.5 1.2 2.5 2.5 2.5h.5c1.5 0 2.5 1.5 2.5 3v0c0 1.5-1 2.5-2.5 2.5h-5c-1.5 0-2.5-1-2.5-2.5v-1.5c0-2 2.5-2.5 5-2.5" />
-                    <path
-                      d="M12 7.5c2.5 0 5 .5 5 2.5v1.5c0 1.5-1.2 2.5-2.5 2.5h-.5c-1.5 0-2.5 1.5-2.5 3v0c0 1.5 1 2.5 2.5 2.5h5c1.5 0 2.5-1 2.5-2.5v-1.5c0-2-2.5-2.5-5-2.5" />
-                  </svg>
-                </div>
-                <h5 class="popup-title">The Pilot Team Accelerator</h5>
-                <p>We select a single, high-impact team to serve as a pilot for the new operating model. I work hands-on
-                  with them to implement <a href="/test-driven-navigation.html"><strong>Test-Driven Navigation
-                      (TDN)</strong></a>, clear critical blockers, and transform their workflow. The goal is to create a
-                  lighthouse project — a resounding success story that demonstrates the new way of working and builds
-                  momentum for broader change.
-                </p>
-                <p><strong>Ideal for:</strong> Organizations that want to prove the value of this approach on a
-                  contained, high-leverage project before committing to a larger transformation.</p>
-                <a href="/accelerating.html" class="btn-offering">Prove the Model</a>
-              </div>
-            </div>
-
-            <!-- Legacy Rescue Sprints -->
-            <div class="offering-card" tabindex="0">
-              <div class="offering-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 3v12" />
-                  <path d="M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                  <path d="M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                  <path d="M18 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                  <path d="M6 15c0-2 2-3 4-3s4 1 4 3" />
-                  <path d="M6 9c0-2 2-3 4-3s4 1 4 3" />
-                </svg>
-              </div>
-              <h4 class="offering-title">The Leadership & Systems Overhaul</h4>
-              <p class="offering-blurb">This is a longer-term partnership where I act as a catalyst for systemic change.
-                We work together to redesign the core processes, upskill the technical leadership, and install the new
-                operating model across multiple teams. This engagement focuses on building the internal capability and
-                culture required to make business velocity a permanent, self-sustaining advantage.
-              </p>
-              <br /><br />
-              <button class="btn-offering">Drive the Transformation</button>
-
-              <!-- Hover popup -->
-              <div class="offering-popup" aria-hidden="true">
-                <div class="offering-icon-wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6 3v12" />
-                    <path d="M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                    <path d="M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                    <path d="M18 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                    <path d="M6 15c0-2 2-3 4-3s4 1 4 3" />
-                    <path d="M6 9c0-2 2-3 4-3s4 1 4 3" />
-                  </svg>
-                </div>
-                <h5 class="popup-title">The Leadership & Systems Overhaul</h5>
-                <p>This is a longer-term partnership where I act as a catalyst for systemic change. We work together to
-                  redesign the core processes, upskill the technical leadership, and install the new operating model
-                  across multiple teams. This engagement focuses on building the internal capability and culture
-                  required to make business velocity a permanent, self-sustaining advantage.<br /><br />
-                  <strong>Ideal for:</strong> CTOs and VPs of Engineering who are ready to lead a full-scale
-                  transformation and want a strategic partner to help architect and navigate the change.
-                </p>
-                <a href="/transforming.html" class="btn-offering">Drive the Transformation</a>
-              </div>
-            </div>
-
-            <!-- Fractional Head of Engineering -->
-            <div class="offering-card" tabindex="0">
-              <div class="offering-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M11 17a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2c0-3.3 2.7-6 6-6h2c3.3 0 6 2.7 6 6v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-2" />
-                  <path d="M7 10.7c0-2.3.8-4.5 2.2-6.2" />
-                  <path d="M17 10.7c0-2.3-.8-4.5-2.2-6.2" />
-                  <path d="M4 14.5c0-1.7.5-3.2 1.3-4.5" />
-                  <path d="M20 14.5c0-1.7-.5-3.2-1.3-4.5" />
-                </svg>
-              </div>
-              <h4 class="offering-title">The Strategic Advisor</h4>
-              <p class="offering-blurb">A flexible advisory retainer that provides you and your leadership team with
-                ongoing access for strategic guidance. Use this for navigating complex technical decisions, vetting new
-                strategies, coaching high-potential leaders, or simply having a trusted, external expert to serve as a
-                sounding board for your biggest challenges.
-              </p>
-              <button class="btn-offering">Your On-Demand Sparring Partner</button>
-
-              <!-- Hover popup -->
-              <div class="offering-popup" aria-hidden="true">
-                <div class="offering-icon-wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M11 17a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2c0-3.3 2.7-6 6-6h2c3.3 0 6 2.7 6 6v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-2" />
-                    <path d="M7 10.7c0-2.3.8-4.5 2.2-6.2" />
-                    <path d="M17 10.7c0-2.3-.8-4.5-2.2-6.2" />
-                    <path d="M4 14.5c0-1.7.5-3.2 1.3-4.5" />
-                    <path d="M20 14.5c0-1.7-.5-3.2-1.3-4.5" />
-                  </svg>
-                </div>
-                <h5 class="popup-title">The Strategic Advisor</h5>
-                <p>A flexible advisory retainer that provides you and your leadership team with ongoing access for
-                  strategic guidance. Use this for navigating complex technical decisions, vetting new strategies,
-                  coaching high-potential leaders, or simply having a trusted, external expert to serve as a sounding
-                  board for your biggest challenges.<br /><br />
-                  <strong>Ideal for:</strong> Leaders who don't need a full-time engagement but require consistent,
-                  high-level strategic counsel to stay ahead of the curve.
-                </p>
-                <a href="/aligning.html" class="btn-offering">Your On-Demand Sparring Partner</a>
-              </div>
-            </div>
-
-            <!-- Private Workshop (new) -->
-            <div class="offering-card" tabindex="0">
-              <div class="offering-icon-wrapper">
-                <!-- Book icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 19.5V5a2 2 0 0 1 2-2h12" />
-                  <path d="M20 22V3a2 2 0 0 0-2-2H6" />
-                  <path d="M4 22h12a2 2 0 0 0 2-2V3" />
-                </svg>
-              </div>
-              <h4 class="offering-title">The Team Workshop Series</h4>
-              <p class="offering-blurb">A customized series of intensive workshops designed to level-up your team's
-                capabilities in specific, high-impact areas. This is not just training; it's a hands-on, collaborative
-                session focused on solving one of your actual business problems using the principles of TDN and modern
-                software architecture.</p>
-              <button class="btn-offering">Upskill & Align</button>
-
-              <!-- Hover popup -->
-              <div class="offering-popup" aria-hidden="true">
-                <div class="offering-icon-wrapper">
-                  <!-- Book icon -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 19.5V5a2 2 0 0 1 2-2h12" />
-                    <path d="M20 22V3a2 2 0 0 0-2-2H6" />
-                    <path d="M4 22h12a2 2 0 0 0 2-2V3" />
-                  </svg>
-                </div>
-                <h5 class="popup-title">The Team Workshop Series</h5>
-                <p>A customized series of intensive workshops designed to level-up your team's capabilities in specific,
-                  high-impact areas. This is not just training; it's a hands-on, collaborative session focused on
-                  solving one of your actual business problems using the principles of TDN and modern software
-                  architecture.
-                  <br /><br />
-                  <strong>Ideal for:</strong> Teams that need a focused injection of new skills and a powerful alignment
-                  exercise to tackle a specific technical or product challenge.
-                </p>
-                <a href="/scaling.html" class="btn-offering">Upskill & Align</a>
-              </div>
-            </div>
-
-
-            <!-- The New "Roll Your Own" Option - The Capstone -->
-            <div class="offering-card" tabindex="0">
-              <div class="offering-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                  <path d="M12 8v8" />
-                  <path d="M8 12h8" />
-                  <path d="M8 8l8 8" />
-                  <path d="M8 16l8-8" />
-                </svg>
-              </div>
-              <h4 class="offering-title">The Bespoke Engagement: Your Vision, Your Framework</h4>
-              <p class="offering-blurb">Do none of the above perfectly match your needs? Excellent. The most impactful
-                engagements are often the ones we design from first principles.<br /><br />
-                This path starts with a blank slate. We begin with a deep, collaborative discussion about your specific
-                challenges, your desired outcomes, and the unique political and technical landscape of your
-                organization. From there, we co-create a completely bespoke partnership designed to deliver the precise
-                transformation you envision.
-              </p>
-              <button class="btn-offering">Outline Your Challenge</button>
-
-              <!-- Hover popup -->
-              <div class="offering-popup" aria-hidden="true">
-                <div class="offering-icon-wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 7l-5 5h5v5l5-5h-5V7z" />
-                    <path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z" />
-                    <path d="M12 21v-2a7 7 0 0 0 0-14v-2" />
-                    <path d="M21 12h-2a7 7 0 0 0-14 0H3" />
-                  </svg>
-                </div>
-                <h5 class="popup-title">The Bespoke Engagement: Your Vision, Your Framework</h5>
-                <p>Do none of the above perfectly match your needs? Excellent. The most impactful engagements are often
-                  the ones we design from first principles.<br /><br />
-                  This path starts with a blank slate. We begin with a deep, collaborative discussion about your
-                  specific challenges, your desired outcomes, and the unique political and technical landscape of your
-                  organization. From there, we co-create a completely bespoke partnership designed to deliver the
-                  precise transformation you envision.<br /><br />
-                  <strong>Ideal for:</strong> Leaders facing complex, cross-functional challenges that demand a unique,
-                  tailored approach built from the ground up.
-                </p>
-                <a href="/stabilizing.html" class="btn-offering">Outline Your Challenge</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Team-Based Executive ROI Calculator (TDN-focused) -->
-        <section class="roi-calculator-section" id="team-roi-calculator" style="padding: 3rem 0;">
-          <div class="container">
-            <h3 class="section-title">What Safe, Frequent Delivery Is Worth to Your Bottom Line</h3>
-            <p class="section-subtitle">Estimate the value your delivery teams could unlock by shipping more often with
-              low blast radius and AI-enabled guardrails.</p>
-
-            <div class="roi-team-grid"
-              style="display:grid; grid-template-columns: 1fr 1fr; gap:2rem; margin-top:1.5rem;">
-              <!-- Inputs -->
-              <div>
-                <label style="display:block; font-weight:600; margin-bottom:0.5rem;">Number of Delivery Teams</label>
-                <input type="number" id="teamroi-teams" value="3" min="1"
-                  style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #e5e5e5; margin-bottom:1rem;">
-
-                <label style="display:block; font-weight:600; margin-bottom:0.5rem;">Safe Cycles per Team per
-                  Quarter</label>
-                <input type="number" id="teamroi-cycles" value="12" min="1" step="1"
-                  style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #e5e5e5; margin-bottom:1rem;">
-                <div style="font-size:0.9rem; color:var(--color-neutral-600); margin-bottom:1rem;">(e.g., 12 = ~weekly
-                  safe releases)</div>
-
-                <label style="display:block; font-weight:600; margin-bottom:0.5rem;">Value per Delivery Cycle
-                  ($)</label>
-                <input type="number" id="teamroi-value" value="25000" min="0" step="500"
-                  style="width:100%; padding:0.6rem; border-radius:10px; border:1px solid #e5e5e5; margin-bottom:1rem;">
-                <div style="font-size:0.9rem; color:var(--color-neutral-600); margin-bottom:1rem;">(revenue, cost
-                  avoidance, compliance value, etc.)</div>
-
-                <label style="display:block; font-weight:600; margin-bottom:0.5rem;">Reliability: Baseline (no
-                  guardrails) %</label>
-                <input type="range" id="teamroi-rel-baseline" min="30" max="80" step="5" value="60"
-                  style="width:100%; margin-bottom:0.25rem;">
-                <div style="margin-bottom:1rem; color:var(--color-neutral-600);">Baseline reliability: <span
-                    id="teamroi-rbv">60%</span></div>
-
-                <label style="display:block; font-weight:600; margin-bottom:0.5rem;">Reliability with TDN (AI
-                  guardrails) %</label>
-                <input type="range" id="teamroi-rel-tdn" min="70" max="99" step="1" value="95"
-                  style="width:100%; margin-bottom:0.25rem;">
-                <div style="margin-bottom:1.25rem; color:var(--color-neutral-600);">TDN reliability: <span
-                    id="teamroi-rtv">95%</span></div>
-
-                <button id="teamroi-calc-btn" class="btn btn-primary"
-                  style="width:100%; border-radius:12px; padding:0.9rem; font-weight:700;">
-                  Calculate Team ROI
-                </button>
-              </div>
-
-              <!-- Outputs -->
-              <div>
-                <div
-                  style="border-radius:12px; padding:1.25rem; background:var(--color-neutral-50); border:1px solid #e5e5e5;">
-                  <h4 class="roi-output-title" style="margin-top:0; margin-bottom:0.5rem;">ROI Summary</h4>
-
-                  <p id="teamroi-quarterly-baseline" style="margin:0.6rem 0; color:var(--color-neutral-700);">
-                    <strong>Quarterly (Baseline):</strong> —
-                  </p>
-                  <p id="teamroi-quarterly-tdn" style="margin:0.6rem 0; color:var(--color-neutral-700);">
-                    <strong>Quarterly (With TDN):</strong> —
-                  </p>
-                  <p id="teamroi-quarterly-delta" style="margin:0.6rem 0; color:var(--color-neutral-700);"><strong>Delta
-                      Unlocked / Quarter:</strong> —</p>
-
-                  <hr style="border:none; border-top:1px solid #ececec; margin:1rem 0;">
-
-                  <p id="teamroi-annual-baseline" style="margin:0.4rem 0; color:var(--color-neutral-700);">
-                    <strong>Annual (Baseline):</strong> —
-                  </p>
-                  <p id="teamroi-annual-tdn" style="margin:0.4rem 0; color:var(--color-neutral-700);"><strong>Annual
-                      (With TDN):</strong> —</p>
-                  <p id="teamroi-annual-delta" style="margin:0.4rem 0; color:var(--color-neutral-700);"><strong>Delta
-                      Unlocked / Year:</strong> —</p>
-
-                  <div style="margin-top:1rem;">
-                    <div style="font-size:0.95rem; color:var(--color-neutral-700); margin-bottom:0.5rem;">
-                      <strong>Equivalent:</strong> Team-capacity freed
-                    </div>
-                    <div id="teamroi-equiv" style="font-weight:700; font-size:1.05rem; color:var(--color-neutral-800);">
-                      — teams worth</div>
-                  </div>
-
-                  <div style="margin-top:1rem;">
-                    <a href="https://app.cal.com/alex-bunardzic" class="btn btn-secondary"
-                      style="border-radius:10px; padding:0.6rem 1rem; font-weight:600; display:inline-block;">
-                      Schedule a Velocity Briefing →
-                    </a>
-                  </div>
-                </div>
-
-                <!-- Tiny bar chart -->
-                <div style="margin-top:1rem;">
-                  <svg id="teamroi-chart" width="100%" height="70" viewBox="0 0 600 70" preserveAspectRatio="none"
-                    style="background:transparent;">
-                    <text x="10" y="16" font-size="12" fill="#6b7280">Baseline</text>
-                    <text x="10" y="42" font-size="12" fill="#6b7280">With TDN</text>
-
-                    <rect id="teamroi-baseline-bar" x="120" y="4" width="0" height="18" rx="6" fill="#d1d5db"></rect>
-                    <rect id="teamroi-tdn-bar" x="120" y="30" width="0" height="18" rx="6" fill="#111827"></rect>
-
-                    <text id="teamroi-chart-max" x="580" y="16" font-size="12" fill="#6b7280" text-anchor="end"></text>
-                    <text id="teamroi-chart-max2" x="580" y="42" font-size="12" fill="#111827" text-anchor="end"></text>
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <!-- interpretive caption -->
-            <p style="text-align:center; font-size:0.95rem; margin-top:1.5rem; color:var(--color-neutral-600);">
-              This model treats the <strong>team</strong> as the smallest unit of delivery — value grows by shipping
-              <em>small, safe, reversible changes frequently</em> with AI guardrails that reduce risk and accelerate
-              ROI.
-            </p>
-          </div>
-          <p style="text-align:center; font-size:0.8rem; margin-top:1rem; color:var(--color-neutral-500);">
-            Disclaimer: This calculator provides <em>illustrative estimates only</em>. Figures shown are hypothetical,
-            for educational purposes, and should not be interpreted as guarantees, promises, or financial advice.
-          </p>
-
-
-          <!-- SECTION 6: ROI CALCULATOR CTA -->
-          <div
-            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; margin: 0px 0;">
-            <h3 style="color: white; font-size: 1.8rem; margin-top: 0;">See Significant Potential ROI?</h3>
-
-            <p style="font-size: 1.2rem; margin: 25px 0;">Let's discuss how Test-Driven Navigation could unlock this
-              value in your specific context.</p>
-
-            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 8px; margin: 25px 0;">
-              <p style="margin: 0; font-size: 1.1rem;"><strong>As a founding client, you receive:</strong></p>
-              <ul style="text-align: left; max-width: 500px; margin: 20px auto; padding-left: 20px;">
-                <li>Priority access to TDN tools and resources</li>
-                <li>Lifetime advisory access (4 hours/quarter)</li>
-              </ul>
-            </div>
-
-            <a href="https://app.cal.com/alex-bunardzic"
-              style="display: inline-block; background: white; color: #667eea; padding: 18px 40px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; margin-top: 20px;">Book
-              Your Founding Client Strategy Call →</a>
-
-            <p style="font-size: 0.9rem; margin-top: 25px; opacity: 0.9;">Only 2 spots remaining for Q2 2026</p>
-
-        </section>
-
-        <script>
-          (function () {
-            // helper formatter
-            function money(n) {
-              return '$' + Number(n).toLocaleString(undefined, { maximumFractionDigits: 0 });
-            }
-
-            // main calculation - robust parsing + guard
-            function calculateTeamROI() {
-              const T = Math.max(0, parseFloat(document.getElementById('teamroi-teams').value) || 0);
-              const C = Math.max(0, parseFloat(document.getElementById('teamroi-cycles').value) || 0);
-              const V = Math.max(0, parseFloat(document.getElementById('teamroi-value').value) || 0);
-
-              const Rb = (parseFloat(document.getElementById('teamroi-rel-baseline').value) || 0) / 100;
-              const Rt = (parseFloat(document.getElementById('teamroi-rel-tdn').value) || 0) / 100;
-
-              // Quarterly ROI = T * C * V * Reliability
-              const quarterlyBaseline = T * C * V * Rb;
-              const quarterlyTdn = T * C * V * Rt;
-              const quarterlyDelta = quarterlyTdn - quarterlyBaseline;
-
-              const annualBaseline = quarterlyBaseline * 4;
-              const annualTdn = quarterlyTdn * 4;
-              const annualDelta = quarterlyDelta * 4;
-
-              // per-team baseline quarter for equivalence (avoid 0)
-              const perTeamBaselineQuarter = Math.max(1, (C * V * Rb));
-              const teamEquivalents = quarterlyDelta / perTeamBaselineQuarter;
-
-              // update outputs
-              document.getElementById('teamroi-quarterly-baseline').innerHTML = '<strong>Quarterly (Baseline):</strong> ' + money(quarterlyBaseline);
-              document.getElementById('teamroi-quarterly-tdn').innerHTML = '<strong>Quarterly (With TDN):</strong> ' + money(quarterlyTdn);
-              document.getElementById('teamroi-quarterly-delta').innerHTML = '<strong>Delta Unlocked / Quarter:</strong> ' + money(quarterlyDelta);
-
-              document.getElementById('teamroi-annual-baseline').innerHTML = '<strong>Annual (Baseline):</strong> ' + money(annualBaseline);
-              document.getElementById('teamroi-annual-tdn').innerHTML = '<strong>Annual (With TDN):</strong> ' + money(annualTdn);
-              document.getElementById('teamroi-annual-delta').innerHTML = '<strong>Delta Unlocked / Year:</strong> ' + money(annualDelta);
-
-              document.getElementById('teamroi-equiv').innerText = (teamEquivalents >= 0 ? teamEquivalents.toFixed(2) : '0.00') + ' team-quarters (value)';
-
-              // update mini chart
-              const theoreticalMax = T * C * V; // 100% potential
-              drawBars(theoreticalMax, quarterlyBaseline, quarterlyTdn, Rb, Rt);
-
-            }
-
-            // draw bars into the SVG; ensures visible difference
-            function drawBars(theoreticalMax, baselineValue, tdnValue, Rb, Rt) {
-              const maxV = theoreticalMax || 1;
-              const svgWidth = 440; // available width for bars
-              const baselineWidth = Math.max(6, Math.round((baselineValue / maxV) * svgWidth));
-              const tdnWidth = Math.max(6, Math.round((tdnValue / maxV) * svgWidth));
-
-              // Update bars
-              document.getElementById('teamroi-baseline-bar').setAttribute('width', baselineWidth);
-              document.getElementById('teamroi-tdn-bar').setAttribute('width', tdnWidth);
-
-              // % labels inside bars
-              const baselinePct = Math.round(Rb * 100) + "% of potential";
-              const tdnPct = Math.round(Rt * 100) + "% of potential";
-
-              let baselineLabel = document.getElementById('teamroi-baseline-pct');
-              if (!baselineLabel) {
-                baselineLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                baselineLabel.setAttribute("id", "teamroi-baseline-pct");
-                baselineLabel.setAttribute("y", 17);
-                baselineLabel.setAttribute("fill", "#374151");
-                baselineLabel.setAttribute("font-size", "11");
-                document.getElementById('teamroi-chart').appendChild(baselineLabel);
-              }
-              baselineLabel.setAttribute("x", 125);
-              baselineLabel.textContent = baselinePct;
-
-              let tdnLabel = document.getElementById('teamroi-tdn-pct');
-              if (!tdnLabel) {
-                tdnLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                tdnLabel.setAttribute("id", "teamroi-tdn-pct");
-                tdnLabel.setAttribute("y", 43);
-                tdnLabel.setAttribute("fill", "#ffffff");
-                tdnLabel.setAttribute("font-size", "11");
-                document.getElementById('teamroi-chart').appendChild(tdnLabel);
-              }
-              tdnLabel.setAttribute("x", 125);
-              tdnLabel.textContent = tdnPct;
-
-              // Dollar labels (always above bars, shifted right a bit)
-              const offset = 600; // position near far right
-              const baselineDollar = document.getElementById('teamroi-chart-max');
-              baselineDollar.setAttribute("x", offset);
-              baselineDollar.setAttribute("y", 16);
-              baselineDollar.textContent = money(Math.round(baselineValue));
-
-              const tdnDollar = document.getElementById('teamroi-chart-max2');
-              tdnDollar.setAttribute("x", offset);
-              tdnDollar.setAttribute("y", 42);
-              tdnDollar.textContent = money(Math.round(tdnValue));
-
-              // Ensure dollar labels render on top by moving them to end of <svg>
-              const svg = document.getElementById('teamroi-chart');
-              svg.appendChild(baselineDollar);
-              svg.appendChild(tdnDollar);
-            }
-
-
-            // sync slider labels and auto-calc on input
-            const inputsToWatch = [
-              'teamroi-teams', 'teamroi-cycles', 'teamroi-value',
-              'teamroi-rel-baseline', 'teamroi-rel-tdn'
-            ];
-            inputsToWatch.forEach(id => {
-              const el = document.getElementById(id);
-              if (!el) return;
-              el.addEventListener('input', function () {
-                // update the visible percent text for ranges
-                if (id === 'teamroi-rel-baseline') {
-                  document.getElementById('teamroi-rbv').textContent = this.value + '%';
-                }
-                if (id === 'teamroi-rel-tdn') {
-                  document.getElementById('teamroi-rtv').textContent = this.value + '%';
-                }
-                // recalc live
-                calculateTeamROI();
-              });
-            });
-
-            // also wire the calculate button
-            const calcBtn = document.getElementById('teamroi-calc-btn');
-            if (calcBtn) calcBtn.addEventListener('click', calculateTeamROI);
-
-            // initial render
-            calculateTeamROI();
-          })();
-        </script>
-
-
-
-        <!-- Talk Highlight Section -->
-        <section class="talk-highlight-section">
-          <div class="container talk-highlight-grid">
-            <div class="talk-info">
-              <h3 class="section-title text-white">AI and The Future of Refactoring: Test‑Driven Navigation</h3>
-              <p class="section-subtitle text-neutral-300">Fresh from Devoxx Belgium, this talk shows how AI can pair
-                with tests to steer refactors safely through legacy code. Ask about an in‑house version tailored to your
-                stack.</p>
-              <div class="talk-buttons">
-                <a href="https://www.youtube.com/watch?v=tH8aqbHWgIM" target="_blank" rel="noreferrer"
-                  class="btn btn-talk-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                  </svg>
-                  View my session
-                </a>
-                <a href="#services" class="btn btn-talk-secondary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-                    <path
-                      d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
-                    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
-                    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
-                  </svg>
-                  Bring it to my team
-                </a>
-              </div>
-            </div>
-            <div class="workshop-outcomes">
-              <div class="outcomes-card">
-                <h4 class="outcomes-title">Workshop outcomes</h4>
-                <ul class="outcomes-list">
-                  <li>Refactor confidently with executable tests as a compass</li>
-                  <li>Adopt mutation testing to harden your safety net</li>
-                  <li>Use AI to generate, explain & evolve tests</li>
-                  <li>Shorten cycle time and defect escape rate</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about-section">
-          <div class="container">
-            <h3 class="section-title">About Alex Bunardzic</h3>
-            <p class="about-text">
-            <p style="font-size: 1.1rem; color: #334155; margin: 25px 0;">I didn't set out to create Test-Driven
-              Navigation (TDN). I set out to solve a problem that kept showing up everywhere I worked.</p>
-
-            <p>Over the past 20 years, I've watched brilliant engineering teams drown in technical debt. I've seen
-              organizations
-              spend millions on "digital transformation" that left them slower than before. I've watched teams paralyzed
-              by fear of breaking production, unable to ship the innovations they knew the business needed.</p>
-
-            <p><strong>The pattern was always the same:</strong> Teams optimizing for speed without building the system
-              to sustain it.</p>
-
-            <p>Then in 2023, generative AI arrived. Suddenly, every team had a new superpower: code that writes itself.
-              But I watched the same pattern repeat - only faster. Teams were generating technical debt at AI speed,
-              with
-              no systematic way to keep their systems healthy.</p>
-
-            <p style="font-size: 1.1rem; color: #334155; margin: 25px 0;"><strong>That's when Test-Driven Navigation
-                crystallized.</strong></p>
-
-            <p>It's the synthesis of everything I learned:</p>
-            <ul>
-              <li>Leading engineering teams at Raymond James, WorkSafeBC, and enterprise platforms across fintech and
-                healthcare</li>
-              <li>Organizing the first International TDD Conference and evangelizing test-first thinking for decades
-              </li>
-              <li>Modernizing SDLCs with XP/TDD practices that actually stick</li>
-              <li>Watching AI tools transform from theoretical to production-critical in 18 months</li>
-            </ul>
-
-            <p>TDN isn't just a development technique - it's a management framework for making your technology a direct,
-              responsive driver of your business strategy. It's the answer to the question: <strong>How do you build
-                organizations that can evolve continuously without collapsing under their own complexity?</strong></p>
-
-            <hr>
-
-            <p style="font-size: 1.1rem; color: #334155;"><strong>I'm now accepting up to 3 founding clients to prove
-                this framework delivers transformative results.</strong></p>
-
-            <p>If you're a CTO or VP of Engineering who's tired of watching your technology hold you back, let's talk. I
-              bring decades of hands-on experience, a proven track record across industries, and a framework designed
-              specifically for the AI era.</p>
-
-            <p><strong>Most importantly:</strong> As a founing client, you'll help shape how TDN evolves while getting
-              elite consulting at a fraction of the normal cost.</p>
-
-            <a href="https://app.cal.com/alex-bunardzic" class="btn btn-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="16" x="2" y="4" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
-              Book Your Founding Client Strategy Call →
-            </a>
-            <div class="about-links">
-              <a href="https://opensource.com/users/alex-bunardzic" target="_blank" rel="noreferrer">Articles</a>
-              <a href="https://medium.com/@alexbunardzic" target="_blank" rel="noreferrer">Essays</a>
-              <a href="https://www.youtube.com/user/alexbunardzic" target="_blank" rel="noreferrer">Videos</a>
-              <a href="https://tddconference.github.io/" target="_blank" rel="noreferrer">TDD Conference</a>
-              <a href="published-work.html" target="_blank" class="cta-button">Explore A Selection Of My Published
-                Work</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="lead-magnet-section">
-          <div class="container">
-            <h1 class="section-title">What Leaders Say About Working With Me</h1>
-            <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px; margin: 25px 0;">
-              <p style="margin: 0;"><strong>Important context:</strong> While Test-Driven Navigation is a new framework
-                I formalized in 2024, it's built on decades of proven practices. These leaders have worked with me
-                across fintech, healthcare, and enterprise platforms - implementing the core principles of continuous
-                delivery, test-first thinking, and AI-augmented development that now form the foundation of TDN.</p>
-            </div>
-            <h3 class="section-title">Testimonials</h3><br />
-            <table>
-              <tr>
-                <td valign="top">
-                  <a href="https://www.linkedin.com/in/mcsee/" target="_blank" rel="noreferrer">
-                    <img src="maxi_contieri.jpeg" width="50" />
-                    <div valign="top"><strong>Maximiliano Contieri</strong></div>
-                  </a>
-                  <br>Engineering Manager@Avature | CS Teacher@UBA | Book Author@O'Reilly | MaximilianoContieri.com</br>
-                  <p>Alex has demonstrated a deep knowledge of software engineering principles and the best practices
-                    ins software development. His presentations capture audiences with clear, insightful, and engaging
-                    content. He has a remarkable ability to break down complex concepts into understandable terms,
-                    making him an excellent mentor and speaker.</p>
-                  <p>Alex's expertise in Test-Driven Development (TDD) is unparalleled, consistently delivering robust
-                    and reliable code. Alex's humanist approach ensures that he not only excels technically but also
-                    pushes for collaborative and team work environment. His dedication to both the craft and the people
-                    he works with makes him an invaluable asset to any team.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td valign="top">
-                  <a href="https://www.linkedin.com/in/danielmoka/" target="_blank" rel="noreferrer">
-                    <img src="daniel_moka.jpeg" width="50" />
-                    <div valign="top"></div><strong>Daniel Moka</strong>
-          </div>
-          </a>
-          <br>Moka IT Engineering</br>
-          <p>I am in contact with Alex for a while about pushing the boundaries of the software industry, and I have to
-            admit that I have never met with such a skilled and professional software engineer as Alex!</p>
-
-          <p>The level of the drive he represents about best software engineering practices is unprecedented! He puts
-            great emphasis on producing quality software and on doing the best to make the customer happy. He has strong
-            and solid background in agile methodologies such as Extreme Programming and Test Driven Development, and in
-            building software in the best possible and agile way.</p>
-
-          <p>I am convinced that Alex will provide significant value to the company he will work for and I sincerely
-            hope to get the chance to be involved in projects together with Alex in the future.</p>
-          </td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-
-          <tr>
-            <td valign="top">
-              <a href="https://www.linkedin.com/in/wpschaub/" target="_blank" rel="noreferrer">
-                <img src="willy_schaub.jpeg" width="50" />
-                <div valign="top"><strong>Willy-Peter Schaub</strong></div>
-              </a>
-              Encourage and enable everyone's creativity, passion, purpose, and strengths.
-              <p>Alex was a pivotal part of our common engineering team, responsible to bring together people,
-                processes, and products to enable software engineering to consistently deliver high-quality value to
-                end-users with a focus on efficiency, security, and innovation. He was a consistent driving force in
-                elevating software engineering practices and quality assurance, never hesitating to challenge
-                conventional thinking when it stands in the way of progress. His commitment to empowering users, whether
-                through embracing emerging technologies or solving complex challenges across people, processes, or
-                products, has made a lasting impact. I have always admired his philosophy of “think outside, no box
-                required,” which perfectly captures his boundaryless approach to innovation. Watching engineers
-                initially flustered by his unconventional ideas, only to have their light bulbs switch on as they grasp
-                the depth and clarity of his insights, has been one of the most rewarding experiences of working
-                alongside him</p>
-            </td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td valign="top">
-              <a href="https://www.linkedin.com/in/christine-ozeroff-a743b714/" target="_blank" rel="noreferrer">
-                <img src="christine_ozeroff.jpeg" width="40" />
-                <div valign="top"></div><strong>Christine Ozeroff</strong>
+<!-- ═══════════════════════════════════════
+     NAV
+════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">Alex Bunardzic</span>
+    <ul class="nav-links">
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#how">The Approach</a></li>
+      <li><a href="#engagements">Work Together</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="https://app.cal.com/alex-bunardzic" class="nav-cta">Book a Diagnostic →</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO — outcomes only. TDN = zero mentions.
+     Prospect must feel seen before they see a framework name.
+════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-context">
+        <span class="hero-tag">CTO &amp; VP Engineering Advisory</span>
+        <span class="hero-dot"></span>
+        <span class="hero-tag">Vancouver · Global</span>
+      </div>
+      <h1>AI is shipping code faster.<br>Your architecture is paying <em>the bill.</em></h1>
+      <p class="hero-sub">
+        I help engineering leaders at AI-accelerated companies restore what AI quietly erodes:
+        <strong>confidence that what you ship will hold.</strong>
+        Faster delivery. Fewer incidents. Architecture that bends instead of snapping.
+      </p>
+      <div class="hero-actions">
+        <a href="https://app.cal.com/alex-bunardzic" class="btn-primary">
+          Book a 30-Minute Diagnostic →
+        </a>
+        <a href="https://www.youtube.com/watch?v=tH8aqbHWgIM" class="btn-ghost">
+          Watch the Devoxx talk ↗
+        </a>
+      </div>
     </div>
-    </a>
-    <br>Manager at WorkSafeBC</br>
-    <p>I had the pleasure of working with Alex at WorkSafeBC, where we partnered on designing and delivering the
-      educational curriculum that trained nine DevOps pods in software engineering best practices. Alex is not only an
-      excellent listener, but also genuinely curious and open to exploring new ways to strengthen team practices. Our
-      collaboration was both enjoyable and impactful, resulting in several innovative initiatives that supported the
-      DevOps teams in adopting best practices and delivering greater value.</p>
-    </td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://www.linkedin.com/in/illyaswan/" target="_blank" rel="noreferrer">
-          <img src="illya_swan.jpeg" width="40" />
-          <div valign="top"></div><strong>Illya Swan</strong>
-  </div>
-  </a>
-  <br>Chief Product Officer @ CoinPayments | Lean Six Sigma Green Belt</br>
-  <p>Alex has an indispensable trait of confirming hypotheses before developing solutions to business problems. It
-    has
-    saved everyone a lot of wasted efforts when the first impulse is to treat symptoms of a problem instead of
-    getting
-    to the root cause. Under his careful guidance, work was noticeably more effective.</p>
-  </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://www.linkedin.com/in/seanwhudson/" target="_blank" rel="noreferrer">
-        <img src="sean_hudson.jpeg" width="40" />
-        <div valign="top"></div><strong>Sean Hudson</strong></div>
-      </a>
-      <br>Shopify | (prev) Tech founder Propel | Next Canada alumni | UBC Engineer</br>
-      <p>Alex is an accomplished software architect, with a penchant for breaking large problems into simple solutions.
-        He is kind, funny, honest, and a great teacher of foundational software engineering skills. I recall from
-        working beside his desk, that the projects he led (TDD style, with full test suites) were of similar complexity
-        and size to others at our Staples dev shop, but were managed flawlessly by his experienced hand and with much
-        smaller teams. If you're in need of an effective software architect who loves to get in the weeds and help those
-        around him, then Alex should be at the top of your list.</p>
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://www.linkedin.com/in/aleksandar-kostic-b944aa1/" target="_blank" rel="noreferrer">
-        <img src="aleksandar_kostic.jpeg" width="40" />
-        <div valign="top"></div><strong>Aleksandar Kostic</strong></div>
-      </a>
-      <br>Integration Architect</br>
-      <p>Knowing Alex for number of years and enjoying and benefiting from discussions on various theoretical and
-        practical problems, did not prevent me to be amazed during our work together with his technical and theoretical
-        expertise in all related fields in our work. Moreover, Alex has another wonderful ability of presenting and
-        transferring knowledge to others, making our collaboration in the team true success. </p>
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <td valign="top">
-    <a href="https://www.linkedin.com/in/eugenelin89/" target="_blank" rel="noreferrer">
-      <img src="eugene_lin.jpeg" width="40" />
-      <div valign="top"></div><strong>Eugene Lin</strong></div>
-    </a>
-    <br>Certified Treasury Professional (CTP). DeFi, Web3, Blockchain</br>
-    <p>When I worked with Alex on the same team, Alex led the effort on improving the team's development methodologies
-      and did an amazing job. Alex introduced TDD to the team and set up structures to how the young team performed
-      software engineering tasks. Alex's effort resulted in significant improvement in delivery time and quality,
-      literally eliminated bugs in our product while meeting all requirements and deadlines. I would highly recommend
-      Alex to any software team that is looking to optimize its practice.</p>
-  </td>
-  </tr>
-  </table>
-  </div>
-  </section>
 
-  <!-- Lead Magnet Section -->
-  <section class="lead-magnet-section">
-    <div class="container lead-magnet-grid">
-      <div>
-        <h3 class="lead-magnet-title">Free Field Guide: Test Driven Navigation (TDN)</h3>
-        <p class="lead-magnet-text">
-          A concise, 10-page PDF covering Test Driven Navigation and AI pairing patterns. Perfect for business and
-          engineering leaders who need results in 90 days.
+    <div class="hero-card">
+      <p class="outcomes-label">What clients come away with</p>
+      <ul class="outcome-list">
+        <li>
+          <span class="outcome-check">✓</span>
+          Delivery that's fast <em>and</em> predictable — not one at the expense of the other
+        </li>
+        <li>
+          <span class="outcome-check">✓</span>
+          AI that accelerates your team instead of quietly compounding technical debt
+        </li>
+        <li>
+          <span class="outcome-check">✓</span>
+          Refactoring that's safe enough to do continuously, not just when it's critical
+        </li>
+        <li>
+          <span class="outcome-check">✓</span>
+          Engineers spending more time on intent and less time reacting to fires
+        </li>
+        <li>
+          <span class="outcome-check">✓</span>
+          A codebase that bends with the business instead of fighting it
+        </li>
+      </ul>
+      <div class="hero-card-divider"></div>
+      <div class="social-mini">
+        <div class="social-mini-item">
+          <span class="social-mini-num">34</span>
+          <span class="social-mini-label">&nbsp;years designing &amp; delivering software</span>
+        </div>
+        <div class="social-mini-item">
+          <span class="social-mini-num">2</span>
+          <span class="social-mini-label">&nbsp;international conference keynotes · 2025–26</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PROOF WALL — immediately after hero
+════════════════════════════════════════ -->
+<div class="proof">
+  <div class="inner">
+    <div class="proof-grid">
+      <div class="proof-item fade-up">
+        <p class="proof-quote">
+          His hands-on approach and deep technical expertise made him the go-to person when our teams needed innovative solutions to complex problems. His strong opinions are always backed by solid reasoning and real-world experience.
         </p>
-        <h3>What You'll Learn:</h3>
-        <ul>
-          <li>Implement Test Driven Navigation in your projects</li>
-          <li>Leverage AI pairing patterns for better results</li>
-          <li>Deliver measurable outcomes in 90 days</li>
-          <li>Optimize workflows for business and engineering teams</li>
-          <li>Apply practical examples and case studies</li>
+        <div class="proof-attr">
+          <span class="proof-name">Andre Kaminski</span>
+          <span class="proof-role">Director, Advanced Technology Solutions</span>
+          <span class="proof-org">WorkSafeBC</span>
+        </div>
+      </div>
+      <div class="proof-item fade-up">
+        <p class="proof-quote">
+          Alex was successful in capturing my vision and solving countless problems to deliver programs that always exceeded my expectations. I always appreciated his out-of-the-box thinking and his can-do attitude.
+        </p>
+        <div class="proof-attr">
+          <span class="proof-name">Sandy Martin</span>
+          <span class="proof-role">Senior Compliance Executive</span>
+          <span class="proof-org">Raymond James Ltd</span>
+        </div>
+      </div>
+      <div class="proof-item fade-up">
+        <p class="proof-quote">
+          He has a gift for making complex ideas feel accessible while still challenging you to think more broadly. Every interaction has been thought-provoking and energizing. His presence is invaluable.
+        </p>
+        <div class="proof-attr">
+          <span class="proof-name">Woody Zuill</span>
+          <span class="proof-role">Agile Guide &amp; Senior Consultant</span>
+          <span class="proof-org">Agile Expertise &amp; Coaching</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     THE PROBLEM — The Velocity Trap, named
+════════════════════════════════════════ -->
+<section class="problem" id="problem">
+  <div class="inner">
+    <div class="problem-grid">
+      <div>
+        <p class="eyebrow">The Problem</p>
+        <h2 class="section-h">Welcome to the Velocity Trap</h2>
+        <div class="problem-prose">
+          <p>
+            Your sprint metrics look great. AI is shipping code faster than ever.
+            Engineers are busy, boards are happy. And yet —
+            <strong>release confidence is quietly collapsing.</strong>
+            Reviews take longer. Incidents take longer to contain. Refactors feel dangerous.
+            The system is speeding up and stiffening at the same time.
+          </p>
+          <p>
+            This is the Velocity Trap: <strong>AI dramatically increases output
+            but also amplifies every existing weakness in your delivery system.</strong>
+            Teams generating technical debt at AI speed, with no systematic way to
+            keep their architecture healthy.
+          </p>
+          <p>
+            The standard fixes — more code review, more testing, better tooling — don't
+            solve it. They address the symptom. <strong>The real problem is that engineers
+            are simultaneously deciding where to go and managing how the system stays correct.</strong>
+            At AI speed, that coupling doesn't hold.
+          </p>
+          <p>
+            <strong>Velocity without navigation is not progress.</strong>
+            It's acceleration in an unknown direction with a degrading map.
+          </p>
+        </div>
+      </div>
+      <div class="trap-card">
+        <p class="trap-card-label">You may be in the trap if…</p>
+        <ul class="trap-list">
+          <li><span class="trap-arrow">→</span> AI is generating code faster than your team can review it</li>
+          <li><span class="trap-arrow">→</span> Refactoring feels risky enough that it doesn't happen</li>
+          <li><span class="trap-arrow">→</span> Sprint velocity is up but release confidence is down</li>
+          <li><span class="trap-arrow">→</span> Technical debt is growing, disguised as productivity</li>
+          <li><span class="trap-arrow">→</span> Your best engineers spend more time reacting than thinking</li>
+          <li><span class="trap-arrow">→</span> Architecture decisions are made by whoever moves fastest</li>
+        </ul>
+        <div class="trap-pill">If 3 or more of these land —<br>we should talk.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     OUTCOMES — what the exit from the trap looks like.
+     Still no framework name. Outcomes are the product.
+════════════════════════════════════════ -->
+<section class="outcomes" id="outcomes">
+  <div class="inner">
+    <p class="eyebrow">The Exit</p>
+    <h2 class="section-h">What it looks like on the other side</h2>
+    <p class="section-sub">
+      Organizations that have worked through this transition describe the same set of
+      changes — in roughly the same order.
+    </p>
+    <div class="outcomes-grid">
+      <div class="outcome-card fade-up">
+        <div class="outcome-icon">⟳</div>
+        <div class="outcome-title">Delivery becomes measurable</div>
+        <p class="outcome-desc">
+          Instead of "it feels slow," there are clear signals — cycle time, defect
+          escape rate, refactor frequency — that tell you how the system is actually performing.
+        </p>
+      </div>
+      <div class="outcome-card fade-up">
+        <div class="outcome-icon">⬡</div>
+        <div class="outcome-title">AI becomes a force multiplier</div>
+        <p class="outcome-desc">
+          Not a chaos source. AI executes. Engineers navigate. The split is clean
+          enough that AI speed becomes real speed, not disguised risk.
+        </p>
+      </div>
+      <div class="outcome-card fade-up">
+        <div class="outcome-icon">↯</div>
+        <div class="outcome-title">Refactoring becomes routine</div>
+        <p class="outcome-desc">
+          When the guardrails are in place, changing the system stops being
+          a special project and becomes something that happens continuously, safely.
+        </p>
+      </div>
+      <div class="outcome-card fade-up">
+        <div class="outcome-icon">◈</div>
+        <div class="outcome-title">Quality regressions surface early</div>
+        <p class="outcome-desc">
+          Problems are caught before they compound. Small failures are welcome —
+          they're cheap to fix. Large incidents stop being inevitable.
+        </p>
+      </div>
+      <div class="outcome-card fade-up">
+        <div class="outcome-icon">△</div>
+        <div class="outcome-title">Engineers think like architects</div>
+        <p class="outcome-desc">
+          The shift isn't about hiring senior people. It's about changing
+          what your existing team is being asked to do moment-to-moment.
+        </p>
+      </div>
+      <div class="outcome-card fade-up">
+        <div class="outcome-icon">→</div>
+        <div class="outcome-title">Architecture serves the business</div>
+        <p class="outcome-desc">
+          The codebase stops being a record of past decisions and becomes
+          a living system that reflects current strategy. It bends instead of snapping.
+        </p>
+      </div>
+    </div>
+    <blockquote class="outcomes-callout">
+      "Alex introduced TDD to the team and set up structures that resulted in significant
+      improvement in delivery time and quality — literally eliminated bugs in our product
+      while meeting all requirements and deadlines."
+      <cite>— Eugene Lin, Engineer (fintech)</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     THE HOW — TDN revealed here, as the mechanism
+     behind the outcomes already established above
+════════════════════════════════════════ -->
+<section class="how" id="how">
+  <div class="inner">
+    <div class="how-reveal">
+      <p class="how-reveal-label">The Method — Test-Driven Navigation</p>
+      <h2>There's a specific reason the outcomes above are achievable systematically.</h2>
+      <p>
+        Every outcome described above depends on solving the same underlying problem:
+        <strong>humans and AI need to play different roles, with tests defining
+        the boundary between them.</strong> Without that boundary, AI speed
+        becomes a liability. With it, AI becomes a precision instrument.
+      </p>
+      <p>
+        The framework I use to establish that boundary is called
+        <strong>Test-Driven Navigation (TDN)</strong> — an evolution of Test-Driven Development
+        designed specifically for AI-assisted software delivery. I introduced it in my
+        closing talk at Devoxx Belgium and presented it internationally at the
+        International Software Quality Days in Vienna.
+      </p>
+      <div class="tdn-diagram">
+        <div class="tdn-col">
+          <div class="tdn-col-label human">Human — Navigates</div>
+          <ul>
+            <li>What should happen next</li>
+            <li>Business intent &amp; priorities</li>
+            <li>Architectural tradeoffs</li>
+            <li>Where the system should go</li>
+          </ul>
+        </div>
+        <div class="tdn-mid">
+          <div class="tdn-mid-line"></div>
+          <div class="tdn-mid-label">tests</div>
+          <div class="tdn-mid-line"></div>
+        </div>
+        <div class="tdn-col">
+          <div class="tdn-col-label ai">AI — Executes</div>
+          <ul>
+            <li>How to implement safely</li>
+            <li>Refactoring mechanics</li>
+            <li>Maintaining consistency</li>
+            <li>Enforcing constraints at scale</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tdn-anchor">
+        <span class="tdn-anchor-glyph">⬡</span>
+        <div>
+          <div class="tdn-anchor-title">Tests are not a checklist. They're a navigation instrument.</div>
+          <p class="tdn-anchor-desc">
+            Failing tests are hyper-specific instructions. They define exactly where AI should go
+            next, and prove when it has arrived safely. This is not about writing more tests.
+            It's about separating strategic intent from mechanical execution.
+          </p>
+        </div>
+      </div>
+      <div class="how-links">
+        <a href="https://www.youtube.com/watch?v=tH8aqbHWgIM" class="btn-primary">Watch the Devoxx Talk →</a>
+        <a href="https://alexbunardzic.com/test-driven-navigation" class="btn-ghost">Read the full TDN framework ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FIT / NOT FIT — honest filter
+════════════════════════════════════════ -->
+<section class="fit">
+  <div class="inner">
+    <p class="eyebrow">Honest Filter</p>
+    <h2 class="section-h">Is this a fit?</h2>
+    <p class="section-sub">
+      My work is high-context and high-effort. Not every organization needs it
+      or is ready for it. Here's a direct read.
+    </p>
+    <div class="fit-grid">
+      <div class="fit-col">
+        <div class="fit-col-title yes">✓ &nbsp;Good fit</div>
+        <ul class="fit-list">
+          <li><span class="fit-yes">✓</span> CTO or VP Engineering at a 50–300 person SaaS</li>
+          <li><span class="fit-yes">✓</span> Using or seriously planning to use AI in software delivery</li>
+          <li><span class="fit-yes">✓</span> Want to move faster without sacrificing predictability</li>
+          <li><span class="fit-yes">✓</span> Accountable for both speed and quality — not just one</li>
+          <li><span class="fit-yes">✓</span> Willing to have a frank conversation about what's actually slowing you down</li>
         </ul>
       </div>
-      <form id="download-form" class="lead-magnet-form" action="https://formsubmit.co/alexbunardzic@gmail.com"
-        method="POST">
-        <!-- FormSubmit configuration -->
-        <input type="hidden" name="_subject" value="New Field Guide Request">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://alexbunardzic.com/thank-you.html#download">
-        <input type="text" name="_honey" style="display:none">
-        <input type="hidden" name="_captcha" value="false">
-
-        <div class="form-fields">
-          <input type="email" id="email" name="email" placeholder="Your work email address" required>
-          <button type="submit" class="btn-form">Get the PDF</button>
-        </div>
-
-        <p class="privacy-notice">
-          We respect your privacy. Your email will only be used to send you the field guide and occasional relevant
-          resources.
-        </p>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer-section">
-    <div class="container footer-content">
-      <div class="footer-copyright">© <span id="year">2026</span> Alex Bunardzic. All rights reserved.</div>
-      <div class="footer-links">
-        <a class="footer-link" href="mailto:alexbunardzic@gmail.com">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect width="20" height="16" x="2" y="4" rx="2" />
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-          </svg>
-          alexbunardzic@gmail.com
-        </a>
-        <a class="footer-link" href="https://www.linkedin.com/in/alexbunardzic/" target="_blank" rel="noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-            <rect width="4" height="12" x="2" y="9" />
-            <circle cx="4" cy="4" r="2" />
-          </svg>
-          LinkedIn
-        </a>
-        <a class="footer-link" href="https://github.com/alexbunardzic" target="_blank" rel="noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path
-              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-          </svg>
-          GitHub
-        </a>
+      <div class="fit-col">
+        <div class="fit-col-title no">✗ &nbsp;Not a fit</div>
+        <ul class="fit-list">
+          <li><span class="fit-no">✗</span> Want AI to go faster with zero constraints</li>
+          <li><span class="fit-no">✗</span> Looking for developer training or certification</li>
+          <li><span class="fit-no">✗</span> Optimizing only for short-term velocity</li>
+          <li><span class="fit-no">✗</span> Need a large firm with project managers and decks</li>
+          <li><span class="fit-no">✗</span> Not using AI in delivery and not planning to</li>
+        </ul>
       </div>
     </div>
-  </footer>
+    <div class="fit-cta">
+      <a href="https://app.cal.com/alex-bunardzic" class="btn-primary">Find out in 30 minutes →</a>
+    </div>
   </div>
+</section>
 
-  <script src="script.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById('download-form');
+<!-- ═══════════════════════════════════════
+     ENGAGEMENTS — simplified to 3
+════════════════════════════════════════ -->
+<section class="eng" id="engagements">
+  <div class="inner">
+    <p class="eyebrow">How We Work</p>
+    <h2 class="section-h">Three ways to engage</h2>
+    <p class="section-sub">
+      Every engagement begins with a diagnostic. If there's a fit, we decide together
+      what comes next. No boilerplate proposals. No multi-month ramp.
+    </p>
+    <div class="eng-grid">
+      <div class="eng-card featured">
+        <span class="eng-tag">Start here</span>
+        <h3 class="eng-name">The Diagnostic</h3>
+        <p class="eng-desc">
+          A focused 2-week assessment of your codebase, AI usage patterns, and delivery
+          risks. You leave with a clear roadmap and the data to make the internal case
+          for change. This is the only way any deeper engagement starts.
+        </p>
+        <span class="eng-price">$7,500 – $15,000 &nbsp;·&nbsp; 2 weeks</span>
+        <a href="https://app.cal.com/alex-bunardzic" class="eng-link">Book the diagnostic call →</a>
+      </div>
+      <div class="eng-card">
+        <span class="eng-tag">Prove it works</span>
+        <h3 class="eng-name">Pilot Accelerator</h3>
+        <p class="eng-desc">
+          Hands-on TDN implementation with one high-impact team. The goal is a
+          measurable, internal lighthouse project that builds momentum for broader adoption
+          and gives you something concrete to show leadership.
+        </p>
+        <span class="eng-price">$35,000 – $50,000 &nbsp;·&nbsp; 6–8 weeks</span>
+        <a href="https://app.cal.com/alex-bunardzic" class="eng-link">Learn more →</a>
+      </div>
+      <div class="eng-card">
+        <span class="eng-tag">Ongoing counsel</span>
+        <h3 class="eng-name">Strategic Advisor</h3>
+        <p class="eng-desc">
+          A retainer for leaders who need a trusted external perspective on complex
+          technical decisions, AI strategy, or system evolution — without the overhead
+          of a full-time engagement.
+        </p>
+        <span class="eng-price">$8,000 – $12,000 / month</span>
+        <a href="https://app.cal.com/alex-bunardzic" class="eng-link">Start a conversation →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-      form.addEventListener('submit', function (e) {
-        // Basic validation
-        const emailInput = document.getElementById('email');
-        const email = emailInput.value.trim();
+<!-- ═══════════════════════════════════════
+     ABOUT — credentials as a timeline
+════════════════════════════════════════ -->
+<div class="about" id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow">About Alex</p>
+        <h2 class="section-h" style="max-width: 420px;">34 years. One consistent obsession.</h2>
+        <div class="about-bio">
+          <p>
+            I didn't set out to create a framework. I set out to solve a problem that kept
+            showing up everywhere I worked: <strong>brilliant engineering teams drowning
+            in technical debt they couldn't safely fix.</strong>
+          </p>
+          <p>
+            Over 34 years I watched organizations spend millions on digital transformation
+            that left them slower than before. Teams paralyzed by fear of breaking production.
+            Then in 2023, generative AI arrived — and I watched the same pattern repeat,
+            only faster. Teams generating debt at AI speed with no systematic exit.
+          </p>
+          <p>
+            <strong>That's when Test-Driven Navigation crystallized.</strong> It's the synthesis
+            of everything learned across fintech, healthcare, and regulated industries —
+            applied specifically to the AI era.
+          </p>
+        </div>
+      </div>
+      <div>
+        <ul class="about-credentials">
+          <li>
+            <span class="cred-year">2026</span>
+            <div class="cred-text">
+              <strong>International Software Quality Days, Vienna</strong>
+              Invited talk: AI and the Future of Refactoring
+            </div>
+          </li>
+          <li>
+            <span class="cred-year">2025</span>
+            <div class="cred-text">
+              <strong>Devoxx Belgium — Closing Talk</strong>
+              Introduced Test-Driven Navigation to Europe's largest developer conference
+            </div>
+          </li>
+          <li>
+            <span class="cred-year">2021</span>
+            <div class="cred-text">
+              <strong>First International TDD Conference</strong>
+              Organizer and host
+            </div>
+          </li>
+          <li>
+            <span class="cred-year">—</span>
+            <div class="cred-text">
+              <strong>WorkSafeBC · Raymond James · Healthcare &amp; Fintech</strong>
+              Engineering Practice Lead, transformation engagements across regulated industries
+            </div>
+          </li>
+          <li>
+            <span class="cred-year">1990</span>
+            <div class="cred-text">
+              <strong>First line of professional code</strong>
+              Still writing them with the same intent: software should be soft enough to evolve
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-        if (!isValidEmail(email)) {
-          e.preventDefault();
-          alert('Please enter a valid email address');
-          emailInput.focus();
-          return;
-        }
+<!-- ═══════════════════════════════════════
+     CONTENT HUB — proof of thinking
+════════════════════════════════════════ -->
+<section class="content">
+  <div class="inner">
+    <p class="eyebrow">Proof of Thinking</p>
+    <h2 class="section-h">See the work before you commit</h2>
+    <p class="section-sub">
+      Serious buyers don't hire on a headline. These are the places to pressure-test
+      the thinking before booking a call.
+    </p>
+    <div class="content-grid">
+      <div class="content-card">
+        <span class="content-type">Conference Talk · Devoxx Belgium</span>
+        <h3 class="content-title">AI and the Future of Refactoring</h3>
+        <p class="content-desc">
+          The closing talk that introduced Test-Driven Navigation to a live audience of
+          thousands. If this resonates, we should talk.
+        </p>
+        <a href="https://www.youtube.com/watch?v=tH8aqbHWgIM" class="content-cta">Watch on YouTube →</a>
+      </div>
+      <div class="content-card">
+        <span class="content-type">Writing · Essays &amp; Articles</span>
+        <h3 class="content-title">Published work on software craft and AI-assisted delivery</h3>
+        <p class="content-desc">
+          Articles on Opensource.com and Medium covering TDD, mutation testing, AI-assisted
+          development, and the discipline of shipping small, safe steps.
+        </p>
+        <a href="https://alexbunardzic.com/published-work.html" class="content-cta">Browse published work →</a>
+      </div>
+      <div class="content-card">
+        <span class="content-type">Community · AI Craftspeople Guild</span>
+        <h3 class="content-title">A code of conduct for engineers using AI</h3>
+        <p class="content-desc">
+          A manifesto and growing community for engineers who believe AI-assisted
+          development demands higher professional standards, not lower ones.
+        </p>
+        <a href="https://aicraftspeopleguild.github.io/" class="content-cta">Explore the Guild →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // If validation passes, the form will submit to FormSubmit
-        // You could add a loading indicator here
-        const submitBtn = form.querySelector('button[type="submit"]');
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-      });
+<!-- ═══════════════════════════════════════
+     PIONEER PROGRAM
+════════════════════════════════════════ -->
+<section class="pioneer">
+  <div class="inner">
+    <div class="pioneer-box">
+      <div>
+        <p class="eyebrow">Pioneer Program</p>
+        <h2>Shape how TDN evolves in your industry</h2>
+        <p>
+          A small cohort of organizations working directly with me to validate TDN across
+          different industries and tech stacks. This is not a discount program — it's a
+          genuine co-creation partnership.
+        </p>
+        <ul class="pioneer-perks">
+          <li>Priority access to all TDN tools, frameworks, and resources</li>
+          <li>Co-creation input — help shape how TDN evolves in your specific context</li>
+          <li>Lifetime advisory access (4 hours per quarter)</li>
+          <li>Conference case study feature (anonymous or named, your choice)</li>
+        </ul>
+        <div style="margin-top: 2rem;">
+          <a href="https://app.cal.com/alex-bunardzic" class="btn-primary">Apply for a Pioneer Spot →</a>
+        </div>
+      </div>
+      <div class="pioneer-counter">
+        <span class="pioneer-num">2</span>
+        <span class="pioneer-counter-label">Pioneer spots remaining for Q2 2026</span>
+        <span class="pioneer-counter-sub">Each engagement receives direct, hands-on involvement — no delegation</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-      function isValidEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-      }
-    });
-  </script>
-  <style>
-    /* Form styling */
-    .lead-magnet-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+<!-- ═══════════════════════════════════════
+     FINAL CTA
+════════════════════════════════════════ -->
+<section class="final">
+  <h2>Your biggest competitor isn't<br>another company.<br><em>It's the drag in your own system.</em></h2>
+  <p>
+    A 30-minute diagnostic. No pitch. No hard sell. No obligation.
+    Just a frank conversation about what's slowing you down and whether there's a fit.
+  </p>
+  <a href="https://app.cal.com/alex-bunardzic" class="btn-primary">Book the 30-Minute Diagnostic →</a>
+</section>
 
-    .form-fields {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
+<!-- ═══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">Alex Bunardzic · Business Velocity Architect</span>
+    <ul class="footer-links">
+      <li><a href="https://alexbunardzic.com/test-driven-navigation">TDN Framework</a></li>
+      <li><a href="https://aicraftspeopleguild.github.io/">AI Craftspeople Guild</a></li>
+      <li><a href="https://www.linkedin.com/in/alexbunardzic/">LinkedIn</a></li>
+      <li><a href="https://github.com/alexbunardzic">GitHub</a></li>
+      <li><a href="mailto:alexbunardzic@gmail.com">Email</a></li>
+    </ul>
+    <span class="footer-copy">Vancouver, Canada · Working globally · © 2026</span>
+  </div>
+</footer>
 
-    #email {
-      padding: 1rem;
-      font-size: 1rem;
-      border-radius: 0.5rem;
-      border: 1px solid #d4d4d4;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .btn-form {
-      padding: 1rem;
-      font-size: 1rem;
-      border-radius: 0.5rem;
-      background-color: #000;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    .btn-form:hover {
-      opacity: 0.9;
-    }
-
-    .privacy-notice {
-      margin: 0;
-      font-size: 0.75rem;
-      color: #666;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    /* Responsive design for larger screens */
-    @media (min-width: 768px) {
-      .form-fields {
-        flex-direction: row;
-      }
-
-      #email {
-        flex: 1;
-      }
-
-      .btn-form {
-        width: auto;
-        min-width: 120px;
-      }
-    }
-  </style>
-
-
-  <style>
-    /* solid card + placement */
-    @media (max-width: 1024px) {
-      .mobile-pop {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-        background: #ffffff;
-        border: 3px solid #9ca3af;
-        box-shadow: 0 20px 35px rgba(0, 0, 0, .35);
-        max-width: 95vw;
-        max-height: 80vh;
-        overflow-y: auto;
-        padding: 1.25rem;
-        border-radius: .75rem;
-        display: none;
-      }
-
-      .mobile-pop.show {
-        display: block;
-      }
-    }
-  </style>
-
-
-
-
-  <script>
-    /* ---- mobile pop-over toggle + solid card ---- */
-    (() => {
-      if (screen.width > 1024) return;
-
-      document.addEventListener('click', e => {
-        const btn = e.target.closest('button[popovertarget]');
-        if (!btn) return;
-        e.preventDefault();
-        const id = btn.getAttribute('popovertarget');
-        let box = document.getElementById(id);
-        if (!box) return;
-
-        const open = !box.hidden;
-        document.querySelectorAll('[data-p]').forEach(p => p.hidden = true);
-        box.hidden = open;
-
-        if (!open) {
-          /* wrap inner HTML in an opaque card */
-          box.innerHTML = `
-          <div style="background:#fff;border:3px solid #9ca3af;box-shadow:0 20px 35px rgba(0,0,0,.35);padding:1.25rem;border-radius:.75rem;width:90vw;max-width:420px;max-height:80vh;overflow-y:auto;">
-            ${box.innerHTML}
-          </div>`;
-        }
-      });
-    })();
-  </script>
-
-
-  <!-- =====  hamburger (mobile)  – place LAST  ===== -->
-  <button id="nav-toggle" aria-label="Open menu" hidden>X</button>
-
-  <script>
-    (() => {
-      if (window.innerWidth > 1024) return;
-      const btn = document.getElementById('nav-toggle');
-      btn.removeAttribute('hidden');
-      btn.style.display = 'block';
-      const menu = document.querySelector('.nav-menu');
-      btn.addEventListener('click', () => {
-        btn.classList.toggle('active');
-        menu.classList.toggle('open');
-      });
-    })();
-  </script>
-  <script>
-    (() => {
-      if (screen.width > 1024) return;
-      const btn = document.getElementById('nav-toggle');
-      const menu = document.querySelector('.nav-menu');
-      btn.hidden = false;                 // reveal button
-      btn.addEventListener('click', () => {
-        btn.classList.toggle('active');
-        menu.classList.toggle('open');
-      });
-    })();
-  </script>
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
 </body>
-</body>
-
 </html>
