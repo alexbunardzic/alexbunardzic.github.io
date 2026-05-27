@@ -145,32 +145,29 @@
   .hero-sub strong { color: var(--mist); font-weight: 500; }
   .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
 
-  /* outcome proof card — no TDN language */
-  .hero-card {
-    background: var(--ink-2);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 16px; padding: 32px;
-    position: relative; overflow: hidden;
+  /* hero stage photo */
+  .hero-photo-wrap {
+    position: relative; border-radius: 16px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6);
   }
-  .hero-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--amber-bd), transparent);
+  .hero-photo {
+    width: 100%; height: 460px;
+    object-fit: cover; object-position: center 20%;
+    display: block;
+    filter: brightness(0.92) contrast(1.04);
   }
-  .outcomes-label {
+  .hero-photo-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 20px 24px;
+    background: linear-gradient(0deg, rgba(11,13,18,0.92) 0%, transparent 100%);
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .hero-photo-event {
     font-family: var(--mono); font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.1em; color: var(--fog); margin-bottom: 20px;
+    letter-spacing: 0.1em; color: var(--amber);
   }
-  .outcome-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-  .outcome-item {
-    display: flex; align-items: flex-start; gap: 12px;
-    font-size: 14px; color: var(--mist); line-height: 1.55;
-  }
-  .outcome-check { color: var(--green-soft); flex-shrink: 0; font-family: var(--mono); font-size: 13px; margin-top: 1px; }
-  .hero-card-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 20px 0; }
-  .social-mini { display: flex; flex-direction: column; gap: 8px; }
-  .social-mini-item { display: flex; gap: 8px; align-items: baseline; }
-  .social-mini-num { font-family: var(--serif); font-size: 1.4rem; color: var(--amber); line-height: 1; }
-  .social-mini-label { font-size: 12px; color: var(--fog); }
+  .hero-photo-desc { font-size: 12px; color: var(--fog); }
 
   /* ── PROOF WALL — right after hero ── */
   .proof { background: var(--ink-2); padding: 80px 2rem; }
@@ -389,6 +386,15 @@
   /* ── ABOUT STRIP ── */
   .about { background: var(--ink-2); padding: 80px 2rem; }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-photo-wrap {
+    border-radius: 12px; overflow: hidden; margin-bottom: 24px;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .about-photo {
+    width: 100%; height: 220px;
+    object-fit: cover; object-position: center 15%;
+    display: block; filter: brightness(0.88) contrast(1.05);
+  }
   .about-bio { display: flex; flex-direction: column; gap: 1.2rem; }
   .about-bio p { font-size: 15px; color: var(--fog); line-height: 1.85; }
   .about-bio p strong { color: var(--mist); font-weight: 500; }
@@ -477,7 +483,7 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .hero-grid, .problem-grid, .about-grid, .pioneer-box { grid-template-columns: 1fr; gap: 48px; }
-    .hero-card { display: none; }
+    .hero-photo { height: 300px; }
     .trap-card { position: static; }
     .proof-grid, .outcomes-grid, .eng-grid, .content-grid, .fit-grid { grid-template-columns: 1fr; }
     .fit-col:first-child { border-radius: 12px 12px 0 0; }
@@ -495,7 +501,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-PYNRR92L50');
   </script>
 </head>
@@ -545,40 +550,15 @@
       </div>
     </div>
 
-    <div class="hero-card">
-      <p class="outcomes-label">What clients come away with</p>
-      <ul class="outcome-list">
-        <li>
-          <span class="outcome-check">✓</span>
-          Delivery that's fast <em>and</em> predictable — not one at the expense of the other
-        </li>
-        <li>
-          <span class="outcome-check">✓</span>
-          AI that accelerates your team instead of quietly compounding technical debt
-        </li>
-        <li>
-          <span class="outcome-check">✓</span>
-          Refactoring that's safe enough to do continuously, not just when it's critical
-        </li>
-        <li>
-          <span class="outcome-check">✓</span>
-          Engineers spending more time on intent and less time reacting to fires
-        </li>
-        <li>
-          <span class="outcome-check">✓</span>
-          A codebase that bends with the business instead of fighting it
-        </li>
-      </ul>
-      <div class="hero-card-divider"></div>
-      <div class="social-mini">
-        <div class="social-mini-item">
-          <span class="social-mini-num">34</span>
-          <span class="social-mini-label">&nbsp;years designing &amp; delivering software</span>
-        </div>
-        <div class="social-mini-item">
-          <span class="social-mini-num">2</span>
-          <span class="social-mini-label">&nbsp;international conference keynotes · 2025–26</span>
-        </div>
+    <div class="hero-photo-wrap">
+      <img
+        src="https://alexbunardzic.com/Alex-Talk-Devoxx-Belgium.png"
+        alt="Alex Bunardzic speaking at Devoxx Belgium"
+        class="hero-photo"
+      >
+      <div class="hero-photo-caption">
+        <span class="hero-photo-event">Devoxx Belgium</span>
+        <span class="hero-photo-desc">Closing keynote · Europe's largest developer conference</span>
       </div>
     </div>
   </div>
@@ -929,6 +909,13 @@
         </div>
       </div>
       <div>
+        <div class="about-photo-wrap">
+          <img
+            src="https://alexbunardzic.com/Alex-Talk-Devoxx-Belgium.png"
+            alt="Alex Bunardzic on stage at Devoxx Belgium"
+            class="about-photo"
+          >
+        </div>
         <ul class="about-credentials">
           <li>
             <span class="cred-year">2026</span>
@@ -1082,13 +1069,19 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 </script>
-  <script>
+
+<script>
   document.querySelectorAll('a[href*="cal.com"]').forEach(function(link) {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
       gtag('event', 'diagnostic_booking_click', {
         event_category: 'conversion',
-        event_label: link.closest('section')?.id || 'nav'
+        event_label: link.closest('section')?.id || 'nav',
+        transport_type: 'beacon'
       });
+      setTimeout(function() {
+        window.location.href = link.href;
+      }, 300);
     });
   });
 </script>
