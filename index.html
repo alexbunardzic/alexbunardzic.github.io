@@ -258,51 +258,30 @@
 
   /* ── THE HOW REVEAL — TDN introduced here ── */
   .how { background: var(--ink); }
-  .how-reveal {
-    background: var(--ink-2);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 20px; padding: 56px;
-    margin-bottom: 3rem;
-    position: relative; overflow: hidden;
+  .how-intro {
+    font-size: 16px; color: var(--fog); line-height: 1.85;
+    max-width: 780px; margin-bottom: 3rem;
   }
-  .how-reveal::before {
-    content: ''; position: absolute; inset: 0; pointer-events: none;
-    background: radial-gradient(ellipse 60% 60% at 85% 20%, rgba(232,168,32,0.05) 0%, transparent 70%);
-  }
-  .how-reveal-label {
-    font-family: var(--mono); font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.12em; color: var(--amber); margin-bottom: 12px;
-  }
-  .how-reveal h2 {
-    font-family: var(--serif); font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-    font-weight: 400; color: var(--white); margin-bottom: 1rem; line-height: 1.25;
-  }
-  .how-reveal p {
-    font-size: 15px; color: var(--fog); line-height: 1.85;
-    max-width: 640px; margin-bottom: 1.5rem;
-  }
-  .how-reveal p strong { color: var(--mist); font-weight: 500; }
+  .how-intro strong { color: var(--mist); font-weight: 500; }
   .tdn-diagram {
     display: grid; grid-template-columns: 1fr 60px 1fr;
-    gap: 0; align-items: center; margin: 2.5rem 0;
+    gap: 0; align-items: stretch; margin: 2.5rem 0;
   }
   .tdn-col {
-    background: var(--ink-3);
+    background: var(--ink-2);
     border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 12px; padding: 28px 24px;
+    border-radius: 14px; padding: 32px 28px;
   }
   .tdn-col-label {
     font-family: var(--mono); font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.1em; margin-bottom: 16px;
+    letter-spacing: 0.12em; color: var(--amber); margin-bottom: 20px;
   }
-  .tdn-col-label.human { color: var(--blue-soft); }
-  .tdn-col-label.ai    { color: #9D7AFF; }
-  .tdn-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .tdn-col li { font-size: 14px; color: var(--mist); display: flex; gap: 8px; line-height: 1.5; }
+  .tdn-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .tdn-col li { font-size: 15px; color: var(--white); display: flex; gap: 10px; line-height: 1.5; }
   .tdn-col li::before { content: '·'; color: var(--fog); flex-shrink: 0; }
   .tdn-mid {
     display: flex; flex-direction: column; align-items: center;
-    gap: 6px; padding: 0 16px;
+    gap: 10px; padding: 0 16px;
   }
   .tdn-mid-line {
     flex: 1; width: 1px;
@@ -310,22 +289,25 @@
     min-height: 40px;
   }
   .tdn-mid-label {
-    font-family: var(--mono); font-size: 9px; color: var(--amber);
-    text-transform: uppercase; letter-spacing: 0.1em;
-    writing-mode: vertical-lr;
+    font-family: var(--mono); font-size: 10px; color: var(--amber);
+    text-transform: uppercase; letter-spacing: 0.14em;
+    writing-mode: vertical-rl;
   }
   .tdn-anchor {
-    background: var(--ink);
-    border: 1px solid var(--amber-bd);
-    border-radius: 10px; padding: 20px 24px;
-    display: flex; gap: 16px; align-items: flex-start;
+    background: var(--ink-2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-left: 3px solid var(--amber);
+    border-radius: 8px; padding: 28px 32px;
+    display: flex; gap: 20px; align-items: flex-start;
+    margin-top: 2rem;
   }
   .tdn-anchor-glyph {
-    font-family: var(--mono); font-size: 1.4rem; color: var(--amber); flex-shrink: 0;
+    font-size: 1.4rem; color: var(--amber); flex-shrink: 0;
+    line-height: 1.3;
   }
-  .tdn-anchor-title { font-weight: 500; color: var(--white); margin-bottom: 4px; font-size: 15px; }
-  .tdn-anchor-desc { font-size: 14px; color: var(--fog); line-height: 1.6; }
-  .how-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 2rem; }
+  .tdn-anchor-title { font-weight: 600; color: var(--white); margin-bottom: 10px; font-size: 17px; }
+  .tdn-anchor-desc { font-size: 14px; color: var(--fog); line-height: 1.7; }
+  .how-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 2.5rem; }
 
   /* ── FIT / NOT FIT ── */
   .fit { background: var(--ink-2); }
@@ -766,62 +748,53 @@
 ════════════════════════════════════════ -->
 <section class="how" id="how">
   <div class="inner">
-    <div class="how-reveal">
-      <p class="how-reveal-label">The Method — Test-Driven Navigation</p>
-      <h2>There's a specific reason the outcomes above are achievable systematically.</h2>
-      <p>
-        Every outcome described above depends on solving the same underlying problem:
-        <strong>humans and AI need to play different roles, with tests defining
-        the boundary between them.</strong> Without that boundary, AI speed
-        becomes a liability. With it, AI becomes a precision instrument.
-      </p>
-      <p>
-        The framework I use to establish that boundary is called
-        <strong>Test-Driven Navigation (TDN)</strong> — an evolution of Test-Driven Development
-        designed specifically for AI-assisted software delivery. I introduced it in my
-        closing talk at Devoxx Belgium and presented it internationally at the
-        International Software Quality Days in Vienna.
-      </p>
-      <div class="tdn-diagram">
-        <div class="tdn-col">
-          <div class="tdn-col-label human">Human — Navigates</div>
-          <ul>
-            <li>What should happen next</li>
-            <li>Business intent &amp; priorities</li>
-            <li>Architectural tradeoffs</li>
-            <li>Where the system should go</li>
-          </ul>
-        </div>
-        <div class="tdn-mid">
-          <div class="tdn-mid-line"></div>
-          <div class="tdn-mid-label">tests</div>
-          <div class="tdn-mid-line"></div>
-        </div>
-        <div class="tdn-col">
-          <div class="tdn-col-label ai">AI — Executes</div>
-          <ul>
-            <li>How to implement safely</li>
-            <li>Refactoring mechanics</li>
-            <li>Maintaining consistency</li>
-            <li>Enforcing constraints at scale</li>
-          </ul>
-        </div>
+    <p class="eyebrow">The Method — Test-Driven Navigation</p>
+    <h2 class="section-h">Humans navigate. AI executes. Tests are the boundary.</h2>
+    <p class="how-intro">
+      Without that boundary, AI speed becomes a liability. With it, AI becomes a precision
+      instrument. The framework that establishes it is <strong>Test-Driven Navigation (TDN)</strong>,
+      introduced in my closing talk at Devoxx Belgium and at the International Software
+      Quality Days in Vienna.
+    </p>
+    <div class="tdn-diagram">
+      <div class="tdn-col">
+        <div class="tdn-col-label">Human — Navigates</div>
+        <ul>
+          <li>What should happen next</li>
+          <li>Business intent &amp; priorities</li>
+          <li>Architectural tradeoffs</li>
+          <li>Where the system should go</li>
+        </ul>
       </div>
-      <div class="tdn-anchor">
-        <span class="tdn-anchor-glyph">⬡</span>
-        <div>
-          <div class="tdn-anchor-title">Tests are not a checklist. They're a navigation instrument.</div>
-          <p class="tdn-anchor-desc">
-            Failing tests are hyper-specific instructions. They define exactly where AI should go
-            next, and prove when it has arrived safely. This is not about writing more tests.
-            It's about separating strategic intent from mechanical execution.
-          </p>
-        </div>
+      <div class="tdn-mid">
+        <div class="tdn-mid-line"></div>
+        <div class="tdn-mid-label">Tests define the boundary</div>
+        <div class="tdn-mid-line"></div>
       </div>
-      <div class="how-links">
-        <a href="https://www.youtube.com/watch?v=tH8aqbHWgIM" class="btn-primary">Watch the Devoxx Talk →</a>
-        <a href="https://alexbunardzic.com/test-driven-navigation" class="btn-ghost">Read the full TDN framework ↗</a>
+      <div class="tdn-col">
+        <div class="tdn-col-label">AI — Executes</div>
+        <ul>
+          <li>How to implement safely</li>
+          <li>Refactoring mechanics</li>
+          <li>Maintaining consistency</li>
+          <li>Enforcing constraints at scale</li>
+        </ul>
       </div>
+    </div>
+    <div class="tdn-anchor">
+      <span class="tdn-anchor-glyph">◯</span>
+      <div>
+        <div class="tdn-anchor-title">Tests aren't a checklist. They're a navigation instrument.</div>
+        <p class="tdn-anchor-desc">
+          Failing tests are hyper-specific instructions: they tell AI exactly where to go next
+          and prove when it has arrived safely. Not more tests — strategic intent separated from
+          mechanical execution.
+        </p>
+      </div>
+    </div>
+    <div class="how-links">
+      <a href="https://www.youtube.com/watch?v=tH8aqbHWgIM" class="btn-primary">Watch the Devoxx Talk →</a>
+      <a href="https://alexbunardzic.com/test-driven-navigation" class="btn-ghost">Read the full TDN framework ↗</a>
     </div>
   </div>
 </section>
