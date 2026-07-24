@@ -353,7 +353,10 @@
 
   /* ── ENGAGEMENTS ── */
   .eng { background: var(--ink); }
-  .eng-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 3rem; }
+  .eng-grid {
+    display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px;
+    margin-top: 3rem; align-items: stretch;
+  }
   .eng-card {
     background: var(--ink-2);
     border: 1px solid rgba(255,255,255,0.07);
@@ -365,6 +368,29 @@
   .eng-card.featured {
     border-color: var(--amber-bd);
     background: linear-gradient(160deg, rgba(232,168,32,0.06), var(--ink-2) 60%);
+    padding: 48px;
+    gap: 22px;
+  }
+  .eng-card.featured .eng-name { font-size: 2.4rem; line-height: 1.1; }
+  .eng-card.featured .eng-desc { font-size: 16px; line-height: 1.75; }
+  .eng-divider {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 8px 0 4px;
+  }
+  .eng-note { font-size: 13px; color: var(--fog); }
+  .eng-cta {
+    background: var(--amber); color: var(--ink);
+    font-family: var(--mono); font-size: 14px; font-weight: 600;
+    padding: 16px 28px; border-radius: 10px;
+    align-self: flex-start; margin-top: 8px;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .eng-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,168,32,0.25); }
+  .eng-secondary { display: flex; flex-direction: column; gap: 20px; }
+  .eng-secondary-h {
+    font-family: var(--mono); font-size: 12px; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--fog);
+    margin: 0 0 4px;
   }
   .eng-tag {
     font-family: var(--mono); font-size: 10px; text-transform: uppercase;
@@ -486,6 +512,8 @@
     .hero-photo { height: 300px; }
     .trap-card { position: static; }
     .proof-grid, .outcomes-grid, .eng-grid, .content-grid, .fit-grid { grid-template-columns: 1fr; }
+    .eng-card.featured { padding: 32px; }
+    .eng-card.featured .eng-name { font-size: 1.9rem; }
     .fit-col:first-child { border-radius: 12px 12px 0 0; }
     .fit-col:last-child  { border-radius: 0 0 12px 12px; }
     .tdn-diagram { grid-template-columns: 1fr; }
@@ -569,6 +597,12 @@
 ════════════════════════════════════════ -->
 <div class="proof">
   <div class="inner">
+    <p class="eyebrow">Peer Validation</p>
+    <h2 class="section-h">Trusted where mistakes get audited.</h2>
+    <p class="section-sub">
+      Senior operators in regulated industries — workplace safety, financial services, agile
+      leadership — vouch for the judgment behind the work.
+    </p>
     <div class="proof-grid">
       <div class="proof-item fade-up">
         <p class="proof-quote">
@@ -844,37 +878,42 @@
     </p>
     <div class="eng-grid">
       <div class="eng-card featured">
-        <span class="eng-tag">Start here</span>
+        <span class="eng-tag">Start here · The only way in</span>
         <h3 class="eng-name">The Diagnostic</h3>
         <p class="eng-desc">
           A focused 2-week assessment of your codebase, AI usage patterns, and delivery
           risks. You leave with a clear roadmap and the data to make the internal case
           for change. This is the only way any deeper engagement starts.
         </p>
+        <div class="eng-divider"></div>
         <span class="eng-price">$7,500 – $15,000 &nbsp;·&nbsp; 2 weeks</span>
-        <a href="https://app.cal.com/alex-bunardzic" class="eng-link">Book the diagnostic call →</a>
+        <span class="eng-note">Fixed scope. Fixed price. No lock-in beyond.</span>
+        <a href="https://app.cal.com/alex-bunardzic" class="eng-cta">Book the diagnostic call →</a>
       </div>
-      <div class="eng-card">
-        <span class="eng-tag">Prove it works</span>
-        <h3 class="eng-name">Pilot Accelerator</h3>
-        <p class="eng-desc">
-          Hands-on TDN implementation with one high-impact team. The goal is a
-          measurable, internal lighthouse project that builds momentum for broader adoption
-          and gives you something concrete to show leadership.
-        </p>
-        <span class="eng-price">$35,000 – $50,000 &nbsp;·&nbsp; 6–8 weeks</span>
-        <a href="https://app.cal.com/alex-bunardzic" class="eng-link">Learn more →</a>
-      </div>
-      <div class="eng-card">
-        <span class="eng-tag">Ongoing counsel</span>
-        <h3 class="eng-name">Strategic Advisor</h3>
-        <p class="eng-desc">
-          A retainer for leaders who need a trusted external perspective on complex
-          technical decisions, AI strategy, or system evolution — without the overhead
-          of a full-time engagement.
-        </p>
-        <span class="eng-price">$8,000 – $12,000 / month</span>
-        <a href="https://app.cal.com/alex-bunardzic" class="eng-link">Start a conversation →</a>
+      <div class="eng-secondary">
+        <p class="eng-secondary-h">If there's a fit, next steps</p>
+        <div class="eng-card">
+          <span class="eng-tag">Prove it works</span>
+          <h3 class="eng-name">Pilot Accelerator</h3>
+          <p class="eng-desc">
+            Hands-on TDN implementation with one high-impact team. The goal is a
+            measurable, internal lighthouse project that builds momentum for broader adoption
+            and gives you something concrete to show leadership.
+          </p>
+          <span class="eng-price">$35,000 – $50,000 &nbsp;·&nbsp; 6–8 weeks</span>
+          <a href="https://app.cal.com/alex-bunardzic" class="eng-link">Learn more →</a>
+        </div>
+        <div class="eng-card">
+          <span class="eng-tag">Ongoing counsel</span>
+          <h3 class="eng-name">Strategic Advisor</h3>
+          <p class="eng-desc">
+            A retainer for leaders who need a trusted external perspective on complex
+            technical decisions, AI strategy, or system evolution — without the overhead
+            of a full-time engagement.
+          </p>
+          <span class="eng-price">$8,000 – $12,000 / month</span>
+          <a href="https://app.cal.com/alex-bunardzic" class="eng-link">Start a conversation →</a>
+        </div>
       </div>
     </div>
   </div>
