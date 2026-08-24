@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You for Your Request - Test Driven Navigation</title>
+    <title>Thank You — AI Code Assurance Checklist</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .thank-you-container {
@@ -13,7 +13,7 @@
             justify-content: center;
             padding: 2rem 0;
         }
-        
+
         .thank-you-card {
             background-color: var(--color-white);
             border-radius: 1rem;
@@ -24,7 +24,7 @@
             width: 100%;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
-        
+
         .thank-you-icon {
             width: 64px;
             height: 64px;
@@ -35,33 +35,33 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .thank-you-icon svg {
             width: 32px;
             height: 32px;
             color: var(--color-neutral-700);
         }
-        
+
         .thank-you-title {
             font-size: 1.875rem;
             font-weight: 600;
             margin-bottom: 1rem;
             color: var(--color-neutral-900);
         }
-        
+
         .thank-you-message {
             color: var(--color-neutral-700);
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
-        
+
         .download-section {
             background-color: var(--color-neutral-50);
             border-radius: 0.75rem;
             padding: 1.5rem;
             margin: 2rem 0;
         }
-        
+
         .download-button {
             display: inline-block;
             background-color: var(--color-black);
@@ -72,23 +72,29 @@
             font-weight: 600;
             margin-top: 1rem;
         }
-        
+
         .download-button:hover {
             opacity: 0.9;
         }
-        
+
+        .email-note {
+            color: var(--color-neutral-700);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
         .action-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
             margin-top: 2rem;
         }
-        
+
         @media (max-width: 640px) {
             .thank-you-card {
                 padding: 1.5rem;
             }
-            
+
             .action-buttons {
                 flex-direction: column;
             }
@@ -105,25 +111,28 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                         </svg>
                     </div>
-                    
-                    <h1 class="thank-you-title">Thank You!</h1>
-                    
+
+                    <h1 class="thank-you-title">Here it is.</h1>
+
                     <p class="thank-you-message">
-                        Thank you for requesting our Field Guide: Test Driven Navigation (TDN).
+                        The AI Code Assurance Checklist — the questions an auditor, a regulator,
+                        or a new board member will eventually ask about the code your AI tooling
+                        is writing, and what a defensible answer to each one looks like.
                     </p>
-                    
+
                     <div class="download-section">
-                        <h3>Download Your Field Guide</h3>
-                        <p>Click the button below to download your PDF:</p>
-                        <a href="https://drive.google.com/file/d/1415mQQ2vq0aRwEi6Y7c9oJPPJVI7GQj_/view?usp=sharing" class="download-button" id="download-link">
+                        <h3>Download the checklist</h3>
+                        <p>No sign-in required. It is a single PDF.</p>
+                        <a href="/ai-code-assurance-checklist.pdf" class="download-button" id="download-link" download>
                             Download PDF
                         </a>
                     </div>
-                    
+
                     <p class="email-note">
-                        We've also sent a copy to your email address. If you don't see it within a few minutes, please check your spam folder.
+                        In a few days I will send one short note asking whether it was any use to you.
+                        That is the only email you will get from me unless you reply to it.
                     </p>
-                    
+
                     <div class="action-buttons">
                         <a href="/" class="btn btn-primary">Return to Homepage</a>
                         <a href="mailto:alexbunardzic@gmail.com" class="btn btn-secondary">Email Alex</a>
@@ -132,19 +141,5 @@
             </div>
         </section>
     </div>
-
-    <script>
-        // Auto-scroll to download section if URL has #download hash
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.location.hash === '#download') {
-                const downloadSection = document.querySelector('.download-section');
-                if (downloadSection) {
-                    setTimeout(() => {
-                        downloadSection.scrollIntoView({ behavior: 'smooth' });
-                    }, 500);
-                }
-            }
-        });
-    </script>
 </body>
 </html>
