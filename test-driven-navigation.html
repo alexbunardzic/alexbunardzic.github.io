@@ -192,6 +192,23 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
+        .loop-figure {
+            margin: 2rem 0;
+        }
+
+        .loop-figure .process-image {
+            margin: 0;
+            display: block;
+            width: 100%;
+        }
+
+        .loop-figure figcaption {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--secondary-text-color);
+            text-align: center;
+        }
+
         .case-snapshot {
             background-color: var(--light-color);
             padding: 2rem;
@@ -300,8 +317,9 @@
                     <p>This approach is fundamentally a "Big Bang" delivery model, and it fails for predictable reasons:
                     </p>
                     <ul>
-                        <li><strong>Un-reviewable Diffs:</strong> The AI produces thousands of lines of changed code,
-                            making a thorough human review impossible and creating hidden risks.</li>
+                        <li><strong>Un-reviewable Diffs:</strong> The AI produces thousands of lines of changed code at
+                            once, with nothing standing between that change and production except human attention that
+                            cannot possibly cover it.</li>
                         <li><strong>Loss of Deterministic Control:</strong> The engineering team loses fine-grained
                             control, unable to guide the process or verify each incremental step.</li>
                         <li><strong>Risk of Hallucinated Logic:</strong> In complex scenarios, the AI can introduce
@@ -311,6 +329,14 @@
                     <p>This method forces engineers to abdicate their strategic role, turning them into passive
                         prompters rather than active architects. It trades short-term speed for long-term risk and
                         instability.</p>
+                    <p>The instinctive correction is to station an engineer inside the workflow to inspect the AI at
+                        every step. That does contain the risk, and it quietly relocates the bottleneck: your delivery
+                        rate is now capped by how much generated code one person can read in a day. You have bought
+                        safety by giving up the speed you adopted AI to get.</p>
+                    <p>Neither the AI's speed nor the engineer's diligence is the actual problem. The problem is that
+                        nothing <em>executable</em> states what the change is required to respect, so human attention is
+                        the only check left in the system. <strong>Supply that executable boundary and the engineer no
+                            longer has to stand inside the loop at all.</strong></p>
                 </section>
 
                 <!-- The Solution -->
@@ -332,6 +358,34 @@
                         micro-bets, each one quickly verified by an executable test, not by human opinion.</blockquote>
                 </section>
 
+                <!-- Human on the Loop -->
+                <section id="human-on-the-loop">
+                    <h2>Human on the Loop, Not in It</h2>
+                    <p>Once tests carry the instruction, the engineer's position changes. Most AI-assisted teams
+                        put the human <em>in</em> the loop: embedded in the workflow, inspecting the AI's output at
+                        every step. It feels responsible, and it caps your throughput at the reading speed of one
+                        engineer.</p>
+                    <p>TDN puts the human <em>on</em> the loop instead: above the workflow, teasing out the domain
+                        policy rules, expressing them as failing tests, and letting the agents iterate until the
+                        suite goes green. This is what resolves the un-reviewable diff problem. The diff does not
+                        have to be read line by line, because the boundary it must respect is executable and the
+                        machine checks it on every run.</p>
+
+                    <figure class="loop-figure">
+                        <a href="human-on-the-loop.png" target="_blank" rel="noopener">
+                            <img src="human-on-the-loop.png"
+                                alt="Side-by-side comparison. Human in the loop: the human reviews tests, AI-generated code, test results and final code at each of the four steps of the development loop, focused on code quality. Human on the loop: the human sits above the loop, providing meaningful constraints as failing tests and thinking in business outcomes, while AI agents iterate through the four steps until the tests pass."
+                                class="process-image">
+                        </a>
+                        <figcaption>Human in the loop versus human on the loop. Click the diagram to open it full
+                            size.</figcaption>
+                    </figure>
+
+                    <blockquote><strong>Leader Takeaway: In the loop, your engineers are inspectors and their
+                            attention is the ceiling. On the loop, they are directors and the work scales with the
+                            number of agents you run.</strong></blockquote>
+                </section>
+
                 <!-- The Process -->
                 <section id="process">
                     <h2>The TDN Operating Model: A Step-by-Step Guide</h2>
@@ -349,8 +403,9 @@
                             before we begin.</li>
                         <li><strong>Move in Micro-steps:</strong> This is the core Red-Green-Refactor loop. The
                             engineering team writes the next failing test, the AI proposes the minimal change to make it
-                            pass, and the team validates the solution. The team is always the navigato; the AI is the
-                            driver.
+                            pass, and the suite decides whether it landed. The team is always the navigator; the AI is
+                            the driver. Notice who is not in that sentence: nobody is reading the implementation to
+                            decide whether it is acceptable.
                         </li>
                         <li><strong>Review + Release:</strong> Because each change is tiny and test-backed, code reviews
                             are synchronous, fast and focused. CI gates enforce safety, and with techniques like feature

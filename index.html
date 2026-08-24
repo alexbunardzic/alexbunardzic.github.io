@@ -293,6 +293,59 @@
     text-transform: uppercase; letter-spacing: 0.14em;
     writing-mode: vertical-rl;
   }
+  /* ── HUMAN IN vs ON THE LOOP strip ── */
+  .loop-strip {
+    display: grid; grid-template-columns: 1fr 56px 1fr;
+    align-items: stretch; margin: 0;
+  }
+  .loop-panel {
+    background: var(--ink-2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px; padding: 28px 26px;
+  }
+  .loop-panel.lead {
+    background: var(--amber-bg);
+    border-color: var(--amber-bd);
+  }
+  .loop-panel-label {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--fog); margin-bottom: 10px;
+  }
+  .loop-panel-label em { font-style: normal; color: var(--mist); }
+  .loop-panel.lead .loop-panel-label { color: var(--amber); }
+  .loop-panel.lead .loop-panel-label em { color: var(--amber); }
+  .loop-role {
+    font-family: var(--serif); font-size: 1.3rem; line-height: 1.3;
+    color: var(--white); margin-bottom: 20px;
+  }
+  .loop-panel ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .loop-panel li {
+    font-size: 15px; color: var(--white);
+    display: flex; gap: 10px; line-height: 1.5;
+  }
+  .loop-panel li::before { content: '·'; color: var(--fog); flex-shrink: 0; }
+  .loop-panel.lead li::before { color: var(--amber); }
+  .loop-vs { display: flex; align-items: center; justify-content: center; padding: 8px 0; }
+  .loop-vs span {
+    width: 34px; height: 34px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--ink); border: 1px solid rgba(255,255,255,0.12);
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--fog);
+  }
+  .loop-note {
+    font-size: 14px; color: var(--fog); line-height: 1.7;
+    max-width: 620px; margin-top: 20px;
+  }
+  .loop-note strong { color: var(--mist); font-weight: 500; }
+  .loop-note-link {
+    display: inline-block; margin-left: 6px;
+    font-family: var(--mono); font-size: 13px; color: var(--amber);
+    border-bottom: 1px solid var(--amber-bd); padding-bottom: 1px;
+    transition: border-color .2s;
+  }
+  .loop-note-link:hover { border-color: var(--amber); }
+
   .tdn-anchor {
     background: var(--ink-2);
     border: 1px solid rgba(255,255,255,0.07);
@@ -583,6 +636,7 @@
     .fit-col:last-child  { border-radius: 0 0 12px 12px; }
     .tdn-diagram { grid-template-columns: 1fr; }
     .tdn-mid { display: none; }
+    .loop-strip { grid-template-columns: 1fr; }
     .how-reveal { padding: 36px 28px; }
     .pioneer-box { padding: 40px 28px; }
     .nav-links { display: none; }
@@ -864,6 +918,33 @@
         </ul>
       </div>
     </div>
+    <div class="loop-strip">
+      <div class="loop-panel">
+        <div class="loop-panel-label">Human <em>IN</em> the loop</div>
+        <p class="loop-role">Inspector inside the loop.</p>
+        <ul>
+          <li>Audits every step the AI takes</li>
+          <li>Attention spent on how the code reads</li>
+          <li>Capped by what one pair of eyes can absorb</li>
+        </ul>
+      </div>
+      <div class="loop-vs"><span>vs</span></div>
+      <div class="loop-panel lead">
+        <div class="loop-panel-label">Human <em>ON</em> the loop</div>
+        <p class="loop-role">Director above the loop.</p>
+        <ul>
+          <li>Sets the boundary as failing tests</li>
+          <li>Attention spent on business outcomes</li>
+          <li>Scales with however many agents you run</li>
+        </ul>
+      </div>
+    </div>
+    <p class="loop-note">
+      Same loop, different altitude — and that is the whole distance between
+      <strong>supervising AI and steering it</strong>.
+      <a href="https://alexbunardzic.com/test-driven-navigation#human-on-the-loop" class="loop-note-link">See the full diagram ↗</a>
+    </p>
+
     <div class="tdn-anchor">
       <span class="tdn-anchor-glyph">◯</span>
       <div>
