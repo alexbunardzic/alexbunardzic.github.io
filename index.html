@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alex Bunardzic — Ship Fast. Ship Confident. With AI in the Loop.</title>
-<meta name="description" content="I help CTOs and VP Engineering at AI-accelerated SaaS companies ship software faster without compounding invisible risk. 34 years. Trusted at WorkSafeBC, Raymond James, and more.">
+<meta name="description" content="I help CTOs and VP Engineering at AI-accelerated SaaS companies ship software faster without compounding invisible risk. Over three decades of experience. Trusted at WorkSafeBC, Raymond James, and more.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -457,6 +457,88 @@
     border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px;
   }
 
+  /* ── ROI CALCULATOR ── */
+  .calc { background: var(--ink-2); }
+  .calc-box {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
+    background: var(--ink-3); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px; padding: 48px;
+  }
+  .calc-note {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--fog); margin-bottom: 28px;
+  }
+  .calc-field { margin-bottom: 22px; }
+  .calc-field label {
+    display: block; font-size: 14px; color: var(--mist); margin-bottom: 8px;
+  }
+  .calc-field .hint { display: block; font-size: 12px; color: var(--fog); margin-top: 5px; }
+  .calc-field input[type="number"] {
+    width: 100%; font-family: var(--mono); font-size: 15px;
+    background: var(--ink); color: var(--white);
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .calc-field input[type="number"]:focus {
+    outline: 2px solid var(--amber); outline-offset: 1px; border-color: transparent;
+  }
+  .calc-field input[type="range"] { width: 100%; accent-color: var(--amber); margin-top: 4px; }
+  .calc-range-val { font-family: var(--mono); font-size: 15px; color: var(--amber); float: right; }
+
+  .calc-out { display: flex; flex-direction: column; justify-content: center; }
+  .calc-row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 20px;
+    padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .calc-row-label { font-size: 14px; color: var(--fog); }
+  .calc-row-val { font-family: var(--mono); font-size: 17px; color: var(--mist); white-space: nowrap; }
+  .calc-row.lead { border-bottom: none; padding-top: 28px; }
+  .calc-row.lead .calc-row-label { color: var(--mist); font-size: 15px; }
+  .calc-row.lead .calc-row-val {
+    font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.9rem); color: var(--amber); line-height: 1;
+  }
+  .calc-disclaimer {
+    font-size: 12px; color: rgba(139,144,154,0.75); line-height: 1.7;
+    margin-top: 28px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 18px;
+  }
+
+  /* ── LEAD CAPTURE ── */
+  .capture { background: var(--ink-2); }
+  .capture-box {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+    background: var(--ink-3); border: 1px solid var(--amber-bd);
+    border-radius: 14px; padding: 48px;
+  }
+  .capture h2 {
+    font-family: var(--serif); font-size: 2rem; color: var(--white);
+    margin-bottom: 1rem; line-height: 1.2;
+  }
+  .capture p { font-size: 15px; color: var(--fog); line-height: 1.8; margin-bottom: 1.5rem; }
+  .capture-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .capture-list li { display: flex; gap: 12px; font-size: 14px; color: var(--mist); line-height: 1.6; }
+  .capture-list li::before {
+    content: '—'; color: var(--amber); font-family: var(--mono); flex-shrink: 0;
+  }
+  .capture-form { display: flex; flex-direction: column; gap: 12px; }
+  .capture-form input[type="email"] {
+    font-family: var(--sans); font-size: 15px;
+    background: var(--ink); color: var(--white);
+    border: 1px solid rgba(255,255,255,0.14); border-radius: 8px;
+    padding: 15px 16px; width: 100%;
+  }
+  .capture-form input[type="email"]::placeholder { color: var(--fog); }
+  .capture-form input[type="email"]:focus {
+    outline: 2px solid var(--amber); outline-offset: 1px; border-color: transparent;
+  }
+  .capture-form button {
+    font-family: var(--mono); font-size: 14px; font-weight: 500; cursor: pointer;
+    background: var(--amber); color: var(--ink); border: none;
+    padding: 15px 28px; border-radius: 8px;
+    transition: background .15s, transform .15s;
+  }
+  .capture-form button:hover { background: #f5b930; transform: translateY(-2px); }
+  .capture-privacy { font-size: 12px; color: rgba(139,144,154,0.8); line-height: 1.7; margin: 4px 0 0; }
+
   /* ── FINAL CTA ── */
   .final {
     background: var(--ink); padding: 120px 2rem;
@@ -490,7 +572,8 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    .hero-grid, .problem-grid, .about-grid, .pioneer-box { grid-template-columns: 1fr; gap: 48px; }
+    .hero-grid, .problem-grid, .about-grid, .pioneer-box,
+    .calc-box, .capture-box { grid-template-columns: 1fr; gap: 48px; }
     .hero-photo { height: 300px; }
     .trap-card { position: static; }
     .proof-grid, .outcomes-grid, .eng-grid, .content-grid, .fit-grid { grid-template-columns: 1fr; }
@@ -568,7 +651,7 @@
       >
       <div class="hero-photo-caption">
         <span class="hero-photo-event">Devoxx Belgium</span>
-        <span class="hero-photo-desc">Closing keynote · Europe's largest developer conference</span>
+        <span class="hero-photo-desc">Closing talk · Europe's largest developer conference</span>
       </div>
     </div>
   </div>
@@ -696,7 +779,7 @@
         <div class="outcome-icon">⬡</div>
         <div class="outcome-title">AI becomes a force multiplier</div>
         <p class="outcome-desc">
-          Not a chaos source. AI executes. Engineers navigate. The split is clean
+          Not a chaos source. Engineers navigate. AI executes. The split is clean
           enough that AI speed becomes real speed, not disguised risk.
         </p>
       </div>
@@ -900,7 +983,7 @@
     <div class="about-grid">
       <div>
         <p class="eyebrow">About Alex</p>
-        <h2 class="section-h" style="max-width: 420px;">34 years. One consistent obsession.</h2>
+        <h2 class="section-h" style="max-width: 420px;">Three decades. One consistent obsession.</h2>
         <div class="about-bio">
           <p>
             I didn't set out to create a framework. I set out to solve a problem that kept
@@ -908,7 +991,7 @@
             in technical debt they couldn't safely fix.</strong>
           </p>
           <p>
-            Over 34 years I watched organizations spend millions on digital transformation
+            Over three decades on the job I watched organizations spend millions on digital transformation
             that left them slower than before. Teams paralyzed by fear of breaking production.
             Then in 2023, generative AI arrived — and I watched the same pattern repeat,
             only faster. Teams generating debt at AI speed with no systematic exit.
@@ -969,6 +1052,84 @@
     </div>
   </div>
 </div>
+
+<!-- ═══════════════════════════════════════
+     ROI — the buyer's own numbers
+════════════════════════════════════════ -->
+<section class="calc" id="roi">
+  <div class="inner">
+    <p class="eyebrow">What rework is costing you</p>
+    <h2 class="section-h">Put your own numbers in.</h2>
+    <p class="section-sub">
+      Every figure below is yours. I supply no uplift, no benchmark, and no industry
+      average — you enter what your delivery actually looks like and decide for
+      yourself how much of the rework is recoverable.
+    </p>
+
+    <div class="calc-box">
+      <div>
+        <p class="calc-note">Example values — replace with your own</p>
+
+        <div class="calc-field">
+          <label for="roi-teams">Delivery teams</label>
+          <input type="number" id="roi-teams" value="4" min="1" step="1">
+        </div>
+
+        <div class="calc-field">
+          <label for="roi-releases">Releases per team, per quarter</label>
+          <input type="number" id="roi-releases" value="12" min="1" step="1">
+        </div>
+
+        <div class="calc-field">
+          <label for="roi-rework">Share of releases needing unplanned rework
+            <span class="calc-range-val" id="roi-rework-val">20%</span>
+          </label>
+          <input type="range" id="roi-rework" min="0" max="60" step="1" value="20">
+          <span class="hint">Rollbacks, hotfixes, and follow-up fixes that were not planned work.</span>
+        </div>
+
+        <div class="calc-field">
+          <label for="roi-cost">What one reworked release costs you</label>
+          <input type="number" id="roi-cost" value="15000" min="0" step="500">
+          <span class="hint">Engineering hours, delay, incident response, and review time combined.</span>
+        </div>
+
+        <div class="calc-field">
+          <label for="roi-reduce">If that rework fell by
+            <span class="calc-range-val" id="roi-reduce-val">25%</span>
+          </label>
+          <input type="range" id="roi-reduce" min="0" max="100" step="5" value="25">
+          <span class="hint">Your assumption, not my promise. Move it to whatever you think is defensible.</span>
+        </div>
+      </div>
+
+      <div class="calc-out">
+        <div class="calc-row">
+          <span class="calc-row-label">Reworked releases per year</span>
+          <span class="calc-row-val" id="roi-out-count">—</span>
+        </div>
+        <div class="calc-row">
+          <span class="calc-row-label">Annual cost of that rework</span>
+          <span class="calc-row-val" id="roi-out-annual">—</span>
+        </div>
+        <div class="calc-row">
+          <span class="calc-row-label">Recovered per quarter</span>
+          <span class="calc-row-val" id="roi-out-quarter">—</span>
+        </div>
+        <div class="calc-row lead">
+          <span class="calc-row-label">Recovered per year</span>
+          <span class="calc-row-val" id="roi-out-recovered">—</span>
+        </div>
+
+        <p class="calc-disclaimer">
+          Illustrative only. This arithmetic multiplies the figures you entered — it is
+          not a forecast, a guarantee, or financial advice. Its purpose is to tell you
+          whether the problem is large enough to be worth two weeks of anyone's attention.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════════════════════════════════
      CONTENT HUB — proof of thinking
@@ -1034,13 +1195,57 @@
           <li>Conference case study feature (anonymous or named, your choice)</li>
         </ul>
         <div style="margin-top: 2rem;">
-          <a href="https://app.cal.com/alex-bunardzic" class="btn-primary">Apply for a Pioneer Spot →</a>
+          <a href="https://app.cal.com/alex-bunardzic" class="btn-primary">Start a Pioneer conversation →</a>
         </div>
       </div>
       <div class="pioneer-counter">
-        <span class="pioneer-num">2</span>
-        <span class="pioneer-counter-label">Pioneer spots remaining for Q2 2026</span>
-        <span class="pioneer-counter-sub">Each engagement receives direct, hands-on involvement — no delegation</span>
+        <span class="pioneer-num">1:1</span>
+        <span class="pioneer-counter-label">Every engagement is mine, start to finish</span>
+        <span class="pioneer-counter-sub">Direct, hands-on involvement — no delegation, no subcontractors, no junior bench</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     LEAD CAPTURE — low-commitment door
+════════════════════════════════════════ -->
+<section class="capture" id="checklist">
+  <div class="inner">
+    <div class="capture-box">
+      <div>
+        <p class="eyebrow">Free · No call required</p>
+        <h2>The AI Code Assurance Checklist</h2>
+        <p>
+          The questions an auditor, a regulator, or a new board member will eventually
+          ask about the code your AI tooling is writing — and what a defensible answer
+          to each one looks like.
+        </p>
+        <ul class="capture-list">
+          <li>What you are expected to be able to evidence, and who typically asks first</li>
+          <li>Where AI-assisted delivery most often breaks a review trail</li>
+          <li>The signals that tell you rework is growing before the metrics do</li>
+          <li>A short self-assessment you can run with your own leads this week</li>
+        </ul>
+      </div>
+
+      <div>
+        <form class="capture-form" action="https://formsubmit.co/alexbunardzic@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="AI Code Assurance Checklist request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://alexbunardzic.com/thank-you.html#checklist">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <label for="capture-email" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Work email address</label>
+          <input type="email" id="capture-email" name="email" placeholder="Your work email address" required>
+          <button type="submit">Send me the checklist</button>
+
+          <p class="capture-privacy">
+            One email with the checklist attached. I will not add you to a sequence,
+            and I will not pass your address to anyone.
+          </p>
+        </form>
       </div>
     </div>
   </div>
@@ -1074,6 +1279,40 @@
     <span class="footer-copy">Vancouver, Canada · Working globally · © 2026</span>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const el = id => document.getElementById(id);
+    const fields = ['roi-teams', 'roi-releases', 'roi-rework', 'roi-cost', 'roi-reduce'].map(el);
+    if (fields.some(f => !f)) return;
+
+    const money = n => '$' + Math.round(n).toLocaleString('en-US');
+    const num = (input, min) => Math.max(min, parseFloat(input.value) || 0);
+
+    function render() {
+      const teams    = num(el('roi-teams'), 0);
+      const releases = num(el('roi-releases'), 0);
+      const rework   = num(el('roi-rework'), 0) / 100;
+      const cost     = num(el('roi-cost'), 0);
+      const reduce   = num(el('roi-reduce'), 0) / 100;
+
+      el('roi-rework-val').textContent = Math.round(rework * 100) + '%';
+      el('roi-reduce-val').textContent = Math.round(reduce * 100) + '%';
+
+      const reworkedPerYear = teams * releases * 4 * rework;
+      const annualCost      = reworkedPerYear * cost;
+      const recoveredYear   = annualCost * reduce;
+
+      el('roi-out-count').textContent     = Math.round(reworkedPerYear).toLocaleString('en-US');
+      el('roi-out-annual').textContent    = money(annualCost);
+      el('roi-out-quarter').textContent   = money(recoveredYear / 4);
+      el('roi-out-recovered').textContent = money(recoveredYear);
+    }
+
+    fields.forEach(f => { f.addEventListener('input', render); f.addEventListener('change', render); });
+    render();
+  })();
+</script>
 
 <script>
   const obs = new IntersectionObserver(entries => {
