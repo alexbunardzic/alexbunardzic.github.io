@@ -482,7 +482,7 @@
 
   /* ── CONTENT HUB ── */
   .content { background: var(--ink); }
-  .content-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 3rem; }
+  .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 3rem; }
   .content-card {
     background: var(--ink-2); border: 1px solid rgba(255,255,255,0.07);
     border-radius: 14px; padding: 32px;
@@ -1274,6 +1274,16 @@
           development demands higher professional standards, not lower ones.
         </p>
         <a href="https://aicraftspeopleguild.github.io/" class="content-cta">Explore the Guild →</a>
+      </div>
+      <div class="content-card">
+        <span class="content-type">Talk · Domain-Driven Design</span>
+        <h3 class="content-title">Permaculture by Succession</h3>
+        <p class="content-desc">
+          Rich domain models cannot take root in barren soil. A pattern for growing bounded
+          contexts the way an ecologist restores a forest: pioneer patterns first, climax
+          architecture last.
+        </p>
+        <a href="https://alexbunardzic.com/permaculture-by-succession.html" class="content-cta">Read the abstract →</a>
       </div>
     </div>
   </div>
