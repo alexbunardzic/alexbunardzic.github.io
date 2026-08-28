@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Published Work — Alex Bunardzic</title>
-<meta name="description" content="Twenty-one articles published on Red Hat's Opensource.com between 2019 and 2022, covering test-driven development, mutation testing, refactoring, and shipping in small, safe steps.">
+<meta name="description" content="Articles, blog posts, training material, and videos on test-driven development, refactoring, and shipping software in small, safe steps.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -76,14 +76,6 @@
     text-transform: uppercase; letter-spacing: 0.12em;
     color: var(--amber); margin-bottom: 16px;
   }
-  .section-h {
-    font-family: var(--serif); font-size: clamp(1.9rem, 3.2vw, 2.7rem);
-    font-weight: 400; line-height: 1.2; color: var(--white); margin-bottom: 1rem;
-  }
-  .section-sub {
-    font-size: 16px; color: var(--fog); line-height: 1.85;
-    max-width: 640px; margin-bottom: 3rem;
-  }
   .btn-primary {
     font-family: var(--mono); font-size: 14px; font-weight: 500;
     background: var(--amber); color: var(--ink);
@@ -115,50 +107,59 @@
     font-size: 17px; color: var(--fog); line-height: 1.8; max-width: 640px;
   }
 
-  /* ── ARTICLE LIST ── */
-  .pub-list { padding-top: 40px; }
-  .pub-card {
+  /* ── HUB GRID ── */
+  .hub { padding-top: 40px; }
+  .hub-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+  }
+  .hub-card {
     background: var(--ink-2);
     border: 1px solid rgba(255,255,255,0.07);
     border-radius: 14px;
-    padding: 28px 30px;
-    margin-bottom: 16px;
-    transition: border-color .2s, transform .2s;
+    padding: 34px 32px 30px;
+    display: flex; flex-direction: column;
+    min-height: 230px;
   }
-  .pub-card:hover { border-color: var(--amber-bd); transform: translateY(-2px); }
-  .pub-date {
+  .hub-card h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 1.7rem; line-height: 1.2; margin-bottom: 12px;
+  }
+  .hub-card p {
+    font-size: 15px; color: var(--fog); line-height: 1.75;
+  }
+  .hub-meta {
     font-family: var(--mono); font-size: 11px; font-weight: 500;
     text-transform: uppercase; letter-spacing: 0.1em;
-    color: var(--fog); margin-bottom: 10px;
+    color: var(--fog); margin-bottom: 12px;
   }
-  .pub-date span { color: var(--amber); }
-  .pub-card h3 {
-    font-family: var(--serif); font-weight: 400;
-    font-size: 1.5rem; line-height: 1.25; margin-bottom: 12px;
+  .hub-go {
+    font-family: var(--mono); font-size: 13px; font-weight: 500;
+    color: var(--amber); margin-top: auto; padding-top: 22px;
+    display: inline-flex; align-items: center; gap: 8px;
   }
-  .pub-card h3 a { color: var(--white); transition: color .2s; }
-  .pub-card h3 a:hover { color: var(--amber); }
-  .pub-card p { font-size: 15px; color: var(--fog); line-height: 1.75; }
+  .hub-go .arrow { transition: transform .2s; }
 
-  .pub-series {
-    border-left: 3px solid var(--amber);
-    background: var(--amber-bg);
-    border-radius: 8px;
-    padding: 24px 28px;
-    margin: 3rem 0 20px;
+  /* live card */
+  a.hub-card {
+    transition: border-color .2s, transform .2s, box-shadow .2s;
   }
-  .pub-series h2 {
-    font-family: var(--mono); font-size: 12px; font-weight: 500;
-    text-transform: uppercase; letter-spacing: 0.12em;
-    color: var(--amber); margin-bottom: 10px;
+  a.hub-card:hover {
+    border-color: var(--amber-bd); transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
   }
-  .pub-series p { font-size: 15px; color: var(--mist); line-height: 1.75; }
+  a.hub-card:hover h2 { color: var(--amber); }
+  a.hub-card:hover .hub-go .arrow { transform: translateX(4px); }
+  a.hub-card h2 { transition: color .2s; }
+  a.hub-card .hub-meta span { color: var(--amber); }
 
-  .pub-archive {
-    margin-top: 3rem; font-size: 15px; color: var(--fog); line-height: 1.8;
+  /* placeholder card */
+  .hub-card.soon { background: transparent; border-style: dashed; }
+  .hub-card.soon h2 { color: var(--mist); }
+  .hub-card.soon p { color: rgba(139,144,154,0.75); }
+  .hub-card.soon .hub-go {
+    color: rgba(139,144,154,0.6); letter-spacing: 0.1em;
+    text-transform: uppercase; font-size: 11px;
   }
-  .pub-archive a { color: var(--amber); border-bottom: 1px solid var(--amber-bd); }
-  .pub-archive a:hover { border-color: var(--amber); }
 
   /* ── CONTACT ── */
   .pub-contact {
@@ -194,7 +195,8 @@
     .nav-links { display: none; }
     .pub-hero { padding: 140px 2rem 40px; }
     section { padding: 70px 2rem; }
-    .pub-card { padding: 24px 22px; }
+    .hub-grid { grid-template-columns: 1fr; }
+    .hub-card { padding: 28px 24px 26px; min-height: 0; }
   }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -228,205 +230,54 @@
 <header class="pub-hero">
   <div class="inner">
     <p class="eyebrow">Published Work</p>
-    <h1>Twenty-one articles on<br>how software <em>actually ships</em>.</h1>
+    <h1>Everything I've written on<br>how software <em>actually ships</em>.</h1>
     <p>
-      Written for Red Hat's Opensource.com between 2019 and 2022, covering test-driven
-      development, mutation testing, refactoring under real constraints, and the discipline
-      of shipping in small, safe steps. Opensource.com stopped publishing in 2023, but the
-      archive remains online.
+      Two decades of test-driven development, refactoring under real constraints, and the
+      discipline of shipping in small, safe steps — collected here by format.
     </p>
   </div>
 </header>
 
 <!-- ═══════════════════════════════════════
-     ARTICLES
+     HUB
 ════════════════════════════════════════ -->
-<section class="pub-list">
+<section class="hub">
   <div class="inner">
+    <div class="hub-grid">
 
-    <div class="pub-card">
-      <p class="pub-date">April 29, 2022</p>
-      <h3><a href="https://opensource.com/article/22/4/systems-programming" target="_blank" rel="noopener">An open source developer's guide to systems programming</a></h3>
-      <p>Networks are unreliable and failure is inevitable, so services should be built to expect it.
-        Argues for simple services that talk asynchronously through message passing rather than shared
-        state, with faults isolated so one failure cannot cascade.</p>
+      <a href="/articles.html" class="hub-card">
+        <p class="hub-meta"><span>27 pieces</span> · 2016—2024</p>
+        <h2>Articles</h2>
+        <p>Long-form pieces for Red Hat's Opensource.com, Redgate's Simple Talk, and
+          freeCodeCamp — test-driven development, mutation testing, legacy code, and
+          the economics of small batches.</p>
+        <span class="hub-go">Read the articles <span class="arrow">→</span></span>
+      </a>
+
+      <div class="hub-card soon">
+        <p class="hub-meta">In progress</p>
+        <h2>Blog Posts</h2>
+        <p>Shorter, sharper takes on delivery flow, technical drag, and what actually
+          slows teams down.</p>
+        <span class="hub-go">Coming soon</span>
+      </div>
+
+      <div class="hub-card soon">
+        <p class="hub-meta">In progress</p>
+        <h2>Training Material</h2>
+        <p>Workshop decks, exercises, and hands-on guides for teams learning to work in
+          small, verifiable steps.</p>
+        <span class="hub-go">Coming soon</span>
+      </div>
+
+      <div class="hub-card soon">
+        <p class="hub-meta">In progress</p>
+        <h2>Videos</h2>
+        <p>Conference talks and recorded sessions, including work presented at Devoxx.</p>
+        <span class="hub-go">Coming soon</span>
+      </div>
+
     </div>
-
-    <div class="pub-card">
-      <p class="pub-date">July 17, 2021</p>
-      <h3><a href="https://opensource.com/article/21/7/avoid-waste-coding" target="_blank" rel="noopener">How to avoid waste when writing code</a></h3>
-      <p>Identifies five categories of waste in software delivery — defects, idling and waiting,
-        overproduction, overprocessing, and activity that never reaches a user — and shows how
-        test-driven development attacks each one.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">July 16, 2021</p>
-      <h3><a href="https://opensource.com/article/21/7/open-closed-principle-refactoring" target="_blank" rel="noopener">What does the Open-Closed Principle mean for refactoring?</a></h3>
-      <p>Software should be open for extension but closed for modification. A stable interface between a
-        service and its clients lets you rework the implementation freely without breaking the handshake
-        anyone depends on.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">July 5, 2021</p>
-      <h3><a href="https://opensource.com/article/21/7/legacy-code" target="_blank" rel="noopener">How I avoid breaking functionality when modifying legacy code</a></h3>
-      <p>Extracting methods is the safest way into unfamiliar code. Breaking long functions into small,
-        well-named pieces makes legacy systems testable and readable without having to understand the
-        whole thing first.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">June 11, 2021</p>
-      <h3><a href="https://opensource.com/article/21/6/hateoas" target="_blank" rel="noopener">How hypertext can establish application state in REST</a></h3>
-      <p>HATEOAS decouples clients from servers by delivering the instructions for what to do next inside
-        the response itself. Clients stop needing advance knowledge of server structure, which is what
-        makes tightly coupled designs so brittle.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">November 18, 2020</p>
-      <h3><a href="https://opensource.com/article/20/11/hypothesis-driven-development" target="_blank" rel="noopener">Apply the Scientific Method to agile development</a></h3>
-      <p>Replaces frozen requirements with hypotheses. Teams state something measurable, build the smallest
-        thing that tests it, collect telemetry, and let the result decide — delivering value rather than
-        merely shipping working software.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">March 16, 2020</p>
-      <h3><a href="https://opensource.com/article/20/3/failed-authentication-attempts-tdd" target="_blank" rel="noopener">How to test failed authentication attempts with test-driven development</a></h3>
-      <p>Uses mountebank service virtualization to simulate repeated login failures, showing how to
-        configure response buffers for successive attempts and why these particular tests have to run in
-        order rather than in parallel.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">March 6, 2020</p>
-      <h3><a href="https://opensource.com/article/20/3/agiles-vs-waterfall" target="_blank" rel="noopener">Why is agile so much more successful than waterfall?</a></h3>
-      <p>Waterfall freezes the specification and postpones integration to the end, which is premature
-        optimization. Agile embraces risk and pulls feedback forward, surfacing problems while they are
-        still cheap to fix.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">February 17, 2020</p>
-      <h3><a href="https://opensource.com/article/20/2/automate-unit-tests" target="_blank" rel="noopener">Writing unit test after writing code considered harmful in test-driven development</a></h3>
-      <p>Writing the test first separates two concerns that get tangled otherwise: deciding what should
-        happen, and deciding how to build it. Measure twice, cut once — the carpentry rule applies to
-        software too.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">January 27, 2020</p>
-      <h3><a href="https://opensource.com/article/20/1/test-driven-development" target="_blank" rel="noopener">How to get started with test-driven development</a></h3>
-      <p>TDD belongs to unit testing of small, independent components, not to integration or system tests.
-        Uses a car battery analogy to explain why isolating a unit from its dependencies is what makes
-        the feedback fast enough to be useful.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">October 23, 2019</p>
-      <h3><a href="https://opensource.com/article/19/10/test-driven-development-best-practices" target="_blank" rel="noopener">Best practices in test-driven development</a></h3>
-      <p>TDD works through iterative micro-failures, each one returning immediate feedback. Covers the
-        FIRST principles — fast, independent, repeatable, self-validating, thorough — and how SOLID
-        design keeps components cheap to change.</p>
-    </div>
-
-    <!-- ZOMBIES series -->
-    <div class="pub-series">
-      <h2>Series · ZOMBIES, a guide to incremental development</h2>
-      <p>Five parts from February 2021 built around the ZOMBIES acronym: Zero, One, Many, Boundary
-        behaviors, Interface definition, Exercise exceptional behavior, Simple scenarios and simple
-        solutions. One shopping-basket API, grown a step at a time.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date"><span>Part 1</span> · February 1, 2021</p>
-      <h3><a href="https://opensource.com/article/21/2/development-guide" target="_blank" rel="noopener">My handy guide to software development and testing</a></h3>
-      <p>Introduces the acronym and the case for small batches over long isolated coding sessions. Starts
-        at Zero: the simplest hard-coded case, which gives immediate feedback and a foundation the rest
-        of the tests can stand on.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date"><span>Part 2</span> · February 2, 2021</p>
-      <h3><a href="https://opensource.com/article/21/2/build-expand-software" target="_blank" rel="noopener">How I build and expand application development and testing</a></h3>
-      <p>One and Many. Moving from the empty case to a single item to multiple items demonstrates stepwise
-        refinement, and shows how to avoid the premature complexity that conditional logic invites.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date"><span>Part 3</span> · February 3, 2021</p>
-      <h3><a href="https://opensource.com/article/21/2/boundaries-interfaces" target="_blank" rel="noopener">Defining boundaries and interfaces in software development</a></h3>
-      <p>Boundary behaviors and Interface definition. Prevents invalid states such as a negative item
-        count, and pins down what the API actually promises: adding items, removing them, and totalling
-        the basket.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date"><span>Part 4</span> · February 4, 2021</p>
-      <h3><a href="https://opensource.com/article/21/2/exceptional-behavior" target="_blank" rel="noopener">How to implement business requirements in software development</a></h3>
-      <p>Exercising exceptional behavior. Encodes a real discount policy — ten percent off orders above
-        $500 — as executable tests, so the business rule lives in something that runs rather than in
-        ambiguous documentation.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date"><span>Part 5</span> · February 5, 2021</p>
-      <h3><a href="https://opensource.com/article/21/2/simplicity" target="_blank" rel="noopener">Why simplicity is critical to delivering sturdy applications</a></h3>
-      <p>Simple scenarios, simple solutions. Closes the series by running mutation testing against the
-        finished API, showing how precise edge-case expectations close the gaps that remain in
-        apparently working logic.</p>
-    </div>
-
-    <!-- Mutation testing series -->
-    <div class="pub-series">
-      <h2>Series · Mutation testing by example</h2>
-      <p>A 2019 series that builds a home-automation cat door in C# and xUnit, then turns the Stryker
-        mutation testing framework loose on it to find out what the tests were never really checking.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date"><span>Part 1</span> · August 9, 2019</p>
-      <h3><a href="https://opensource.com/article/19/8/mutation-testing-evolution-tdd" target="_blank" rel="noopener">Mutation testing is the evolution of TDD</a></h3>
-      <p>Frames TDD as natural selection: iterate against a measurable test and a workable solution
-        emerges regardless of where you started. Mutation testing is the next step, because it checks
-        whether those tests are worth anything.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date"><span>Part 2</span> · September 23, 2019</p>
-      <h3><a href="https://opensource.com/article/19/9/mutation-testing-example-tdd" target="_blank" rel="noopener">Mutation testing by example: How to leverage failure</a></h3>
-      <p>Starts the cat door with a failing test and lets planned failure drive each refinement. Shows how
-        to deal with dependencies from the outset instead of discovering them later.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date"><span>Part 3</span> · September 24, 2019</p>
-      <h3><a href="https://opensource.com/article/19/9/mutation-testing-example-failure-experimentation" target="_blank" rel="noopener">Mutation testing by example: Failure as experimentation</a></h3>
-      <p>A failing test exposes a hidden dependency on system time. Separation of concerns and inversion
-        of control turn untestable code into something deterministic.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date"><span>Part 4</span> · September 25, 2019</p>
-      <h3><a href="https://opensource.com/article/19/9/mutation-testing-example-execute-test" target="_blank" rel="noopener">Mutation testing by example: Execute the test</a></h3>
-      <p>Builds the abstraction out with interfaces and fake implementations, driving the door from
-        daylight or darkness, with every step arrived at through a test written before the code.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date"><span>Part 5</span> · September 26, 2019</p>
-      <h3><a href="https://opensource.com/article/19/9/mutation-testing-example-definition" target="_blank" rel="noopener">Mutation testing by example: Evolving from fragile TDD</a></h3>
-      <p>Stryker alters each line of code and re-runs the suite. Surviving mutants mark logic no
-        expectation ever covered — the gap between a green suite and a suite that means something.</p>
-    </div>
-
-    <p class="pub-archive">
-      The complete archive lives on my
-      <a href="https://opensource.com/users/alex-bunardzic" target="_blank" rel="noopener">Opensource.com author page</a>.
-    </p>
-
   </div>
 </section>
 
