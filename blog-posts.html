@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Posts — Alex Bunardzic</title>
+<meta name="description" content="100 posts from Alex Bunardzic's Substack, 2014—2026 — test-driven development, refactoring, delivery flow, hypermedia architecture, and what changes when AI writes the implementation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:      #0B0D12;
+    --ink-2:    #161920;
+    --ink-3:    #1E2229;
+    --amber:    #E8A820;
+    --amber-bg: rgba(232,168,32,0.08);
+    --amber-bd: rgba(232,168,32,0.22);
+    --fog:      #8B909A;
+    --mist:     #C4C8D0;
+    --white:    #F4F5F7;
+    --serif:    'Instrument Serif', Georgia, serif;
+    --mono:     'DM Mono', monospace;
+    --sans:     'Sora', system-ui, sans-serif;
+    --max:      1100px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(11,13,18,0.9);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 64px;
+  }
+  .nav-logo {
+    font-family: var(--mono); font-size: 13px; font-weight: 500;
+    color: var(--amber); letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 13px; color: var(--fog); transition: color .2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    font-family: var(--mono); font-size: 13px; font-weight: 500;
+    background: var(--amber); color: var(--ink);
+    padding: 8px 20px; border-radius: 6px;
+    transition: background .15s, transform .15s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: #f5b930; transform: translateY(-1px); }
+
+  /* ── SHARED ── */
+  section { padding: 100px 2rem; }
+  .inner { max-width: var(--max); margin: 0 auto; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--amber); margin-bottom: 16px;
+  }
+  .eyebrow a { transition: opacity .2s; }
+  .eyebrow a:hover { opacity: 0.65; }
+  .btn-primary {
+    font-family: var(--mono); font-size: 14px; font-weight: 500;
+    background: var(--amber); color: var(--ink);
+    padding: 14px 28px; border-radius: 8px;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background .15s, transform .15s, box-shadow .2s;
+  }
+  .btn-primary:hover {
+    background: #f5b930; transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(232,168,32,0.25);
+  }
+
+  /* ── HERO ── */
+  .pub-hero {
+    padding: 180px 2rem 60px; position: relative; overflow: hidden;
+  }
+  .pub-hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 55% 60% at 70% 30%, rgba(232,168,32,0.07) 0%, transparent 70%);
+  }
+  .pub-hero .inner { position: relative; }
+  .pub-hero h1 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+  .pub-hero h1 em { font-style: italic; color: var(--amber); }
+  .pub-hero p {
+    font-size: 17px; color: var(--fog); line-height: 1.8; max-width: 640px;
+  }
+
+  /* ── JUMP NAV ── */
+  .jump {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-top: 2.5rem; max-width: 780px;
+  }
+  .jump a {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--fog);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px; padding: 7px 15px;
+    transition: color .2s, border-color .2s, background .2s;
+  }
+  .jump a:hover {
+    color: var(--amber); border-color: var(--amber-bd); background: var(--amber-bg);
+  }
+
+  /* ── POST LIST ── */
+  .pub-list { padding-top: 40px; }
+  .pub-card {
+    background: var(--ink-2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin-bottom: 16px;
+    transition: border-color .2s, transform .2s;
+  }
+  .pub-card:hover { border-color: var(--amber-bd); transform: translateY(-2px); }
+  .pub-date {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--fog); margin-bottom: 10px;
+  }
+  .pub-date span { color: var(--amber); }
+  .pub-card h3 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 1.5rem; line-height: 1.25; margin-bottom: 12px;
+  }
+  .pub-card h3 a { color: var(--white); transition: color .2s; }
+  .pub-card h3 a:hover { color: var(--amber); }
+  .pub-card p { font-size: 15px; color: var(--fog); line-height: 1.75; }
+
+  .pub-series {
+    border-left: 3px solid var(--amber);
+    background: var(--amber-bg);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 3rem 0 20px;
+    scroll-margin-top: 90px;
+  }
+  .pub-series:first-child { margin-top: 0; }
+  .pub-series h2 {
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--amber); margin-bottom: 10px;
+  }
+  .pub-series p { font-size: 15px; color: var(--mist); line-height: 1.75; }
+
+  .pub-archive {
+    margin-top: 3rem; font-size: 15px; color: var(--fog); line-height: 1.8;
+  }
+  .pub-archive a { color: var(--amber); border-bottom: 1px solid var(--amber-bd); }
+  .pub-archive a:hover { border-color: var(--amber); }
+
+  /* ── CONTACT ── */
+  .pub-contact {
+    background: var(--ink-2);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+  }
+  .pub-contact h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.2; margin-bottom: 1rem;
+  }
+  .pub-contact p {
+    font-size: 16px; color: var(--fog); max-width: 520px; margin: 0 auto 2.5rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink-2); border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 48px 2rem;
+  }
+  .footer-inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;
+  }
+  .footer-logo { font-family: var(--mono); font-size: 13px; color: var(--amber); }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { font-size: 13px; color: var(--fog); transition: color .2s; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-copy { font-size: 12px; color: rgba(139,144,154,0.55); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .pub-hero { padding: 140px 2rem 40px; }
+    section { padding: 70px 2rem; }
+    .pub-card { padding: 24px 22px; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYNRR92L50"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-PYNRR92L50');
+</script>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Alex Bunardzic</a>
+    <ul class="nav-links">
+      <li><a href="/#problem">The Problem</a></li>
+      <li><a href="/#how">The Approach</a></li>
+      <li><a href="/#engagements">Work Together</a></li>
+      <li><a href="/#about">About</a></li>
+    </ul>
+    <a href="https://app.cal.com/alex-bunardzic" class="nav-cta">Book a Diagnostic →</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<header class="pub-hero">
+  <div class="inner">
+    <p class="eyebrow"><a href="/published-work.html">Published Work</a> · Blog Posts</p>
+    <h1>100 posts from<br>the <em>working notebook</em>.</h1>
+    <p>
+      Shorter, sharper pieces published on Substack between 2014—2026 — test-driven development
+      and mutation testing, refactoring and legacy code, delivery flow and batch size, hypermedia
+      architecture, and what changes when the machine writes the implementation.
+    </p>
+    <div class="jump">
+      <a href="#ai-and-the-craft">AI</a>
+      <a href="#test-driven-development-and-testing">TDD &amp; Testing</a>
+      <a href="#refactoring-and-legacy-code">Refactoring</a>
+      <a href="#agile-flow-and-delivery">Flow &amp; Delivery</a>
+      <a href="#architecture-rest-and-the-web">Architecture</a>
+      <a href="#teams-and-the-profession">Teams</a>
+      <a href="#interfaces-bots-and-self-serve">Interfaces</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════
+     POSTS
+════════════════════════════════════════ -->
+<section class="pub-list">
+  <div class="inner">
+
+    <div class="pub-series" id="ai-and-the-craft">
+      <h2>AI and the Craft · 18 posts</h2>
+      <p>Written since the arrival of capable LLMs — what changes when implementation becomes a commodity, what doesn't, and why judgment gets more valuable rather than less.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 13, 2026</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/ai-craftspeople-guild-charter" target="_blank" rel="noopener">AI Craftspeople Guild Charter</a></h3>
+      <p>The founding charter of the AI Craftspeople Guild. AI expands what a professional can produce and raises the burden of judgment at the same time — speed without discipline invites fragility, capability without responsibility invites harm.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 10, 2026</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/ai-harness-constraint-driven-software" target="_blank" rel="noopener">AI Harness: Constraint-Driven Software Development for the Age of AI Agents</a></h3>
+      <p>When software can change itself, architecture has to govern how change is allowed to happen. Proposes a change architecture layer that constrains how AI-generated code evolves, holding off specification drift without giving up the speed.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 8, 2026</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/roundtable-discussion-on-ai-in-2026" target="_blank" rel="noopener">Roundtable Discussion On AI In 2026, Session 2 -- What To Expect, What To Avoid</a></h3>
+      <p>Notes from the second AI Roundtable session, tracing a ten-year arc from the brittle chatbots of 2016 through ChatGPT to the agentic tooling of 2026 — what to expect from it, and what to steer clear of.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 5, 2026</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/can-we-cope-with-abundance" target="_blank" rel="noopener">Can We Cope With Abundance?</a></h3>
+      <p>A response to the 'software industrial revolution' framing. Bolting a steam engine onto a sailing ship produced an awkward hybrid, not a steamship; borrowing the old paradigm wholesale is how we misread a genuinely new abundance.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">December 28, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/fight-ai-with-ai" target="_blank" rel="noopener">Fight AI With AI</a></h3>
+      <p>With essentially all public digitized knowledge now assimilated and trillions being spent, the question shifts from whether AI is intelligent to who gets to use that knowledge — and why sitting passively on the sidelines is the losing move.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">November 28, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/is-ai-native-possible" target="_blank" rel="noopener">Is AI-Native Possible?</a></h3>
+      <p>An extraordinary Viennese layer cake as an argument about composition: can anything genuinely bespoke be built without leaning on reusable commodities, or is 'AI-native' just a new arrangement of familiar layers?</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 27, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/software-code-fetish" target="_blank" rel="noopener">Software Code Fetish</a></h3>
+      <p>Von Neumann asked why anyone would want more than machine code. Seventy years of profession-building later, code has gone from the scarce asset that justified the job to the liability that gets in the way of it.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">July 23, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/is-consciousness-singular-or-plural" target="_blank" rel="noopener">Is Consciousness Singular Or Plural?</a></h3>
+      <p>Schrödinger said consciousness is a singular of which the plural is unknown. An excursion into what that 1958 claim means for how we think about individual minds — and, by extension, machine ones.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">May 13, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/the-future-of-refactoring-part-1" target="_blank" rel="noopener">The Future Of Refactoring, Part 1</a></h3>
+      <p>A verbatim meta-dialog with an AI about its own blind spot: it learned from finished repositories, so it has seen countless destinations and almost none of the journeys that produced them.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 20, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/can-ai-make-design-decisions" target="_blank" rel="noopener">Can AI Make Design Decisions?</a></h3>
+      <p>Applies the Permaculture by Succession model to AI-driven development. Every design is a throwaway design — the best one available given current knowledge — so the question is whether AI can be trusted to keep replacing its own.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 13, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/let-machines-do-the-machine-jobs" target="_blank" rel="noopener">Let Machines Do The Machine Jobs</a></h3>
+      <p>The compiler was the first AI: it translated English-like statements into binary and programmers stopped checking its output. LLMs are the next rung on that same ladder, and the same trust question applies.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 25, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/neural-net-is-my-instructor" target="_blank" rel="noopener">Neural Net Is My Instructor</a></h3>
+      <p>A confessed React sceptic builds a React course anyway, using a neural net as instructor — and finds the machine a better teacher than expected on tech he still doesn't much like.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 19, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/why-writing-quality-tests-matters" target="_blank" rel="noopener">Why Writing Quality Tests Matters More Than Ever</a></h3>
+      <p>If machines write the implementation, code design and maintainability stop being the developer's scarce skill. What remains scarce is the ability to state precisely what the code is supposed to do.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 1, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/its-all-about-the-expectations" target="_blank" rel="noopener">It's All About The Expectations</a></h3>
+      <p>Implementation code is now a commodity; testing skill is not. LLMs are weak at formulating good expectations, which makes the most-avoided discipline in software suddenly the most valuable one.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">November 21, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/a-brand-new-development-in-the-material" target="_blank" rel="noopener">A Brand New Development In The Material World</a></h3>
+      <p>Human intelligence is localized — trapped in one three-dimensional body. Machine intelligence is dimensionless, distributed, and decentralized, and we keep trying to reason about it using the only kind we know.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 30, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/evergreen-apps-are-coming-to-an-end" target="_blank" rel="noopener">Evergreen Apps Are Coming To An End</a></h3>
+      <p>A short standing prediction: the industry shifts wholesale from boring 'concierge apps' to 'butler apps' that act on your behalf rather than waiting for you to operate them.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 28, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/implementation-costs-are-on-the-decline" target="_blank" rel="noopener">Implementation Costs Are On The Decline</a></h3>
+      <p>Telephone operators once made every call expensive; automation collapsed that cost to nothing. Software implementation is entering the same curve, and pricing built on scarce implementation labour goes with it.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 24, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/the-issue-is-very-straightforward-if-agi-emerges-and-if-it-surpasses-our-intelligence-we-simply-b3d356ef184e" target="_blank" rel="noopener">The issue is very straightforward: if AGI emerges, and if it surpasses our intelligence, we simply…</a></h3>
+      <p>If AGI emerges and genuinely surpasses us, we would not be able to detect it — a dog cannot assess its owner's intelligence. Which makes most AGI scenario-spinning a waste of breath.</p>
+    </div>
+
+    <div class="pub-series" id="test-driven-development-and-testing">
+      <h2>Test-Driven Development and Testing · 19 posts</h2>
+      <p>The practice at the centre of everything else: writing the expectation first, keeping feedback fast, and finding out whether a green suite means anything at all.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 25, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/declarative-mocking-of-aws-lambda" target="_blank" rel="noopener">Declarative Mocking Of AWS Lambda Functions</a></h3>
+      <p>Lambda functions are awkward to test well. Walks through mocking them declaratively rather than imperatively, so the tests state what is expected instead of scripting how the mock behaves.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">October 16, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/youre-cheating-your-employer-if-youre" target="_blank" rel="noopener">You're Cheating Your Employer If You're Not Doing TDD</a></h3>
+      <p>Software developers inherited a mystical aura and got cocky with it. Manual verification is a choice to burn an employer's money on chores a machine would do for free.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">October 3, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/why-i-do-tdd-even-for-throwaway-prototypes" target="_blank" rel="noopener">Why I Do TDD Even For Throwaway Prototypes</a></h3>
+      <p>Teams that adopt TDD often carve out an exception for prototypes. TDD is not a quality ritual you can skip when quality doesn't matter — it is the faster way to build, which is exactly what a prototype needs.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 27, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/form-follows-function" target="_blank" rel="noopener">Form Follows Function</a></h3>
+      <p>Function first, form second. Establish the expectation as an executable test, and the shape of the implementation follows from it — reverse the order and you get premature optimization.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 23, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/database-is-a-hidden-input" target="_blank" rel="noopener">Database Is A Hidden Input</a></h3>
+      <p>The system clock and the database are inputs your design pretends aren't there. Anything fetched from ambient infrastructure is a hidden input, and hidden inputs are what make behaviour impossible to pin down in a test.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 29, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/i-prefer-to-base-tests-on-values-rather-than-on-objects-401a7334d954" target="_blank" rel="noopener">I prefer to base tests on values, rather than on objects.</a></h3>
+      <p>A short note on test design: objects carry identity, values don't. That impartiality is what makes values the better abstraction to assert against.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 17, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/mutation-testing-for-javascript-e5e5ef7b5b" target="_blank" rel="noopener">Mutation testing for JavaScript</a></h3>
+      <p>Ports the cat-door mutation testing example from C# to JavaScript and Node, showing how to add mutation testing to a project whose team already thinks its TDD practice is in good shape.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 16, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/untestability-of-monolithic-systems-e3f900085de3" target="_blank" rel="noopener">Untestability of monolithic systems</a></h3>
+      <p>Why 'monolith' and 'testable' pull against each other, worked through a border-crossing and emergency-ward example where nothing can be exercised without dragging in everything else.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">November 23, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/computer-programming-started-with-tdd-and-is-still-stuck-there-ca5328974a1c" target="_blank" rel="noopener">Computer Programming started with TDD… and is still stuck there!</a></h3>
+      <p>Programming began with manual rewiring and punched cards, where the only way to know anything was to run it. Argues the profession never actually left that feedback-first model — it just forgot it was in one.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">October 29, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/delete-all-tests-that-contain-imperative-code-1f3236853555" target="_blank" rel="noopener">Delete all tests that contain imperative code</a></h3>
+      <p>In a world where everything runs on code, code must be maintained forever. Tests containing imperative logic are code that needs its own tests — delete them and state expectations declaratively instead.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 28, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/mutation-testing-by-example-how-to-leverage-failure-by-experimenting-fc4f13aa39bd" target="_blank" rel="noopener">Mutation Testing Example: How To Leverage Failure by Experimenting</a></h3>
+      <p>An in-depth guide to leaner code through failing fast, using iteration against a measurable test — the same technique that finds a square root by refining wrong guesses.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 27, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/hands-on-explanation-of-how-tdd-works-c009135dfc79" target="_blank" rel="noopener">Hands-On Explanation of How Test-Driven Design Works</a></h3>
+      <p>TDD modelled on natural selection: spontaneous variation plus a selection pressure produces a working solution without anyone designing it up front. Worked hands-on, one refinement at a time.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 27, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/failure-is-essential-in-devops-culture-dace2a72bfa1" target="_blank" rel="noopener">Failure is essential in DevOps culture</a></h3>
+      <p>Value isn't an entity, it's a flow — which is why it's called a value stream. Since nobody volunteers feedback, failure is the mechanism that solicits it, and DevOps culture depends on welcoming it.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 19, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/i-once-was-a-free-hand-coder-e70bdfd7a205" target="_blank" rel="noopener">I Once was a Free-Hand Coder</a></h3>
+      <p>A career retrospective from FORTRAN onward, and an account of why hand-cranking code — however skilled you get at it — is worse than letting tests drive the work.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 11, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/why-is-it-crucial-to-write-super-fast-tests-c7f97bb48331" target="_blank" rel="noopener">Why is it crucial to write super fast tests?</a></h3>
+      <p>Code-as-text means the machine stays silent while you change it, so damage is done before you learn of it. Slow tests barely shorten that lag; only very fast tests close it.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 25, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/how-to-transition-to-test-driven-development-tdd-8247eb289ee1" target="_blank" rel="noopener">How to transition to Test-Driven Development (TDD)</a></h3>
+      <p>The hard part of adopting TDD isn't the tooling, it's abandoning large batches. The smallest possible batch is a single expectation — start there and the rest of the practice follows.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 23, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/customer-driven-development-2eb9b8e57380" target="_blank" rel="noopener">Customer-Driven Development</a></h3>
+      <p>The epiphany that changes how you write code: create the consumer that is ready to use the code before the code exists. A test is exactly that consumer, arriving first.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 23, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/how-to-create-deterministic-tests-dcea070bc2a1" target="_blank" rel="noopener">How to create deterministic tests</a></h3>
+      <p>Separates exploratory testing, which deliberately disrupts the status quo, from automated testing, which underwrites continuous delivery — and shows why only the deterministic kind can gate a pipeline.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 10, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/mutation-testing-explained-8aaa81ff783f" target="_blank" rel="noopener">Mutation testing explained</a></h3>
+      <p>A short index post pointing to the five-part Opensource.com mutation testing series, in reading order.</p>
+    </div>
+
+    <div class="pub-series" id="refactoring-and-legacy-code">
+      <h2>Refactoring and Legacy Code · 6 posts</h2>
+      <p>Getting code to work is the easy part. These are about the other ninety percent — keeping a system soft enough that the next change is still affordable.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 17, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/how-necessary-is-refactoring" target="_blank" rel="noopener">How Necessary Is Refactoring?</a></h3>
+      <p>Getting something to work is the easy part; keeping it maintainable is the job. Estimates that upwards of 90% of quality software work is refactoring, and that every best practice exists to make refactoring cheaper.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 13, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/how-to-implement-volatile-code-in-24-06-11" target="_blank" rel="noopener">How To Implement Volatile Code In A Lean Fashion</a></h3>
+      <p>Isolate the code that changes often from the code that rarely does. Skip that and coupling hardens the system until software stops being soft.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 8, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/irrelevant-changes" target="_blank" rel="noopener">Irrelevant Changes</a></h3>
+      <p>Deadlines are manufactured urgency, a symptom of management not trusting the team to deliver. A team on genuine continuous delivery ships several times a day, and the concept of a deadline simply evaporates.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 5, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/cultivate-apathy-for-details-to-enable-systems-to-evolve-a44b8ccf732b" target="_blank" rel="noopener">Cultivate apathy for details to enable systems to evolve</a></h3>
+      <p>Behaviour and structure are inseparable, but only behaviour is visible to the business — which is why structure gets starved. Caring less about specific details is what lets a system keep evolving.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 2, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/loose-coupling-and-ambiguity-46c14f23e75" target="_blank" rel="noopener">Loose coupling and ambiguity</a></h3>
+      <p>A Twitter argument worked out properly: a brittle system is easy to break and hard to restore. Natural systems break easily too but recover — the difference is coupling, and coupling is bought with ambiguity.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 16, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/why-extract-methods-when-modifying-legacy-code-f701c6379e21" target="_blank" rel="noopener">Why extract methods when modifying legacy code?</a></h3>
+      <p>Thirty-one years of modifying legacy code distilled into a habit: skim rather than fully comprehend, find the relevant region, then extract methods to make it safe to touch.</p>
+    </div>
+
+    <div class="pub-series" id="agile-flow-and-delivery">
+      <h2>Agile, Flow, and Delivery · 21 posts</h2>
+      <p>On batch size, unfinished work, estimates, and the difference between emptying your plate and being done.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 8, 2026</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/when-the-pipeline-dies-the-merge" target="_blank" rel="noopener">When the Pipeline Dies, the Merge Gate Won’t Save You</a></h3>
+      <p>Why change software in an environment where the change isn't running? Darklang showed a third way — touch production code and it becomes a draft, flip the flag and it publishes — which is where Draft Flag Driven Development came from.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 7, 2026</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/avoid-being-fractally-wrong" target="_blank" rel="noopener">Avoid Being Fractally Wrong</a></h3>
+      <p>Kent Beck's line that a plan going perfectly means nothing was learned. Competing only on already-proven practice hands your competition the same tools and leaves you racing to the bottom on price.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">December 11, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/why-do-many-people-want-agile-dead" target="_blank" rel="noopener">Why Do Many People Want Agile Dead?</a></h3>
+      <p>After 23 years, Agile is being loudly declared dead. Argues the backlash comes from people who never wanted to work with other people, for whom Agile never stood a chance.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">October 25, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/dont-place-unfinished-work-on-a-queue-6ae" target="_blank" rel="noopener">Don't Place Unfinished Work On A Queue, Part 2</a></h3>
+      <p>A point-by-point reply to a thoughtful objection: forgotten branches, duplicates, and completed spikes are not exceptions to the rule, because finished work belongs shipped, not shelved.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">October 23, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/dont-place-unfinished-work-on-a-queue" target="_blank" rel="noopener">Don't Place Unfinished Work On A Queue</a></h3>
+      <p>Every branch is unfinished work, and most branches on most teams are stale — sometimes by a year. Never start an item you cannot carry to delivery without interruption.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 23, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/agile-misunderstood" target="_blank" rel="noopener">Agile Misunderstood</a></h3>
+      <p>Rewatching his own Agile talk a year on, and finding that the feedback it drew was overwhelmingly emotional. Something about the word touches a raw nerve well beyond the practices it names.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 14, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/what-are-the-challenges-businesses" target="_blank" rel="noopener">What are the challenges businesses face?</a></h3>
+      <p>The recurring challenges of running and growing an operation, starting with the one nobody can answer honestly: how long is this change going to take?</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 25, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/promiscuous-and-chastity-belt-business" target="_blank" rel="noopener">Promiscuous and Chastity Belt Business Models</a></h3>
+      <p>Two organizational models: the chastity-belt shop in maintenance mode where every change reads as a threat to stability, and the promiscuous one that invites change in.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 8, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/there-is-no-final-state-138ad10a1055" target="_blank" rel="noopener">There is no final state</a></h3>
+      <p>A reply to 'enough theory, show us the goods'. Rejects the silo it assumes — thinkers over here, doers over there — and the idea that a system ever arrives at a finished state.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">May 19, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/documentation-driven-and-feedback-driven-development-8db2ccd28a15" target="_blank" rel="noopener">Documentation-Driven and Feedback-Driven Development</a></h3>
+      <p>We use logic to predict the future and mistake inference for knowledge. Where documentation-driven work assumes the prediction holds, feedback-driven work goes and checks.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 24, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/draft-flag-driven-development-dfdd-b8d437bf86cf" target="_blank" rel="noopener">Draft Flag Driven Development (DFDD)</a></h3>
+      <p>Software is like furniture — move it around enough and something breaks. DFDD keeps code where it already runs, hiding work behind a draft flag until it is genuinely ready to publish.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 28, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/factors-leading-to-agile-development-967f647d7b90" target="_blank" rel="noopener">Factors leading to agile development</a></h3>
+      <p>Agility comes down to two factors: dependencies and options. Illustrated by a home baking business that prints flyers, waits for orders, and learns what a dependency actually costs.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 19, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/track-work-with-popcorn-flow-2edff49d49b4" target="_blank" rel="noopener">Track work with POPCORN Flow</a></h3>
+      <p>A board and sticky notes are easy; knowing what to put on them is the hard part. POPCORN Flow tracks the problems, options, and experiments rather than just the tickets.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 13, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/first-step-is-more-important-than-anything-else-80063999e540" target="_blank" rel="noopener">First step is more important than anything else</a></h3>
+      <p>Walk east and no amount of speed or stamina gets you to a beach that lies west. The first step sets the direction, which makes it worth more scrutiny than everything that follows.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">November 8, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/does-it-make-sense-to-estimate-software-dd3a5a497d4d" target="_blank" rel="noopener">Does it make sense to estimate software?</a></h3>
+      <p>The fixed-price standoff from both sides: the buyer fears an open-ended cash cow, the crew knows the estimate is fiction. Examines whether estimation is answering the question anyone actually has.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 28, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/replace-road-maps-with-sea-charts-8f0e267468b9" target="_blank" rel="noopener">Replace road maps with sea charts</a></h3>
+      <p>Roadmaps assume predictable terrain and hazard-free travel. In a VUCA world a sea chart is the honest instrument — it shows the hazards and leaves the route to the navigator.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 16, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/non-functional-requirements-revisited-92f57f45eb5c" target="_blank" rel="noopener">Non-functional requirements revisited</a></h3>
+      <p>Customers pay for functionality, so everything else is non-functional — except availability, performance, and security clearly affect every customer. Works out where the line actually falls.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 9, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/the-true-meaning-of-no-silver-bullet-1722c59621a9" target="_blank" rel="noopener">The true meaning of ‘no silver bullet’</a></h3>
+      <p>The cliché is used to shut down enthusiasm. Examined properly — via a weight-loss analogy — it says something more useful about what can and cannot be bought with a single change.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 2, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/plate-emptying-is-not-the-same-as-done-1c5aa4421584" target="_blank" rel="noopener">Plate-emptying is not the same as Done</a></h3>
+      <p>Lessons from being CTO of a dotcom that ran out of funding in April 2001. Clearing the plate is not the same as finishing, and mistaking one for the other is how departments burn through runway.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 1, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/hypothesis-driven-development-c1bfd8f58a91" target="_blank" rel="noopener">Hypothesis-Driven Development</a></h3>
+      <p>Building a feature without a hypothesis is shooting in the dark. An MVP is not a small product, it is an experiment — and market leaders have largely stopped running projects at all.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 15, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/incremental-and-iterative-development-8a55ffcf4145" target="_blank" rel="noopener">Incremental and Iterative Development</a></h3>
+      <p>People routinely use the two words interchangeably. A visual walk-through of why iterating and incrementing are genuinely different processes with different failure modes.</p>
+    </div>
+
+    <div class="pub-series" id="architecture-rest-and-the-web">
+      <h2>Architecture, REST, and the Web · 12 posts</h2>
+      <p>REST, hypermedia, hexagonal architecture, and a running argument that the web already solved problems we keep re-solving badly.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">July 30, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/in-defence-of-html" target="_blank" rel="noopener">In Defence Of HTML</a></h3>
+      <p>Prompted by FastHTML, a defence of hypermedia against the reflex to paper over it. HTML is the most widespread hypermedia implementation there is, and the industry keeps treating it as something to hide.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 15, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/keyboardless-programming" target="_blank" rel="noopener">Keyboardless Programming</a></h3>
+      <p>For an idea to get from your head into the computer it must pass through someone else's hands. On modelling as the real work of programming, and the keyboard as the least interesting part of it.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">May 31, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/increasing-the-client-side-expressiveness" target="_blank" rel="noopener">Increasing the client-side expressiveness is risky</a></h3>
+      <p>Rich client-side logic is what users now expect, but the browser remains an untrusted computing environment. Every increment of front-end expressiveness buys a security headache.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">May 31, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/software-is-abstract" target="_blank" rel="noopener">Software is Abstract</a></h3>
+      <p>A throwaway post about abstract thinking drew 116,000 views and a fight. Digs into why the word 'abstract' provokes so much heat among people who spend all day doing it.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">November 25, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/how-hypertext-can-establish-application-state-in-rest-1f8c0a15a188" target="_blank" rel="noopener">How hypertext can establish application state in REST</a></h3>
+      <p>HATEOAS explained: hypertext carries content that implies action, and action implies a state change. Late binding is the payoff — clients stop needing advance knowledge of server structure.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 12, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/lay-persons-guide-to-representational-state-transfer-rest-c770ff22df8" target="_blank" rel="noopener">Lay person’s guide to Representational State Transfer (REST)</a></h3>
+      <p>REST without the jargon, built up from the idea of a protocol as formal communication, for readers who need to understand the model rather than implement it.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 16, 2022</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/do-not-replace-programming-complexity-with-infrastructure-logistics-complexity-66783bc612b7" target="_blank" rel="noopener">Do not replace programming complexity with infrastructure/logistics complexity</a></h3>
+      <p>Computing infrastructure is a commodity now, but old habits treat it as an achievement. Moving complexity out of the program and into the logistics doesn't reduce it — it just hides it.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 4, 2021</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/how-is-ordering-a-pizza-similar-to-hexagonal-architecture-acfbdf3c6181" target="_blank" rel="noopener">How is ordering a pizza similar to hexagonal architecture?</a></h3>
+      <p>Alistair Cockburn's pizza parlour, worked through: two windows, one facing customers and one facing the kitchen, and the parlour doesn't care who is standing at either.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 6, 2017</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/immutable-components-cattle-not-pets-3e0b7b5afa6e" target="_blank" rel="noopener">Immutable Components: Cattle, Not Pets</a></h3>
+      <p>Shared mutable state is universally condemned; mutable components get a pass they haven't earned. Objects, services, and actors all hold state, and all benefit from being cattle rather than pets.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 11, 2017</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/web-as-a-bureaucratic-machine-2276d5a1b397" target="_blank" rel="noopener">Web as a Bureaucratic Machine</a></h3>
+      <p>The web arrived late because perfectionism stalled it, and won because it was good enough. Reads REST as bureaucratic machinery — forms, standard responses, and no memory of you between visits.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 17, 2015</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/metaphysical-vs-empirical-programming-7a63b189a708" target="_blank" rel="noopener">Metaphysical Vs. Empirical Programming</a></h3>
+      <p>Two modes of writing code, usually chosen unconsciously: starting from a metaphysical premise about how the world is, or starting from what can actually be observed and tested.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 1, 2014</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/tell-dont-ask-or-ask-dont-tell-c52e4d852f0" target="_blank" rel="noopener">Tell Don’t Ask or Ask Don’t Tell?</a></h3>
+      <p>Procedural code asks then decides; object-oriented code tells objects to act. But where does the telling code get the information guiding it? An examination of why imperative programming is the naive model.</p>
+    </div>
+
+    <div class="pub-series" id="teams-and-the-profession">
+      <h2>Teams and the Profession · 17 posts</h2>
+      <p>Teams, heroes, mob programming, and the parts of the job that have nothing to do with code.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">October 25, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/my-software-heroes" target="_blank" rel="noopener">My Software Heroes</a></h3>
+      <p>The people who shaped his thinking, starting with getting booed off his own stage by engineers shouting about Kent Beck and some crazy new fad called Extreme Programming.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 15, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/in-conversation-with-alex-paul-hammond" target="_blank" rel="noopener">In conversation with Alex: Paul Hammond explains his approach to quality software</a></h3>
+      <p>An hour with Paul Hammond on what quality software actually requires — Extreme Programming, TDD, the particular difficulty of front-end TDD, and feedback-driven development.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 1, 2025</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/what-evolution-teaches-about-software" target="_blank" rel="noopener">What Evolution Teaches About Software Engineering and Design</a></h3>
+      <p>Giraffes did not stretch their necks. Dawkins' Climbing Mount Improbable applied to software: the counterintuitive, undirected process is the one that reliably produces good design.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">November 22, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/software-developers-and-common-sense" target="_blank" rel="noopener">Software Developers and Common-Sense Logic</a></h3>
+      <p>A man drives to the motor vehicle branch, pays for parking, waits 45 minutes, and tells the teller he has nothing to report. A parable about the systems developers design without noticing.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">November 12, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/stop-working-in-secrecy" target="_blank" rel="noopener">Stop Working In Secrecy</a></h3>
+      <p>Nobody takes a software job expecting to work alone, and no non-trivial system survives a solo maintainer. So why does everyone start hiding their work the moment they join the team?</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">October 14, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/no-appetite-for-technical-excellence" target="_blank" rel="noopener">No Appetite For Technical Excellence</a></h3>
+      <p>A podcast leads to an introduction, which leads to a CTO interview, which reveals exactly how much appetite a self-described progressive fintech has for technical excellence.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 27, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/smartest-person-in-the-room-is-a" target="_blank" rel="noopener">Smartest person in the room is a myth?</a></h3>
+      <p>Surround yourself with smarter people, the advice goes. But collective IQ falls as the group grows, which makes the whole premise harder to act on than it sounds.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 15, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/dont-go-into-business-of-convincing" target="_blank" rel="noopener">Don't Go Into Business Of Convincing People</a></h3>
+      <p>From numerical ecology research to software, chasing less regimented ground. The lesson that stuck: people hate being convinced, so persuasion is a bad business to be in.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 13, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/post-sharing-economy-24-06-11" target="_blank" rel="noopener">Post-Sharing Economy</a></h3>
+      <p>An $87 price tag that rings up over $100. On the economy of lies, how little white lies compound into audacious ones, and what comes after the sharing economy.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 7, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/what-im-about" target="_blank" rel="noopener">What I'm About</a></h3>
+      <p>A short personal introduction — what he's about, professionally and otherwise.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 12, 2024</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/right-to-ignorance" target="_blank" rel="noopener">Right to ignorance</a></h3>
+      <p>On belonging to no organization and no ideology — a man of no rank — and the freedom that comes from reserving the right not to adopt a view at all.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 26, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/advanced-software-development-the" target="_blank" rel="noopener">Advanced Software Development, the Friendly Way</a></h3>
+      <p>Announcing a book. After years in the field, an attempt to set down a more compassionate and approachable way to do software development than the one the profession keeps defaulting to.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">May 12, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/all-hands-on-deck-8c565ede6651" target="_blank" rel="noopener">All-hands-on-deck</a></h3>
+      <p>Teams should work one user story at a time. Quality requires shared information, sharing requires collaboration, and the best collaboration is real-time and face to face.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 10, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/the-central-role-of-teamwork-451ac1c85aae" target="_blank" rel="noopener">The central role of teamwork</a></h3>
+      <p>Woody Zuill on the origins of mob programming, including the 1998 team that called itself a team while doing nothing that resembled teamwork — and the fifteen years spent fixing that.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 29, 2023</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/neglected-opportunities-4d6c469a945b" target="_blank" rel="noopener">Neglected opportunities</a></h3>
+      <p>Most mid-size and large organizations run on a shadow estate of linked spreadsheets and Access apps, built by people who gave up waiting on the Ivory Tower. Fix those before the ambitious project.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 1, 2017</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/https-medium-com-digital-exprt-abolish-unique-precious-snowflakes-16fcf3937283" target="_blank" rel="noopener">Abolish Unique Precious Snowflakes</a></h3>
+      <p>Software professionals are phenomenally good at producing bloat. The root cause is treating code as a lovingly crafted precious snowflake, which is also what justifies its price.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">May 12, 2017</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/build-software-by-trial-and-error-or-by-careful-planning-54408c9cda79" target="_blank" rel="noopener">Build Software By Trial-And-Error Or By Careful Planning?</a></h3>
+      <p>Life is one long improvisation — we make the map and follow it at the same time. Which of trial-and-error and careful planning actually suits building software.</p>
+    </div>
+
+    <div class="pub-series" id="interfaces-bots-and-self-serve">
+      <h2>Interfaces, Bots, and Self-Serve · 7 posts</h2>
+      <p>An earlier arc, from 2014 to 2017, on interfaces, bots, and the argument that self-serve was a bad deal we agreed to without noticing.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 29, 2017</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/software-must-become-relationship-c412dce71dfa" target="_blank" rel="noopener">Software Must Become Relationship</a></h3>
+      <p>Canned software commoditized the common cases and left customization stranded. Argues software has to stop being a product you buy and become a relationship you maintain.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">July 25, 2017</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/interesting-patterns-in-the-mainstream-adoption-of-technology-84eb358ceeab" target="_blank" rel="noopener">Interesting Patterns In The Mainstream Adoption Of Technology</a></h3>
+      <p>Mainstream society used to be the bottleneck on adopting innovation, for economic, cultural, and plain inertial reasons. That bottleneck is moving, and the patterns around it are worth watching.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 29, 2017</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/self-serve-is-dead-long-live-digital-experts-13b4092631bd" target="_blank" rel="noopener">Self-Serve Is Dead; Long Live Digital Experts!</a></h3>
+      <p>Slides from the Apps World Evolution talk in London, arguing the self-serve era gives way to digital experts acting on the user's behalf.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">December 8, 2016</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/in-praise-of-textual-user-interface-tui-c66ac958ee28" target="_blank" rel="noopener">In Praise Of Textual User Interface (TUI)</a></h3>
+      <p>From rewiring to punched cards to text, because language is how humans actually communicate. A defence of the textual interface against the graphical one that displaced it.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">July 12, 2016</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/replace-user-experience-with-trust-73eaad22b4b" target="_blank" rel="noopener">Replace User Experience With Trust</a></h3>
+      <p>Twenty-six years with a utility company and essentially zero interactions — no user experience whatsoever, and an outstanding service. Sometimes the best interface is one you never have to use.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 9, 2016</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/the-age-of-self-serve-is-coming-to-an-end-ae632f7151b2" target="_blank" rel="noopener">The Age of Self-Serve is Coming to an End</a></h3>
+      <p>Automation retired the operators, the agents, and the tellers, then quietly handed their work to us. Self-serve was sold as liberation and delivered a second job; bots are how that work gets taken back.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 2, 2016</p>
+      <h3><a href="https://alexbunardzic.substack.com/p/breaking-the-fourth-wall-in-software-d08a25df34b7" target="_blank" rel="noopener">Breaking The Fourth Wall In Software</a></h3>
+      <p>Punched cards to terminals to the desktop metaphor — and the GUI ending up as arcane as the syntax it replaced. Text was always the intuitive part; the graphics were training wheels.</p>
+    </div>
+
+    <p class="pub-archive">
+      The full archive, including posts not listed here, lives on my
+      <a href="https://alexbunardzic.substack.com/archive" target="_blank" rel="noopener">Substack archive</a>.
+    </p>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CONTACT
+════════════════════════════════════════ -->
+<section class="pub-contact">
+  <div class="inner">
+    <h2>If any of this resonates, we should talk.</h2>
+    <p>
+      The writing is the cheapest way to pressure-test how I think before
+      putting anything on a calendar.
+    </p>
+    <a href="https://app.cal.com/alex-bunardzic" class="btn-primary">Book a Diagnostic →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">Alex Bunardzic · Business Velocity Architect</span>
+    <ul class="footer-links">
+      <li><a href="https://alexbunardzic.com/test-driven-navigation">TDN Framework</a></li>
+      <li><a href="https://aicraftspeopleguild.github.io/">AI Craftspeople Guild</a></li>
+      <li><a href="https://www.linkedin.com/in/alexbunardzic/">LinkedIn</a></li>
+      <li><a href="https://github.com/alexbunardzic">GitHub</a></li>
+      <li><a href="mailto:alexbunardzic@gmail.com">Email</a></li>
+    </ul>
+    <span class="footer-copy">Vancouver, Canada · Working globally · © 2026</span>
+  </div>
+</footer>
+
+</body>
+
+</html>
