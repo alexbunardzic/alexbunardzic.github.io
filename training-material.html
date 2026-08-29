@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Material — Alex Bunardzic</title>
+<meta name="description" content="Conference decks and podcast appearances from Alex Bunardzic, 2015 to 2026 — test-driven navigation, systems programming, conversational commerce, functional programming, and test-driven design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:      #0B0D12;
+    --ink-2:    #161920;
+    --ink-3:    #1E2229;
+    --amber:    #E8A820;
+    --amber-bg: rgba(232,168,32,0.08);
+    --amber-bd: rgba(232,168,32,0.22);
+    --fog:      #8B909A;
+    --mist:     #C4C8D0;
+    --white:    #F4F5F7;
+    --serif:    'Instrument Serif', Georgia, serif;
+    --mono:     'DM Mono', monospace;
+    --sans:     'Sora', system-ui, sans-serif;
+    --max:      1100px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(11,13,18,0.9);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 64px;
+  }
+  .nav-logo {
+    font-family: var(--mono); font-size: 13px; font-weight: 500;
+    color: var(--amber); letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 13px; color: var(--fog); transition: color .2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    font-family: var(--mono); font-size: 13px; font-weight: 500;
+    background: var(--amber); color: var(--ink);
+    padding: 8px 20px; border-radius: 6px;
+    transition: background .15s, transform .15s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: #f5b930; transform: translateY(-1px); }
+
+  /* ── SHARED ── */
+  section { padding: 100px 2rem; }
+  .inner { max-width: var(--max); margin: 0 auto; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--amber); margin-bottom: 16px;
+  }
+  .eyebrow a { transition: opacity .2s; }
+  .eyebrow a:hover { opacity: 0.65; }
+  .btn-primary {
+    font-family: var(--mono); font-size: 14px; font-weight: 500;
+    background: var(--amber); color: var(--ink);
+    padding: 14px 28px; border-radius: 8px;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background .15s, transform .15s, box-shadow .2s;
+  }
+  .btn-primary:hover {
+    background: #f5b930; transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(232,168,32,0.25);
+  }
+
+  /* ── HERO ── */
+  .pub-hero {
+    padding: 180px 2rem 60px; position: relative; overflow: hidden;
+  }
+  .pub-hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 55% 60% at 70% 30%, rgba(232,168,32,0.07) 0%, transparent 70%);
+  }
+  .pub-hero .inner { position: relative; }
+  .pub-hero h1 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+  .pub-hero h1 em { font-style: italic; color: var(--amber); }
+  .pub-hero p {
+    font-size: 17px; color: var(--fog); line-height: 1.8; max-width: 640px;
+  }
+
+  /* ── LIST ── */
+  .pub-list { padding-top: 40px; }
+  .pub-card {
+    background: var(--ink-2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin-bottom: 16px;
+    transition: border-color .2s, transform .2s;
+  }
+  .pub-card:hover { border-color: var(--amber-bd); transform: translateY(-2px); }
+  .pub-date {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--fog); margin-bottom: 10px;
+  }
+  .pub-date span { color: var(--amber); }
+  .pub-card h3 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 1.5rem; line-height: 1.25; margin-bottom: 12px;
+  }
+  .pub-card h3 a { color: var(--white); transition: color .2s; }
+  .pub-card h3 a:hover { color: var(--amber); }
+  .pub-card p { font-size: 15px; color: var(--fog); line-height: 1.75; }
+  .pub-card .aside {
+    font-family: var(--mono); font-size: 12px;
+    color: rgba(139,144,154,0.8); margin-top: 12px;
+  }
+  .pub-card .aside a { color: var(--amber); border-bottom: 1px solid var(--amber-bd); }
+  .pub-card .aside a:hover { border-color: var(--amber); }
+
+  .pub-series {
+    border-left: 3px solid var(--amber);
+    background: var(--amber-bg);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 3rem 0 20px;
+  }
+  .pub-series:first-child { margin-top: 0; }
+  .pub-series h2 {
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--amber); margin-bottom: 10px;
+  }
+  .pub-series p { font-size: 15px; color: var(--mist); line-height: 1.75; }
+
+  /* ── CONTACT ── */
+  .pub-contact {
+    background: var(--ink-2);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+  }
+  .pub-contact h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.2; margin-bottom: 1rem;
+  }
+  .pub-contact p {
+    font-size: 16px; color: var(--fog); max-width: 520px; margin: 0 auto 2.5rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink-2); border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 48px 2rem;
+  }
+  .footer-inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;
+  }
+  .footer-logo { font-family: var(--mono); font-size: 13px; color: var(--amber); }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { font-size: 13px; color: var(--fog); transition: color .2s; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-copy { font-size: 12px; color: rgba(139,144,154,0.55); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .pub-hero { padding: 140px 2rem 40px; }
+    section { padding: 70px 2rem; }
+    .pub-card { padding: 24px 22px; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYNRR92L50"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-PYNRR92L50');
+</script>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Alex Bunardzic</a>
+    <ul class="nav-links">
+      <li><a href="/#problem">The Problem</a></li>
+      <li><a href="/#how">The Approach</a></li>
+      <li><a href="/#engagements">Work Together</a></li>
+      <li><a href="/#about">About</a></li>
+    </ul>
+    <a href="https://app.cal.com/alex-bunardzic" class="nav-cta">Book a Diagnostic →</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<header class="pub-hero">
+  <div class="inner">
+    <p class="eyebrow"><a href="/published-work.html">Published Work</a> · Training Material</p>
+    <h1>Decks and conversations,<br><em>worked through</em> out loud.</h1>
+    <p>
+      Conference and workshop decks from 2015 to 2026, plus podcast appearances — test-driven
+      navigation in the age of AI agents, systems programming, the case against self-serve,
+      and the move from imperative to functional thinking.
+    </p>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════
+     MATERIAL
+════════════════════════════════════════ -->
+<section class="pub-list">
+  <div class="inner">
+
+    <!-- SLIDES -->
+    <div class="pub-series">
+      <h2>Slides · 7 decks</h2>
+      <p>Talks given at conferences and in-house sessions between 2015 and 2026, hosted on
+        Slides.com and SlideShare. Full decks, in the form they were presented.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">May 2026 · ISQD Vienna · <span>24 slides</span></p>
+      <h3><a href="https://slides.com/alexbunardzic-1/deck-83069b" target="_blank" rel="noopener">AI and the Future of Refactoring: Test-Driven Navigation</a></h3>
+      <p>Splits the delivery loop in two. The human engineer navigates — sets direction, owns
+        intent, evaluates tradeoffs — while the AI agent executes, implementing the mechanics
+        under the constraint of a failing test. That failing test is the contract between human
+        intent and machine execution. Applies XP's three C's — Card, Conversation, Confirmation —
+        to the AI-assisted loop, so the agent can only operate inside intent a human already set.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 14, 2020 · <span>7 slides</span></p>
+      <h3><a href="https://www.slideshare.net/slideshow/software-engineering-going-beyond-the-black-belt/238481326" target="_blank" rel="noopener">Software engineering going beyond the black belt</a></h3>
+      <p>A short deck on skill progression past the point where the belts run out. Uses a tip
+        calculator to show what testing while coding actually looks like, and why frequent tests
+        and frequent commits belong to the same habit.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">2017 · <span>103 slides</span></p>
+      <h3><a href="https://slides.com/alexbunardzic-1/introduction-to-systems-programming" target="_blank" rel="noopener">Introduction To Systems Programming</a></h3>
+      <p>How to build a reliable system out of unreliable parts. Networks fail, so system-level
+        errors are a different species from programming bugs, and the job is finding abstraction
+        boundaries that stop errors propagating. Argues for values over objects on the wire —
+        ephemeral, nameless, identity-free — for decoupling producers from consumers with queues
+        and pub/sub, and for designing services for machines rather than for humans.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 14, 2017 · London, England · <span>141 slides</span></p>
+      <h3><a href="https://slides.com/alexbunardzic-1/understanding-the-commercial-opportunity-of-conversational-commerce-7" target="_blank" rel="noopener">Understanding the commercial opportunity of Conversational Commerce</a></h3>
+      <p>Presented as "Business Automation Beyond Self-Serve." Traces the arc from technology-for-the-masses
+        to self-serve as unpaid labour — searching, scrolling, swiping, tapping. Wizards were a sneakier
+        self-serve that shifted the blame onto the user; chatbots that merely swap tapping for typing make
+        the chore worse, not better. The opening is a working definition of holistic development: analysis,
+        process, and engineering informing each other rather than running in isolation.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">October 2016 · <span>88 slides</span></p>
+      <h3><a href="https://slides.com/alexbunardzic-1/deck-2" target="_blank" rel="noopener">Bots for Business</a></h3>
+      <p>Bots aimed at the individual user are set up to fail: people are fickle, they change their
+        minds mid-conversation, and the NLP of the day could not cope. Separates the Concierge bot —
+        loyal to the corporation, sets the conversational protocol, needs surprisingly little AI —
+        from the Butler, loyal to the individual and dependent on heavy AI. The medical receptionist
+        is the worked example of a Concierge doing its job well.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 25, 2016 · <span>33 slides</span></p>
+      <h3><a href="https://www.slideshare.net/slideshow/breaking-the-fourth-wall-in-software/58687752" target="_blank" rel="noopener">Breaking the Fourth Wall in Software</a></h3>
+      <p>The deck behind the essay. Walks the evolution of human-computer interaction from punched
+        cards through terminals to the GUI, and argues for a return to text — with conversational
+        agents fielding inquiries directly instead of making users navigate someone else's menus.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 13, 2015 · <span>23 slides</span></p>
+      <h3><a href="https://www.slideshare.net/slideshow/from-imperative-to-functional-programming-43476397/43476397" target="_blank" rel="noopener">From Imperative to Functional Programming (for Absolute Beginners)</a></h3>
+      <p>An introduction to the functional paradigm for people arriving from imperative code:
+        immutable data, pure functions, and no side effects. Covers why that combination makes
+        programs easier to test and debug, and how it lets you deploy an update by simply
+        replacing the code.</p>
+    </div>
+
+    <!-- PODCASTS -->
+    <div class="pub-series">
+      <h2>Podcasts · 1 episode</h2>
+      <p>Long-form conversations about how the work actually gets done.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 6, 2024 · Code with Jason · Episode 229 · <span>84 min</span></p>
+      <h3><a href="https://www.codewithjason.com/podcast/15536523-229-test-driven-design-with-alex-bunardzic/" target="_blank" rel="noopener">Test Driven Design with Alex Bunardzic</a></h3>
+      <p>An hour and a half with Jason Swett on test-driven design: separating IO from business
+        logic, configurable dependencies, and TCR — test and commit or revert. Also covers making
+        many small commits instead of trying to get the whole program right first time, distributed
+        cognition, order dependency, imperative versus declarative programming, and the difference
+        between coding speculatively and coding without shipping.</p>
+      <p class="aside">Direct audio: <a href="https://audio.buzzsprout.com/s7qhsm9qodpcphf4x27lkopw3sut?response-content-disposition=inline" target="_blank" rel="noopener">MP3</a></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CONTACT
+════════════════════════════════════════ -->
+<section class="pub-contact">
+  <div class="inner">
+    <h2>If any of this resonates, we should talk.</h2>
+    <p>
+      The writing is the cheapest way to pressure-test how I think before
+      putting anything on a calendar.
+    </p>
+    <a href="https://app.cal.com/alex-bunardzic" class="btn-primary">Book a Diagnostic →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">Alex Bunardzic · Business Velocity Architect</span>
+    <ul class="footer-links">
+      <li><a href="https://alexbunardzic.com/test-driven-navigation">TDN Framework</a></li>
+      <li><a href="https://aicraftspeopleguild.github.io/">AI Craftspeople Guild</a></li>
+      <li><a href="https://www.linkedin.com/in/alexbunardzic/">LinkedIn</a></li>
+      <li><a href="https://github.com/alexbunardzic">GitHub</a></li>
+      <li><a href="mailto:alexbunardzic@gmail.com">Email</a></li>
+    </ul>
+    <span class="footer-copy">Vancouver, Canada · Working globally · © 2026</span>
+  </div>
+</footer>
+
+</body>
+
+</html>
