@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Training Material — Alex Bunardzic</title>
-<meta name="description" content="Conference decks, recorded sessions, and podcast appearances from Alex Bunardzic, 2015 to 2026 — test-driven navigation, systems programming, conversational commerce, functional programming, and test-driven design.">
+<title>Videos — Alex Bunardzic</title>
+<meta name="description" content="Eight recorded sessions from Alex Bunardzic — a Devoxx talk on Test-Driven Navigation plus the Coding Interviews with Alex series, tackling real problems live with test-driven development, refactoring, and incremental design.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -162,6 +162,12 @@
   }
   .pub-series p { font-size: 15px; color: var(--mist); line-height: 1.75; }
 
+  .pub-archive {
+    margin-top: 3rem; font-size: 15px; color: var(--fog); line-height: 1.8;
+  }
+  .pub-archive a { color: var(--amber); border-bottom: 1px solid var(--amber-bd); }
+  .pub-archive a:hover { border-color: var(--amber); }
+
   /* ── CONTACT ── */
   .pub-contact {
     background: var(--ink-2);
@@ -229,130 +235,99 @@
 ════════════════════════════════════════ -->
 <header class="pub-hero">
   <div class="inner">
-    <p class="eyebrow"><a href="/published-work.html">Published Work</a> · Training Material</p>
-    <h1>Decks and conversations,<br><em>worked through</em> out loud.</h1>
+    <p class="eyebrow"><a href="/published-work.html">Published Work</a> · Videos</p>
+    <h1>Eight recorded sessions,<br><em>unedited</em>.</h1>
     <p>
-      Conference and workshop decks from 2015 to 2026, plus recorded sessions and podcast
-      appearances — test-driven navigation in the age of AI agents, systems programming, the
-      case against self-serve, and the move from imperative to functional thinking.
+      A Devoxx talk on Test-Driven Navigation, plus the Coding Interviews with Alex series —
+      working engineers taking a live problem in front of a camera, with test-driven development,
+      refactoring, and incremental design done in real time rather than described after the fact.
+      Just under eight hours in total.
     </p>
     <p class="hero-note">
-      Gathered here for the technique each one demonstrates. The recorded sessions also appear
-      in the full <a href="/videos.html">Videos</a> catalogue.
+      This is the complete catalogue of everything recorded. A few of these also appear under
+      <a href="/training-material.html">Training Material</a>, selected there for what they teach.
     </p>
   </div>
 </header>
 
 <!-- ═══════════════════════════════════════
-     MATERIAL
+     VIDEOS
 ════════════════════════════════════════ -->
 <section class="pub-list">
   <div class="inner">
 
-    <!-- SLIDES -->
     <div class="pub-series">
-      <h2>Slides · 7 decks</h2>
-      <p>Talks given at conferences and in-house sessions between 2015 and 2026, hosted on
-        Slides.com and SlideShare. Full decks, in the form they were presented.</p>
+      <h2>Conference Talks · 1 session</h2>
+      <p>Recorded on the main circuit, in front of a room.</p>
     </div>
 
     <div class="pub-card">
-      <p class="pub-date">May 2026 · ISQD Vienna · <span>24 slides</span></p>
-      <h3><a href="https://slides.com/alexbunardzic-1/deck-83069b" target="_blank" rel="noopener">AI and the Future of Refactoring: Test-Driven Navigation</a></h3>
-      <p>Splits the delivery loop in two. The human engineer navigates — sets direction, owns
-        intent, evaluates tradeoffs — while the AI agent executes, implementing the mechanics
-        under the constraint of a failing test. That failing test is the contract between human
-        intent and machine execution. Applies XP's three C's — Card, Conversation, Confirmation —
-        to the AI-assisted loop, so the agent can only operate inside intent a human already set.</p>
+      <p class="pub-date">October 10, 2025 · Devoxx · <span>67 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=tH8aqbHWgIM" target="_blank" rel="noopener">The Future of Refactoring: Test-Driven Navigation</a></h3>
+      <p>AI promised to take refactoring off our hands and instead delivers sweeping, uncontrolled
+        changes. Test-Driven Navigation is the workflow that tames it: failing tests act as
+        hyper-specific instructions that force the assistant into safe, incremental steps. Combines
+        XP's three C's with Permaculture by Succession, includes a live-coded red-green-refactor
+        cycle with an AI partner, and reframes code review — writing the next test <em>is</em> the
+        review. The closing argument is that the developer's role is not obsolete but elevated:
+        mechanic to race engineer, coder to architect.</p>
     </div>
 
-    <div class="pub-card">
-      <p class="pub-date">September 14, 2020 · <span>7 slides</span></p>
-      <h3><a href="https://www.slideshare.net/slideshow/software-engineering-going-beyond-the-black-belt/238481326" target="_blank" rel="noopener">Software engineering going beyond the black belt</a></h3>
-      <p>A short deck on skill progression past the point where the belts run out. Uses a tip
-        calculator to show what testing while coding actually looks like, and why frequent tests
-        and frequent commits belong to the same habit.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">2017 · <span>103 slides</span></p>
-      <h3><a href="https://slides.com/alexbunardzic-1/introduction-to-systems-programming" target="_blank" rel="noopener">Introduction To Systems Programming</a></h3>
-      <p>How to build a reliable system out of unreliable parts. Networks fail, so system-level
-        errors are a different species from programming bugs, and the job is finding abstraction
-        boundaries that stop errors propagating. Argues for values over objects on the wire —
-        ephemeral, nameless, identity-free — for decoupling producers from consumers with queues
-        and pub/sub, and for designing services for machines rather than for humans.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">June 14, 2017 · London, England · <span>141 slides</span></p>
-      <h3><a href="https://slides.com/alexbunardzic-1/understanding-the-commercial-opportunity-of-conversational-commerce-7" target="_blank" rel="noopener">Understanding the commercial opportunity of Conversational Commerce</a></h3>
-      <p>Presented as "Business Automation Beyond Self-Serve." Traces the arc from technology-for-the-masses
-        to self-serve as unpaid labour — searching, scrolling, swiping, tapping. Wizards were a sneakier
-        self-serve that shifted the blame onto the user; chatbots that merely swap tapping for typing make
-        the chore worse, not better. The opening is a working definition of holistic development: analysis,
-        process, and engineering informing each other rather than running in isolation.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">October 2016 · <span>88 slides</span></p>
-      <h3><a href="https://slides.com/alexbunardzic-1/deck-2" target="_blank" rel="noopener">Bots for Business</a></h3>
-      <p>Bots aimed at the individual user are set up to fail: people are fickle, they change their
-        minds mid-conversation, and the NLP of the day could not cope. Separates the Concierge bot —
-        loyal to the corporation, sets the conversational protocol, needs surprisingly little AI —
-        from the Butler, loyal to the individual and dependent on heavy AI. The medical receptionist
-        is the worked example of a Concierge doing its job well.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">February 25, 2016 · <span>33 slides</span></p>
-      <h3><a href="https://www.slideshare.net/slideshow/breaking-the-fourth-wall-in-software/58687752" target="_blank" rel="noopener">Breaking the Fourth Wall in Software</a></h3>
-      <p>The deck behind the essay. Walks the evolution of human-computer interaction from punched
-        cards through terminals to the GUI, and argues for a return to text — with conversational
-        agents fielding inquiries directly instead of making users navigate someone else's menus.</p>
-    </div>
-
-    <div class="pub-card">
-      <p class="pub-date">January 13, 2015 · <span>23 slides</span></p>
-      <h3><a href="https://www.slideshare.net/slideshow/from-imperative-to-functional-programming-43476397/43476397" target="_blank" rel="noopener">From Imperative to Functional Programming (for Absolute Beginners)</a></h3>
-      <p>An introduction to the functional paradigm for people arriving from imperative code:
-        immutable data, pure functions, and no side effects. Covers why that combination makes
-        programs easier to test and debug, and how it lets you deploy an update by simply
-        replacing the code.</p>
-    </div>
-
-    <!-- VIDEOS -->
     <div class="pub-series">
-      <h2>Videos · 1 session</h2>
-      <p>Recorded working sessions — the practice demonstrated rather than described.</p>
+      <h2>Coding Interviews with Alex · 7 sessions</h2>
+      <p>A pretend technical interview with a real engineer, run as a working session rather than
+        a quiz. Guests include Robert C. Martin, Esko Luontola, Maxi Contieri, Gregor Riegler,
+        Daniel Markham, Tsvetan Tsvetanov, Simon Revill, and Philip Wong. Multi-part sets are
+        listed in viewing order.</p>
     </div>
 
     <div class="pub-card">
       <p class="pub-date">November 25, 2024 · <span>57 min</span></p>
       <h3><a href="https://www.youtube.com/watch?v=YwZZia7c4z8" target="_blank" rel="noopener">Coding Interview with Simon Revill and Uncle Bob Martin — Part 1</a></h3>
-      <p>A faux coding interview, with Simon Revill taking the challenge and Robert C. Martin
-        supplying live commentary, staged to show how seasoned front-end developers actually
-        approach a problem. Uncle Bob's advice centres on bringing unit tests and microtests to
-        front-end work and letting TDD guide the design; Simon's ability to pivot mid-problem is
-        the other half of the lesson.</p>
-    </div>
-
-    <!-- PODCASTS -->
-    <div class="pub-series">
-      <h2>Podcasts · 1 episode</h2>
-      <p>Long-form conversations about how the work actually gets done.</p>
+      <p>A faux coding interview with Simon Revill taking the challenge and Robert C. Martin supplying live commentary, staged to show how seasoned front-end developers actually approach a problem. Uncle Bob's advice centres on bringing unit tests and microtests to front-end work and letting TDD guide the design; Simon's ability to pivot mid-problem is the other half of the lesson.</p>
     </div>
 
     <div class="pub-card">
-      <p class="pub-date">August 6, 2024 · Code with Jason · Episode 229 · <span>84 min</span></p>
-      <h3><a href="https://www.codewithjason.com/podcast/15536523-229-test-driven-design-with-alex-bunardzic/" target="_blank" rel="noopener">Test Driven Design with Alex Bunardzic</a></h3>
-      <p>An hour and a half with Jason Swett on test-driven design: separating IO from business
-        logic, configurable dependencies, and TCR — test and commit or revert. Also covers making
-        many small commits instead of trying to get the whole program right first time, distributed
-        cognition, order dependency, imperative versus declarative programming, and the difference
-        between coding speculatively and coding without shipping.</p>
-      <p class="aside">Direct audio: <a href="https://audio.buzzsprout.com/s7qhsm9qodpcphf4x27lkopw3sut?response-content-disposition=inline" target="_blank" rel="noopener">MP3</a></p>
+      <p class="pub-date">June 11, 2022 · <span>88 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=fYz3GhEKMgE" target="_blank" rel="noopener">Tsvetan Tsvetanov and Maxi Contieri</a></h3>
+      <p>The longest session in the set, and a direct demonstration of how to solve a problem by supplying a series of concrete examples as tests, then generalizing from those examples to reach the right structure at the right level of abstraction. Maxi Contieri joins to add his own TDD expertise.</p>
     </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 5, 2022 · <span>59 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=ph4fivijw-8" target="_blank" rel="noopener">Esko Luontola and Daniel Markham</a></h3>
+      <p>Esko Luontola works the challenge in Clojure — full TDD, functional throughout, with a REPL in the loop — while Daniel Markham questions and pushes from the side. Ends with an extended exercise in TCR, test and commit or revert.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">May 19, 2022 · <span>38 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=Uxde0RXANF8" target="_blank" rel="noopener">Gregor Riegler Coding Interview — Part 1</a></h3>
+      <p>Gregor Riegler — software development coach and, by Alex's description, a merciless refactorer — takes on the hairy problems that surface whenever you try to model a real-world situation in code.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">May 19, 2022 · <span>42 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=Rh4kmtyC7sA" target="_blank" rel="noopener">Code interview with Gregor Riegler — Part 2</a></h3>
+      <p>Picking up where Part 1 left off, Gregor works through the thornier details of building the system under test-driven development.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">May 2, 2022 · <span>50 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=5COUHqoy8II" target="_blank" rel="noopener">Philip Wong — Part 1</a></h3>
+      <p>The session that opened the series. Philip Wong, an experienced engineer and manager, walks through how he approaches implementing brand-new functionality from a standing start.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">May 3, 2022 · <span>74 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=x0s-ojhRWLM" target="_blank" rel="noopener">Philip Wong — Part 2</a></h3>
+      <p>Philip grows the solution step by step: breaking the work into small pieces, keeping the code running at all times, and moving from primitive-obsession code toward real business abstractions. The stated criterion for optimal design — easy to read, easy to reason about, risk-free to modify.</p>
+    </div>
+
+    <p class="pub-archive">
+      The seven coding interviews are collected in the
+      <a href="https://www.youtube.com/playlist?list=PLpQwCufTgsb21EuS262M1dn1dhgqInndD" target="_blank" rel="noopener">Coding Interviews with Alex playlist</a>
+      on YouTube.
+    </p>
 
   </div>
 </section>
