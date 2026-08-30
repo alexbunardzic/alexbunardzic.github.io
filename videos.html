@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Videos — Alex Bunardzic</title>
-<meta name="description" content="Eight recorded sessions from Alex Bunardzic — a Devoxx talk on Test-Driven Navigation plus the Coding Interviews with Alex series, tackling real problems live with test-driven development, refactoring, and incremental design.">
+<meta name="description" content="Sixty-four recorded sessions from Alex Bunardzic — a Devoxx talk on Test-Driven Navigation, the Coding Interviews with Alex series, and Software Breakthroughs for the 21st Century: guest conversations, AI roundtables, and Guild working sessions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -116,6 +116,17 @@
   .pub-hero .hero-note a { color: var(--amber); border-bottom: 1px solid var(--amber-bd); }
   .pub-hero .hero-note a:hover { border-color: var(--amber); }
 
+  .jump { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2rem; max-width: 780px; }
+  .jump a {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--fog);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px; padding: 7px 15px;
+    transition: color .2s, border-color .2s, background .2s;
+  }
+  .jump a:hover { color: var(--amber); border-color: var(--amber-bd); background: var(--amber-bg); }
+
   /* ── LIST ── */
   .pub-list { padding-top: 40px; }
   .pub-card {
@@ -148,6 +159,7 @@
   .pub-card .aside a:hover { border-color: var(--amber); }
 
   .pub-series {
+    scroll-margin-top: 90px;
     border-left: 3px solid var(--amber);
     background: var(--amber-bg);
     border-radius: 8px;
@@ -236,17 +248,26 @@
 <header class="pub-hero">
   <div class="inner">
     <p class="eyebrow"><a href="/published-work.html">Published Work</a> · Videos</p>
-    <h1>Eight recorded sessions,<br><em>unedited</em>.</h1>
+    <h1>Sixty-four recorded<br>sessions, <em>unedited</em>.</h1>
     <p>
-      A Devoxx talk on Test-Driven Navigation, plus the Coding Interviews with Alex series —
-      working engineers taking a live problem in front of a camera, with test-driven development,
-      refactoring, and incremental design done in real time rather than described after the fact.
-      Just under eight hours in total.
+      A Devoxx talk on Test-Driven Navigation, the Coding Interviews with Alex series, and the
+      long-running Software Breakthroughs for the 21st Century collection — working engineers
+      taking live problems in front of a camera, guest conversations, and AI roundtables, with
+      the thinking done in real time rather than described after the fact. Roughly 73 hours
+      in total.
     </p>
     <p class="hero-note">
       This is the complete catalogue of everything recorded. A few of these also appear under
       <a href="/training-material.html">Training Material</a>, selected there for what they teach.
     </p>
+    <div class="jump">
+      <a href="#conference-talks">Conference Talks</a>
+      <a href="#coding-interviews">Coding Interviews</a>
+      <a href="#ai-craftspeople-guild-and-roundtables">Guild &amp; Roundtables</a>
+      <a href="#roundtable-clips">Clips</a>
+      <a href="#guest-conversations">Guest Conversations</a>
+      <a href="#short-talks-and-series-openers">Short Talks</a>
+    </div>
   </div>
 </header>
 
@@ -256,7 +277,7 @@
 <section class="pub-list">
   <div class="inner">
 
-    <div class="pub-series">
+    <div class="pub-series" id="conference-talks">
       <h2>Conference Talks · 1 session</h2>
       <p>Recorded on the main circuit, in front of a room.</p>
     </div>
@@ -273,7 +294,7 @@
         mechanic to race engineer, coder to architect.</p>
     </div>
 
-    <div class="pub-series">
+    <div class="pub-series" id="coding-interviews">
       <h2>Coding Interviews with Alex · 7 sessions</h2>
       <p>A pretend technical interview with a real engineer, run as a working session rather than
         a quiz. Guests include Robert C. Martin, Esko Luontola, Maxi Contieri, Gregor Riegler,
@@ -326,6 +347,376 @@
     <p class="pub-archive">
       The seven coding interviews are collected in the
       <a href="https://www.youtube.com/playlist?list=PLpQwCufTgsb21EuS262M1dn1dhgqInndD" target="_blank" rel="noopener">Coding Interviews with Alex playlist</a>
+      on YouTube.
+    </p>
+
+    <div class="pub-series" id="software-breakthroughs">
+      <h2>Software Breakthroughs for the 21st Century · 56 sessions</h2>
+      <p>A running series begun in January 2021 around one question: why has software engineering
+        stayed stuck while every other branch of engineering kept making breakthroughs? Sixty-five
+        hours of guest conversations, roundtables, and Guild working sessions. Grouped below;
+        newest first within each group.</p>
+    </div>
+
+    <div class="pub-series" id="ai-craftspeople-guild-and-roundtables">
+      <h2>AI Craftspeople Guild and Roundtables · 20 sessions</h2>
+      <p>The 2026 run: recurring roundtables on what AI is doing to the profession, and the working meetings of the AI Craftspeople Guild that grew out of them. Full sessions, unedited.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 5, 2026 · <span>6 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=Zq8mfmbgOuI" target="_blank" rel="noopener">AI Craftspeople Mob Programming Session 01</a></h3>
+      <p>The Guild's first real mob programming session. Technical glitches meant only part of it was captured, so this is the surviving fragment.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">July 21, 2026 · <span>53 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=yKPiA2F5uOE" target="_blank" rel="noopener">AI Craftspeople Guild Retrospective Jul 21, 2026</a></h3>
+      <p>The Guild's retrospective for July 2026 — what the group had learned so far and what to change going forward.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">July 17, 2026 · <span>51 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=Kj5RjLN6nTo" target="_blank" rel="noopener">AI Craftspeople Guild Core Team ACG Rubric Session</a></h3>
+      <p>The core team works on the ACG Rubric, a Guild framework offering a scaffold for assessing the practices individuals and teams use when employing agentic AI to build software.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">June 30, 2026 · <span>57 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=8I2Q72CfqdA" target="_blank" rel="noopener">ACG Core Team Working Session #1, 2026,  06 30</a></h3>
+      <p>The first ACG core team working session, recorded in full.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 23, 2026 · <span>1h 55m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=tdX2fks_Ts4" target="_blank" rel="noopener">AI Craftspeople Guild's first online mob programming session</a></h3>
+      <p>Nearly two hours of the Guild's first online mob programming session.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 16, 2026 · <span>1h 53m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=UYBiYWAUBd8" target="_blank" rel="noopener">AI Craftspeople Guild Weekly Meeting #6</a></h3>
+      <p>Guild weekly meeting number six, recorded end to end.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 14, 2026 · <span>2h 32m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=exFoxwoqAdw" target="_blank" rel="noopener">AI Craftspeople Weekly Meeting #5</a></h3>
+      <p>The longest session in the set at two and a half hours — Guild weekly meeting number five.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 14, 2026 · <span>2h 02m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=eUSZr8iaEQo" target="_blank" rel="noopener">AI Roundtable Discussion, Session 11</a></h3>
+      <p>The eleventh roundtable, running just over two hours.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 3, 2026 · <span>2h 23m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=bvXn4d-NIU8" target="_blank" rel="noopener">AI Roundtable Discussion, Session 10</a></h3>
+      <p>An in-depth discussion of the merits and demerits of engaging with and using AI.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">April 2, 2026 · <span>1h 59m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=OxCJO6o_0iA" target="_blank" rel="noopener">AI Craftspeople Guild Weekly Meeting #4</a></h3>
+      <p>Guild weekly meeting number four, covering a wide range of member-raised topics.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 29, 2026 · <span>1h 51m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=8cr4488V46A" target="_blank" rel="noopener">AI Roundtable Discussion, Session 9</a></h3>
+      <p>A review of the Guild's collaboration assets and the idea of shared AI rituals to make collective work more reliable and demonstrable — white papers, an AI rituals repository, a mission statement built on technical excellence and human advocacy, plus a Hall of Fame and code of conduct.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 26, 2026 · <span>1h 57m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=WghCM2YGgWY" target="_blank" rel="noopener">AI Craftspeople Guild Session 3</a></h3>
+      <p>Opens with introductions tying members' artistic and musical backgrounds to the Guild's purpose, then turns to strategy: a drafted mission statement centred on building AI that serves individuals, protects agency and dignity, and resists centralized extraction.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 20, 2026 · <span>1h 40m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=DiVbBkp6ESE" target="_blank" rel="noopener">AI Roundtable Discussion, Session 8</a></h3>
+      <p>Built around Joshua Kerievsky's line that AI must become our partner in production, not just in development.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 19, 2026 · <span>1h 57m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=tX9ny8qOaZI" target="_blank" rel="noopener">AI Craftspeople Guild Second Meeting</a></h3>
+      <p>Reviews progress on the Guild — charter, code of conduct, member profiles, a Hall of Fame and Shame, eleven white papers — then debates membership standards and reputation: open entry versus vetting, and what removal should look like.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 17, 2026 · <span>1h 02m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=qH0QITppC_M" target="_blank" rel="noopener">AI Roundtable Discussion, Session 7</a></h3>
+      <p>Continuing what Alex calls the pilgrimage toward safely adopting AI in the software profession.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">March 6, 2026 · <span>2h 16m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=KUuPucZB7H0" target="_blank" rel="noopener">Roundtable discussion on AI in 2026, Session 6</a></h3>
+      <p>Framed on Brecht's line that the chief aim of science is not to open a door to infinite wisdom but to set a limit to infinite error. Time is a non-issue for machines, so they behave as though the supply of it were unlimited — and the errors scale accordingly.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 28, 2026 · <span>2h 39m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=AcmTMbMYp2k" target="_blank" rel="noopener">Roundtable discussion on AI in 2026, Session 5</a></h3>
+      <p>How teams should actually use LLMs, with the emphasis on verification, maintainability, and effects on human behaviour. Covers research showing fluent model output reinforces confirmation bias, and argues for codified mechanical guardrails — TDD, mutation testing — over informal prompting.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 13, 2026 · <span>2h 09m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=wTZwN2w1Rpw" target="_blank" rel="noopener">Roundtable discussion on AI in 2026, Session 3 -- What to expect, what to avoid</a></h3>
+      <p>Panelists examine how AI agents and LLMs should serve people rather than unilaterally serving corporate interests, reassessing software's historical promises and diagnosing the risks of surveillance capitalism and techno-feudalism.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 6, 2026 · <span>1h 31m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=76896-VbymE" target="_blank" rel="noopener">Roundtable discussion on AI in 2026, Session 2 -- What to expect, what to avoid</a></h3>
+      <p>The session with the heaviest guest list — Grady Booch, Kent Beck, Woody Zuill, Tim Ottinger and others — on what AI is bringing to the table in the years immediately ahead.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 30, 2026 · <span>59 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=ztx7cMQ3dFE" target="_blank" rel="noopener">Roundtable discussion on AI in 2026, Session 1 -- What to expect, what to avoid</a></h3>
+      <p>The one that started the series: a think tank convened to work out what 2026 would bring for AI-assisted software development.</p>
+    </div>
+
+    <div class="pub-series" id="roundtable-clips">
+      <h2>Roundtable Clips · 5 sessions</h2>
+      <p>Short excerpts lifted from the January 2026 roundtables — one point each, from the people who made it.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 31, 2026 · <span>1 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=YcZPlxqVrVA" target="_blank" rel="noopener">Generative AI</a></h3>
+      <p>One minute on a distinction that keeps getting lost: copying material from the training corpus would be regurgitative AI. Generative means producing new patterns from the patterns it learned.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 31, 2026 · <span>3 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=MUcOeXUa4GE" target="_blank" rel="noopener">Woody Zuill on the role of AI</a></h3>
+      <p>Woody Zuill on how to use AI prudently when building and delivering solutions.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 31, 2026 · <span>5 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=T3Pj-3bmzZg" target="_blank" rel="noopener">Matt Burch describes the AI agents orchestration challenges</a></h3>
+      <p>Matt Burch on the hands-on reality of orchestrating the work of multiple AI agents.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 30, 2026 · <span>2 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=7Eqx0-fw34M" target="_blank" rel="noopener">Adoption of AI in software development is at the "Angry" phase</a></h3>
+      <p>Bryan Finster on the fear, bullying, and ganging up aimed at software professionals who use AI to improve their craft — the profession's adoption curve stuck at the angry phase.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 30, 2026 · <span>2 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=fGQRkmQiUjc" target="_blank" rel="noopener">Fabian Wesner sends a strong message to all software developers/coders</a></h3>
+      <p>Fabian Wesner's blunt message to developers hoping AI is not a threat to their jobs.</p>
+    </div>
+
+    <div class="pub-series" id="guest-conversations">
+      <h2>Guest Conversations · 27 sessions</h2>
+      <p>One guest, one hour, one problem worth chewing on. Recorded between 2021 and 2025 with practitioners whose work changed how Alex thinks about delivery.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 29, 2025 · <span>1h 04m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=INd5XRPVxXg" target="_blank" rel="noopener">Michele Sollecito discusses his ideas on improving the software delivery</a></h3>
+      <p>Michele Sollecito on the current state of software development and delivery, and where he expects it to go next.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 21, 2025 · <span>1h 04m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=qrkJ3V3MsxI" target="_blank" rel="noopener">Bryan Finster teaches how to not set ourselves for failure</a></h3>
+      <p>Bryan Finster on avoiding the trap of focusing on technology at the expense of business value — how teams set themselves up to fail before they write a line of code.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 14, 2025 · <span>1h 00m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=tU9lA7FUDGA" target="_blank" rel="noopener">Paul Hammond explains his approach to quality software</a></h3>
+      <p>Paul Hammond on building on a foundation of technical excellence while making sure the result is genuinely fit for purpose.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">October 12, 2023 · <span>56 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=FNacueiKeVY" target="_blank" rel="noopener">Bottleneck rules</a></h3>
+      <p>Clarke Ching on The Bottleneck Rules — where constraints actually sit in a delivery system, and what happens when you optimize everywhere except the one place that matters.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 3, 2023 · <span>1h 38m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=mmzc3auHSEQ" target="_blank" rel="noopener">HTMX creator Carson Gross discusses his "Hypermedia Systems" book</a></h3>
+      <p>Carson Gross on his book Hypermedia Systems — the longest of the guest conversations, and the fuller argument behind HTMX.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 24, 2023 · <span>1h 05m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=bW2_3nYSUQI" target="_blank" rel="noopener">Eric &amp; Alex discuss software breakthroughs and how do we pick up the velocity</a></h3>
+      <p>Eric Wright on the future of software development and delivery, and where the velocity actually comes from.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">December 30, 2022 · <span>1h 20m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=opBWHIaqpTs" target="_blank" rel="noopener">Maxi Contieri explains ChatGPT revolution</a></h3>
+      <p>Recorded days after ChatGPT landed. Maxi Contieri, fresh from experimenting with OpenAI and Copilot, argues the profession is standing on the threshold of a major breakthrough.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 10, 2022 · <span>1h 01m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=YD-7AKUjqQU" target="_blank" rel="noopener">Fun chats with Alex -- Michaël Azerhad, Monseigneur TDD</a></h3>
+      <p>Michaël Azerhad, whom Alex dubs Monseigneur TDD, on the nuances of a practice Alex had already been doing for fifteen years and still found new corners in.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 9, 2022 · <span>1h 59m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=oMpCD10VQOQ" target="_blank" rel="noopener">Anton Teterine makes his first guest appearance to help with the push toward software breakthroughs</a></h3>
+      <p>A free-form, two-hour brainstorm with Anton Teterine on where the breakthroughs might come from.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 4, 2022 · <span>40 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=fJkEwn9Qxak" target="_blank" rel="noopener">Woody Zuill in a fantastic session elaborating the need for meaningful and fulfilling collaboration</a></h3>
+      <p>Woody Zuill on humanizing the workplace and what genuinely fulfilling collaboration requires.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 3, 2022 · <span>1h 23m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=W49tiLQ0KMQ" target="_blank" rel="noopener">Woody Zuill &amp; me ushering the New Year with plans to spread the joys of mob programming - Part 1</a></h3>
+      <p>Woody Zuill, creator of mob programming — which Alex calls the most significant breakthrough in the profession this century — on spreading the practice.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">October 19, 2021 · <span>1h 03m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=tWVvnoYEw8o" target="_blank" rel="noopener">Fun chats with Alex -- Philippe Bourgau explains how to get better at creating good software</a></h3>
+      <p>Philippe Bourgau on getting better at creating good software, and on building work environments people actually want to be in.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">October 13, 2021 · <span>1h 09m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=iwwopQPXVw8" target="_blank" rel="noopener">Fun chats with Alex -- Austin Chadwick shares his extensive mob programming experiences</a></h3>
+      <p>Austin Chadwick of the Mob Mentality Show on his extensive mob programming experience.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 27, 2021 · <span>59 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=JzZjDtLfFbY" target="_blank" rel="noopener">Fun chats with Alex - Dragan Stepanović, Round 2</a></h3>
+      <p>A second round with Dragan Stepanović on the roadblocks standing between the industry and the quality it keeps promising.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">September 21, 2021 · <span>1h 01m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=afdRaTjvjXE" target="_blank" rel="noopener">Fun chats with Alex-- Stephan Schmidt's Radical Simplicity</a></h3>
+      <p>Stephan Schmidt on Radical Simplicity: stop slaving over complex machinery and build deep domain solutions instead of generating waste in the form of glue code.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">August 6, 2021 · <span>1h 08m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=GubbFCUq8aI" target="_blank" rel="noopener">Fun chats with Alex - Dragan Stepanović explains the value of continuous code reviews</a></h3>
+      <p>Dragan Stepanović on the value of continuous code review, and what stops the software creation process delivering on its promise.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">May 24, 2021 · <span>1h 02m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=O4ZFIx1ckSg" target="_blank" rel="noopener">Fun chats with Alex -- Carson explains his HTMX breakthrough!</a></h3>
+      <p>The first HTMX conversation, recorded when Alex had just realized what the technology could do. Carson Gross explains the breakthrough.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 22, 2021 · <span>1h 07m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=u5vYEPga23M" target="_blank" rel="noopener">Fun chats with Alex -- Brian LeRoux</a></h3>
+      <p>Brian LeRoux on a wide-ranging set of unorthodox takes on software engineering.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 29, 2021 · <span>57 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=iVRFL2bb0D0" target="_blank" rel="noopener">Fun chats with Alex -- Josue discusses his UX views</a></h3>
+      <p>Josue on user experience degenerating into user exploitation, and what can be done to stop it.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 28, 2021 · <span>1h 01m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=0sLV5E1r2LI" target="_blank" rel="noopener">Fun chats with Alex -- Paul Biggar and his revolutionary Dark platform!</a></h3>
+      <p>Paul Biggar on Dark, the platform that let developers change code in the same environment where it runs — the system that later prompted Alex's Draft Flag Driven Development.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 22, 2021 · <span>1h 01m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=SmjqgHg5bdM" target="_blank" rel="noopener">Fun chats with Alex -- Kerri Miller</a></h3>
+      <p>Kerri Miller on the path from Amazon to GitLab, how managing theatre events translates into running back-end services, and why the future is not single-core.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 21, 2021 · <span>1h 11m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=tckN7jfHmsk" target="_blank" rel="noopener">Fun chats with Alex -- Jov shares his amazing educational channel</a></h3>
+      <p>Jov on improving the conditions of the profession, and on keeping hold of the big picture.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 15, 2021 · <span>1h 05m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=ZahKYb7L8H0" target="_blank" rel="noopener">Fun chats with Alex -- Alejandro Piad kicks it into stratosphere!</a></h3>
+      <p>Alejandro Piad — professor at the University of Havana, finishing a PhD in AI — on the future of AI, software ethics, and how ineffectual the current teaching curriculum is.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 13, 2021 · <span>1h 18m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=1acHR-VCGes" target="_blank" rel="noopener">Fun chats with Alex -- Software engineering as seen from the computer scientist's standpoint</a></h3>
+      <p>Mario Cervera, PhD computer scientist, on why technical excellence is indistinguishable from quality delivery.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 12, 2021 · <span>1h 08m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=C9dymQG9lls" target="_blank" rel="noopener">Fun chats with Alex -- Jan and Alex discuss software quality and frequency of deployments</a></h3>
+      <p>Jan Giacomelli on moving from electrical engineering into Python and machine learning services, and on the link between quality and deployment frequency.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 9, 2021 · <span>1h 06m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=K_ln92hRH3A" target="_blank" rel="noopener">Fun chats with Alex -- Deni and Alex talk software philosophy, January 9 2021</a></h3>
+      <p>An hour with Deni that goes further into software philosophy than these conversations usually do, informed by his background in civil engineering.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 7, 2021 · <span>1h 01m</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=qV-_mSWIHag" target="_blank" rel="noopener">Fun chats with Alex -- Mutation Testing and Stuff</a></h3>
+      <p>The first episode. Markus Schirp — as authoritative on mutation testing as anyone — on what surviving mutants tell you that a green suite cannot.</p>
+    </div>
+
+    <div class="pub-series" id="short-talks-and-series-openers">
+      <h2>Short Talks and Series Openers · 4 sessions</h2>
+      <p>Solo pieces and the openers that set the series going.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">February 16, 2021 · <span>21 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=_oPNbOaJXO8" target="_blank" rel="noopener">Test and Commit or Revert (TCR) -- What is it &amp; how to leverage it?</a></h3>
+      <p>Is there anything after TDD? An introduction to Kent Beck's Test and Commit or Revert — the high-octane version of the discipline, where a failing test throws away the work rather than pausing it.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 27, 2021 · <span>38 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=-BTjmHwke-Q" target="_blank" rel="noopener">Software Breakthroughs for the 21st century Inaugural chat</a></h3>
+      <p>The inaugural chat: a first attempt at discussing the new manifesto the series was built around.</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 16, 2021 · <span>3 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=XMux6dwOyKo" target="_blank" rel="noopener">Introduction to software breakthroughs for 21st century</a></h3>
+      <p>Three minutes stating the premise of the whole series: why has software engineering been stuck in a rut for fifty years while every other branch of science and engineering kept making breakthroughs?</p>
+    </div>
+
+    <div class="pub-card">
+      <p class="pub-date">January 14, 2021 · <span>4 min</span></p>
+      <h3><a href="https://www.youtube.com/watch?v=_hw4vDqQzKE" target="_blank" rel="noopener">Manage change in small steps</a></h3>
+      <p>Software is easily mass produced, but building it well takes a different mental model than the industrial-age assembly line most engineers are still emulating. The argument for abandoning that mindset and returning to craft.</p>
+    </div>
+
+    <p class="pub-archive">
+      All fifty-six are collected in the
+      <a href="https://www.youtube.com/playlist?list=PLpQwCufTgsb2z_FW8FFbOzr7uBU-kuydQ" target="_blank" rel="noopener">Software Breakthroughs for the 21st Century playlist</a>
       on YouTube.
     </p>
 
