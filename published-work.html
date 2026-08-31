@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Published Work — Alex Bunardzic</title>
-<meta name="description" content="Articles, blog posts, training material, and videos on test-driven development, refactoring, and shipping software in small, safe steps.">
+<meta name="description" content="Articles, blog posts, training material, videos, and books by Alex Bunardzic — test-driven development, refactoring, shipping software in small safe steps, and the philosophy underneath it.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -127,6 +127,7 @@
   .hub-card p {
     font-size: 15px; color: var(--fog); line-height: 1.75;
   }
+  .hub-card p em { font-style: italic; color: var(--mist); }
   .hub-meta {
     font-family: var(--mono); font-size: 11px; font-weight: 500;
     text-transform: uppercase; letter-spacing: 0.1em;
@@ -151,6 +152,22 @@
   a.hub-card:hover .hub-go .arrow { transform: translateX(4px); }
   a.hub-card h2 { transition: color .2s; }
   a.hub-card .hub-meta span { color: var(--amber); }
+
+  /* books feature band */
+  a.hub-card.wide {
+    grid-column: 1 / -1;
+    min-height: 0;
+    background: linear-gradient(135deg, var(--amber-bg) 0%, var(--ink-2) 60%);
+    border-color: var(--amber-bd);
+  }
+  a.hub-card.wide h2 { font-size: 2rem; }
+  a.hub-card.wide .new {
+    display: inline-block; margin-left: 10px; vertical-align: middle;
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--ink); background: var(--amber);
+    border-radius: 100px; padding: 3px 10px;
+  }
 
   /* placeholder card */
   .hub-card.soon { background: transparent; border-style: dashed; }
@@ -233,7 +250,8 @@
     <h1>Everything I've written on<br>how software <em>actually ships</em>.</h1>
     <p>
       Two decades of test-driven development, refactoring under real constraints, and the
-      discipline of shipping in small, safe steps — collected here by format.
+      discipline of shipping in small, safe steps — collected here by format. Plus three books,
+      where the argument runs past software into what is actually there.
     </p>
   </div>
 </header>
@@ -279,6 +297,16 @@
           Software Breakthroughs for the 21st Century — guest conversations and AI roundtables
           with Kent Beck, Grady Booch, Woody Zuill, Robert C. Martin, and many more.</p>
         <span class="hub-go">Watch the sessions <span class="arrow">→</span></span>
+      </a>
+
+
+      <a href="/books.html" class="hub-card wide">
+        <p class="hub-meta"><span>3 books</span> · 2011—2026</p>
+        <h2>Books<span class="new">New</span></h2>
+        <p><em>Nothing Holds: How to Understand Reality</em> — published August 2026, on why
+          "it's all just particles" was never more than a slogan. Alongside <em>Artisan Software
+          Development for the 21st Century</em> and <em>Difficult Points In Buddhism</em>.</p>
+        <span class="hub-go">Browse the books <span class="arrow">→</span></span>
       </a>
 
     </div>
