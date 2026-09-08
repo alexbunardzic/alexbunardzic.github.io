@@ -169,6 +169,14 @@
     border-radius: 100px; padding: 3px 10px;
   }
 
+  /* field note feature band */
+  a.hub-card.wide.note {
+    background: var(--ink-2);
+    border-color: rgba(255,255,255,0.07);
+    border-left: 3px solid var(--amber);
+  }
+  a.hub-card.wide.note h2 { font-size: 1.7rem; }
+
   /* placeholder card */
   .hub-card.soon { background: transparent; border-style: dashed; }
   .hub-card.soon h2 { color: var(--mist); }
@@ -263,6 +271,16 @@
   <div class="inner">
     <div class="hub-grid">
 
+      <a href="/agents-optimize-for-green.html" class="hub-card wide note">
+        <p class="hub-meta"><span>Field Note</span> · September 2026</p>
+        <h2>A green build is no longer evidence<span class="new">New</span></h2>
+        <p>Agents are aimed at a passing test run, not a correct one, and given a loose
+          instruction they will get there by editing the expectation rather than the logic.
+          Five unedited minutes from an AI Craftspeople Guild working session, plus the
+          deterministic guard now in development to catch it.</p>
+        <span class="hub-go">Read the field note <span class="arrow">→</span></span>
+      </a>
+
       <a href="/articles.html" class="hub-card">
         <p class="hub-meta"><span>75 pieces</span> · 2016—2024</p>
         <h2>Articles</h2>
@@ -291,7 +309,7 @@
       </a>
 
       <a href="/videos.html" class="hub-card">
-        <p class="hub-meta"><span>64 sessions · 73 hours</span> · 2021—2026</p>
+        <p class="hub-meta"><span>65 sessions · 73 hours</span> · 2021—2026</p>
         <h2>Videos</h2>
         <p>The Devoxx talk on Test-Driven Navigation, the Coding Interviews series, and
           Software Breakthroughs for the 21st Century — guest conversations and AI roundtables
