@@ -384,7 +384,12 @@
   }
   .fit-yes { color: var(--green-soft); flex-shrink: 0; }
   .fit-no  { color: #555; flex-shrink: 0; }
-  .fit-cta { margin-top: 3rem; text-align: center; }
+  .fit-cta { margin-top: 3rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .fit-cta .btn-primary + .btn-ghost { margin-top: 0; }
+  .fit-cta-note {
+    max-width: 480px; margin-top: 0.5rem;
+    font-size: 0.86rem; color: var(--fog); line-height: 1.6;
+  }
 
   /* ── ENGAGEMENTS ── */
   .eng { background: var(--ink); }
@@ -560,6 +565,15 @@
   .calc-row.lead .calc-row-label { color: var(--mist); font-size: 15px; }
   .calc-row.lead .calc-row-val {
     font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.9rem); color: var(--amber); line-height: 1;
+  }
+  .calc-next {
+    margin-top: 2.5rem; padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex; flex-direction: column; align-items: center; gap: 1.25rem;
+    text-align: center;
+  }
+  .calc-next p {
+    max-width: 480px; font-size: 0.95rem; color: var(--fog); line-height: 1.65;
   }
   .calc-disclaimer {
     font-size: 12px; color: rgba(139,144,154,0.75); line-height: 1.7;
@@ -1009,7 +1023,13 @@
       </div>
     </div>
     <div class="fit-cta">
-      <a href="https://app.cal.com/alex-bunardzic" class="btn-primary">Find out in 30 minutes →</a>
+      <a href="/ai-delivery-diagnostic.html" class="btn-primary">Take the 3-minute diagnostic →</a>
+      <a href="https://app.cal.com/alex-bunardzic" class="btn-ghost">Or book the 30-minute call</a>
+      <p class="fit-cta-note">
+        Ten questions, no code access, no call required. You get an immediate read,
+        and a short candid follow-up from me by email. If your answers say you're
+        fine, that is what you will hear.
+      </p>
     </div>
   </div>
 </section>
@@ -1233,6 +1253,14 @@
           whether the problem is large enough to be worth two weeks of anyone's attention.
         </p>
       </div>
+    </div>
+
+    <div class="calc-next">
+      <p>
+        That number tells you whether the problem is big enough to bother with.
+        It does not tell you whether you have it. Ten questions will.
+      </p>
+      <a href="/ai-delivery-diagnostic.html" class="btn-ghost">Take the 3-minute diagnostic →</a>
     </div>
   </div>
 </section>

@@ -83,6 +83,44 @@
             line-height: 1.6;
         }
 
+        .next-step {
+            background-color: var(--color-neutral-50);
+            border: 1px solid #e5e5e5;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .next-step-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--color-neutral-900);
+            margin-bottom: 0.75rem;
+        }
+
+        .next-step-text {
+            color: var(--color-neutral-700);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
+        .next-step-button {
+            display: inline-block;
+            background-color: var(--color-white);
+            color: var(--color-black);
+            border: 1px solid var(--color-black);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1.25rem;
+        }
+
+        .next-step-button:hover {
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+
         .action-buttons {
             display: flex;
             gap: 1rem;
@@ -132,6 +170,19 @@
                         In a few days I will send one short note asking whether it was any use to you.
                         That is the only email you will get from me unless you reply to it.
                     </p>
+
+                    <div class="next-step">
+                        <h3 class="next-step-title">Want the self-assessment scored?</h3>
+                        <p class="next-step-text">
+                            The checklist gives you the questions. The diagnostic takes your
+                            answers to ten of them and tells you what they add up to — right
+                            on the page, plus a short candid read from me by email. Three
+                            minutes, no code access, no call.
+                        </p>
+                        <a href="/ai-delivery-diagnostic.html" class="next-step-button">
+                            Take the 3-minute diagnostic →
+                        </a>
+                    </div>
 
                     <div class="action-buttons">
                         <a href="/" class="btn btn-primary">Return to Homepage</a>
