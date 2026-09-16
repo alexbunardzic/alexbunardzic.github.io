@@ -696,6 +696,51 @@
   ]);
 
   /* =========================================================
+     CAMPAIGN ATTRIBUTION
+     Reads UTM parameters off the landing URL so every submission
+     says which post or channel produced it. Held in sessionStorage
+     so a reload or a back-navigation doesn't lose the source.
+     Tag LinkedIn links like:
+       /ai-delivery-diagnostic.html?utm_source=linkedin&utm_campaign=q5-green-build
+  ========================================================= */
+  const CAMPAIGN_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+
+  function captureCampaign(){
+    let stored = {};
+    try { stored = JSON.parse(sessionStorage.getItem('ab_campaign') || '{}'); } catch(_) {}
+
+    const params = new URLSearchParams(window.location.search);
+    const fresh = {};
+    CAMPAIGN_KEYS.forEach(k => {
+      const v = params.get(k);
+      if(v) fresh[k] = v.trim().slice(0, 120);
+    });
+
+    // A URL carrying UTMs starts fresh attribution; otherwise keep the session's.
+    const campaign = Object.keys(fresh).length ? fresh : stored;
+
+    if(!campaign.referrer && document.referrer && !document.referrer.includes(location.host)){
+      campaign.referrer = document.referrer.slice(0, 200);
+    }
+
+    try { sessionStorage.setItem('ab_campaign', JSON.stringify(campaign)); } catch(_) {}
+    return campaign;
+  }
+
+  const CAMPAIGN = captureCampaign();
+
+  // One readable line for the inbox: "linkedin / q5-green-build"
+  const CAMPAIGN_SUMMARY =
+    [CAMPAIGN.utm_source, CAMPAIGN.utm_campaign, CAMPAIGN.utm_content]
+      .filter(Boolean).join(' / ')
+    || (CAMPAIGN.referrer ? 'referrer: ' + CAMPAIGN.referrer : 'direct');
+
+  // Merge campaign fields into the funnel-level GA events.
+  function withCampaign(params){
+    return Object.assign({}, params || {}, CAMPAIGN);
+  }
+
+  /* =========================================================
      GA4 ANALYTICS — per-question interaction & abandonment
      Free-text answers are NEVER sent (only their length).
      Radio answers are pre-defined and safe to send.
@@ -714,7 +759,7 @@
   function trackStart(){
     if(questionnaireStarted) return;
     questionnaireStarted = true;
-    track('questionnaire_start', {});
+    track('questionnaire_start', withCampaign());
   }
 
   function trackAnswerChanges(){
@@ -745,12 +790,12 @@
   function trackAbandonment(){
     if(!questionnaireStarted || questionnaireSubmitted || abandonmentFired) return;
     abandonmentFired = true;
-    track('questionnaire_abandoned', {
+    track('questionnaire_abandoned', withCampaign({
       last_question_reached: highestReached,
       last_question_answered: highestAnswered,
       questions_answered: answeredCount(),
       transport_type: 'beacon'
-    });
+    }));
   }
 
   function valueFor(name){
@@ -1006,11 +1051,15 @@
     data._heavy_usage = result.heavyUsage;
     data._submittedAt = new Date().toISOString();
     data._source = 'alexbunardzic.com';
+    data._campaign = CAMPAIGN_SUMMARY;
+    Object.assign(data, CAMPAIGN);
 
     // --- Web3Forms fields ---
     data.access_key = WEB3FORMS_ACCESS_KEY;
     data.email_to = "alexbunardzic@gmail.com";
-    data.subject = `New Diagnostic — Band ${result.band}/4 — ${(data.company || 'unknown company')}`;
+    const via = CAMPAIGN.utm_campaign || CAMPAIGN.utm_source;
+    data.subject = `New Diagnostic — Band ${result.band}/4 — ${(data.company || 'unknown company')}`
+      + (via ? ` — via ${via}` : '');
     data.from_name = "AI-Assisted Delivery Diagnostic";
 
     submitBtn.disabled = true;
@@ -1037,14 +1086,14 @@
       }
 
       questionnaireSubmitted = true;
-      track('questionnaire_submitted', {
+      track('questionnaire_submitted', withCampaign({
         event_category: 'conversion',
         provisional_band: result.band,
         risk_score: result.score,
         heavy_usage: result.heavyUsage,
         role: data.role || 'unspecified',
         team_size: data.team_size || 'unspecified'
-      });
+      }));
 
       renderResult();
       form.style.display = 'none';
@@ -1053,7 +1102,7 @@
       document.getElementById('result').scrollIntoView({behavior:'smooth', block:'start'});
 
     } catch(err){
-      track('questionnaire_submit_failed', { message: String(err && err.message || err) });
+      track('questionnaire_submit_failed', withCampaign({ message: String(err && err.message || err) }));
       errBanner.textContent =
         'Something went wrong sending your answers. Please try again, or email alexbunardzic@gmail.com directly.';
       errBanner.classList.add('show');
