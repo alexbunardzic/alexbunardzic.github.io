@@ -144,6 +144,12 @@
   }
   .hero-sub strong { color: var(--mist); font-weight: 500; }
   .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .hero-quote {
+    max-width: 510px; margin: 2rem 0 0 0; padding-left: 16px;
+    border-left: 2px solid var(--amber-bd);
+    font-size: 14px; color: var(--fog); line-height: 1.7; font-style: italic;
+  }
+  .hero-quote cite { display: block; margin-top: 6px; font-style: normal; font-size: 12px; color: var(--mist); }
 
   /* hero stage photo */
   .hero-photo-wrap {
@@ -720,6 +726,11 @@
           Watch the Devoxx talk ↗
         </a>
       </div>
+      <blockquote class="hero-quote">
+        "I attended 17 talks during the 3 final days of that week and at none of these did I see
+        participants walking up to the stage to talk to the speaker. Except with you…"
+        <cite>— Johan Schoubben, Java Developer, Devoxx Belgium attendee</cite>
+      </blockquote>
     </div>
 
     <div class="hero-photo-wrap">
